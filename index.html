@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Olá</title>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<script type="text/javascript" src="login.js"></script>
+	<link rel="icon" href="usuario.png">
 </head>
 <body>
 
-	<h1>Olá mundo!</h1>
+	<div class="login">
+		<img src="usuario.png" class="usuario" width="100" height="100">
+		<h1>Login</h1>
+		
+		<form name="formu" onsubmit = "return validaCampo()"/>
+			
+			<p>Usuário</p>
+			<input type="text" name="usuario" placeholder="Insira seu nome">
+			<p>Senha</p>
+			<input type="password" name="senha" id="Senha" placeholder="Insira sua senha">
 
+		</form>
+
+			<form action = "notasdasprovas.html" method="post" onsubmit = "return validaCampo()"/>	
+
+			<input type="submit" name="" value="Confirmar">
+			<a href="Senha.html">Esqueceu sua senha ?</a><br>
+			<a href="#">Ainda não possui uma conta ?</a>
+
+		</form>
+	</div>
+	<a name ="Voltar">
 </body>
 </html>
