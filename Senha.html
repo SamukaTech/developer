@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Buscar Senha</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<script type="text/javascript" src="login.js"></script>
+	<link rel="icon" href="usuario.png">
+</head>
+<body>
+
+	
+<div class="login">
+		<img src="usuario.png" class="usuario" width="100" height="100">
+		<h1>Login</h1>
+		
+		<form name="formu" onsubmit = "return validaCampo()"/>
+			
+			<p>Usuário</p>
+			<input type="text" name="usuario" placeholder="Insira seu nome">
+			<p>Senha</p>
+			<input type="password" name="senha" id="Senha" placeholder="Insira sua senha">
+
+		</form>
+
+			<form action = "notas.html" method="post" onsubmit = "return validaCampo()"/>	
+
+			<input type="submit" name="" value="Confirmar">
+			<a href="Senha.html">Esqueceu sua senha ?</a><br>
+
+		</form>
+	</div>
+	<a name ="Voltar">
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+			var ano = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 1- Em que ano você nasceu?"); 
+			var cidade = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 2- Em qual cidade você nasceu?");
+			var mes = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 3- Em qual mês você completa ano?");
+			if (ano != "1998" || cidade != "Barras" || mes != "fevereiro") {
+			alert("Acesso negado!\n Verifique se você preencheu todos os campos corretamente.");
+			}
+			else {
+				alert("Olá Samuel, sua senha é: boletim");
+			}
+		
+	</script>
+
+</body>
+</html>
