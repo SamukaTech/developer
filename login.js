@@ -10,7 +10,7 @@ alert (x + ", você precisa digitar a sua senha!");
 return false;
 }
 var senha = document.getElementById("Senha").value;
-if ( senha != "boletim") {
+if ( senha != "boletim10") {
 alert("A senha que você digitou está incorreta. Tente novamente " + x + "!");
 return false;
 }
