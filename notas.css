@@ -27,12 +27,6 @@ fieldset {
 	padding: 8px;
 	background-color: rgb(243, 252, 244);
 }
-#imgesq {
-	float: left;
-	width: 70px;
-	height: 55px;
-	border-radius: 10px;
-}
 #tab_tds {
 	width: 100%;
 }
