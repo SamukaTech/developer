@@ -24,7 +24,7 @@
 
 		</form>
 
-			<form action = "notas.html" method="post" onsubmit = "return validaCampo()"/>	
+			<form action = "notas.html" method="get" onsubmit = "return validaCampo()"/>	
 
 			<input type="submit" name="" value="Confirmar">
 			<a href="Senha.html">Esqueceu sua senha ?</a><br>
@@ -40,14 +40,14 @@
 
 	<script type="text/javascript">
 		
-			var ano = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 1- Em que ano você nasceu?"); 
-			var cidade = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 2- Em qual cidade você nasceu?");
-			var mes = prompt("PROVE SE VOCÊ É REALMENTE O SAMUEL\n 3- Em qual mês você completa ano?");
-			if (ano != "1998" || cidade != "Barras" || mes != "fevereiro") {
-			alert("Acesso negado!\n Verifique se você preencheu todos os campos corretamente.");
+			var nome = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 1- Qual seu primeiro nome?"); 
+			var insti = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 2- Em qual instituição de ensino você estuda?");
+			var serie = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 3- Qual foi a série/filme que você assistiu ultimamente?");
+			if (nome != "Samuel" || insti != "UESPI" || serie != "Elite") {
+			alert("Acesso negado!\n Os dados informados não consta em nosso sistema.");
 			}
 			else {
-				alert("Olá Samuel, sua senha é: boletim");
+				alert("Olá Samuel, sua senha é: boletim10");
 			}
 		
 	</script>
