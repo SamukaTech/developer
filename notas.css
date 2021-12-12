@@ -33,12 +33,6 @@ fieldset {
 	height: 115px;
 	border-radius: 10px;
 }
-#imgdir {
-	float: right;
-	width: 150px;
-	height: 115px;
-	border-radius: 10px;
-}
 #tab_tds {
 	width: 100%;
 }
@@ -142,9 +136,13 @@ fieldset {
 	color: darkgreen;
 	background-color: rgb(252, 251, 227);
 }
-#bot_voltar {
+#bot_voltar img {
 	float: right;
 	padding-right: 5px;
+	border: 2px solid black;
+	width: 23px;
+	height: 15px;
+	border-radius: 30px;
 }
 @media screen and (min-width: 768px) { 
 
