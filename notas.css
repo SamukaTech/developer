@@ -29,8 +29,8 @@ fieldset {
 }
 #imgesq {
 	float: left;
-	width: 150px;
-	height: 115px;
+	width: 10%;
+	height: 15%;
 	border-radius: 10px;
 }
 #tab_tds {
@@ -138,7 +138,6 @@ fieldset {
 }
 #bot_voltar img {
 	float: right;
-	padding-right: 5px;
 	border: 2px solid black;
 	width: 23px;
 	height: 15px;
