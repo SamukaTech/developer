@@ -95,8 +95,6 @@ header {
     background-image: url('samuka.gif');
     background-size: 100%; 
     background-position: center; 
-    background-repeat: no-repeat; 
-    color: rgba(1, 31, 3, 0.993); 
     display: flex; 
     flex-direction: column; 
     align-items: baseline; 
@@ -110,7 +108,7 @@ header {
     text-align: center; 
     padding: 0 20px 20px; 
     background-image: url('MegaTron.jpg');
-    background-size: contain; 
+    background-size: 100%; 
     background-position: center; 
     color: #00008B; 
 } 
@@ -144,16 +142,16 @@ header {
     padding: 20px; 
 } 
 #email {
-    width: 18%;
+    width: 20px;
     border-radius: 40px;
 }
 #fone {
-    width: 10%;
+    width: 15px%;
     border-radius: 40px;
 }
 footer { 
     text-align: center; 
-    padding: 15px; 
+    padding: 18px; 
     background-color: #363636; 
     color: #f1f1f1; 
     font-size:15px;
