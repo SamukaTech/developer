@@ -190,7 +190,7 @@ footer {
         width: 33.3333333333%; 
     }
     #contato { 
-        flex-direction: row; 
+        flex-direction: column; 
         flex-wrap: wrap; 
         justify-content: space-around; 
         max-width: 500px; 
