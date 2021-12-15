@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+ 
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Jogo da velha</title>
+</head>
+<body>
+<div id="geral">
+	<h1><mark>JOGO DA VELHA</mark></h1>
+    <br>
+    <div class='game'></div>
+ 
+    <script src="Jogo da velha.js"></script>
+
+   <script>
+
+    tic_tac_toe.init( document.querySelector('.game') );
+    tic_tac_toe.start();
+
+</script>
+	<br>
+	<a href="C:/Users/Gilvane/Documents/Arquivos/Jogo da velha.html">
+	<input id="botao" type="button" name="botao" value="Jogar novamente"></a>
+</div>
+<br><br><br><br><br><br><br><br>
+	<h6><mark>
+		&copy Desenvolvido por: Samuel Araújo.
+	</mark>
+	</h6>
+
+
+
+
+    <!--css da página-->
+
+    <style>
+
+body {
+	text-align: center;
+	background-image: url('C:/Users/Gilvane/Documents/Imagens/tella.png');
+	background-position: center;
+	background-size: 100%;
+	background-image: linear-gradient(
+        to bottom right,
+        #07f0f8 0%, #42f8d1 40%, #c1f8ff 60%, #16f4fc 100%
+    );
+    background-size: 200% 200%;
+    animation: moveGradient 5s linear infinite alternate;
+} 
+@keyframes moveGradient {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%;}
+}
+#geral {
+	padding-top: 100px;
+	text-align: center;
+}
+h1 {
+	font-family: cursive;
+	font-size: 20px;
+}
+mark {
+	border: 2px solid black;
+	border-radius: 15px;
+	color: navy;
+	background-color: aquamarine;
+	padding: 6px;
+}
+h6 mark {
+	background-color: black;
+	color: white;
+	padding: 1px;
+}
+h6 {
+	text-align: left;
+	margin: 0px;
+	font-style: italic;
+}
+#botao {
+	font-family: sans-serif;
+	border: 2px solid black;
+	background-color: yellow;
+	padding: 5px;
+	border-radius: 10px;
+}
+#botao:hover:not(.active) {
+  background-color: #7FFF00;
+}
+.game {
+width: 240px;
+height: 240px;
+margin: 0 auto;
+background-color: red;
+color: white;
+border: 6px solid black;
+border-radius: 10px;
+display: grid;
+grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.game > div {
+border: 6px solid black;
+border-radius: 2px;
+font-family: Helvetica;
+font-weight: bold;
+font-size: 3em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+</style>
+</body>
+</html>

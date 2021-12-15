@@ -1,0 +1,71 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#slider {
+    background-image: url('C:/Users/Gilvane/Documents/Imagens/Timber.jpg');
+    background-position: center;
+    background-size: 100%;
+}
+.galeria {
+    position: center;
+    overflow: hidden;
+    height: 100px;
+    padding-top: 29px;
+    padding-bottom: 170px;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+.foto{
+    width: 85%;
+    height: 37.5%;
+    position: absolute;
+    opacity: 0;
+    animation-name: animacao;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+@keyframes animacao{
+
+    25%{
+        opacity: 1;
+        transform:scale(1.1,1.1);
+    }
+
+    50%{
+        opacity: 0;
+    }
+}
+.foto:nth-child(1){
+   
+}
+.foto:nth-child(2){
+    animation-delay: 5s;
+    
+}
+.foto:nth-child(3){
+    animation-delay: 10s;
+    
+}
+.foto:nth-child(4){
+    animation-delay: 15s;
+    
+}
+@media screen and (min-width: 768px) { 
+
+section {
+    flex-direction: row;
+    display: flex;
+}
+.galeria{
+    height: 280px;
+    padding-bottom: 0px;
+}
+.foto{
+    width: 35%;
+}
+}
