@@ -93,7 +93,7 @@ li:hover:not(.active) {
 } 
 header { 
     background-image: url('samuka.gif');
-    background-size: 120%; 
+    background-size: 123%; 
     background-position: center; 
     display: flex; 
     flex-direction: column; 
