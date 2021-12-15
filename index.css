@@ -108,7 +108,7 @@ header {
     text-align: center; 
     padding: 0 20px 20px; 
     background-image: url('MegaTron.jpg');
-    background-size: 100%; 
+    background-size: 107%; 
     background-position: center; 
     color: #00008B; 
 } 
@@ -142,11 +142,11 @@ header {
     padding: 20px; 
 } 
 #email {
-    width: 20%;
+    width: 18px;
     border-radius: 40px;
 }
 #fone {
-    width: 11%;
+    width: 10px;
     border-radius: 40px;
 }
 footer { 
