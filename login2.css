@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-image: url('C:/Users/Gilvane/Documents/Imagens/galhos.png');
+	background-image: url(galhos.png');
 	background-size: cover;
 	font-family: arial;
 }
