@@ -1,0 +1,54 @@
+body {
+	margin: 0px;
+	font-family: arial;
+	background-image: url(C:/Users/Gilvane/Documents/Imagens/ima.png);
+	background-position: center;
+	background-size: 100%;
+}
+#cab {
+	border: 2px solid black;
+	text-align: left;
+	padding: 5px;
+	background-color: rgb(253, 198, 215);
+	color: rgb(2, 102, 27);
+}
+h2 {
+	text-align: left;
+	line-height: 32px;
+	font-size: 27px;
+}
+hr {
+	border: 1px solid black;
+}
+table {
+	background-color: black;
+	width: 50%;
+	text-align: center;
+}
+#centro {
+	font-style: italic;
+	background-color: aqua;
+	font-size: 20px;
+	padding: 3px;
+	color: navy;	
+}
+#disciplina {
+	background: #FFB6C1;
+	font-size: 17px;
+	color: #A52A2A;
+}
+#nota {
+	background-color: #FFDEAD;
+	color:blue;
+	font-size: 15px;
+}
+#total {
+	background: #FFFACD;
+	font-size: 15px;
+	color: darkgreen;
+}
+p {
+	padding-right: 4px;
+	padding-top: 48px;
+	text-align: right;
+}
