@@ -13,7 +13,7 @@
     <br><br>
 <fieldset>
     <legend></legend>
-    <form action="notas2.html" name="formu" autocomplete="off" method="get" onsubmit = "return validaCampo()"/>
+    <form action="notas2.html" name="formu" autocomplete="off" method="post" onsubmit = "return validaCampo()"/>
 			
 			<p>Aluno(a)</p>
 			<input type="text" name="usuario" placeholder="Digite seu nome">
@@ -26,7 +26,7 @@
             <a href="senha2.html">Esqueceu sua senha ?</a><br>
 		</form>
 </fieldset>
-
+<br><br><br>
 
 <style>
 body {
@@ -79,7 +79,8 @@ input[type="submit"] {
 	border: 1px solid rgb(11, 11, 12);
 	outline: none;
 	color: #000;
-    padding: 5px;
+	width: 100px;
+    	padding: 5px;
 	background: rgb(247, 231, 10);
 	border-radius: 10px;
 	transition: 0.25;
