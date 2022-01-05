@@ -6,43 +6,47 @@
 	<title>Buscar Senha</title>
 	<link rel="stylesheet" type="text/css" href="login2.css">
 	<script type="text/javascript" src="login2.js"></script>
+	<script type="text/javascript" src="comprovacao.js"></script>
 	<link rel="icon" href="aluno.jpg">
 </head>
 <body>
 
 	
-   <h2>Preencha o formulário abaixo para ter acesso as notas das provas.</h2>
+   <h3>Preencha o formulário abaixo para ter acesso as notas das provas.</h3>
     <br><br>
 <fieldset>
     <legend></legend>
-    <form action="notas2.html" name="formu" autocomplete="off" onsubmit = "return validaCampo()"/>
+    <form name="formu" autocomplete="off" onsubmit="return validaCampo()"/>
 			
-			<p>Aluno(a)</p>
-			<input type="text" name="usuario" placeholder="Digite seu nome">
-            <br><br>
-			<p>Senha</p>
-			<input type="password" name="senha" id="Senha" placeholder="Digite sua senha">
-            <br><br><br>
-            <input type="submit" value="Confirmar">
-            <br><br>
-            <a href="senha2.html">Esqueceu sua senha ?</a><br>
-		</form>
+		<p>Aluno(a)</p>
+		<input type="text" name="usuario" placeholder="Digite seu nome">
+            	<br><br>
+		<p>Senha</p>
+		<input type="password" name="senha" id="Senha" placeholder="Digite sua senha">
+	</form>
+            	<br><br><br>
+	<form action="notas2.html" onsubmit="return validaCampo()"/>
+            	<input type="submit" value="Confirmar">
+           	<br><br>
+            	<a href="senha2.html">Esqueceu sua senha ?</a><br>
+	</form>
 </fieldset>
-
+<br><br>
+	
 
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
-    background-image: url('aluno_online.jpg');
+    background-image: url('https://exame.com/wp-content/uploads/2020/04/gettyimages-1168910967-e1587388035606.jpg');
     background-position: top;
     background-size: 1370px;
     background-repeat: no-repeat;
 }
-h2 {
+h3 {
     text-align: center;
-    color: rgb(253, 165, 1);
+    color: black;
 }
 legend {
     border: 2px solid rgb(15, 70, 1);
@@ -55,37 +59,35 @@ legend {
     background-size: 100%;
 }
 fieldset {
-    width: 320px;
+   	width: 315px;
 	height: 405px;
-	border: 2px solid rgb(15, 70, 1);
-	border-radius: 10px;
-	background-color: rgb(224, 252, 221);
-	top: 50%;
-	left: 50%;
-    text-align: center;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
+	border: 2px solid rgb(2, 0, 19);
+	border-radius: 12px;
+	background-color: rgb(218, 216, 212);
+    	text-align: center;
+	margin: 0px auto;
 }
 p {
     font-weight: bold;
     font-size: 17px;
+    color: rgb(3, 1, 124);
 }
 input[type="text"], input[type="password"] {
 	border: none;
-	border-bottom: 1px solid rgb(14, 1, 85);
+	border-bottom: 1px solid rgb(6, 63, 1);
 	background: transparent;
 	outline: none;
-    width: 85%;
+    	width: 85%;
 	height: 40px;
-	color: #0c7402;
+	color: #9b1801;
 	font-size: 16px;
 }
 input[type="submit"] {
 	border: 1px solid rgb(11, 11, 12);
 	outline: none;
 	color: #000;
-    padding: 5px;
+	width: 100px;
+    	padding: 5px;
 	background: rgb(247, 231, 10);
 	border-radius: 10px;
 	transition: 0.25;
@@ -109,24 +111,6 @@ a:hover {
 }
 
 </style>
-
-
-
-
-
-	<script type="text/javascript">
-		
-			var nome = prompt("PROVE SE VOCÊ REALMENTE ESTÁ CADASTRADO NO SISTEMA\n 1- Qual seu primeiro nome?"); 
-			var tel = prompt("PROVE SE VOCÊ REALMENTE ESTÁ CADASTRADO NO SISTEMA\n 2- Qual seu número de telefone?");
-			var cid = prompt("PROVE SE VOCÊ REALMENTE ESTÁ CADASTRADO NO SISTEMA\n 3- Em qual cidade você nasceu?");
-			if (nome != "Vitória" || tel != "994609245" || cid != "Teresina") {
-			alert("Acesso negado!\n Verifique se você preencheu todos os campos corretamente.");
-			}
-			else {
-				alert("Olá Vitória, sua senha é: 2425");
-			}
-		
-	</script>
 
 </body>
 </html>
