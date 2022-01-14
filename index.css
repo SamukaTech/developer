@@ -120,6 +120,10 @@ header {
     color: black; 
     font-style: oblique;
 }
+#nomeport {
+    text-align: center;
+    padding-bottom: 3px;
+}
 #divport1 {
     display: flex;
     flex-direction: column;
