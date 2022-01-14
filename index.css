@@ -122,7 +122,8 @@ header {
 }
 #nomeport {
     text-align: center;
-    padding-bottom: 3px;
+    padding: 3px;
+    padding-bottom: 4px;
 }
 #divport1 {
     display: flex;
