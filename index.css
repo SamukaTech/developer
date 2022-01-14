@@ -190,6 +190,9 @@ footer {
         flex-direction: row;
         text-align: center;
     }
+    div img {
+        width: 100%;
+    }
     #contato { 
         flex-direction: column; 
         flex-wrap: wrap; 
@@ -291,9 +294,7 @@ html {
   sup { 
     top: -0.5em; 
   }  
-  img { 
-    border-style: none; 
-  }  
+    
   svg:not(:root) { 
     overflow: hidden; 
   } 
