@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">	
+	<head>
+		<title>Cadastro</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="cadastro.css">
+	</head>
+		<body>
+
+            <br><br><br><br>            
+                <fieldset>
+                <legend>Cadatre-se</legend>
+                <br>
+                <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <h4>Nome: <input type="text" name="Nome" id="nom" placeholder="Digite seu nome" required></h4>
+                <h4>E-mail: <input type="email" name="E-mail" id="ema" placeholder="Digite seu e-mail" required></h4>
+                <h4>Telefone: <input type="tel" name="Telefone" id="tel" placeholder="Digite seu telefone" maxlength="11" required></h4>
+                <h4>Cidade: <select name = "Cidade" id="cid">
+                    <option value = "te" selected>Teresina</option>
+                    <option value = "mi">Miguel Alves</option>
+                    <option value = "la">Lagoa Alegre</option>
+                    <option value = "jo">José de Freitas</option>
+                    <option value = "ba">Barras</option>
+                    <option value = "un">União</option>
+                </select></h4>
+                <h4>Sexo: <input type= "radio" name= "Sexo" value= "m" id="sex"/>Masculino
+                <input type= "radio" name= "Sexo" value= "f" id="sex"/>Feminino</h4>
+                <input type="hidden" name="_next" value="https://samukatech.github.io/developer/obrigado.htm">
+                <input type="hidden" name="_captcha" value="false">
+                <br>
+                <button type="submit" id="bot1">Enviar</button>
+                <button type="Reset" id="bot2">Limpar Dados</button> 
+
+                </form>
+                </fieldset>
+        </body>
+</html>
