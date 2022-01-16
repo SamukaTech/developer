@@ -28,7 +28,7 @@ h4 {
     font-size: 16px;
     color: rgb(2, 1, 82);
 }
-#sen {
+#sen1, #sen2 {
     padding: 6px;
     border-radius: 7px;
     border: 1px solid black;
