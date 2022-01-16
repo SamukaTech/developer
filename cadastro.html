@@ -29,8 +29,8 @@
                 <input type= "radio" name= "Sexo" value= "Feminino" id="sex"/>Feminino</h4>
                 <input type="hidden" name="_next" value="https://samukatech.github.io/developer/obrigado.htm">
                 <input type="hidden" name="_captcha" value="false">
-		<h4>Senha: <input type="password" name="Senha1" id="sen" placeholder="Crie uma senha" maxlength="20" required></h4>
-                <h4>Confirmar Senha: <input type="password" name="Senha2" id="sen" placeholder="Confirme sua senha" maxlength="20" required></h4>
+		<h4>Senha: <input type="password" id="sen1" placeholder="Crie uma senha" maxlength="20" required></h4>
+                <h4>Confirmar Senha: <input type="password" name="Senha" id="sen2" placeholder="Confirme sua senha" maxlength="20" required></h4>
                 <br>
                 <button type="submit" id="bot1">Enviar</button>
                 <button type="Reset" id="bot2">Limpar Dados</button> 
@@ -40,14 +40,14 @@
 			
 		<script>
                     function validarForm() {
-                    var x = document.forms["formu"]["Senha1"].value;
-                    var y = document.forms["formu"]["Senha2"].value;
-                    if(x != y) {
-                    alert("As senhas não confere. As duas senhas devem ser iguais!");
-		    return false;
-		    }
-		    return true;
-		    }
+                    var x = document.getElementById("sen1").value;
+		    var y = document.getElementById("sen2").value;
+		    if ( x != y) {
+ 	            alert("As senhas não confere. As duas senhas devem ser iguais!");
+                    return false;
+                    }
+                    return true;
+                    }
                 </script>
         </body>
 </html>
