@@ -42,14 +42,15 @@
 		<script>
                     function validarForm() {
                     var val= document.getElementById("valido");
-		     Senha1 = "text"
-                     Senha2 = "text"
+		     var Senha1 = "text"
+                     var Senha2 = "text"
                     try{
                     var x = document.forms["formu"]["Senha1"].value;
                     var y = document.forms["formu"]["Senha2"].value;
                     if(x != y) {
                     throw "As senhas não confere. As duas senhas devem ser iguais!";
                     }
+		    return true;
                     }
                     catch (err) {
                     val.style.color= "red";
