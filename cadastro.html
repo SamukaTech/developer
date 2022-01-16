@@ -13,7 +13,7 @@
                 <fieldset>
                 <legend>Cadatre-se</legend>
                 <br>
-                <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
                 <h4>Nome: <input type="text" name="Nome" id="nom" placeholder="Digite seu nome" required></h4>
                 <h4>E-mail: <input type="email" name="E-mail" id="ema" placeholder="Digite seu e-mail" required></h4>
                 <h4>Telefone: <input type="tel" name="Telefone" id="tel" placeholder="Digite seu telefone" maxlength="11" required></h4>
@@ -29,11 +29,32 @@
                 <input type= "radio" name= "Sexo" value= "Feminino" id="sex"/>Feminino</h4>
                 <input type="hidden" name="_next" value="https://samukatech.github.io/developer/obrigado.htm">
                 <input type="hidden" name="_captcha" value="false">
+		<h4>Senha: <input type="password" id="sen" placeholder="Crie uma senha" maxlength="20" required></h4>
+                <h4>Confirmar Senha: <input type="password" name="Senha" id="sen" placeholder="Confirme sua senha" maxlength="20" required></h4>
+                <p id="valido"></p>
                 <br>
                 <button type="submit" id="bot1">Enviar</button>
                 <button type="Reset" id="bot2">Limpar Dados</button> 
 
                 </form>
                 </fieldset>
+			
+		<script>
+                    function validarForm() {
+                    var val= document.getElementById("valido");
+                    try{
+                    var x = document.forms["formu"]["sen"].value;
+                    var y = document.forms["formu"]["Senha"].value;
+                    if(x != y) {
+                    throw "As senhas não confere. As duas senhas devem ser iguais!";
+                    }
+                    }
+                    catch (err) {
+                    val.style.color= "red";
+                    val.innerHTML= "Erro: " + err;
+                    return false;    
+                    }
+                    }
+                </script>
         </body>
 </html>
