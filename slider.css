@@ -5,7 +5,8 @@
 #slider {
     background-image: url('electromagnetic_spectrum-1920x1200.jpg');
     background-position: center;
-    background-size: 200%;
+    background-size: 300%;
+    height: 450px;
 }
 .galeria {
     position: center;
