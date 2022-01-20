@@ -133,6 +133,14 @@ div img {
     text-align: center; 
     padding: 20px; 
 } 
+#contato p {
+    color: rgb(92, 27, 1);
+    font-weight: 600;
+}
+div p a {
+    color: rgb(20, 1, 73);
+    font-weight: 510;
+}
 #email {
     width: 35px;
     border-radius: 40px;
