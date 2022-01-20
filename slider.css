@@ -6,7 +6,7 @@
     background-image: url('electromagnetic_spectrum-1920x1200.jpg');
     background-position: center;
     background-size: 300%;
-    height: 450px;
+    height: 440px;
 }
 .galeria {
     position: center;
@@ -63,7 +63,7 @@ section {
     display: flex;
 }
 #slider {
-    background-size: 200%;
+    background-size: 100%;
 }
 .galeria{
     height: 280px;
