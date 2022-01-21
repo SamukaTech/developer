@@ -1,7 +1,7 @@
 function validaCampo(){
 var x = document.forms["formu"]["usuario"].value;
 if(x == null || x == "") {
-alert ("Você precisa digitar o seu nome!");
+alert ("Você precisa informar o seu nome!");
 return false;
 }
 var y = document.forms["formu"]["senha"].value;
