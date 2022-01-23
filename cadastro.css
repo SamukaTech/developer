@@ -13,29 +13,67 @@ h4 {
 #ema, #nom {
     padding: 6px;
     border-radius: 7px;
-    border: 1px solid black;
+    border: 2px solid #0214b6;
+    box-shadow: 0 0 4px #0214b6;
     width: 73%;
     background-color: rgb(238, 234, 234);
     font-size: 16px;
     color: rgb(2, 1, 82);
 }
+#nom:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#nom:focus { 
+    outline: 0; 
+}
+#ema:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#ema:focus { 
+    outline: 0; 
+}
 #tel, #cid {
     padding: 6px;
     border-radius: 7px;
-    border: 1px solid black;
+    border: 2px solid #0214b6;
+    box-shadow: 0 0 4px #0214b6;
     width: 145px;
     background-color: rgb(238, 234, 234);
     font-size: 16px;
     color: rgb(2, 1, 82);
 }
+#tel:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#tel:focus { 
+    outline: 0; 
+}
+#cid:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#cid:focus { 
+    outline: 0; 
+}
 #sen1, #sen2 {
     padding: 6px;
     border-radius: 7px;
-    border: 1px solid black;
+    border: 2px solid #0214b6;
+    box-shadow: 0 0 4px #0214b6;
     background-color: rgb(238, 234, 234);
     font-size: 16px;
     width: 147px;
     color: rgb(2, 1, 82);
+}
+#sen:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#sen:focus { 
+    outline: 0; 
 }
 #cid, #sex {
     cursor: pointer;
