@@ -68,11 +68,18 @@ h4 {
     width: 147px;
     color: rgb(2, 1, 82);
 }
-#sen:focus-within {
+#sen1:focus-within {
     border: 2px solid rgb(42, 204, 2);
     box-shadow: 0 0 6px rgb(22, 235, 2);
 }
-#sen:focus { 
+#sen1:focus { 
+    outline: 0; 
+}
+#sen2:focus-within {
+    border: 2px solid rgb(42, 204, 2);
+    box-shadow: 0 0 6px rgb(22, 235, 2);
+}
+#sen2:focus { 
     outline: 0; 
 }
 #cid, #sex {
