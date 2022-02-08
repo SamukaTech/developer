@@ -1,9 +1,15 @@
-var nome = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 1- Qual o seu primeiro nome?"); 
+var tel = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 1- Informe o número do seu celular?"); 
 var email = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 2- Qual o seu e-mail?");
-var serie = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 3- Qual foi a série/filme que você assistiu ultimamente?");
-if (nome != "Samuel" || email != "samuelnaslima.98@gmail.com" || serie != "Elite") {
-alert("Acesso negado!\n Verifique se você preencheu todos os campos corretamente.");
+var cid = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 3- Em qual cidade você nasceu?");
+var ano = prompt("PROVE SE VOCÊ ESTÁ CADASTRADO NO SISTEMA\n 4- Em que ano você nasceu?");
+if (tel == "994200398" && email == "samuelnaslima.98@gmail.com" && cid == "Barras" && ano == "1998" ||
+tel == "994200398" && email == "samuelnaslima.98@gmail.com" && cid == "BARRAS" && ano == "1998"){
+    alert("Olá Samuel, sua senha é: boletim10");
+}
+else if (tel == "994609245" && email == "vitoriasamea.10@gmail.com" && cid == "Teresina" && ano == "2011" ||
+tel == "994609245" && email == "vitoriasamea.10@gmail.com" && cid == "TERESINA" && ano == "2011") {
+    alert("Olá Vitória, sua senha é: 2425");
 }
 else {
-alert("Olá Samuel, sua senha é: boletim10");
+    alert("Acesso negado!\n Verifique se você preencheu todos os campos corretamente.");
 }
