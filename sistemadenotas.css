@@ -1,0 +1,78 @@
+body {
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 0px;
+			padding: 0px;
+			background-image: url('https://exame.com/wp-content/uploads/2020/04/gettyimages-1168910967-e1587388035606.jpg');
+			background-position: top;
+			background-size: 1370px;
+			background-repeat: no-repeat;
+		}
+		h2 {
+			text-align: center;
+			color: rgb(17, 17, 16);
+		}
+		legend {
+			border: 2px solid rgb(15, 70, 1);
+			padding: 10px;
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			background-image: url('aluno.jpg');
+			background-position: center;
+			background-size: 100%;
+		}
+		fieldset {
+			width: 300px;
+			height: 410px;
+			border: 2px solid rgb(2, 0, 19);
+			border-radius: 80px 0px 80px 0px;
+			background-color: rgb(218, 216, 212);
+			text-align: center;
+			margin: 0px auto;
+		}
+		p {
+			font-weight: bold;
+			font-size: 17px;
+			color: rgb(3, 1, 124);
+		}
+		input[type="text"], input[type="password"] {
+			border: none;
+			border-bottom: 1px solid rgb(6, 63, 1);
+			background: transparent;
+			outline: none;
+			width: 85%;
+			height: 40px;
+			color: #095a02;
+			font-size: 16px;
+		}
+		input[type="button"] {
+			border: 1px solid rgb(11, 11, 12);
+			outline: none;
+			color: #000;
+			padding: 5px;
+			width: 85%;
+			height: 35px;
+			background: rgb(247, 231, 10);
+			border-radius: 20px;
+			transition: 0.25;
+			font-weight: bold;
+		}
+		input[type="button"]:hover {
+			cursor: pointer;
+			background: #7CFC00;
+			transition: 0.2s;
+		}
+		form a {
+			text-align: left;
+		}
+		a {
+			font-weight: bold;
+			text-decoration: none;
+			font-size: 12px;
+			color: #4b4b4b;
+			transition: 0.2s;
+		}
+		a:hover {
+			transition: 0.2s;
+			color: #ff4d4d;
+		}
