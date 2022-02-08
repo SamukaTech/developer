@@ -1,5 +1,5 @@
 function acesso(form){
-    if (form.usuario.value == "Samuel" && form.senha.value == "boletim10" || 
+    if (form.usuario.value == "Samuel " && form.senha.value == "boletim10" || 
     form.usuario.value == "samuel" && form.senha.value == "boletim10" || 
     form.usuario.value == "SAMUEL" && form.senha.value == "boletim10") {
         location = "notas.html"
