@@ -4,114 +4,29 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="sistemadenotas.css">
 	<script type="text/javascript" src="login2.js"></script>
 	<link rel="icon" href="aluno.jpg">
 </head>
 <body>
 
-    <h3>Preencha o formulário abaixo para ter acesso as notas das provas.</h3>
+    <h2>Preencha o formulário abaixo para ter acesso as notas das provas.</h2>
     <br><br>
 <fieldset>
     <legend></legend>
-    <form name="formu" autocomplete="off" onsubmit="return validaCampo()"/>
+    <form name="formu" autocomplete="off">
 			
-		<p>Aluno(a)</p>
-		<input type="text" name="usuario" placeholder="Digite seu nome">
-            	<br><br>
-		<p>Senha</p>
-		<input type="password" name="senha" id="Senha" placeholder="Digite sua senha">
-	</form>
-            	<br><br><br>
-	<form action="notas2.html" onsubmit="return validaCampo()"/>
-            	<input type="submit" value="Confirmar">
-           	<br><br>
-            	<a href="senha2.html">Esqueceu sua senha ?</a><br>
-	</form>
-</fieldset>
-<br><br>
-	
-
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-    padding: 0px;
-    background-image: url('https://exame.com/wp-content/uploads/2020/04/gettyimages-1168910967-e1587388035606.jpg');
-    background-position: top;
-    background-size: 1370px;
-    background-repeat: no-repeat;
-}
-h3 {
-    text-align: center;
-    color: black;
-}
-legend {
-    border: 2px solid rgb(15, 70, 1);
-    padding: 10px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: url('aluno.jpg');
-    background-position: center;
-    background-size: 100%;
-}
-fieldset {
-   	width: 315px;
-	height: 405px;
-	border: 2px solid rgb(2, 0, 19);
-	border-radius: 12px;
-	background-color: rgb(218, 216, 212);
-    	text-align: center;
-	margin: 0px auto;
-}
-p {
-    font-weight: bold;
-    font-size: 17px;
-    color: rgb(3, 1, 124);
-}
-input[type="text"], input[type="password"] {
-	border: none;
-	border-bottom: 1px solid rgb(6, 63, 1);
-	background: transparent;
-	outline: none;
-    	width: 85%;
-	height: 40px;
-	color: #9b1801;
-	font-size: 16px;
-}
-input[type="submit"] {
-	border: 1px solid rgb(11, 11, 12);
-	outline: none;
-	color: #000;
-	width: 100px;
-    	padding: 5px;
-	background: rgb(247, 231, 10);
-	border-radius: 10px;
-	transition: 0.25;
-	font-weight: bold;
-}
-input[type="submit"]:hover {
-	cursor: pointer;
-	background: #7CFC00;
-	transition: 0.2s;
-}
-a {
-	font-weight: bold;
-	text-decoration: none;
-	font-size: 12px;
-	color: #4b4b4b;
-	transition: 0.2s;
-}
-a:hover {
-	transition: 0.2s;
-	color: #ff4d4d;
-}
-
-
-
-
-
-</style>
-
+			<p>Aluno(a)</p>
+			<input type="text" name="usuario" placeholder="Digite seu nome">
+            		<br><br>
+			<p>Senha</p>
+			<input type="password" name="senha" id="Senha" maxlength="20" placeholder="Digite sua senha">
+            		<br><br><br>
+            		<input type="button" name="bot" value="Confirmar" onclick="acesso(this.form)">
+            		<br><br>
+            		<a href="buscarsenha.html">Esqueceu sua senha ?</a><br>
+			<a href="cadastro.html">Ainda não possui conta ?</a><br>
+		</form>
+	</fieldset>
 </body>
 </html>
