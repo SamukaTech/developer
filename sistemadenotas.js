@@ -18,4 +18,10 @@ function acesso(form){
     else {
         alert("Ops! Não reconheci seu usuário e senha. Veja se está tudo certo e tente novamente.")
     }
+    var $t = document.getElementById('nome');
+	$t.addEventListener('paste', function(event) {
+	  setTimeout(function(){
+		this.value = this.value.replace(/\s+/g, '');
+	  }.bind(this), 0)
+	});
 }
