@@ -1,21 +1,17 @@
 function acesso(form){
-    if (form.usuario.value == "Samuel" && form.senha.value == "boletim10" || 
-    form.usuario.value == "samuel" && form.senha.value == "boletim10" || 
-    form.usuario.value == "SAMUEL" && form.senha.value == "boletim10") {
+    if (form.usuario.value == "samuelnaslima.98@gmail.com" && form.senha.value == "boletim10") {
         location = "notas.html"
     }
-    else if (form.usuario.value == "Vitória" && form.senha.value == "2425" || 
-    form.usuario.value == "vitória" && form.senha.value == "2425" || 
-    form.usuario.value == "VITÓRIA" && form.senha.value == "2425"){
+    else if (form.usuario.value == "vitoriasamea.10@gmail.com" && form.senha.value == "2425"){
         location = "notas2.html"
     }
     else if (form.usuario.value == "") {
-        alert("Você precisa digitar o seu nome!")
+        alert("Você precisa digitar o seu e-mail!")
     }
     else if (form.senha.value == "") {
         alert("Você precisa digitar a sua senha!")
     }
     else {
-        alert("Ops! Não reconheci seu usuário e senha. Veja se está tudo certo e tente novamente.")
+        alert("Ops! Não reconheci seu e-mail e senha. Veja se está tudo certo e tente novamente.")
     }
 }
