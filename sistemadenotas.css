@@ -29,6 +29,8 @@
 			background-color: rgb(218, 216, 212);
 			text-align: center;
 			margin: 0px auto;
+			top: 50%;
+			left: 50%;
 			position: absolute;
 			transform: translate(-50%, -50%);
 		}
