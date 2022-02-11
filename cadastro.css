@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("fundopreto.jpg");
+    background-image: url("gradientes-em-fundo-escuro_23-2148430749.jpg");
     background-position: center;
     background-size: 100%;
     margin: 0px;
@@ -93,9 +93,7 @@ legend {
 fieldset {
     border: 2px solid rgb(175, 173, 173);
     border-radius: 5px;
-    background-image: url('1146320.jpg');
-    background-position: center;
-    background-size: 100%;
+    background-color: rgb(29, 7, 119);
     width: 90%;
     margin: 0px auto;
 }
