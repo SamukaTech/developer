@@ -6,12 +6,12 @@ function acesso(form){
         location = "notas2.html"
     }
     else if (form.usuario.value == "") {
-        alert("Você precisa digitar o seu e-mail!")
+        alert("Por favor, digite o seu e-mail.")
     }
     else if (form.senha.value == "") {
-        alert("Você precisa digitar a sua senha!")
+        alert("Por favor, digite a sua senha.")
     }
     else {
-        alert("Ops! Não reconheci seu e-mail e senha. Veja se está tudo certo e tente novamente.")
+        alert("Ops! Usuário não reconhecido. Veja se está tudo certo e tente novamente.")
     }
 }
