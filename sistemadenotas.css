@@ -2,9 +2,9 @@
 			font-family: Arial, Helvetica, sans-serif;
 			margin: 0px;
 			padding: 0px;
-			background-image: url('https://exame.com/wp-content/uploads/2020/04/gettyimages-1168910967-e1587388035606.jpg');
+			background-image: url('1603194623phpOiRX65.jpeg');
 			background-position: top;
-			background-size: 1370px;
+			background-size: 300%;
 			background-repeat: no-repeat;
 		}
 		h2 {
@@ -75,4 +75,12 @@
 		a:hover {
 			transition: 0.2s;
 			color: #ff4d4d;
+		}
+		@media screen and (min-width: 768px) { 
+
+		body {
+			background-size: 100%;
+			background-position: top;
+			background-repeat: no-repeat;
+		}
 		}
