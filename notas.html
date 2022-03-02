@@ -8,6 +8,13 @@
 	<link rel="icon" href="not.jpg">
 </head>
 <body>
+	<script>
+		var usuarioLogado = sessionStorage.getItem('usuarioLogado');
+
+if (!usuarioLogado) {
+    window.location = "file:///C:/Users/Gilvane/Documents/Arquivos/login..html"
+}
+	</script>
 
 	<div id="cabeçalho">
 		<h2>Notas das Provas</h2>
