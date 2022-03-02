@@ -6,7 +6,7 @@ function acesso(form){
         location = "notas2.html"
     }
     else if (form.usuario.value == "") {
-        alert("Por favor, digite o seu e-mail.")
+        alert("Por favor, preencha o campo do e-mail e da senha.")
     }
     else if (form.senha.value == "") {
         alert("Por favor, digite a sua senha.")
