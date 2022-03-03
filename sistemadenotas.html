@@ -11,6 +11,10 @@
 <body>
 	<script>
 		sessionStorage.setItem('usuarioLogado', '1');
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function () {
+    		history.pushState(null, null, document.URL);
+		});
 	</script>
 
     <h2>Notas Online</h2>
