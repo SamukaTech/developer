@@ -58,14 +58,14 @@
 			padding: 5px;
 			width: 85%;
 			height: 35px;
-			background: rgb(247, 231, 10);
+			background: #ddf9fc;
 			border-radius: 20px;
 			transition: 0.25;
 			font-weight: bold;
 		}
 		input[type="button"]:hover {
 			cursor: pointer;
-			background: #7CFC00;
+			background: #00fcb0;
 			transition: 0.2s;
 		}
 		form a {
