@@ -27,84 +27,11 @@ fieldset {
 	padding: 8px;
 	background-color: rgb(243, 252, 244);
 }
-#tab_tds {
-	width: 100%;
-}
-#centro {
-	font-style: italic;
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	background-color: #7FFF00;
-	padding: 3px;
-}
-#disciplina {
-	background: #FFF5EE;
-	text-align: left;
-	font-size: 16px;
-	padding: 4px;
-	color: navy;
-}
-#nota {
-	background-color: #FFFACD;
-	text-align: center;
-	font-size: 16px;
-	color: #006400;
-	padding: 2px;
-}
-#tab_notas {
-	width: 100%;
-	background-color: black;
-}
-#titulo {
-	background-color: #ffff00;
-	text-align: center;
-	font-weight: bold;
-	font-size: 16px;
-	color: #363636;
-	padding: 10px;
-}
-#avaliações {
-	background-color: #FAFAD2;
-	color: #0000CD;
-	font-size: 16px;
-	text-align: center;
-	padding: 10px;
-}
-#not {
-	background-color: #F8F8FF;
-	color: #006400;
-	font-size: 14px;
-	text-align: center;
-	padding: 10px;
-}
-#fieldset1, #fieldset2, #fieldset3, #fieldset4 {
+#fieldset1 {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	padding-bottom: 15px;
-}
-#titulo_rh {
-	background-color: #FFE4B5;
-	font-weight: bold;
-	color: #363636;
-	text-align: center;
-	font-size: 16px;
-	padding: 10px;
-}
-#avaliações_rh {
-	background-color: #FFFFE0;
-	color: #0000CD;
-	text-align: center;
-	font-size: 16px;
-	padding: 10px;
-}
-#not_rh {
-	background-color: #F5FFFA;
-	color: #006400;
-	font-size: 16px;
-	text-align: center;
-	padding: 10px;
 }
 #tab_lp {
 	width: 90%;
@@ -132,7 +59,7 @@ fieldset {
 }
 @media screen and (min-width: 768px) { 
 
-#div0, #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8{
+#div1 {
 	display: flex;
 	width: 100%;
 	align-items: center;
