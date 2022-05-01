@@ -75,14 +75,14 @@ li:hover:not(.active) {
   background-color: rgb(93, 247, 21);
 } 
 header { 
-    background-image: url('samukatech.gif');
+    background-image: url('samuka.gif');
     background-size: 110%; 
     background-position: center; 
     display: flex; 
     flex-direction: column; 
     align-items: baseline; 
     text-align: center; 
-    padding: 120px; 
+    padding: 100px; 
 } 
 #sobre { 
     display: flex; 
