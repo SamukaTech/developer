@@ -170,6 +170,8 @@ footer {
     header { 
         height: 200px; 
         height: 60vh;  
+        width: 100%;
+        padding:0px;
         justify-content: center; 
     }
     #sobre { 
