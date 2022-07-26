@@ -75,7 +75,7 @@ li:hover:not(.active) {
   background-color: rgb(93, 247, 21);
 } 
 header { 
-    background-image: url('samukatech-red.gif');
+    background-image: url('samukatech-neon.gif');
     background-size: 110%; 
     background-position: center; 
     display: flex; 
@@ -170,8 +170,6 @@ footer {
     header { 
         height: 200px; 
         height: 60vh;  
-        width: 100%;
-        padding:0px;
         justify-content: center; 
     }
     #sobre { 
