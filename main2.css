@@ -1,5 +1,5 @@
 head{ 
-    background-image: url('C:/Users/samue/Documents/Imagens/samukatech3.gif');
+    background-image: url('samukatech3.gif');
     background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -24,7 +24,7 @@ head{
 form {
     font-family: Verdana,Tahoma,sans-serif;
     font-size: 15px;
-    background-image: url('C:/Users/samue/Documents/Imagens/Honey Dew.jpg');
+    background-image: url('Honey Dew.jpg');
     width: 100%;
 }
 #input2 {
