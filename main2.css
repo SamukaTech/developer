@@ -3,13 +3,13 @@ head{
     background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
-	background-color: black;
+    background-color: black;
     color: rgba(1, 31, 3, 0.993); 
     display: flex; 
     flex-direction: column; 
     align-items: baseline; 
     text-align: center; 
-    padding: 220px; 
+    padding: 210px; 
 }
 #img1, #img2, #img3{
 	width: 100%;
