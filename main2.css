@@ -35,17 +35,16 @@ form {
 }
 
 #h1 {
-    margin-bottom: 20px;
-    margin-left: 20px;
     font-size: 1.2em;
-	letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
     font-weight: 600;
     color: #010050;
     text-align: center;
+    padding-top: 5px;
 }
 
 input, textarea {
-    width: 55%;
+    width: 75%;
     padding: 10px;
     color: black;
     margin-left: 20px;
@@ -79,7 +78,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     background-color: gold;
   }
 textarea {
-    width: 59.5%;
+    width: 89%;
     height: 120px;
     line-height: 20px;
 }
@@ -94,6 +93,7 @@ form label {
     margin-left: 20px;
     color: #050505;
     font-weight: bold;
+    font-size: 16px;
 }
 .social-menu{
     display: flex;
@@ -160,4 +160,10 @@ head{
     background-size: 100%; 
     background-position: center; 
 } 
+input {
+    width: 55%;
+}
+textarea {
+    width: 59.5%;
+}
 }
