@@ -69,11 +69,9 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border: 1px solid;
+     background-color: #c2ffae;
     color: rgb(0, 0, 0);
 }
-#enviar:hover:not(.active) {
-    background-color:#c4ffc4;
-  }
 #enviar:hover:not(.active) {
     background-color: gold;
   }
