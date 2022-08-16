@@ -188,6 +188,9 @@ input, select, textarea {
 		color: #000000;
 		font-weight: 300;
 	}
+        #p {
+               font-weight: 400;
+        }
 	blockquote {
 		border-left: solid 0.5em rgba(124, 128, 129, 0.2);
 		font-style: italic;
