@@ -1,6 +1,5 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,900");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css") print;
 
 /*
 	Twenty by HTML5 UP
@@ -1960,6 +1959,7 @@ input, select, textarea {
 
 		.wrapper.style3 {
 			background-color: #c1ffc5;
+			background-image: url('3875fc9e2aaff45c5af67b364896308b.jpg');
 			color: black;
 		}
 
