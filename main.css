@@ -1889,7 +1889,7 @@ input, select, textarea {
 		background: rgb(241, 241, 241);
 		border: solid 1px black;
 		border-radius: 0;
-		color: rgb(16, 80, 0);
+		color: rgb(28, 0, 129);
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8em;
@@ -1902,6 +1902,14 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 	}
+		#but_vermais {
+		background-color: #f0eeff;
+		color: rgb(1, 122, 1);
+	}
+		#but_vermais:hover:not(.active) {
+		background-color: #37ffb2;
+		color: #f80000;
+	  }
 
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
