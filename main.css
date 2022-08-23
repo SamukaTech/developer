@@ -189,7 +189,7 @@ input, select, textarea {
 		font-weight: 300;
 	}
         #p {
-               font-weight: 400;
+               font-weight: 300;
         }
 	blockquote {
 		border-left: solid 0.5em rgba(124, 128, 129, 0.2);
@@ -1970,7 +1970,8 @@ input, select, textarea {
 
 		.wrapper.style3 {
 			background-color: #c1ffc5;
-			background-image: url('3875fc9e2aaff45c5af67b364896308b.jpg');
+			background-image: url('https://i0.wp.com/i.pinimg.com/originals/29/14/d5/2914d5ed1da9c7f9807d5c2a804319e1.jpg');
+			background-size: 100%;
 			color: black;
 		}
 
