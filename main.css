@@ -2270,6 +2270,9 @@ input, select, textarea {
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
 			background: rgb(10, 0, 143);
+			background-image: url(https://www.teahub.io/photos/full/220-2208960_dark-blue-lines-4k-material-design-creative-geometric.jpg);
+			background-position: center;
+			background-size: 100%;
 			color: rgb(238, 235, 235);
 			display: inline-block;
 			opacity: 0;
