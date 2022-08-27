@@ -3,6 +3,8 @@ body {
 	background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/1849423-fluido-abstrato-azul-fundo-gr%C3%A1tis-vetor.jpg');
 	background-position: center;
 	background-size: 140%;
+	margin: 0px;
+	padding: 0px;
 }
 a {
 	text-decoration: none;
@@ -93,6 +95,8 @@ fieldset {
 body {
 	background-size: 130%;
 	background-position: center;
+	margin: 0px;
+	padding: 0px;
 }
 fieldset {
 	background-position: center;
