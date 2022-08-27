@@ -1,8 +1,8 @@
 body {
-	margin: 0.5px;
 	font-family: arial;
-	background-image: url('Abstract_triangle_3D_HD_Art_Design_1366x768.jpg');
+	background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/1849423-fluido-abstrato-azul-fundo-gr%C3%A1tis-vetor.jpg');
 	background-position: center;
+	background-size: 140%;
 }
 a {
 	text-decoration: none;
@@ -17,22 +17,23 @@ p {
 	padding-right: 5px;
 }
 h2 {
-	color: rgb(14, 14, 236);
+	color: rgb(0, 0, 0);
 	text-align: center;
+	font-size: 22px;
 }
 h3 {
-	color: red;
-	border: 2px solid black;
+	color: rgb(243, 0, 0);
+	border: 1px solid black;
 	font-size: 18px;
 	border-radius: 15px;
-	padding: 5px;
+	padding: 7px;
 	background-color: #E0FFFF;
 }
 legend {
 	text-align: center;
 }
 fieldset {
-	border: 2px solid black;
+	border: 1px solid black;
 	padding: 0px;
 	margin: 0px;
 	background-image: url('Bora Bora.jpg');
@@ -40,21 +41,21 @@ fieldset {
 	background-size: 545%;
 }
 #cabeçalho {
-	border: 2px solid black;
+	border: 1px solid rgb(6, 0, 95);
 	padding: 8px;
-	background-color: rgb(243, 252, 244);
+	background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-fresh-white-brick-face-poster-banner-background-image_131546.jpg);
+	background-position: center;
+	background-size: 100%;
 }
 #fieldset1 {
 	display: flex;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column-reverse;
+	justify-content: space-around;
 	padding-bottom: 15px;
 }
-#div1, #div2 {
-	width: 100%;
-}
 #tab_lp {
-	width: 90%;
+	width: 100%;
 	background-color: rgb(5, 67, 201)
 }
 #titletras {
@@ -89,15 +90,23 @@ fieldset {
 }
 @media screen and (min-width: 768px) { 
 
-#div1, #div2 {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	flex-direction: row;
+body {
+	background-size: 130%;
+	background-position: center;
 }
 fieldset {
 	background-position: center;
-	background-size: 100%;
-	padding: 15px;
+	background-size: 140%;
+	padding: 8px;
+}
+#tab_lp {
+	width: 70%;
+}
+#fieldset1 {
+	display: flex;
+	align-items: center;
+	flex-direction: column-reverse;
+	padding-bottom: 15px;
+	justify-content: space-around;
 }
 }
