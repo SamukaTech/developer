@@ -42,7 +42,7 @@ fieldset {
 	background-position: center;
 	background-size: 545%;
 }
-#cabeçalho {
+#cabecalho {
 	border: 1px solid rgb(6, 0, 95);
 	padding: 8px;
 	background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-fresh-white-brick-face-poster-banner-background-image_131546.jpg);
@@ -98,7 +98,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
-#cabeçalho {
+#cabecalho {
 	background-size: 100%;
 }
 fieldset {
