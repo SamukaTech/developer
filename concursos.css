@@ -2,23 +2,18 @@ body{
     padding: 0px;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(C:/Users/samue/Documents/Imagens/1624521904_1GG.webp);
-}
-html,
-body {
-overflow-x: hidden;
-width: 100%;
+    background-image: url(imagens/1624521904_1GG.webp);
 }
 #cab {
 	background-color: #f0f0f0;
     position: fixed;
 	width: 99.1%;
 	border: 2px solid black;
-    padding: 4px;
+    padding: 3px;
     text-align: center;
 }
 #img_con {
-    width: 35%;
+    width: 37%;
 }
 #img-esq {
     width: 29%;
@@ -59,7 +54,7 @@ table {
 	background-color: #c1fdeb;
 	background-image: url(https://www45.bb.com.br/docs/ri/ra2011/includes/imagens/agencia_paulista.jpg);
 	background-position: center;
-	background-size: 100%;
+	background-size: 150%;
 	align-items: center;
 	padding: 12px;
 	flex-wrap: wrap;
