@@ -18,14 +18,14 @@ width: 100%;
     text-align: center;
 }
 #img_con {
-    width: 30%;
+    width: 35%;
 }
 #img-esq {
-    width: 23%;
+    width: 29%;
     float: left;
 }
 #img-dir {
-    width: 23%;
+    width: 29%;
     float: right;
 }
 table {
