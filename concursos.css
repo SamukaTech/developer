@@ -61,7 +61,7 @@ table {
 	background-position: center;
 	background-size: 100%;
 	align-items: center;
-	padding: 15px;
+	padding: 12px;
 	flex-wrap: wrap;
     flex-direction: column;
 	justify-content: space-around;
@@ -85,7 +85,7 @@ table {
 }
 #img-bb {
 	border-radius: 7px;
-	height: 70px;
+	height: 60px;
 }
 #tab_crono-bb {
 	border: 2px solid black;
@@ -149,5 +149,8 @@ footer {
         width: 18%;
         float: right;
     }
+	#img-bb {
+	height: 70px;
+}
     
     }
