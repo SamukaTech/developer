@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login..css">
+	<script type="text/javascript" src="login..js"></script>
+	<link rel="icon" href="C:/Users/samue/Documents/Imagens/usuario.png">
+</head>
+<body>
+	<script>
+		//Esse comando faz com que o usúario não acesse a página Notas.html de forma direta via url, o restante do códiga está na página Notas.html//
+		sessionStorage.setItem('usuarioLogado', '1');
+		// Esses comandos faz com que o usúario não retorne a página anterior//
+		history.pushState(null, null, document.URL);
+		window.addEventListener('popstate', function () {
+    	history.pushState(null, null, document.URL);
+});
+	</script>
+	<div class="login">
+		<img src="C:/Users/samue/Documents/Imagens/usuario.png" class="usuario" width="100" height="100">
+		<h1>Login</h1>
+		
+		<form name="formu">
+			
+			<p>Usuário</p>
+			<input type="text" name="usuario" placeholder="Insira seu nome">
+			<p>Senha</p>
+			<input type="password" name="senha" id="Senha" placeholder="Insira sua senha">
+
+			<input type="button" name="bot" value="Confirmar" onclick="acesso(this.form)">
+			<a href="C:/Users/samue/Documents/Arquivos/Senha.html">Esqueceu sua senha ?</a><br>
+			<a href="#">Ainda não possui uma conta ?</a>
+
+		</form>
+	</div>
+	<a name ="Voltar">
+</body>
+</html>
