@@ -4,6 +4,11 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(C:/Users/samue/Documents/Imagens/1624521904_1GG.webp);
 }
+html,
+body {
+overflow-x: hidden;
+width: 100%;
+}
 #cab {
 	background-color: #f0f0f0;
     position: fixed;
