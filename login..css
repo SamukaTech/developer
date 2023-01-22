@@ -2,7 +2,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-image: url('imagens/blue-black-square-boxes-silver-balls-abstract.jpg');
-	background-size: cover;
+	background-size: 120%;
 	font-family: arial;
 }
 img {
@@ -86,7 +86,12 @@ h1 {
 	transition: 0.2s;
 	color: #ff4d4d;
 }
+@media screen and (min-width: 768px) { 
 
+body {
+background-size: cover;
+}
+}
 
 
 
