@@ -1,5 +1,6 @@
 body{
     padding: 0px;
+    padding-top: 3px;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(imagens/1624521904_1GG.webp);
@@ -127,6 +128,9 @@ footer {
 }
 @media screen and (min-width: 768px) { 
 
+    body {
+      padding: 0px;
+    }
     #fiel-bb {
         flex-direction: row;
     }
