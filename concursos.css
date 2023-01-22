@@ -1,6 +1,5 @@
 body{
     padding: 0px;
-    padding-top: 3px;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(imagens/1624521904_1GG.webp);
@@ -78,6 +77,7 @@ table {
 	color: black;
 	text-decoration: none;
 	padding: 6px;
+	text-align: center;
 }
 #img-bb {
 	border-radius: 7px;
@@ -128,9 +128,6 @@ footer {
 }
 @media screen and (min-width: 768px) { 
 
-    body {
-      padding: 0px;
-    }
     #fiel-bb {
         flex-direction: row;
     }
