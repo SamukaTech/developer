@@ -9,6 +9,13 @@
 
 </head>
 <body>
+	<script>
+		var usuarioLogado = sessionStorage.getItem('usuarioLogado');
+
+if (!usuarioLogado) {
+    window.location = "https://samukatech.github.io/developer/login..html"
+}
+	</script>
 
     <div id="cab">
         <img src="https://ww2.uft.edu.br/images/noticias/2019/out/gabarito.jpg" id="img-esq">
