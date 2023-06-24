@@ -15,17 +15,6 @@ body{
     text-align: center;
 	font-size: 20px;
 }
-#img_con {
-    width: 27%;
-}
-#img-esq {
-    width: 20%;
-    float: left;
-}
-#img-dir {
-    width: 20%;
-    float: right;
-}
 #fiel-uespi {
 	border: 1px solid black;
 	background-image: url(https://180graus.com/180graus/media/image_bank/2022/11/1_7256461761309286866.jpg.696x0_q85_upscale.jpg);
@@ -94,7 +83,7 @@ body{
 	display: flex;
 }
 #logo-uespi {
-	width: 45%;
+	width: 55%;
 	border-radius: 5px;
 }
 #botao-bb {
@@ -117,6 +106,7 @@ body{
 #img-bb {
 	border-radius: 7px;
 	height: 70px;
+	width: 100%;
 }
 #tab_crono-bb {
 	border: 2px solid black;
@@ -166,22 +156,15 @@ footer {
 	#fiel-uespi {
 		flex-direction: row;
 	}
+	#logo-uespi {
+	width: 45%;
+	border-radius: 5px;
+}
     #fiel-bb {
         flex-direction: row;
     }
     table {
         width: 80%;
     }	
-    #img_con {
-        width: 25%;
-    }
-    #img-esq {
-        width: 18%;
-        float: left;
-    }
-    #img-dir {
-        width: 18%;
-        float: right;
-    }
     
     }
