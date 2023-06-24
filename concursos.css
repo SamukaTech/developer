@@ -72,7 +72,7 @@ body{
 #fiel-bb {
 	border: 2px solid black;
 	background-color: #c1fdeb;
-	background-image: url('https://cdn.acritica.net/upload/dn_noticia/2020/03/1584564808.jpg');
+	background-image: url(https://cdn.acritica.net/upload/dn_noticia/2020/03/1584564808.jpg);
 	background-position: center;
 	background-size: 150%;
 	align-items: center;
