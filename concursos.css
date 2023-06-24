@@ -1,0 +1,187 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(C:/Users/samue/Documents/Imagens/1624521904_1GG.webp);
+}
+#cab {
+	background-color: #f0f0f0;
+	background-image: url('https://blog.faculdadedemacapa.com.br/wp-content/uploads/2020/05/original-d73e699258cd206d577e97385708a4e9.jpg');
+	background-size: 100%;
+	background-position: center;
+	border: 2px solid black;
+	color: rgb(255, 255, 255);
+    padding: 4px;
+    text-align: center;
+	font-size: 20px;
+}
+#img_con {
+    width: 27%;
+}
+#img-esq {
+    width: 20%;
+    float: left;
+}
+#img-dir {
+    width: 20%;
+    float: right;
+}
+#fiel-uespi {
+	border: 1px solid black;
+	background-image: url(https://180graus.com/180graus/media/image_bank/2022/11/1_7256461761309286866.jpg.696x0_q85_upscale.jpg);
+	background-position: center;
+	background-size: cover;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	display: flex;
+}
+#uespi_geral {
+	background: #008ada;
+	border: 1px solid black;
+	padding-bottom: 15px;
+}
+#botao-uespi {
+	border: 1.5px solid black;
+	border-radius: 12px;
+	font-size: 18px;
+	padding: 6px;
+	text-decoration: none;
+	background:  #00d4b8;
+	color: #020140;
+}
+#botao-uespi:hover:not(.active) {
+	background-color: rgb(245, 167, 0);
+	color: rgb(112, 1, 1);
+}
+#cab_tab-uespi {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(4, 195, 243);
+	color: #0e0d0c;
+}
+#tab_crono-uespi {
+	border: 2px solid black;
+	width: 100%;
+	background-color: rgb(0, 224, 93);
+}
+#th-uespi {
+	font-size: 18px;
+	padding: 5px;
+	background-color: rgb(40, 6, 230);
+	color: rgb(255, 255, 255);
+}
+#td-uespi {
+	padding: 5px;
+	background-color: #beffd2;
+}
+#data-uespi {
+	background-color: #ddfafa;
+}
+#fiel-bb {
+	border: 2px solid black;
+	background-color: #c1fdeb;
+	background-image: url(https://www45.bb.com.br/docs/ri/ra2011/includes/imagens/agencia_paulista.jpg);
+	background-position: center;
+	background-size: 150%;
+	align-items: center;
+	padding: 10px;
+	flex-wrap: wrap;
+    flex-direction: column;
+	justify-content: space-around;
+	display: flex;
+}
+#logo-uespi {
+	width: 45%;
+	border-radius: 5px;
+}
+#botao-bb {
+	background:  #f2cb05;
+	color: #384001;
+}
+#botao-bb:hover:not(.active) {
+	background-color: blue;
+	color: white;
+}
+#botao-bb {
+	border: 1.5px solid black;
+	border-radius: 12px;
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 6px;
+}
+#img-bb {
+	border-radius: 7px;
+	height: 70px;
+}
+#tab_crono-bb {
+	border: 2px solid black;
+	width: 100%;
+	background-color: yellow;
+}
+#th-bb {
+	font-size: 18px;
+	padding: 5px;
+	background-color: rgb(47, 0, 255);
+	color: whitesmoke;
+}
+#cab_tab-bb {
+	text-align: center;
+	font-weight: bold;
+	background-color: rgb(255, 238, 0);
+	color: #020080;
+}
+#td-bb {
+	padding: 5px;
+	background-color: #feffb0;
+}
+#data-bb {
+	text-align: center;
+	background-color: #fbffbc;
+}
+li {
+	list-style-position: inside;
+	text-align: right;
+}
+b {
+	color: rgb(2, 2, 29);
+}
+i {
+	color: rgb(6, 73, 0);
+	font-size: 15px;
+}
+footer {
+	text-align: center;
+	padding: 10px;
+	font-size: 15px;
+	color: rgb(255, 255, 255);
+	background-color: #303030;
+}
+@media screen and (min-width: 768px) { 
+
+	#fiel-uespi {
+		flex-direction: row;
+	}
+    #fiel-bb {
+        flex-direction: row;
+    }
+    table {
+        width: 80%;
+    }	
+    #img_con {
+        width: 25%;
+    }
+    #img-esq {
+        width: 18%;
+        float: left;
+    }
+    #img-dir {
+        width: 18%;
+        float: right;
+    }
+    
+    }
