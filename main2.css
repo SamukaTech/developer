@@ -9,7 +9,7 @@ head{
     flex-direction: column; 
     align-items: baseline; 
     text-align: center; 
-    padding: 180px; 
+    padding: 195px; 
 }
 #img1, #img2, #img3{
 	width: 100%;
@@ -158,7 +158,7 @@ head{
     height: 200px; 
     height: 60vh;  
     justify-content: center; 
-    padding: 485px;
+    padding: 495px;
     background-size: 100%; 
     background-position: center; 
 } 
