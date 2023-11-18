@@ -1,5 +1,5 @@
 head{ 
-    background-image: url('samuka.gif');
+    background-image: url('samukatech-red.gif');
     background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -9,7 +9,7 @@ head{
     flex-direction: column; 
     align-items: baseline; 
     text-align: center; 
-    padding: 190px; 
+    padding: 180px; 
 }
 #img1, #img2, #img3{
 	width: 100%;
