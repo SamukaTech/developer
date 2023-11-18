@@ -1,5 +1,5 @@
 head{ 
-    background-image: url('samukatech.gif');
+    background-image: url('samukatech-neon.gif');
     background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -9,7 +9,7 @@ head{
     flex-direction: column; 
     align-items: baseline; 
     text-align: center; 
-    padding: 195px; 
+    padding: 180px; 
 }
 #img1, #img2, #img3{
 	width: 100%;
@@ -158,7 +158,7 @@ head{
     height: 200px; 
     height: 60vh;  
     justify-content: center; 
-    padding: 495px;
+    padding: 485px;
     background-size: 100%; 
     background-position: center; 
 } 
