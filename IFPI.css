@@ -1,0 +1,231 @@
+body {
+	font-family: arial;
+	background-color: azure;
+	margin: 0.5px;
+	background-image: url(C:/Users/samue/Documents/Imagens/1624525147_1GG.webp);
+}
+html,
+body {
+overflow-x: hidden;
+width: 100%;
+}
+#cabeçalho {
+	background-color: white;
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+    text-align: center;
+	justify-content: space-around;
+    flex-wrap: wrap;
+}
+h2 {
+    font-size: 20px;
+}
+#imgEsque {
+	width: 48%;
+}
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+}
+#buton {
+    border: 1px solid rgb(2, 70, 0);
+    border-radius: 6px;
+    color: #13542d;
+    padding: 12px;
+    font-weight: 600;
+    background-color: #efff11;
+    text-decoration: none;
+}
+#buton:hover:not(.active) {
+    background-color: rgb(255, 233, 31);
+    color: navy;
+    border: 1px solid red;
+}
+#tabhora {
+    border: 2px solid black;
+    padding: 2px;
+	width: 95%;
+    background-color: rgb(2, 238, 218);
+}
+#cabe {
+    border: 1.5px solid black;
+    background-color: #13542d;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 18px;
+}
+#dia {
+    padding: 5px;
+    font-size: 15px;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+    background-color: #c3cf0a;
+}
+#discip {
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    color: rgb(7, 13, 97);
+    background-color: #ffffff;
+}
+#horas {
+    text-align: center;
+    font-size: 15px;
+    padding: 7px;
+    color: rgb(184, 41, 36);
+    font-style: italic;
+    background-color: #e7eee8;
+}
+#hrs {
+    text-align: center;
+    font-size: 15px;
+    padding: 7px;
+    color: rgba(235, 114, 0, 0.993);
+    background-color: #f2f4f5;
+}
+#curso {
+    border: 0px solid black;
+    background-color: rgb(107, 194, 252);
+    background-image: url('https://img.freepik.com/vetores-premium/dna-genetico-espiral-medico-realista-3d-isolado-em-fundo-azul-banner-para-quimica-molecular-fisica-ciencia-bioquimica-em-estilo-cartoon-ilustracao-vetorial_255502-1592.jpg?w=2000');
+    background-size: 80%;
+    background-position: center;
+    padding: 7px;
+    padding-bottom: 11px;
+}
+#campus, #anoLet, #turno {
+    font-size: 18px;
+    color: black;
+    padding-left: 6px;
+}
+#campus {
+    line-height: 28px;
+}
+#turno {
+    line-height: 25px;
+}
+#local, #ano, #tur {
+    font-size: 16.5px;
+    color: rgb(18, 2, 63);
+}
+#disc {
+    border: 1px solid rgb(7, 7, 7);
+    background-image: url('https://img.freepik.com/vetores-gratis/conjunto-de-desenhos-animados-de-icones-de-ciencia_1284-24173.jpg?w=2000');
+    background-position: center;
+    background-size: contain;
+    background-color: #FFF5EE;
+}
+#legdisc {
+    border: 1px solid black;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #defcf9;
+}
+#nomprof{
+    font-size: 14px;
+    font-style: italic;
+}
+#d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9, #d10 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    color: #13542d;
+    background-color: #f0fffe;
+    font-size: 19px;
+    padding: 16px;
+}
+#bot {
+    border: 1px solid rgb(16, 92, 1);
+    color: rgb(3, 3, 3);
+    background-color: #c1ffce;
+    background-position: center;
+    background-size: contain;
+    border-radius: 5px 12px 5px 12px;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px;
+    text-align: center;
+}
+#bot:hover:not(.active) {
+    background-color: rgb(93, 255, 174);
+    color: rgb(235, 0, 0);
+    border-radius: 5px 12px 5px 12px;
+    background-position: center;
+    background-size: contain;
+}
+#dis {
+    text-align: left;
+    border-radius: 8px;
+    font-size: 17px;
+    background-color: rgb(251, 255, 194);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 7px;
+    font-weight: bold;
+}
+p {
+    text-align: right;
+}
+#sit3 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(252, 20, 20);
+    border-radius: 20px;
+    font-style: italic;
+    padding: 5px;
+}
+#sit2, #sit1 {
+    color: rgb(0, 0, 0);
+    background-color: rgb(79, 248, 0);
+    border-radius: 20px;
+    font-style: italic;
+    padding: 5px;
+}
+footer {
+    text-align: center;
+    background-color: #e7eee8;
+    line-height: 8px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 768px) { 
+
+
+#cabeçalho {
+    flex-direction: row;
+    padding: 15px;
+}
+#imgEsque {
+	width: 20%;
+}
+h2 {
+    font-size: 25px;
+}
+#tabhora {
+    width: 65%;
+}
+nav {
+    flex-direction: row;
+}
+#buton {
+    padding: 10px;
+}
+#d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9, #d10 {
+        display: flex;
+        flex-direction: row;
+        
+    }
+}
