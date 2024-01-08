@@ -21,7 +21,7 @@ width: 100%;
     flex-wrap: wrap;
 }
 h2 {
-    font-size: 20px;
+    font-size: 22px;
 }
 #imgEsque {
 	width: 48%;
@@ -50,8 +50,11 @@ nav {
 #tabhora {
     border: 2px solid black;
     padding: 2px;
-	width: 95%;
+	width: 100%;
     background-color: rgb(2, 238, 218);
+}
+#imgcurso {
+	width: 65%;
 }
 #cabe {
     border: 1.5px solid black;
@@ -118,9 +121,6 @@ nav {
 }
 #disc {
     border: 1px solid rgb(7, 7, 7);
-    background-image: url('https://img.freepik.com/vetores-gratis/conjunto-de-desenhos-animados-de-icones-de-ciencia_1284-24173.jpg?w=2000');
-    background-position: center;
-    background-size: contain;
     background-color: #FFF5EE;
 }
 #legdisc {
@@ -197,7 +197,7 @@ p {
 footer {
     text-align: center;
     background-color: #e7eee8;
-    line-height: 8px;
+    line-height: 4px;
     padding: 10px;
 }
 
@@ -213,6 +213,9 @@ footer {
 }
 h2 {
     font-size: 25px;
+}
+imgcurso {
+	width: 20%;
 }
 #tabhora {
     width: 65%;
