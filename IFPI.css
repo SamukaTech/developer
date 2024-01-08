@@ -15,7 +15,6 @@ width: 100%;
 	display: flex;
     flex-direction: column;
 	align-items: center;
-	position: fixed;
 	width: 100%;
     text-align: center;
 	justify-content: space-around;
@@ -182,6 +181,9 @@ nav {
 p {
     text-align: right;
 }
+#esp {
+	padding: 30px;
+}
 #sit3 {
     color: rgb(255, 255, 255);
     background-color: rgb(252, 20, 20);
@@ -209,12 +211,16 @@ footer {
 #cabeçalho {
     flex-direction: row;
     padding: 15px;
+    possition: fixed;
 }
 #imgEsque {
 	width: 20%;
 }
 h2 {
     font-size: 25px;
+}
+#esp {
+	padding: 90px;
 }
 imgcurso {
 	width: 27%;
