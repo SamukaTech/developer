@@ -1,7 +1,8 @@
 body {
 	font-family: arial;
 	background-color: azure;
-	margin: 0.5px;
+	margin: 0px;
+	padding:0px;
 	background-image: url(imagens/1624525147_1GG.webp);
 }
 html,
@@ -22,7 +23,7 @@ width: 100%;
 	padding-top: 10px
 }
 h2 {
-    font-size: 21px;
+    font-size: 21.2px;
 }
 #imgEsque {
 	width: 49%;
@@ -106,7 +107,7 @@ nav {
     padding-bottom: 11px;
 }
 #campus, #anoLet, #turno {
-    font-size: 18px;
+    font-size: 17px;
     color: black;
     padding-left: 6px;
 }
@@ -117,7 +118,7 @@ nav {
     line-height: 25px;
 }
 #local, #ano, #tur {
-    font-size: 16.5px;
+    font-size: 17px;
     color: rgb(18, 2, 63);
 }
 #disc {
