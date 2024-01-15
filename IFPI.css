@@ -2,8 +2,8 @@ body {
 	font-family: arial;
 	background-color: azure;
 	margin: 0px;
-	padding:0px;
-	background-image: url(imagens/1624525147_1GG.webp);
+    padding: 0px;
+	background-image: url(C:/Users/samue/Documents/Imagens/1624525147_1GG.webp);
 }
 html,
 body {
@@ -15,11 +15,15 @@ width: 100%;
 	display: flex;
     flex-direction: column;
 	align-items: center;
+	
 	width: 100%;
     text-align: center;
 	justify-content: space-around;
     flex-wrap: wrap;
-	padding-top: 10px
+    padding-top: 10px;
+}
+#esp {
+    padding: 30px;
 }
 h2 {
     font-size: 21.2px;
@@ -50,49 +54,44 @@ nav {
 }
 #tabhora {
     border: 1px solid black;
-    padding: 2px;
 	width: 100%;
     background-color: rgb(2, 238, 218);
 }
 #imgcurso {
-	width: 70%;
+    width: 70%;
 }
 #cabe {
     border: 1.5px solid black;
     background-color: #13542d;
     color: rgb(255, 255, 255);
-    padding: 10px;
-    font-size: 17px;
+    padding: 6px;
+    font-size: 13px;
 }
 #dia {
     padding: 5px;
-    font-size: 14px;
+    font-size: 9px;
     color: black;
-    padding: 5px;
     text-align: center;
     font-style: italic;
     background-color: #c3cf0a;
 }
 #discip {
-    padding: 5px;
-    font-size: 14px;
+    padding: 3px;
+    font-size: 9px;
     text-align: center;
-    padding: 5px;
     color: rgb(7, 13, 97);
     background-color: #ffffff;
 }
 #horas {
     text-align: center;
-    font-size: 14px;
-    padding: 7px;
+    font-size: 9px;
     color: rgb(184, 41, 36);
     font-style: italic;
     background-color: #e7eee8;
 }
 #hrs {
     text-align: center;
-    font-size: 14px;
-    padding: 7px;
+    font-size: 9px;
     color: rgba(235, 114, 0, 0.993);
     background-color: #f2f4f5;
 }
@@ -181,8 +180,8 @@ nav {
 p {
     text-align: right;
 }
-#esp {
-	padding: 30px;
+#mat {
+    text-align: center;
 }
 #sit3 {
     color: rgb(255, 255, 255);
@@ -211,7 +210,10 @@ footer {
 #cabeçalho {
     flex-direction: row;
     padding: 15px;
-    possition: fixed;
+    position: fixed;
+}
+#esp {
+    padding: 90px;
 }
 #imgEsque {
 	width: 20%;
@@ -219,11 +221,15 @@ footer {
 h2 {
     font-size: 25px;
 }
-#esp {
-	padding: 90px;
+#cabe {
+    font-size: 17px;
 }
-imgcurso {
-	width: 27%;
+#dia, #discip, #horas, #hrs {
+    font-size: 14px;
+    padding: 5px;
+}
+#imgcurso {
+    width: 27%;
 }
 #tabhora {
     width: 65%;
