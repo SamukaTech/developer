@@ -19,16 +19,17 @@ function displayTasks() {
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     li.textContent = task;
-  const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Deletar';
-  deleteButton.classList.add('delete'); // Adicionando classe "delete"
-  deleteButton.onclick = function() {
-    tasks.splice(index, 1);
-    displayTasks();
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Deletar';
+    deleteButton.classList.add('delete'); // Adicionando classe "delete"
+    deleteButton.onclick = function() {
+      tasks.splice(index, 1);
+      displayTasks();
     };
     li.appendChild(deleteButton);
     taskList.appendChild(li);
   });
+  saveTasks();
 }
 
 // Função para salvar as tarefas
@@ -49,24 +50,24 @@ if (storedTasks) {
   tasks = JSON.parse(storedTasks);
   displayTasks();
 }
+
 // Função para salvar as tarefas no localStorage
 function salvarTarefas() {
-  const tarefas = document.getElementById('taskList').innerHTML;
-  localStorage.setItem('tarefas', tarefas);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // Função para adicionar uma nova tarefa
 function adicionarTarefa() {
   const tarefa = document.getElementById('taskInput').value;
-  const novaTarefa = `<li>${tarefa}</li>`;
-  document.getElementById('taskList').insertAdjacentHTML('beforeend', novaTarefa);
-  salvarTarefas();
+  tasks.push(tarefa);
+  displayTasks();
   document.getElementById('taskInput').value = '';
 }
 
 // Verificar se existem tarefas salvas no localStorage
 window.onload = function() {
-  if(localStorage.getItem('tarefas')) {
-    document.getElementById('taskList').innerHTML = localStorage.getItem('tarefas');
+  if(localStorage.getItem('tasks')) {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+    displayTasks();
   }
-}
+      }
