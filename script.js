@@ -19,11 +19,12 @@ function displayTasks() {
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     li.textContent = task;
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Deletar';
-    deleteButton.onclick = function() {
-      tasks.splice(index, 1);
-      displayTasks();
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Deletar';
+  deleteButton.classList.add('delete'); // Adicionando classe "delete"
+  deleteButton.onclick = function() {
+    tasks.splice(index, 1);
+    displayTasks();
     };
     li.appendChild(deleteButton);
     taskList.appendChild(li);
