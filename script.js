@@ -56,12 +56,18 @@ function salvarTarefas() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// // Função para exibir um pop-up ao salvar as tarefas
+function exibirPopUp() {
+  alert('Tarefa salva com sucesso!');
+}
+
 // Função para adicionar uma nova tarefa
 function adicionarTarefa() {
   const tarefa = document.getElementById('taskInput').value;
   tasks.push(tarefa);
   displayTasks();
   document.getElementById('taskInput').value = '';
+  exibirPopUp(); // Chama a função para exibir o pop-up
 }
 
 // Verificar se existem tarefas salvas no localStorage
