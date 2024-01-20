@@ -19,6 +19,13 @@ function displayTasks() {
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     li.textContent = task;
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Deletar';
+    deleteButton.onclick = function() {
+      tasks.splice(index, 1);
+      displayTasks();
+    };
+    li.appendChild(deleteButton);
     taskList.appendChild(li);
   });
 }
@@ -28,9 +35,16 @@ function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Função para limpar as tarefas
+function clearTasks() {
+  tasks = [];
+  displayTasks();
+  localStorage.removeItem('tasks');
+}
+
 // Verificar se há tarefas salvas
 const storedTasks = localStorage.getItem('tasks');
 if (storedTasks) {
   tasks = JSON.parse(storedTasks);
   displayTasks();
-  }
+}
