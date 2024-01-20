@@ -49,3 +49,24 @@ if (storedTasks) {
   tasks = JSON.parse(storedTasks);
   displayTasks();
 }
+// Função para salvar as tarefas no localStorage
+function salvarTarefas() {
+  const tarefas = document.getElementById('taskList').innerHTML;
+  localStorage.setItem('tarefas', tarefas);
+}
+
+// Função para adicionar uma nova tarefa
+function adicionarTarefa() {
+  const tarefa = document.getElementById('taskInput').value;
+  const novaTarefa = `<li>${tarefa}</li>`;
+  document.getElementById('taskList').insertAdjacentHTML('beforeend', novaTarefa);
+  salvarTarefas();
+  document.getElementById('taskInput').value = '';
+}
+
+// Verificar se existem tarefas salvas no localStorage
+window.onload = function() {
+  if(localStorage.getItem('tarefas')) {
+    document.getElementById('taskList').innerHTML = localStorage.getItem('tarefas');
+  }
+}
