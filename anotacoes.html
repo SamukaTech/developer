@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anotações</title>
+  <link rel="icon" href="imagens/lt.jpg">
+</head>
+<body>
+  <br>
+  <div id="geral">
+  <h1>Anotações</h1>
+
+  <input type="text" id="taskInput" placeholder="Digite uma anotação">
+  <button onclick="addTask()" id="botadiciona">Adicionar</button>
+
+  <ul id="taskList">
+    <!-- As tarefas serão adicionadas aqui -->
+  </ul>
+
+  <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
+  <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+
+  <br><br><br><br><br><br>
+  <div id="rodape">
+  Desenvolvido por: Samuel Araújo.<br>
+  Técnico em Desenvolvimento de Sistemas<br>
+  &copy 2024 | Todos os direitos reservados
+  </div>
+  </div>
+
+  <script src="anotacoes.js"></script>
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 3.5px;
+  margin-left: 0px;
+  padding-left: 2px;
+  background-color: #000000;
+  background-size: 100%;
+  background-image: url(c:/Users/samue/OneDrive/Documents/Imagens/paredetijolos.jpg);
+}
+
+#geral {
+ border: 1px solid black;
+  padding: 3px;
+  width: 100%;
+ margin: 0px auto;
+  border-radius: 10px;
+  background-size: contain;
+  background-color: #d3d1d1;
+}
+
+h1 {
+  color: #000000;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  width: 60%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#botadiciona {
+  background-color: #0400e2;
+}
+#botadiciona:hover {
+  background-color: #020080;
+}
+#botsalva {
+  background-color: #00ca00;
+}
+#botsalva:hover {
+  background-color: #178b00;
+}
+#botlimpa {
+  background-color: #FF8C00;
+}
+#botlimpa:hover {
+  background-color: #e47900;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.delete {
+  background-color: #ff2903;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+button.delete:hover {
+  background-color: #e92300;
+  }
+
+ #rodape {
+ padding: 8px;
+  border-radius: 0px 0px 10px 10px;
+  color: black;
+  font-size: 12px;
+  background: #b8b6b6;
+}
+
+  @media screen and (min-width: 768px) { 
+
+#geral {
+  width: 50%;
+}
+  }
+  </style>
+</body>
+</html>
