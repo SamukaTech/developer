@@ -72,7 +72,7 @@ window.onload = function() {
     displayTasks();
   }
       }
-document.getElementById('meuBotao').addEventListener('click', function() {
+document.getElementById('botsalva').addEventListener('click', function() {
   document.getElementById('meuPopup').style.display = 'block';
   document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! 🎉';
 });
