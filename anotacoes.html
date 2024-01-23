@@ -9,6 +9,8 @@
 <body>
   <br>
   <div id="geral">
+    <div id="meuPopup" class="popup">
+  <p id="mensagem"></p>
   <h1>Anotações</h1>
 
   <input type="text" id="taskInput" placeholder="Digite uma anotação">
@@ -20,8 +22,6 @@
 
   <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
   <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
-<div id="meuPopup" class="popup">
-  <p id="mensagem"></p>
   
 </div>
   <br><br><br><br><br><br>
@@ -121,7 +121,9 @@ button.delete:hover {
   background-color: #e92300;
   }
 #mensagem {
-  background-color: lime;
+  background-color: #008000;
+  color: white;
+  padding: 2px;
   }
  #rodape {
  padding: 8px;
