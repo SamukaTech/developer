@@ -7,12 +7,14 @@
   <link rel="icon" href="imagens/lt.jpg">
 </head>
 <body>
-  <br>
-  <div id="geral">
-    <div id="meuPopup" class="popup">
-  <p id="mensagem"></p>
-  <h1>Anotações</h1>
 
+  <div id="meuPopup" class="popup">
+    <p id="mensagem"></p>
+  </div>
+  <br>
+
+  <div id="geral">
+  <h1>Anotações</h1>
   <input type="text" id="taskInput" placeholder="Digite uma anotação">
   <button onclick="addTask()" id="botadiciona">Adicionar</button>
 
@@ -23,7 +25,6 @@
   <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
   <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
   
-</div>
   <br><br><br><br><br><br>
   <div id="rodape">
   Desenvolvido por: Samuel Araújo.<br>
@@ -66,6 +67,8 @@ input[type="text"] {
   width: 60%;
   box-sizing: border-box;
   background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 button {
@@ -84,7 +87,7 @@ button {
   background-color: #020080;
 }
 #botsalva {
-  background-color: #00ca00;
+  background-color: #01c701;
 }
 #botsalva:hover {
   background-color: #178b00;
@@ -123,7 +126,6 @@ button.delete:hover {
 #mensagem {
   background-color: #008000;
   color: white;
-  padding: 2px;
   }
  #rodape {
  padding: 8px;

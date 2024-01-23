@@ -72,7 +72,13 @@ window.onload = function() {
     displayTasks();
   }
       }
+// Notificação quando as anotações são salvas
 document.getElementById('botsalva').addEventListener('click', function() {
   document.getElementById('meuPopup').style.display = 'block';
   document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! 🎉';
+
+  setTimeout(function(){
+    document.getElementById('meuPopup').style.display = 'none';
+  }, 4000);
 });
+
