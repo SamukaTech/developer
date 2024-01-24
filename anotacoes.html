@@ -13,13 +13,14 @@
   </div>
   <br>
 
-  <div id="geral">
+  <div id="geral" class="box
+  glowing">
   <h1>Anotações</h1>
   <input type="text" id="taskInput" placeholder="Digite uma anotação">
   <button onclick="addTask()" id="botadiciona">Adicionar</button>
 
   <ul id="taskList">
-    <!-- As tarefas serão adicionadas aqui -->
+   <!-- As tarefas serão adicionadas aqui -->
   </ul>
 
   <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
@@ -53,7 +54,6 @@
   width: 100%;
  margin: 0px auto;
   border-radius: 10px;
-  background-size: contain;
   background-color: #d3d1d1;
 }
 
@@ -127,6 +127,7 @@ button.delete:hover {
   background-color: #008000;
   color: white;
   margin-left: 8px;
+  border-radius: 5px;
   }
  #rodape {
  padding: 8px;
@@ -135,13 +136,40 @@ button.delete:hover {
   font-size: 12px;
   background: #b8b6b6;
 }
-
-  @media screen and (min-width: 768px) { 
+.box {
+  position: relative;
+ }
+.glowing::before {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  left: -4px;
+  top: -4px;
+  background: linear-gradient(45deg, #e7fc00, #26bd33, #6f05da, #ff3300de, #0496f1);
+  background-size: 400%;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  z-index: -1;
+  animation: glower 20s linear infinite;
+}
+@keyframes glower {
+  0% {
+  background-position: 0 0;
+}
+50% {
+  background-position: 400%;
+}
+100% {
+  background-position: 0 0;
+}
+}
+@media screen and (min-width: 768px) { 
 
 #geral {
   width: 50%;
 }
   }
+
   </style>
 </body>
 </html>
