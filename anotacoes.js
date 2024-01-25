@@ -20,7 +20,7 @@ function displayTasks() {
     const li = document.createElement('li');
     li.textContent = task;
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Deletar🗑️';
+    deleteButton.textContent = '🗑️';
     deleteButton.classList.add('delete'); // Adicionando classe "delete"
     deleteButton.onclick = function() {
       tasks.splice(index, 1);
