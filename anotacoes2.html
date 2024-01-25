@@ -58,14 +58,28 @@ function displayTasks() {
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     li.textContent = task;
+    
     const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = '<img src="imagens/lixeira.jpg" alt="Deletar" onclick="removeTask(' + index + ')">';
+    const deleteImage = document.createElement('img');
+    deleteImage.src = "C:/Users/samue/Documents/Imagens/imgifpi..png";
+    deleteImage.alt = "Deletar";
+
+    // Definir propriedades de estilo da imagem
+    deleteImage.style.width = "20px"; // Ajuste a largura conforme necessário
+    deleteImage.style.height = "20px"; // Ajuste a altura conforme necessário
+    
+    // Adicionar evento de clique ao botão de deletar
+    deleteButton.addEventListener('click', function() {
+      removeTask(index);
+    });
+    
+    deleteButton.appendChild(deleteImage);
     li.appendChild(deleteButton);
     taskList.appendChild(li);
   });
   saveTasks();
 }
-
+    
 function removeTask(index) {
   tasks.splice(index, 1);
   displayTasks();
