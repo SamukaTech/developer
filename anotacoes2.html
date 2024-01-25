@@ -97,12 +97,15 @@ function salvarTarefas() {
 
 // Função para adicionar uma nova tarefa
 function adicionarTarefa() {
-  const tarefa = document.getElementById('taskInput').value;
-  tasks.push(tarefa);
-  displayTasks();
-  adicionarBotaoDeletar();
-      document.getElementById('taskInput').value = '';
-      exibirPopUp(); // Chama a função para exibir o pop-up
+  const tarefaInput = document.getElementById('taskInput');
+  const tarefa = tarefaInput.value.trim();
+  if (tarefa !== '') {
+    tasks.push(tarefa);
+    displayTasks();
+    adicionarBotaoDeletar();
+    tarefaInput.value = ''; // Limpa o valor da caixa de texto
+    exibirPopUp(); // Chama a função para exibir o pop-up
+  }
 }
 
 // Verificar se existem tarefas salvas no localStorage
