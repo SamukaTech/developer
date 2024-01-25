@@ -64,12 +64,24 @@ function displayTasks() {
     deleteImage.src = "imagens/lixeira.jpg";
     deleteImage.alt = "Deletar";
 
+    // Adicionar uma classe ao botão para estilo de ocultação
+    deleteButton.classList.add('delete-button');
+
     // Definir propriedades de estilo da imagem
     deleteImage.style.width = "32px"; // Ajuste a largura conforme necessário
     deleteImage.style.height = "32px"; // Ajuste a altura conforme necessário
     deleteImage.style.borderRadius = "50%"; // 50% para tornar a imagem completamente redonda, ajuste conforme necessário
     deleteImage.style.marginRight = "5px"; // Adicione uma margem à direita para separar a imagem do texto da tarefa, ajuste conforme necessário
-    
+
+    // Estilo CSS para ocultar o texto dentro do botão
+const style = document.createElement('style');
+style.textContent = `
+  .delete-button {
+    font-size: 0;
+    line-height: 0;
+  }
+`;
+document.head.appendChild(style);
     
     // Adicionar evento de clique ao botão de deletar
     deleteButton.addEventListener('click', function() {
