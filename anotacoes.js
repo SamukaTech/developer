@@ -20,7 +20,7 @@ function displayTasks() {
     const li = document.createElement('li');
     li.textContent = task;
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Deletar';
+    deleteButton.textContent = 'Deletar🗑️';
     deleteButton.classList.add('delete'); // Adicionando classe "delete"
     deleteButton.onclick = function() {
       tasks.splice(index, 1);
@@ -75,7 +75,7 @@ window.onload = function() {
 // Notificação quando as anotações são salvas
 document.getElementById('botsalva').addEventListener('click', function() {
   document.getElementById('meuPopup').style.display = 'block';
-  document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! 🎉';
+  document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! ✅';
 
   setTimeout(function(){
     document.getElementById('meuPopup').style.display = 'none';
