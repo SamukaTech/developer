@@ -46,10 +46,10 @@ function addTask() {
     tasks.push(task);
     displayTasks();
     adicionarBotaoDeletar();
-    taskInput.value = '';
+    taskInput.value = ''; // Limpa o valor da caixa de texto
   }
 }
-
+    
 // Função para exibir as tarefas
 function displayTasks() {
   const taskList = document.getElementById('taskList');
