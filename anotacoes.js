@@ -24,7 +24,7 @@ function displayTasks() {
     
     const deleteButton = document.createElement('button');
     const deleteImage = document.createElement('img');
-    deleteImage.src = "imagens/lixeira.jpg";
+    deleteImage.src = "imagens/lixeira.jpeg";
     deleteImage.alt = "Deletar";
 
     // Definir propriedades de estilo da imagem
