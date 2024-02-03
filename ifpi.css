@@ -96,8 +96,8 @@ nav {
 #curso {
     border: 0px solid black;
     background-color: rgb(107, 194, 252);
-    background-image: url('https://assets.atlas.grupoq.io/images/01e016af-45aa-4c09-b8bd-7a6664290d96.png');
-    background-size: 270%;
+    background-image: url('https://a-static.mlcdn.com.br/1500x1500/papel-de-parede-adesivo-vinilico-laboratorio-ciencia-proveta-gf-casa-decor/gfcasadecor/casual-10/f781f7c08273ab8e4704aa44c1578f9a.jpg');
+    background-size: contain;
     background-position: center;
     padding: 7px;
     padding-bottom: 11px;
@@ -212,9 +212,6 @@ footer {
     flex-direction: row;
     padding: 15px;
     position: fixed;
-}
-#curso {
-    background-size: 130%;
 }
 #esp {
     padding: 90px;
