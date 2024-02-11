@@ -18,7 +18,7 @@
   <input type="text" id="taskInput" placeholder="Digite uma anotação">
   <button onclick="addTask()" id="botadiciona">Adicionar</button>
 
-  <ul id="taskList">
+  <ul id="taskList" class="taskList">
    <!-- As tarefas serão adicionadas aqui -->
   </ul>
 
@@ -46,7 +46,26 @@
   background-size: 100%;
   background-image: url(imagens/paredetijolos.jpg);
 }
+.task-list {
+  list-style: none;
+  padding: 0;
+}
 
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.task-list li p {
+  margin: 0;
+}
+
+.task-list li .button-div {
+  display: flex;
+  gap: 10px;
+}
 #geral {
  border: 1px solid black;
   padding: 3px;
