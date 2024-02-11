@@ -122,7 +122,7 @@ function displayTasks() {
  function clearTasks() {
             const confirmacao = confirm("Tem certeza de que deseja apagar todas as anotações?");
             if (confirmacao) {
-                document.getElementById('anotacoes').innerText = ""; // Apaga todas as anotações
+                document.getElementById('taskList').innerText = ""; // Apaga todas as anotações
             }
  }
     // Notificação quando as anotações são salvas
