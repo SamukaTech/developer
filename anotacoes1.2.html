@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anotações</title>
+  <link rel="icon" href="imagens/lt.jpg">
+  <!-- Adicione a biblioteca Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-cXMp17zKpmh73F5uPQ7rlP53N4dN/iIs3OxALIh37TM=" crossorigin="anonymous" />
+</head>
+<body>
+
+  <div id="meuPopup" class="popup">
+    <p id="mensagem"></p>
+  </div>
+
+  <div id="geral" class="box glowing">
+    <h1>Anotações</h1>
+    <input type="text" id="taskInput" placeholder="Digite uma anotação">
+    <button onclick="addTask()" id="botadiciona">Adicionar</button>
+
+    <ul id="taskList">
+      <!-- As tarefas serão adicionadas aqui -->
+    </ul>
+
+    <div class="action-buttons">
+      <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
+      <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+    </div>
+
+    <br><br><br><br><br>
+    <div id="rodape">
+      Desenvolvido por: Samuel Araújo.<br>
+      Técnico em Desenvolvimento de Sistemas<br>
+      &copy 2024 | Todos os direitos reservados
+    </div>
+  </div>
+
+  <script>
+    // Array para armazenar as tarefas
+    let tasks = [];
+
+    // Função para adicionar uma tarefa
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const task = taskInput.value.trim();
+      if (task !== '') {
+        tasks.push(task);
+        taskInput.value = ''; // Limpa o valor da caixa de texto antes de adicionar a tarefa
+        displayTasks();
+        adicionarBotaoDeletar();
+      }
+    }
+
+   // Função para exibir as tarefas
+function displayTasks() {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+  tasks.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.textContent = task;
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.classList.add('button-div');
+
+    const deleteButton = document.createElement('button');
+    const deleteImage = document.createElement('img');
+    deleteImage.src = "c:/Users/samue/OneDrive/Documents/Imagens/lixeira.jpg";
+    deleteImage.alt = "Deletar";
+    deleteImage.classList.add('delete-image');
+
+    deleteButton.classList.add('delete-button');
+    deleteButton.addEventListener('click', function() {
+      removeTask(index);
+    });
+    deleteButton.appendChild(deleteImage);
+
+    const editButton = document.createElement('button');
+    const editImage = document.createElement('img');
+    editImage.src = "https://cdn-icons-png.flaticon.com/512/8216/8216656.png";
+    editImage.alt = "Editar";
+    editImage.classList.add('edit-image');
+
+    editButton.classList.add('edit-button');
+    editButton.addEventListener('click', function() {
+      editTask(index);
+    });
+    editButton.appendChild(editImage);
+
+    buttonDiv.appendChild(deleteButton);
+    buttonDiv.appendChild(editButton);
+
+    li.appendChild(buttonDiv);
+    taskList.appendChild(li);
+  });
+  saveTasks();
+}
+
+
+    // Função para remover uma tarefa
+    function removeTask(index) {
+      tasks.splice(index, 1);
+      displayTasks();
+      adicionarBotaoDeletar();
+    }
+
+    // Função para salvar as tarefas
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // Função para limpar as tarefas
+    function clearTasks() {
+      tasks = [];
+      displayTasks();
+      localStorage.removeItem('tasks');
+    }
+
+    // Função para editar uma tarefa
+    function editTask(index) {
+      const newTask = prompt('Editar a anotação:', tasks[index]);
+      if (newTask !== null) {
+        tasks[index] = newTask.trim();
+        displayTasks();
+        adicionarBotaoDeletar();
+      }
+    }
+
+    // Verificar se há tarefas salvas
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      tasks = JSON.parse(storedTasks);
+      displayTasks();
+    }
+
+    // Função para salvar as tarefas no localStorage
+    function salvarTarefas() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // Função para adicionar uma nova tarefa
+    function adicionarTarefa() {
+      const tarefaInput = document.getElementById('taskInput');
+      const tarefa = tarefaInput.value.trim();
+      if (tarefa !== '') {
+        tasks.push(tarefa);
+        displayTasks();
+        adicionarBotaoDeletar();
+        tarefaInput.value = ''; // Limpa o valor da caixa de texto
+        exibirPopUp(); // Chama a função para exibir o pop-up
+      }
+    }
+
+    // Verificar se existem tarefas salvas no localStorage
+    window.onload = function() {
+      if(localStorage.getItem('tasks')) {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+        displayTasks();
+      }
+    }
+
+    // Notificação quando as anotações são salvas
+    document.getElementById('botsalva').addEventListener('click', function() {
+      document.getElementById('meuPopup').style.display = 'block';
+      document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! 🎉';
+
+      setTimeout(function(){
+        document.getElementById('meuPopup').style.display = 'none';
+      }, 4000);
+    });
+  </script>
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 3.5px;
+  margin-left: 0px;
+  padding-left: 8px;
+  background-color: #000000;
+  background-size: 100%;
+  background-image: url(c:/Users/samue/OneDrive/Documents/Imagens/paredetijolos.jpg);
+}
+
+#geral {
+ border: 1px solid black;
+  padding: 3px;
+  width: 99%;
+ margin: 0px auto;
+  border-radius: 10px;
+  background-color: #d3d1d1;
+}
+
+h1 {
+  color: #000000;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  width: 65%;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+}
+.delete-button {
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+}
+.edit-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+#botadiciona {
+  background-color: #0400e2;
+}
+#botadiciona:hover {
+  background-color: #020080;
+}
+#botsalva {
+  background-color: #01c701;
+}
+#botsalva:hover {
+  background-color: #178b00;
+}
+#botlimpa {
+  background-color: #FF8C00;
+}
+#botlimpa:hover {
+  background-color: #e47900;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.delete {
+  background-color: #ff2903;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+button.delete:hover {
+  background-color: #e92300;
+  }
+ 
+.delete-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+#mensagem {
+  background-color: #008000;
+  color: white;
+  margin-left: 5px;
+  border-radius: 3px;
+  }
+ #rodape {
+ padding: 8px;
+  border-radius: 0px 0px 10px 10px;
+  color: black;
+  font-size: 12px;
+  background: #b8b6b6;
+}
+.box {
+  position: relative;
+ }
+.glowing::before {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  left: -3px;
+  top: -3px;
+  background: linear-gradient(45deg, #e7fc00, #26bd33, #6f05da, #ff3300de, #0496f1);
+  background-size: 400%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  z-index: -1;
+  animation: glower 20s linear infinite;
+}
+@keyframes glower {
+  0% {
+  background-position: 0 0;
+}
+50% {
+  background-position: 400%;
+}
+100% {
+  background-position: 0 0;
+}
+}
+@media screen and (min-width: 768px) { 
+
+#geral {
+  width: 50%;
+}
+  }
+
+  </style>
+
+</body>
+</html>
