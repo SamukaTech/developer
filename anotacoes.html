@@ -47,25 +47,34 @@
   background-image: url(imagens/paredetijolos.jpg);
 }
 .task-list {
-  list-style: none;
-  padding: 0;
-}
+      list-style: none;
+      padding: 0;
+    }
 
-.task-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
+    .task-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
 
-.task-list li p {
-  margin: 0;
-}
+    .task-list li p {
+      margin: 0;
+    }
 
-.task-list li .button-div {
-  display: flex;
-  gap: 10px;
-}
+    .button-div {
+      display: flex;
+      gap: 10px;
+    }
+
+    .delete-button, .edit-button {
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 #geral {
  border: 1px solid black;
   padding: 3px;
@@ -193,7 +202,15 @@ li {
   width: 50%;
 }
   }
+@media only screen and (max-width: 600px) {
+      .task-list li p {
+        flex: 1;
+      }
 
+      .button-div {
+        flex-shrink: 0;
+      }
+    }
   </style>
 </body>
 </html>
