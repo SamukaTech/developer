@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div id="mensagemAviso"></div>
+
   <div id="meuPopup" class="popup">
     <p id="mensagem"></p>
   </div>
@@ -33,10 +35,9 @@
   </div>
   </div>
 
-  <script src="anotacoes.js"></script>
-
   <style>
-    body {
+
+body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 3.5px;
@@ -47,34 +48,34 @@
   background-image: url(imagens/paredetijolos.jpg);
 }
 .task-list {
-      list-style: none;
-      padding: 0;
-    }
+  list-style: none;
+  padding: 0;
+}
 
-    .task-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px;
-      border-bottom: 1px solid #ccc;
-    }
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
 
-    .task-list li p {
-      margin: 0;
-    }
+.task-list li p {
+  margin: 0;
+}
 
-    .button-div {
-      display: flex;
-      gap: 1px;
-    }
+.button-div {
+  display: flex;
+  gap: 0px;
+}
 
-    .delete-button, .edit-button {
-      padding: 5px 10px;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.delete-button, .edit-button {
+padding: 5px 10px;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
 #geral {
  border: 1px solid black;
   padding: 3px;
@@ -107,7 +108,7 @@ button {
   background-color: transparent;
 }
 .delete-button {
-  padding: 5px;
+  padding: 2px;
   border: none;
   background-color: transparent;
 }
@@ -143,7 +144,7 @@ ul {
 
 li {
   background-color: #f4f4f4;
-  padding: 10px;
+  padding: 8px;
   padding-right: 0px;
   margin: 5px 0;
   display: flex;
@@ -155,12 +156,18 @@ li {
   height: 26px;
   border-radius: 50%;
 }
-
+#mensagemAviso { 
+  text-align: center;  
+  background-color: rgb(243, 25, 25);
+  color: #ffffff;
+  border-radius: 3px;
+}
 #mensagem {
   background-color: #008000;
   color: white;
   margin-left: 5px;
   border-radius: 3px;
+  font-weight: bold;
   }
  #rodape {
  padding: 8px;
