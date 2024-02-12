@@ -71,11 +71,26 @@ function displayTasks() {
     }
 
     // Função para limpar as tarefas
-    function clearTasks() {
-      tasks = [];
-      displayTasks();
-      localStorage.removeItem('tasks');
-    }
+function clearTasks() {
+  // Pergunta ao usuário se ele realmente deseja apagar todas as anotações
+  const confirmation = confirm('Tem certeza de que deseja apagar todas as anotações?');
+  
+  if (confirmation) {
+    tasks = [];
+    displayTasks();
+    localStorage.removeItem('tasks');
+    
+    // Mensagem informando que todas as anotações foram apagadas
+    const mensagemAviso = document.getElementById('mensagemAviso');
+    mensagemAviso.innerText = 'Todas as anotações foram apagadas com sucesso!';
+    mensagemAviso.style.display = 'block';
+
+    // Ocultar a mensagem após 3 segundos (3000 milissegundos)
+    setTimeout(function() {
+      mensagemAviso.style.display = 'none';
+    }, 4000);
+  }
+}
 
     // Função para editar uma tarefa
     function editTask(index) {
