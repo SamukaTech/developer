@@ -119,12 +119,7 @@ function displayTasks() {
         displayTasks();
       }
     }
- function clearTasks() {
-            const confirmacao = confirm("Tem certeza de que deseja apagar todas as anotações?");
-            if (confirmacao) {
-                document.getElementById('taskList').innerText = ""; // Apaga todas as anotações
-            }
- }
+ 
     // Notificação quando as anotações são salvas
     document.getElementById('botsalva').addEventListener('click', function() {
       document.getElementById('meuPopup').style.display = 'block';
@@ -134,3 +129,34 @@ function displayTasks() {
         document.getElementById('meuPopup').style.display = 'none';
       }, 4000);
     });
+// Verificar se existem anotações salvas no localStorage, e exibir o pop-up se necessário
+window.onload = function() {
+    if(localStorage.getItem('anotacoes')) {
+        anotacoes = JSON.parse(localStorage.getItem('anotacoes'));
+        displayAnotacoes();
+    }
+    exibirPopUp(); // Chama a função para exibir o pop-up
+}
+
+// Função para limpar todas as anotações
+function limparAnotacoes() {
+    const confirmacao = confirm("Tem certeza de que deseja apagar todas as anotações?");
+    if (confirmacao) {
+        localStorage.removeItem('anotacoes'); // Remove todas as anotações do localStorage
+        document.getElementById('taskList').innerHTML = ""; // Limpa a lista de anotações visualmente
+        exibirMensagemPopup('Anotações apagadas com sucesso! 🗑️'); // Exibe a mensagem de sucesso
+    }
+}
+
+// Função para exibir pop-up com mensagem
+function exibirMensagemPopup(mensagem) {
+    document.getElementById('meuPopup').style.display = 'block';
+    document.getElementById('mensagem').innerText = mensagem;
+
+    setTimeout(function(){
+        document.getElementById('meuPopup').style.display = 'none';
+    }, 4000);
+}
+
+// Evento para acionar a limpeza de anotações ao clicar no botão
+document.getElementById('botsalva').addEventListener('click', limparAnotacoes);
