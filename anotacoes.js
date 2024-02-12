@@ -81,7 +81,7 @@ function clearTasks() {
     
     // Mensagem informando que todas as anotações foram apagadas
     const mensagemAviso = document.getElementById('mensagemAviso');
-    mensagemAviso.innerText = 'Todas as anotações foram apagadas com sucesso!';
+    mensagemAviso.innerText = 'Todas as anotações foram apagadas com sucesso!🗑️';
     mensagemAviso.style.display = 'block';
 
     // Ocultar a mensagem após 3 segundos (3000 milissegundos)
@@ -137,7 +137,7 @@ window.onload = function() {
 // Notificação quando as anotações são salvas
 document.getElementById('botsalva').addEventListener('click', function() {
   document.getElementById('meuPopup').style.display = 'block';
-  document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! 🎉';
+  document.getElementById('mensagem').innerText = 'Anotações salvas com sucesso! ✅';
 
   setTimeout(function(){
     document.getElementById('meuPopup').style.display = 'none';
