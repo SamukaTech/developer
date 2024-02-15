@@ -51,7 +51,8 @@
     <button onclick="calculaProdução()">Calcular</button>
     </div>
 
-    
+    <br><br>
+
     <div id="result-container">
         <div id="resultado"></div>
     </div>
@@ -422,7 +423,7 @@ button {
 }
 
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     margin-top: 10px;
     margin: 0 auto;
@@ -446,6 +447,32 @@ th {
 }
 #result-container h2 {
     margin-bottom: 10px; /* Adicione a margem inferior desejada */
+    font-size: 18px;
+}
+#resultado table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px; /* Tamanho da fonte reduzido */
+}
+
+#resultado th, #resultado td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#resultado td {
+    text-align: center;
+}
+#resultado th {
+    background-color: #f2f2f2;
+}
+
+#resultado tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#resultado tr:hover {
+    background-color: #f5f5f5;
 }
 
 /* Adicionando linhas horizontais e verticais */
@@ -466,8 +493,12 @@ tr:hover {
     #product-container {
         width: 60%;
     }
+    #resultado table {
+    font-size: 16px; /* Tamanho da fonte reduzido */
+}
 }
 
     </style>
 </body>
 </html>
+
