@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora Para Linha de Produção</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="clp.css">
+    <script src="clp.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Lobster&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Calculadora Para Linha De Produção</h1>
+    <div id="product-container">
+        <!-- Campos iniciais para um produto -->
+        <div class="product-info">
+            <label for="product-name">Nome do material:</label>
+            <input type="text" class="product-name" placeholder="Digite o nome do material">
+            <label for="product-value">Valor do material (R$):</label>
+            <input type="number" class="product-value" placeholder="Digite o valor do material">
+            <label for="product-quantity">Quant. do material:</label>
+            <input type="number" class="product-quantity" placeholder="Digite a quantidade do material">
+            <select class="product-quantity-unit">
+                <option value="unidades">Unidades (u)</option>
+                <option value="litros">Litros (l)</option>
+                <option value="mililitros">Mililitros (ml)</option>
+                <option value="gramas">Gramas (g)</option>
+                <option value="kg">Quilos (Kg)</option>
+                <option value="centimetros">Centímetros (cm)</option>
+                <option value="metros">Metros (m)</option>
+            </select>
+            <label for="material-quantity-used">Quant. usada do material:</label>
+            <input type="number" class="material-quantity-used" placeholder="Digite a quantidade usada do material">
+            <select class="material-quantity-used-unit">
+                <option value="unidades">Unidades (u)</option>
+                <option value="litros">Litros (l)</option>
+                <option value="mililitros">Mililitros (ml)</option>
+                <option value="gramas">Gramas (g)</option>
+                <option value="kg">Quilos (kg)</option>
+                <option value="centimetros">Centímetros (cm)</option>
+                <option value="metros">Metros (m)</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="bot">
+    <button onclick="addNewProduct()">Adicionar novo material</button>
+    <button onclick="calculaProdução()">Calcular</button>
+    </div>
+
+    <br><br>
+
+    <div id="result-container">
+        <div id="resultado"></div>
+    </div>
+    
+    <br><br><br><br><br><br><br>
+    <footer>
+	<h5>Desenvolvido por: Samuel Araújo.</h5>
+	<h5>Técnico em Desenvolvimento de Sistemas</h5>
+	<h5>&copy 2024 | Todos os direitos reservados.</h5>
+    </footer>
+    </body>
+</html>
