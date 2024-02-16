@@ -1,0 +1,155 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    text-align: center;
+    color: #333;
+}
+
+#product-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product-info {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#bot {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#bot button {
+    background-color: #2e00fd; /* Cor inicial do botão Adicionar */
+    color: #fff; /* Cor do texto no botão Adicionar */
+    transition: background-color 0.3s; /* Adiciona um efeito de transição na mudança de cor */
+}
+
+#bot button:hover {
+    background-color: #0300af; /* Cor do botão Adicionar ao passar o mouse por cima */
+}
+
+#bot button:nth-child(2) {
+    background-color: #01af09; /* Cor inicial do botão Calcular */
+}
+
+#bot button:nth-child(2):hover {
+    background-color: #187900; /* Cor do botão Calcular ao passar o mouse por cima */
+}
+
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin: 0 auto;
+}
+
+#result-container {
+    text-align: center;
+}
+
+#resultado table {
+    margin: 0 auto;
+}
+#result-container h2 {
+    margin-bottom: 10px; /* Adicione a margem inferior desejada */
+    font-size: 16px;
+}
+#resultado table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 9px; /* Tamanho da fonte reduzido */
+}
+
+#resultado th, #resultado td {
+    border: 1px solid #000000;
+    padding: 7px;
+    text-align: left;
+}
+#resultado td {
+    text-align: center;
+}
+#resultado th {
+    background-color: #eceaea;
+}
+
+#resultado tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+#resultado tr:hover {
+    background-color: white;
+}
+
+.invalid-field {
+    border: 1px solid red !important;
+}
+
+/* Adicionando linhas horizontais e verticais */
+tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+tr:hover {
+    background-color: white;
+}
+footer {
+	text-align: center;
+	padding: 6px;
+	line-height: 3px;
+	font-size: 16px;
+	color: rgb(255, 255, 255);
+	background-color: #474747;
+}
+
+/* Media Query para limitar a largura da tabela em telas maiores */
+@media only screen and (min-width: 600px) { 
+    table {
+        width: 58%; /* Ou o valor que desejar para telas maiores */
+        margin: auto;
+    }
+    #product-container {
+        width: 60%;
+    }
+    #resultado table {
+    font-size: 16px; /* Tamanho da fonte reduzido */
+}
+}
