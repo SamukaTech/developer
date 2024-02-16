@@ -72,11 +72,11 @@
             newProductInfo.classList.add("product-info");
             const productFields = `
                 <label for="product-name">Nome do material:</label>
-                <input type="text" class="product-name">
+                <input type="text" class="product-name"  placeholder="Digite o nome do material">
                 <label for="product-value">Valor do material (R$):</label>
-                <input type="number" class="product-value">
+                <input type="number" class="product-value" placeholder="Digite o valor do material">
                 <label for="product-quantity">Quant. do material:</label>
-                <input type="number" class="product-quantity">
+                <input type="number" class="product-quantity" placeholder="Digite a quantidade do material">
                 <select class="product-quantity-unit">
                     <option value="unidades">Unidades (u)</option>
                     <option value="litros">Litros (l)</option>
@@ -89,7 +89,7 @@
                     <!-- Nova opção -->
                 </select>
                 <label for="material-quantity-used">Quant. usada do material:</label>
-                <input type="number" class="material-quantity-used">
+                <input type="number" class="material-quantity-used" placeholder="Digite a quantidade usada do material">
                 <select class="material-quantity-used-unit">
                     <option value="unidades">Unidades (u)</option>
                     <option value="litros">Litros (l)</option>
@@ -451,7 +451,7 @@ table {
 
 #resultado th, #resultado td {
     border: 1px solid #000000;
-    padding: 8px;
+    padding: 6px;
     text-align: left;
 }
 #resultado td {
@@ -479,7 +479,7 @@ tr:hover {
 }
 footer {
 	text-align: center;
-	padding: 10px;
+	padding: 8px;
 	line-height: 3px;
 	font-size: 16px;
 	color: rgb(255, 255, 255);
