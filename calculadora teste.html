@@ -57,6 +57,12 @@
         <div id="resultado"></div>
     </div>
     
+    <br><br><br><br><br>
+    <footer>
+	<h5>Desenvolvido por: Samuel Araújo.</h5>
+	<h5>Técnico em Desenvolvimento de Sistemas</h5>
+	<h6>&copy 2024 | Todos os direitos reservados.</h6>
+    </footer>
 
     <script>
         function addNewProduct() {
@@ -388,11 +394,7 @@ input, select {
 }
 
 #bot button {
-    padding: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    margin: 5px;
-    background-color: #3123f7; /* Cor inicial do botão Adicionar */
+    background-color: #2e00fd; /* Cor inicial do botão Adicionar */
     color: #fff; /* Cor do texto no botão Adicionar */
     transition: background-color 0.3s; /* Adiciona um efeito de transição na mudança de cor */
 }
@@ -402,7 +404,7 @@ input, select {
 }
 
 #bot button:nth-child(2) {
-    background-color: #06b100; /* Cor inicial do botão Calcular */
+    background-color: #01af09; /* Cor inicial do botão Calcular */
 }
 
 #bot button:nth-child(2):hover {
@@ -412,7 +414,8 @@ input, select {
 
 button {
     padding: 10px;
-    font-size: 15px;
+    font-size: 16px;
+    border: 1px solid black;
     cursor: pointer;
     border-radius: 5px;
     margin: 5px;
@@ -429,15 +432,6 @@ table {
     margin: 0 auto;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
 #result-container {
     text-align: center;
 }
@@ -447,7 +441,7 @@ th {
 }
 #result-container h2 {
     margin-bottom: 10px; /* Adicione a margem inferior desejada */
-    font-size: 17px;
+    font-size: 16px;
 }
 #resultado table {
     border-collapse: collapse;
@@ -456,7 +450,7 @@ th {
 }
 
 #resultado th, #resultado td {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 8px;
     text-align: left;
 }
@@ -464,41 +458,50 @@ th {
     text-align: center;
 }
 #resultado th {
-    background-color: #f2f2f2;
+    background-color: #eceaea;
 }
 
 #resultado tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: whitesmoke;
 }
 
 #resultado tr:hover {
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 /* Adicionando linhas horizontais e verticais */
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: whitesmoke;
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: white;
+}
+footer {
+	text-align: center;
+	padding: 10px;
+	line-height: 4px;
+	font-size: 15px;
+	color: rgb(255, 255, 255);
+	background-color: #474747;
 }
 
 /* Media Query para limitar a largura da tabela em telas maiores */
 @media only screen and (min-width: 600px) { 
     table {
-        width: 60%; /* Ou o valor que desejar para telas maiores */
+        width: 58%; /* Ou o valor que desejar para telas maiores */
         margin: auto;
     }
     #product-container {
         width: 60%;
     }
     #resultado table {
-    font-size: 15px; /* Tamanho da fonte reduzido */
+    font-size: 16px; /* Tamanho da fonte reduzido */
 }
 }
 
     </style>
 </body>
 </html>
+
 
