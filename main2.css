@@ -57,7 +57,6 @@ section{
 
 .dot-container {
   text-align: center;
-  margin-top: 10px;
 }
 
 .dot {
@@ -72,7 +71,7 @@ section{
 }
 
 .dot.active {
-  background-color: #717171;
+  background-color: #0b8000;
 }
 #formu {
     display: flex;
