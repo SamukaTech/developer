@@ -1,5 +1,5 @@
 #section{ 
-    background-image: url('imagens/samukatech.gif');
+    background-image: url('imagens/samuka.gif');
     background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -216,7 +216,7 @@ form {
     height: 200px; 
     height: 60vh;  
     justify-content: center; 
-    padding: 485px;
+    padding: 480px;
     background-size: 100%; 
     background-position: center; 
 } 
