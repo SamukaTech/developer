@@ -2249,7 +2249,7 @@ input, select, textarea {
 
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #0013bd;
+		background-color: #2471c8;
 		background-image: url("light-bl.svg"), url("light-br.svg"), url("overlay.png"), url("banner.jpg");
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
