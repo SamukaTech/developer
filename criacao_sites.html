@@ -68,7 +68,7 @@
 <section id="contato">
     <div class="container">
         <h2>Entre em Contato</h2>
-        <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return handleFormSubmit()">
+        <form id="meu_form" name="meu_form" method="post" enctype="multipart/form-data" autocomplete="off">
             <label for="nome">Nome:</label>
             <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
             <label for="email">Email:</label>
@@ -95,26 +95,36 @@
         return false;
     }
 
-    function handleFormSubmit() {
+    document.getElementById('meu_form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio normal do formulário
         if (validarForm()) {
             var submitButton = document.getElementById("enviar");
             submitButton.disabled = true;
             submitButton.innerText = 'Enviando...';
-            return true;
-        }
-        return false;
-    }
 
-    document.forms['meu_form'].onsubmit = function() {
-        var isFormValid = handleFormSubmit();
-        if (isFormValid) {
-            var confirmationMessage = document.getElementById('confirmationMessage');
-            setTimeout(function() {
-                confirmationMessage.style.display = 'block';
-            }, 500); // Mensagem aparece após o envio do formulário
+            var formData = new FormData(this);
+
+            fetch('https://formsubmit.co/samuel.araujonascimento.98@gmail.com', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                    submitButton.innerText = 'Enviar';
+                    submitButton.disabled = false;
+                    document.getElementById('meu_form').reset(); // Reseta o formulário após o envio
+                } else {
+                    alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
+                    submitButton.innerText = 'Enviar';
+                    submitButton.disabled = false;
+                }
+            }).catch(error => {
+                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
+                submitButton.innerText = 'Enviar';
+                submitButton.disabled = false;
+            });
         }
-        return isFormValid;
-    };
+    });
 </script>
 
     <footer>
