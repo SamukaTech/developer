@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Sites</title>
+    <link rel="stylesheet" href="criacao_sites.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Criação de Sites Profissionais</h1>
+            <p>Transforme sua presença online com um site personalizado e de alta qualidade!</p>
+            <a href="#contato" class="btn">Solicite um Orçamento</a>
+        </div>
+    </header>
+    <section id="servicos">
+        <div class="container">
+            <h2>O que ofereço</h2>
+            <div class="servico">
+                <h3>Design Responsivo</h3>
+                <p>Seu site será adaptado para qualquer dispositivo, proporcionando a melhor experiência para seus visitantes.</p>
+            </div>
+            <div class="servico">
+                <h3>Desenvolvimento Personalizado</h3>
+                <p>Desenvolvimento de sites sob medida, alinhados às suas necessidades e objetivos de negócio.</p>
+            </div>
+            <div class="servico">
+                <h3>Sites Gerenciáveis</h3>
+                <p>Facilidade de atualização e gerenciamento de conteúdo através de sistemas intuitivos.</p>
+            </div>
+            <div class="servico">
+                <h3>Sites Modernos</h3>
+                <p>Design atual e funcionalidade de ponta para manter seu site competitivo no mercado.</p>
+            </div>
+            <div class="servico">
+                <h3>Custo x Benefício</h3>
+                <p>Soluções econômicas sem comprometer a qualidade, garantindo um ótimo retorno sobre o investimento.</p>
+            </div>
+            <div class="servico">
+                <h3>Entrega no Prazo</h3>
+                <p>Comprometimento com prazos estabelecidos para que você possa contar com seu site no momento certo.</p>
+            </div>
+        </div>
+    </section>
+    <section id="depoimentos">
+        <div class="container">
+            <h2>O que os meus clientes dizem</h2>
+            <div class="depoimento">
+                <p>"Adorei! O site ficou incrível e bastante intuitivo."</p>
+                <p><strong>- Maria Silva</strong>, Vendedora de perfumes X</p>
+            </div>
+            <div class="depoimento">
+                <p>"Serviço de primeira qualidade! Recomendo a todos que precisam de um site profissional."</p>
+                <p><strong>- João Oliveira</strong>, Fundador da Startup Y</p>
+            </div>
+            <div class="depoimento">
+                <p>"Nosso site está lindo e funcional. A entrega foi rápida e superou nossas expectativas."</p>
+                <p><strong>- Ana Pereira</strong>, Professora da Escola Z</p>
+            </div>
+            <div class="depoimento">
+                <p>"Excelente profissional! Nosso site é gerenciável e super moderno. Estamos muito satisfeitos."</p>
+                <p><strong>- Carlos Santos</strong>, Cabeleireiro do Salão W</p>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+                <label for="email">Email:</label>
+                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+                <label for="mensagem">Mensagem:</label>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                <button type="submit" class="btn" id="enviar" onclick="Enviar();" value="Enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Samukatech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+<script>
+							function Enviar() {
+
+						var nome = document.getElementById("nomeid");
+						var email = document.getElementById("emailid");
+						var mensa = document.getElementById("menid");
+
+						if(nome.value !="" && mensa.value !="" && email.value != "") {
+							alert('Sua mensagem foi enviada com sucesso!');
+						}
+					}
+						</script>
+   
+</body>
+</html>
+
