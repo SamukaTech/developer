@@ -68,7 +68,7 @@
             </div>
         </div>
     </section>
-    <section id="contato">
+   <section id="contato">
     <div class="container">
         <h2>Entre em Contato</h2>
         <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
@@ -110,23 +110,24 @@
                 body: formData
             })
             .then(response => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Enviar";
                 if (response.ok) {
                     mensagemStatus.textContent = "Mensagem enviada com sucesso!";
                     this.reset();
                 } else {
                     mensagemStatus.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
                 }
-                submitButton.disabled = false;
-                submitButton.textContent = "Enviar";
             })
             .catch(error => {
-                mensagemStatus.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
                 submitButton.disabled = false;
                 submitButton.textContent = "Enviar";
+                mensagemStatus.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
             });
         }
     });
 </script>
+
 
 
     <footer>
