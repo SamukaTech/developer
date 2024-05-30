@@ -254,17 +254,11 @@
                 body: formData
             }).then(response => {
                 if (response.ok) {
-                    document.getElementById('confirmationMessage').style.display = 'block';
+                    document.getElementById('confirmationMessage').style.display = 'block'; // Exibe a mensagem de confirmação
                     submitButton.innerText = 'Enviar';
                     submitButton.disabled = false;
                     document.getElementById('meu_form').reset(); // Reseta o formulário após o envio
-                } else {
-                    throw new Error('Erro no servidor.'); // Lança um erro personalizado para ser capturado no bloco catch
                 }
-            }).catch(error => {
-                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-                submitButton.innerText = 'Enviar';
-                submitButton.disabled = false;
             });
         }
     });
