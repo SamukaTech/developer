@@ -95,31 +95,22 @@
         var email = document.getElementById("emailid").value;
         var mensa = document.getElementById("menid").value;
 
-        if(nome && email && mensa) {
+        if (nome && email && mensa) {
             var submitButton = document.getElementById("enviar");
             var mensagemStatus = document.getElementById("mensagem-status");
 
             submitButton.disabled = true;
             submitButton.textContent = "Enviando...";
+            mensagemStatus.textContent = "";
 
             var formData = new FormData(this);
 
-            // Timeout de 10 segundos (10000 milissegundos)
-            var timeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('timeout')), 10000)
-            );
-
-            Promise.race([
-                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-                    method: "POST",
-                    body: formData
-                }),
-                timeout
-            ])
+            fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                method: "POST",
+                body: formData
+            })
             .then(response => {
-                if (response instanceof Error && response.message === 'timeout') {
-                    mensagemStatus.textContent = "O envio da mensagem está demorando muito. Por favor, tente novamente.";
-                } else if (response.ok) {
+                if (response.ok) {
                     mensagemStatus.textContent = "Mensagem enviada com sucesso!";
                     this.reset();
                 } else {
@@ -136,6 +127,7 @@
         }
     });
 </script>
+
 
     <footer>
         <div class="container">
