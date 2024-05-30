@@ -201,7 +201,7 @@
 
 						</section>
 						<br>
-   <div id="formu">
+  <div id="formu">
     <form id="meu_form" name="meu_form" method="post" enctype="multipart/form-data" autocomplete="off">
         <h1 id="h1">ENTRE EM CONTATO COM O DESENVOLVEDOR</h1>
         <br>
@@ -237,7 +237,6 @@
         if (nome !== "" && email !== "" && mensagem !== "") {
             return true;
         }
-        alert('Por favor, preencha todos os campos.');
         return false;
     }
 
@@ -260,10 +259,6 @@
                     submitButton.disabled = false;
                     document.getElementById('meu_form').reset(); // Reseta o formulário após o envio
                 }
-            }).catch(error => {
-                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-                submitButton.innerText = 'Enviar';
-                submitButton.disabled = false;
             });
         }
     });
