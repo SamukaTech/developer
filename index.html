@@ -201,113 +201,43 @@
 
 						</section>
 						<br>
-  <div id="formu">
-    <form id="meu_form" name="meu_form" method="post" enctype="multipart/form-data" autocomplete="off">
-        <h1 id="h1">ENTRE EM CONTATO COM O DESENVOLVEDOR</h1>
-        <br>
-        <label for="nome">Nome</label>
-        <input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" />
-        <br>
-        <label for="fone" id="input2">Fone</label>
-        <input type="tel" id="tel" placeholder="(00) 0 0000-0000" name="telefone" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" />
-        <br>
-        <label for="email">Email</label>
-        <input type="email" id="emailid" placeholder="fulano@mail.com" required="required" name="e-mail" />
-        <br>
-        <div id="textarea">
-            <textarea type="text" placeholder="Digite sua mensagem" id="menid" required="required" name="mensagem"></textarea>
-        </div>
-        <br>
-        <div id="bot_enviar">
-            <button type="submit" id="enviar">Enviar</button>
-        </div>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
-        <input type="hidden" name="_template" value="table">
-    </form>
-    <p id="confirmationMessage" style="display:none;">Mensagem enviada com sucesso!</p>
-</div>
+  						<div id="formu">
+							<form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
+								<h1 id="h1">ENTRE EM CONTATO COM O DESENVOLVEDOR</h1>
+							<br>
+							<label for="nome">Nome</label>
+							<input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="Nome" />
+						  <br>
+							<label for="fone" id="input2">Fone </label>
+							<input type="tel" id="foneid" placeholder="(00) 0 0000-0000" name="Telefone" maxlength="16" />
+						  <br>
+							<label for="email">Email</label>
+							<input type="email" id="emailid" placeholder="fulano@mail.com" name="Email" />
+						  <br>
+						  <div id="textarea">
+							<textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+						  </div>
+						  <br>
+						  <div id="bot_enviar">
+							<input type="submit" id="enviar" onclick="Enviar();" value="Enviar" />
+						  </div>
+						  <input type="hidden" name="_captcha" value="false">
+						  </form>
+						</div>
+			
+						<script>
+							function Enviar() {
 
-<script>
-    function validarForm() {
-        var nome = document.getElementById("nomeid").value;
-        var email = document.getElementById("emailid").value;
-        var mensagem = document.getElementById("menid").value;
+						var nome = document.getElementById("nomeid");
+						var tel = document.getElementById("foneid");
+						var email = document.getElementById("emailid");
+						var mensa = document.getElementById("menid");
 
-        if (nome !== "" && email !== "" && mensagem !== "") {
-            return true;
-        }
-        return false;
-    }
-
-    document.getElementById('meu_form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio normal do formulário
-        if (validarForm()) {
-            var submitButton = document.getElementById("enviar");
-            submitButton.disabled = true;
-            submitButton.innerText = 'Enviando...';
-
-            var formData = new FormData(this);
-
-            fetch('https://formsubmit.co/samuel.araujonascimento.98@gmail.com', {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('confirmationMessage').style.display = 'block'; // Exibe a mensagem de confirmação
-                    submitButton.innerText = 'Enviar';
-                    submitButton.disabled = false;
-                    document.getElementById('meu_form').reset(); // Reseta o formulário após o envio
-                }
-            });
-        }
-    });
-
-    const tel = document.getElementById('tel'); // Seletor do campo de telefone
-
-    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)); // Dispara quando digitado no campo
-    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)); // Dispara quando autocompletado o campo
-
-    const mascaraTelefone = (valor) => {
-        valor = valor.replace(/\D/g, "");
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2");
-        tel.value = valor; // Insere o(s) valor(es) no campo
-    };
-
-    let slideIndex = 0;
-    let timeout;
-
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        clearTimeout(timeout);
-        timeout = setTimeout(showSlides, 5000); // Change image every 5 seconds
-    }
-
-    function plusSlides(n) {
-        clearTimeout(timeout);
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        clearTimeout(timeout);
-        showSlides(slideIndex = n);
-    }
-
-    showSlides();
-</script>
+						if(nome.value !="" && mensa.value !="") {
+							alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso!');
+						}
+					}
+						</script>
 
 				<br><br><br><br>
 			<!-- Footer -->
