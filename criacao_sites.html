@@ -65,43 +65,63 @@
             </div>
         </div>
     </section>
-    <section id="contato">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-                <label for="email">Email:</label>
-                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
-                <label for="mensagem">Mensagem:</label>
-                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-                <button type="submit" class="btn" id="enviar" onclick="Enviar();" value="Enviar">Enviar</button>
-                <input type="hidden" name="_captcha" value="false">
-		<input type="hidden" name="_next" value="https://samukatech.netlify.app/criacao_sites.html">
-		<input type="hidden" name="_template" value="table">
-            </form>
-        </div>
-    </section>
+<section id="contato">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return handleFormSubmit()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+            <label for="email">Email:</label>
+            <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+            <label for="mensagem">Mensagem:</label>
+            <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+            <button type="submit" class="btn" id="enviar">Enviar</button>
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+        <p id="confirmationMessage" style="display:none;">Sua mensagem foi enviada com sucesso!</p>
+    </div>
+</section>
+
+<script>
+    function validarForm() {
+        var nome = document.getElementById("nomeid").value;
+        var email = document.getElementById("emailid").value;
+        var mensagem = document.getElementById("menid").value;
+
+        if (nome !== "" && email !== "" && mensagem !== "") {
+            return true;
+        }
+        alert('Por favor, preencha todos os campos.');
+        return false;
+    }
+
+    function handleFormSubmit() {
+        if (validarForm()) {
+            var submitButton = document.getElementById("enviar");
+            submitButton.disabled = true;
+            submitButton.innerText = 'Enviando...';
+            return true;
+        }
+        return false;
+    }
+
+    document.forms['meu_form'].onsubmit = function() {
+        var isFormValid = handleFormSubmit();
+        if (isFormValid) {
+            var confirmationMessage = document.getElementById('confirmationMessage');
+            setTimeout(function() {
+                confirmationMessage.style.display = 'block';
+            }, 500); // Mensagem aparece após o envio do formulário
+        }
+        return isFormValid;
+    };
+</script>
 
     <footer>
         <div class="container">
             <p>&copy; 2024 Samukatech. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-<script>
-							function Enviar() {
-
-						var nome = document.getElementById("nomeid");
-						var email = document.getElementById("emailid");
-						var mensa = document.getElementById("menid");
-
-						if(nome.value !="" && mensa.value !="" && email.value != "") {
-							alert('Sua mensagem foi enviada com sucesso!');
-						}
-					}
-						</script>
-   
 </body>
 </html>
 
