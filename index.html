@@ -201,6 +201,32 @@
 
 						</section>
 						<br>
+			<div id="formu">
+    <form id="meu_form" name="meu_form" method="post" enctype="multipart/form-data" autocomplete="off">
+        <h1 id="h1">ENTRE EM CONTATO COM O DESENVOLVEDOR</h1>
+        <br>
+        <label for="nome">Nome</label>
+        <input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" />
+        <br>
+        <label for="fone" id="input2">Fone</label>
+        <input type="tel" id="tel" placeholder="(00) 0 0000-0000" name="telefone" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" />
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="emailid" placeholder="fulano@mail.com" required="required" name="e-mail" />
+        <br>
+        <div id="textarea">
+            <textarea type="text" placeholder="Digite sua mensagem" id="menid" required="required" name="mensagem"></textarea>
+        </div>
+        <br>
+        <div id="bot_enviar">
+            <button type="submit" id="enviar">Enviar</button>
+        </div>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
+        <input type="hidden" name="_template" value="table">
+    </form>
+    <p id="confirmationMessage" style="display:none;">Obrigado, sua mensagem foi enviada com sucesso!</p>
+</div>
 <script>
     function validarForm() {
         var nome = document.getElementById("nomeid").value;
@@ -288,6 +314,7 @@
 
     showSlides();
 </script>
+
 
 
 				<br><br><br><br>
