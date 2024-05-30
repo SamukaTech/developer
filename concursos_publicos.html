@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Estudos para Concursos Públicos</title>
+    <link rel="stylesheet" href="concursos_publicos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Plataforma de Estudos para Concursos Públicos</h1>
+            <p>Prepare-se para concursos públicos com materiais de alta qualidade por apenas R$19,99!</p>
+            <a href="https://samukatech.github.io/developer/cadastro.html" class="btn">Cadastre-se agora</a>
+        </div>
+    </header>
+    <section id="servicos">
+        <div class="container">
+            <h2>O que eu ofereço</h2>
+            <div class="servico">
+                <h3>Cronogramas Personalizados</h3>
+                <p>Organize seus estudos de forma eficiente com cronogramas personalizados para cada concurso.</p>
+            </div>
+            <div class="servico">
+                <h3>Apostilas Completas</h3>
+                <p>Tenha acesso a apostilas completas e atualizadas para todas as disciplinas.</p>
+            </div>
+            <div class="servico">
+                <h3>Memorex</h3>
+                <p>Utilize técnicas de memorização avançadas para garantir a fixação do conteúdo estudado.</p>
+            </div>
+            <div class="servico">
+                <h3>Simulados</h3>
+                <p>Teste seus conhecimentos com simulados que reproduzem as condições reais dos concursos.</p>
+            </div>
+            <div class="servico">
+                <h3>Mapas Mentais</h3>
+                <p>Visualize o conteúdo de forma clara e organizada com meus mapas mentais.</p>
+            </div>
+        </div>
+    </section>
+    <section id="preco">
+        <div class="container">
+            <h2>Tudo isso por apenas R$19,99!</h2>
+            <p>Tenha acesso ilimitado a todos os meus materiais e serviços por um preço acessível.</p>
+            <a href="https://samukatech.github.io/developer/cadastro.html" class="btn">Cadastre-se agora</a>
+        </div>
+    </section>
+    <section id="depoimentos">
+        <div class="container">
+            <h2>O que meus alunos dizem</h2>
+            <div class="depoimento">
+                <p>"A plataforma é incrível! Os cronogramas me ajudaram a organizar meus estudos de forma eficiente."</p>
+                <p><strong>- Lucas Pereira</strong>, Aprovado no Concurso XYZ</p>
+            </div>
+            <div class="depoimento">
+                <p>"Os simulados são muito realistas e me prepararam muito bem para a prova."</p>
+                <p><strong>- Ana Souza</strong>, Aprovada no Concurso ABC</p>
+            </div>
+            <div class="depoimento">
+                <p>"Os mapas mentais foram essenciais para a minha aprovação. Recomendo a todos."</p>
+                <p><strong>- João Silva</strong>, Aprovado no Concurso DEF</p>
+            </div>
+            <div class="depoimento">
+                <p>"Ótimo custo-benefício! Material de qualidade e suporte excelente."</p>
+                <p><strong>- Maria Oliveira</strong>, Aprovada no Concurso GHI</p>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+                <label for="email">Email:</label>
+                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+                <label for="mensagem">Mensagem:</label>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                <button type="submit" class="btn" id="enviar" onclick="Enviar();" value="Enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+		        <input type="hidden" name="_template" value="table">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Samukatech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        function Enviar() {
+
+    var nome = document.getElementById("nomeid");
+    var email = document.getElementById("emailid");
+    var mensa = document.getElementById("menid");
+
+    if(nome.value !="" && mensa.value !="" && email.value != "") {
+        alert('Sua mensagem foi enviada com sucesso!');
+    }
+}
+    </script>
+</body>
+</html>
