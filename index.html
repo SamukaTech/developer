@@ -18,47 +18,80 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header" class="alt">
-					<h1 id="logo"><a href="index.html">Samuka<span>Tech</span></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Bem-Vindo</a></li>
-							<li class="submenu">
-								<a href="#">Sistemas</a>
-								<ul>
-									<li><a href="cadastro.html">Cadastro</a></li>
-									<li><a href="sistemadenotas.html" target="_blank">Notas Online</a></li>
-								</ul>
-							</li>
-								<li><a href="#servi">serviços</a></li>
-							        <li><a href="#port">Portfólio</a></li>
-								<li><a href="login.">Login</a></li>
-								<li><a href="jogodavelha">Jogo</a></li>
-								<li><a href="#sob">sobre</a></li>
-						</ul>
-					</nav>
-				</header>
+			<header id="header" class="alt">
+				<h1 id="logo"><a href="index.html">Samuka<span>Tech</span></a></h1>
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="index.html">Bem-Vindo</a></li>
+						<li class="submenu">
+							<a href="#">Sistemas</a>
+							<ul>
+								<li><a href="cadastro.html">Cadastro</a></li>
+								<li><a href="sistemadenotas.html" target="_blank">Notas Online</a></li>
+							</ul>
+						</li>
+						<li><a href="#servi">serviços</a></li>
+						<li><a href="#port">Portfólio</a></li>
+						<li><a href="login.">Login</a></li>
+						<li><a href="jogodavelha">Jogo</a></li>
+						<li><a href="#sob">sobre</a></li>
+					</ul>
+				</nav>
+			</header>
 
-			<head></head>
-			<br>
 			<div class="slider">
-					<div class="slide">
-					  <a href="https://samukatech.netlify.app/concursos_publicos.html"><img src="imagens/concu.png" alt="Image 1"></a>
-					</div>
-					<div class="slide">
-					  <a href="https://samukatech.netlify.app/criacao_sites.html"><img src="imagens/criacaosite.png" alt="Image 2"></a>
-					</div>
-					<div class="slide">
-					  <a href="#"><img src="imagens/projetos.png" alt="Image 3"></a>
-					</div>
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-					<div class="dot-container">
-					  <span class="dot" onclick="currentSlide(1)"></span>
-					  <span class="dot" onclick="currentSlide(2)"></span>
-					  <span class="dot" onclick="currentSlide(3)"></span>
-					</div>
-				  </div>
+				<div class="slide fade">
+				  <a href="https://samukatech.netlify.app/concursos_publicos.html"><img src="imagens/concu.png" alt="Image 1"></a>
+				</div>
+				<div class="slide fade">
+				  <a href="https://samukatech.netlify.app/criacao_sites.html"><img src="imagens/criacaosite.png" alt="Image 2"></a>
+				</div>
+				<div class="slide fade">
+				  <a href="#"><img src="imagens/projetos.png" alt="Image 3"></a>
+				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<div class="dot-container">
+				  <span class="dot" onclick="currentSlide(1)"></span>
+				  <span class="dot" onclick="currentSlide(2)"></span>
+				  <span class="dot" onclick="currentSlide(3)"></span>
+				</div>
+			</div>
+
+			<script>
+				let slideIndex = 0;
+				let timeout;
+
+				function showSlides() {
+					let i;
+					let slides = document.getElementsByClassName("slide");
+					let dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) { slideIndex = 1 }
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex - 1].style.display = "block";
+					dots[slideIndex - 1].className += " active";
+					clearTimeout(timeout);
+					timeout = setTimeout(showSlides, 5000); // Change image every 5 seconds
+				}
+
+				function plusSlides(n) {
+					clearTimeout(timeout);
+					showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+					clearTimeout(timeout);
+					showSlides(slideIndex = n);
+				}
+
+				showSlides();
+			</script>
 
 	<br>
 			<!-- Banner -->
