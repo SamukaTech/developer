@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">    
 <head>
     <title>Cadastro</title>
     <link rel="icon" href="img_cadastro.png">
@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-    <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
+    <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return handleSubmit()">
         <h4>Cadastre-se</h4>
         
         <div class="input-section">
@@ -50,16 +50,25 @@
 </div>
 
 <script>
-    
     function validarForm() {
-            var x = document.getElementById("password").value;
-		    var y = document.getElementById("verify-password").value;
-		    if ( x != y) {
- 	            alert("As senhas não confere. As duas senhas devem ser iguais!");
-                    return false;
-                    }
-                    return true;
-                    }
+        var x = document.getElementById("password").value;
+        var y = document.getElementById("verify-password").value;
+        if (x != y) {
+            alert("As senhas não conferem. As duas senhas devem ser iguais!");
+            return false;
+        }
+        return true;
+    }
+
+    function handleSubmit() {
+        var isValid = validarForm();
+        if (isValid) {
+            var submitButton = document.getElementById("bot1");
+            submitButton.disabled = true;
+            submitButton.innerText = 'Enviando...';
+        }
+        return isValid;
+    }
 </script>
 </body>
 </html>
