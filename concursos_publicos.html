@@ -71,36 +71,65 @@
     <section id="contato">
         <div class="container">
             <h2>Entre em Contato</h2>
-            <form name="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" onsubmit="return validarForm()">
+            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
                 <label for="email">Email:</label>
                 <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
                 <label for="mensagem">Mensagem:</label>
                 <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-                <button type="submit" class="btn" id="enviar" onclick="Enviar();" value="Enviar">Enviar</button>
+                <button type="submit" class="btn" id="enviar">Enviar</button>
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
-		        <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_template" value="table">
             </form>
+            <div id="mensagem-status"></div>
         </div>
     </section>
+    
+    <script>
+        document.getElementById("meu_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            var nome = document.getElementById("nomeid").value;
+            var email = document.getElementById("emailid").value;
+            var mensa = document.getElementById("menid").value;
+    
+            if(nome && email && mensa) {
+                var submitButton = document.getElementById("enviar");
+                var mensagemStatus = document.getElementById("mensagem-status");
+    
+                submitButton.disabled = true;
+                submitButton.textContent = "Enviando...";
+    
+                var formData = new FormData(this);
+    
+                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                        this.reset();
+                    } else {
+                        mensagemStatus.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
+                    }
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                })
+                .catch(error => {
+                    mensagemStatus.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                });
+            }
+        });
+    </script>
     <footer>
         <div class="container">
             <p>&copy; 2024 Samukatech. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script>
-        function Enviar() {
-
-    var nome = document.getElementById("nomeid");
-    var email = document.getElementById("emailid");
-    var mensa = document.getElementById("menid");
-
-    if(nome.value !="" && mensa.value !="" && email.value != "") {
-        alert('Sua mensagem foi enviada com sucesso!');
-    }
-}
-    </script>
 </body>
 </html>
