@@ -14,10 +14,10 @@
   <div class="form">
     <input type="text" spellcheck="false" placeholder="Insira um texto ou URL" id="inputText">
     <button id="generateBtn">Gerar QR Code</button>
-    <!-- Adicionando o botão de download -->
-    <button id="downloadBtn" style="display: none;">Download QR Code</button>
+    <button id="downloadBtn" style="display: none;">Baixar QR Code</button>
   </div>
   <div class="qr-code">
+    <canvas id="qrCodeCanvas" style="display: none;"></canvas>
     <img src="" alt="QR Code" id="qrCodeImg">
   </div>
 </div>
