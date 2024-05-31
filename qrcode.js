@@ -1,9 +1,8 @@
 const wrapper = document.querySelector(".wrapper"),
   qrInput = wrapper.querySelector(".form input"),
   generateBtn = wrapper.querySelector("#generateBtn"),
-  qrImg = wrapper.querySelector(".qr-code img"),
-  qrCanvas = wrapper.querySelector("#qrCodeCanvas"),
-  downloadBtn = wrapper.querySelector("#downloadBtn");
+  qrImg = wrapper.querySelector("#qrCodeImg"),
+  qrCanvas = wrapper.querySelector("#qrCodeCanvas");
 
 let preValue;
 
@@ -22,13 +21,15 @@ generateBtn.addEventListener("click", () => {
   qrImg.addEventListener("load", () => {
     wrapper.classList.add("active");
     generateBtn.innerText = "Gerar QR Code";
-    downloadBtn.style.display = "inline";
 
     // Desenhar QR Code no canvas
     const ctx = qrCanvas.getContext("2d");
     qrCanvas.width = qrImg.width;
     qrCanvas.height = qrImg.height;
     ctx.drawImage(qrImg, 0, 0);
+
+    // Exibir o canvas
+    qrCanvas.style.display = "block";
   });
 });
 
@@ -36,11 +37,11 @@ qrInput.addEventListener("keyup", () => {
   if (!qrInput.value.trim()) {
     wrapper.classList.remove("active");
     preValue = "";
-    downloadBtn.style.display = "none";
+    qrCanvas.style.display = "none";
   }
 });
 
-downloadBtn.addEventListener("click", () => {
+qrImg.addEventListener("click", () => {
   // Converter o canvas para um link de download
   const link = document.createElement("a");
   link.href = qrCanvas.toDataURL("image/png");
