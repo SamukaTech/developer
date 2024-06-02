@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samukatech - Home</title>
+    <link rel="stylesheet" href="site_teste.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Serviços</a>
+                    <ul>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="notas_online.html">Notas Online</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <img src="c:/Users/samue/OneDrive/Documents/Imagens/concu.png" alt="Imagem 1">
+            <img src="c:/Users/samue/OneDrive/Documents/Imagens/criacaosite.png" alt="Imagem 2">
+            <img src="C:/Users/samue/OneDrive/Documents/Imagens/projetos.png" alt="Imagem 3">
+        </div>
+        <div class="slider-controls">
+            <span class="prev">‹</span>
+            <span class="next">›</span>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Serviços</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <img src="C:/Users/samue/Documents/Imagens/criacao-sites.png" alt="Criação de Sites">
+                <h3>Criação de Sites</h3>
+                <p>Desenvolvemos sites modernos e responsivos.</p>
+            </div>
+            <div class="service-item">
+                <img src="C:/Users/samue/Documents/Imagens/sistema web.png" alt="Sistemas Web">
+                <h3>Sistemas Web</h3>
+                <p>Implementamos sistemas web personalizados.</p>
+            </div>
+            <div class="service-item">
+                <img src="C:/Users/samue/Documents/Imagens/hospedagem.png" alt="Hospedagem de Sites">
+                <h3>Hospedagem de Sites</h3>
+                <p>Oferecemos hospedagem segura e confiável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2>Portfólio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-login.jpg" alt="Projeto 1">
+                <h3>Projeto 1</h3>
+                <p>Descrição do Projeto 1.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-contato.jpg" alt="Projeto 2">
+                <h3>Projeto 2</h3>
+                <p>Descrição do Projeto 2.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-google.jpg" alt="Projeto 3">
+                <h3>Projeto 3</h3>
+                <p>Descrição do Projeto 3.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-cronometro.jpg" alt="Projeto 4">
+                <h3>Projeto 4</h3>
+                <p>Descrição do Projeto 4.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-login.jpg" alt="Projeto 5">
+                <h3>Projeto 5</h3>
+                <p>Descrição do Projeto 5.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="C:/Users/samue/Documents/Imagens/pag-login.jpg" alt="Projeto 6">
+                <h3>Projeto 6</h3>
+                <p>Descrição do Projeto 6.</p>
+            </div>
+        </div>
+        <button onclick="window.location.href='portfolio.html'">Veja mais projetos</button>
+    </section>
+
+    <section class="about">
+        <h2>Sobre</h2>
+        <p>Descrição do site e dos serviços oferecidos.</p>
+    </section>
+
+    <section class="testimonials">
+        <h2>Depoimentos</h2>
+        <div class="testimonial-item">
+            <p>"Excelente serviço!" - Cliente 1</p>
+        </div>
+        <div class="testimonial-item">
+            <p>"Altamente recomendado." - Cliente 2</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Samukatech &copy; 2024</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider img');
+        const totalSlides = slides.length;
+
+        document.querySelector('.next').addEventListener('click', () => {
+            goToSlide(currentSlide + 1);
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            goToSlide(currentSlide - 1);
+        });
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+    </script>
+</body>
+</html>
