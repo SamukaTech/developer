@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Header</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <header>
@@ -25,6 +25,70 @@
         </nav>
     </header>
     <script src="teste.js"></script>
+    <script>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+    }
+    
+    </script>
 </body>
                                          </html>
                                          
