@@ -21,9 +21,9 @@
 
     <section class="hero">
         <div class="slider">
-            <img src="imagens/concu.png" alt="Imagem 1"></a>
-            <img src="imagens/criacaosite.png" alt="Imagem 2"></a>
-            <img src="imagens/projetos.png" alt="Imagem 3"></a>
+            <img src="c:/Users/samue/OneDrive/Documents/Imagens/concu.png" alt="Imagem 1">
+            <img src="c:/Users/samue/OneDrive/Documents/Imagens/criacaosite.png" alt="Imagem 2">
+            <img src="C:/Users/samue/OneDrive/Documents/Imagens/projetos.png" alt="Imagem 3">
         </div>
     </section>
 
@@ -31,17 +31,17 @@
         <h2>Meus Serviços</h2>
         <div class="services-container">
             <div class="service-item">
-                <img src="imagens/criacao-sites.png" alt="Criação de Sites">
+                <img src="C:/Users/samue/Documents/Imagens/criacao-sites.png" alt="Criação de Sites">
                 <h3>Criação de Sites Personalizados</h3>
                 <p>Desenvolvo sites modernos e totalmente personalizados para atender às suas necessidades e destacar sua marca na internet.</p>
             </div>
             <div class="service-item">
-                <img src="imagens/sistema web.png" alt="Sistemas Web">
+                <img src="C:/Users/samue/Documents/Imagens/sistema web.png" alt="Sistemas Web">
                 <h3>Desenvolvimento de Sistemas Web</h3>
                 <p>Desenvolvo sistemas web sob medida para simplificar processos, aumentar a eficiência e impulsionar seus negócios.</p>
             </div>
             <div class="service-item">
-                <img src="imagens/hospedagem.png" alt="Hospedagem de Sites">
+                <img src="C:/Users/samue/Documents/Imagens/hospedagem.png" alt="Hospedagem de Sites">
                 <h3>Hospedagem Confiável e Segura</h3>
                 <p>Ofereço serviços de hospedagem de sites confiáveis, com alta disponibilidade e suporte técnico personalizado para garantir o melhor desempenho online.</p>
             </div>
@@ -107,25 +107,27 @@
         </div>
     </section>
 
-    <section class="contact" id="cont">
-        <h2>Contato</h2>
-        <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
-            <button type="submit" id="enviar">Enviar</button>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
-            <input type="hidden" name="_template" value="table">
-        </form>
-        <br>
-        <div id="mensagem-status"></div>
+    <section id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+                <label for="email">Email:</label>
+                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+                <label for="mensagem">Mensagem:</label>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                <button type="submit" class="btn" id="enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                <input type="hidden" name="_template" value="table">
+            </form>
+            <br>
+            <div id="mensagem-status"></div>
+        </div>
     </section>
 
-    
+    <br>
     <footer class="footer">
         <div class="icons">
             <a href="https://samukatech.netlify.app/"><img src="c:/Users/samue/OneDrive/Documents/Imagens/icon-samukatech9.2.png" alt="Ícone 1"></a>
@@ -157,9 +159,9 @@ setInterval(() => {
 document.getElementById("meu_form").addEventListener("submit", function(event) {
             event.preventDefault();
     
-            var nome = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var mensa = document.getElementById("message").value;
+            var nome = document.getElementById("nomeid").value;
+            var email = document.getElementById("emailid").value;
+            var mensa = document.getElementById("menid").value;
     
             if (nome && email && mensa) {
                 var submitButton = document.getElementById("enviar");

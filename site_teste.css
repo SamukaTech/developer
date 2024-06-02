@@ -162,9 +162,7 @@ nav ul li:hover ul {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.contact {
-    background-color: #c8e6c9; /* Cor de fundo da seção de contato */
-    padding: 20px;
+#contato h2 {
     text-align: center;
 }
 
