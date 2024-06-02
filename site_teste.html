@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samukatech</title>
     <link rel="stylesheet" href="site_teste.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,16 +16,14 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#serv">Serviços</a></li>
+                <li><a href="#port">Portfólio</a></li>
+                <li><a href="concursos_publicos.html">Concursos</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li><a href="#cont">Contato</a></li>
             </ul>
         </nav>
     </header>
-    
 
     <section class="hero">
         <div class="slider">
@@ -116,7 +115,7 @@
 
     <section id="contato">
         <div class="container">
-            <h2>Entre em Contato</h2>
+            <h2 id="cont">Entre em Contato</h2>
             <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
@@ -198,12 +197,15 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
                 });
             }
         });
-            const mobileMenu = document.getElementById('mobile-menu');
+
+        // código referente ao menu do cabeçalho
+        const mobileMenu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 
 mobileMenu.addEventListener('click', () => {
     navList.classList.toggle('active');
 });
+
         </script>
     </body>
     </html>
