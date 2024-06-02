@@ -46,29 +46,7 @@ header {
     background-color: white;
     margin: 4px 0;
 }
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-list li {
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-}
 	
-
 .hero {
     position: relative;
     width: 100%;
@@ -268,4 +246,22 @@ button:hover {
     .service-item, .portfolio-item {
         width: 80%;
     }
+	    display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
 }
