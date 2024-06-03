@@ -11,7 +11,7 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px;
+    padding: 5px;
 }
 
 .nav-list {
@@ -168,7 +168,7 @@ header {
 }
 
 #contato {
-    padding: 5px;
+    padding: 10px;
 }
 
 #contato h2 {
