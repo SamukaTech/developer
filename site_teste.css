@@ -258,7 +258,7 @@ button:hover {
     }
 
     .service-item, .portfolio-item {
-        width: 100%;
+        width: 90%;
     }
     .nav-list {
         display: none;
