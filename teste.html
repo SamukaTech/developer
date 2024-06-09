@@ -102,15 +102,20 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 300%; /* Assegura que todas as imagens cabem no slider */
-        }
-        .slides img {
-            width: 100%;
-            border-radius: 5px;
-        }
+        
+     .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * 3); /* Ajusta a largura para o número de imagens */
+}
+
+.slides img {
+    width: 100%;
+    height: 400px; /* Ajuste conforme necessário */
+    object-fit: cover;
+    border-radius: 5px;
+}
+     
         form {
             display: flex;
             flex-direction: column;
