@@ -11,6 +11,7 @@
             color: #2e7d32;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Remove a barra de rolagem horizontal */
         }
         header {
             background-color: #4caf50;
@@ -24,9 +25,6 @@
             justify-content: center;
             background-color: #66bb6a;
             padding: 10px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         nav a {
             color: white;
@@ -107,10 +105,36 @@
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: 300%; /* Assegura que todas as imagens cabem no slider */
         }
         .slides img {
             width: 100%;
             border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-top: 10px;
+        }
+        form input, form textarea {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #4caf50;
+        }
+        form input[type="submit"] {
+            margin-top: 15px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background-color: #388e3c;
         }
         @media (max-width: 768px) {
             .content {
@@ -122,6 +146,9 @@
                 padding: 10px;
                 width: 100%;
                 text-align: center;
+            }
+            .slides {
+                width: 100%; /* Ajusta o slider para telas menores */
             }
         }
     </style>
@@ -157,7 +184,7 @@
                     <a href="link-do-livro-2.pdf" class="button" target="_blank">Abrir Livro</a>
                 </div>
                 <div>
-                    <h3>Genética: Princípios e Análises</h3>
+                    <h3>Genética: Princípios e Análises</h>
                     <p>Autor: Hartl, Daniel</p>
                     <p>Descrição: Aborda os fundamentos e avanços na área da genética.</p>
                     <a href="link-do-livro-3.pdf" class="button" target="_blank">Abrir Livro</a>
@@ -284,11 +311,11 @@
             <div class="content">
                 <form>
                     <label for="nome">Nome:</label><br>
-                    <input type="text" id="nome" name="nome"><br><br>
+                    <input type="text" id="nome" name="nome" style="max-width: 100%;"><br><br>
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br><br>
+                    <input type="email" id="email" name="email" style="max-width: 100%;"><br><br>
                     <label for="mensagem">Mensagem:</label><br>
-                    <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea><br><br>
+                    <textarea id="mensagem" name="mensagem" rows="4" style="max-width: 100%;"></textarea><br><br>
                     <input type="submit" value="Enviar" class="button">
                 </form>
             </div>
@@ -301,15 +328,16 @@
     <script>
         const slider = document.querySelector('.slider');
         const slides = document.querySelector('.slides');
-        const slideWidth = slider.clientWidth;
         let currentSlide = 0;
 
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.children.length;
-            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            const totalSlides = slides.children.length;
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100 / totalSlides}%)`;
         }
 
         setInterval(nextSlide, 6000); // Alterei o intervalo para 6 segundos
     </script>
 </body>
-</html>
+ </html>
+                     
