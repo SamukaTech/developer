@@ -430,22 +430,21 @@
         </section>
 
         <section id="contato">
-            <div class="container">
-                <h2 id="cont">Entre em Contato</h2>
+            <h2 class="section-title">Contato</h2>
+            <div class="content" style="display: flex; justify-content: center;">
                 <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-                    <label for="email">Email:</label>
-                    <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-                    <button type="submit" class="btn" id="enviar">Enviar</button>
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" /><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required /><br><br>
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem" rows="4"></textarea><br><br>
+                    <button type="submit" id="enviar" class="button">Enviar</button>
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                    <input type="hidden" name="_next" value="https://samukatech.netlify.app/pla_biologia.html">
                     <input type="hidden" name="_template" value="table">
                 </form>
-                <br>
-                <div id="mensagem-status"></div>
+                <br id="mensagem-status">
             </div>
         </section>
     </main>
