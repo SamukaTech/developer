@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorando a Vida - Estudo de Biologia</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,6 +74,11 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+        .button, #enviar {
+            padding-left: 30px;
+            padding-right: 30px;
+            cursor: pointer;
+        }
         .button {
             background-color: #2b9348;
             color: white;
@@ -125,7 +129,7 @@
             background-color: #2b9348;
             color: rgb(255, 255, 255);
             border: none;
-            cursor: pointer;
+           
             transition: background-color 0.3s;
         }
         form input[type="submit"]:hover {
@@ -134,23 +138,26 @@
         #mensagem-status {
             text-align: center;
         }
-        .swiper-container {
-            width: 100%;
-            height: 100%;
-            margin: 20px 0;
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
+        .slides {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            transition: transform 1s ease;
         }
-        .swiper-slide img {
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures that the images are properly scaled */
+            display: block;
+            border-radius: 10px;
         }
         @media (max-width: 768px) {
             .content {
@@ -168,7 +175,7 @@
 </head>
 <body>
     <header>
-        <h1>Explorando a Vida - Estudo de Biologia</h1>
+        <h1>Biologia em Foco</h1>
     </header>
     <nav>
         <a href="#livros">Livros</a>
@@ -180,328 +187,76 @@
         <a href="#contato">Contato</a>
     </nav>
     <main>
-        <section id="slider">
-            <h2 class="section-title">Galeria de Imagens</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://art.kartinkof.club/uploads/posts/2023-07/1689087239_art-kartinkof-club-p-idei-dlya-srisovki-zhivaya-kletka-72.jpg" alt="Imagem 1"></div>
-                    <div class="swiper-slide"><img src="https://static.wixstatic.com/media/8b0ca6_71ee50ad82b046669b2a7860754ce566~mv2.gif" alt="Imagem 2"></div>
-                    <div class="swiper-slide"><img src="https://i.ytimg.com/vi/jzbaQhghayE/maxresdefault.jpg" alt="Imagem 3"></div>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://i.ytimg.com/vi/jzbaQhghayE/maxresdefault.jpg" alt="Imagem 1">
                 </div>
-                <!-- Add Pagination -->
-               
+                <div class="slide">
+                    <img src="https://static.wixstatic.com/media/8b0ca6_71ee50ad82b046669b2a7860754ce566~mv2.gif" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <img src="https://art.kartinkof.club/uploads/posts/2023-07/1689087239_art-kartinkof-club-p-idei-dlya-srisovki-zhivaya-kletka-72.jpg" alt="Imagem 3">
+                </div>
+                <div class="slide">
+                    <img src="https://images.pexels.com/photos/751682/pexels-photo-751682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagem 3">
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Restante do conteúdo da página -->
-        
         <section id="livros">
             <h2 class="section-title">Livros de Biologia</h2>
             <div class="content">
-                <div>
-                    <h3>Biologia - Vol. 01</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Composição química dos seres vivos: água, sais minerais, aminoácidos, proteinas e enzimas. Histologia animal: tecido epitelial, tecidos conjuntivos próprio, adiposo e hematopoiético.
-                    Vírus. Viroses. Categorias taxonômicas e regras de nomenclatura. Bactérias: reprodução e características gerais. Genética: código genético, conceitos fundamentais, 1ª Lei de Mendel e 2ª Lei de Mendel.</p>
-                    <a href="https://drive.google.com/file/d/1miqp3Az2h97Bi-PMLq_l7Iqhgz_P1DK4/view?usp=sharing" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Biologia - Vol. 02</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Composição química dos seres vivos: lipídios e carboidratos, nucleotídeos, ácidos nucleicos e ATP. Histologia animal: tecidos conjuntivos de transporte e sustentação, tecido muscular
-                        Bacterioses. Protozoários e protozooses. Fungos. Poríferos e celenterados. Genética: interação gênica, herança dos grupos sanguíneos, herança ligada aos cromossomos sexuais, linkage.</p>
-                    <a href="https://drive.google.com/file/d/1eya0Ue1dO6273P8NBgDxKKdVQHK6V6gQ/view?usp=sharing" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Biologia - Vol. 03</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Composição química dos seres vivos: vitaminas. Citologia: revestimentos externos da célula. Histologia animal: tecido nervoso. Fisiologia humana: sistema nervoso e sistema sensorial. 
-                        Platelmintos. Nematelmintos. Anelídeos e moluscos. Artrópodes. Genética de populações. Noções de Engenharia Genética. Origem da vida. Teorias evolucionistas.</p>
-                    <a href="https://drive.google.com/file/d/1KkyTSI9qUbizCn4Dcu45tcN_erVfGsz9/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Biologia - Vol. 04</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Citoplasma. Respiração celular e fermentação. Sistema endócrino. Sistema digestório. Equinodermos e protocordados. Vertebrados: peixes, anfíbios e répteis. Evidências da evolução. 
-                        Mecanismos de especiação. Evolução dos vertebrados. Evolução do homem.</p>
-                    <a href="https://drive.google.com/file/d/1RldO4VP6QXvchVkFB1KXYfnk0mE8nfgM/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Biologia - Vol. 05</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Fotossíntese e quimiossíntese. O núcleo celular. Sistema respiratório. Sistema cardiovascular. Vertebrados: aves e mamíferos. Relações ecológicas. Estudo das populações
-                        Cadeia alimentar. Algas. Briófitas e pteridófitas. Gimnospermas. Angiospermas.</p>
-                    <a href="https://drive.google.com/file/d/1xJ_v5U4_vfszz0M9MhR82hR1vtoAQQ2q/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Biologia - Vol. 06</h3>
-                    <p><b>Autor:</b> Marcos Lemos</p>
-                    <p><b>Sumário:</b> Mitose e meiose. Embriologia animal. Sistema urinário. Sistema reprodutor. Ecossistemas. Sucessão ecológica. Ciclos biogeoquímicos. Desequilíbrios ambientais. Histologia vegetal
-                        Organologia vegetal. Fisiologia vegetal. Hormônios e movimentos vegetais.</p>
-                    <a href="https://drive.google.com/file/d/1ZdeJ6nAGlULB-PishdAAzY4C16q6GnQs/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Fundamentos da Biologia Celular</h3>
-                    <p><b>Autor:</b>  Bruce Alberts et al.</p>
-                    <p><b>Descrição:</b> Neste livro, os autores descrevem os fundamentos da biologia celular de maneira clara e didática, explicando como uma célula viva funciona e apresentando as informações necessárias 
-                        para a compreensão de assuntos tanto da biomedicina quanto da biologia mais ampla que afeta nossas vidas.</p>
-                    <a href="https://drive.google.com/file/d/1UfvEJFeK3SPmXg9f1swIOk2epNlZviL0/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div> 
-                    <h3>Biologia Celular e Molecular</h3>
-                    <p><b>Autor:</b> De Robertis</p>
-                    <p><b>Descrição:</b> A atualização periódica das estruturas e funções celulares faz com que os professores e os alunos mantenham sua lealdade aos livros que tratam desse tema.
-                        Em Biologia Celular e Molecular o conteúdo é apresentado de tal forma que o próprio aluno consegue localizar, estabelecer correlações e incorporar autonomamente os conhecimentos necessários.</p>
-                    <a href="https://drive.google.com/file/d/12Kt-ouQGN2PGiL8WQooVE9W6b-LAjvUF/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Anatomia Vegetal</h3>
-                    <p><b>Autora:</b>  Beatriz Appezzato-da-Gloria </p>
-                    <p><b>Descrição:</b> Anatomia vegetal oferece a estudantes, pesquisadores, professores e demais interessados no assunto a base para o conhecimento da estrutura interna do vegetal, abordando a 
-                        organização geral do corpo da planta, os diferentes tipos de célula e tecidos e a anatomia de órgãos vegetativos e reprodutivos.</p>
-                    <a href="https://drive.google.com/file/d/1ciXh2K6PTJCZmJQWyLW6bg8RwEzmitCN/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
-                <div>
-                    <h3>Botânica Organografia</h3>
-                    <p><b>Autor:</b> Waldomiro Nunes</p>
-                    <p><b>Descrição:</b> Este livro trata especialmente das plantas superiores e vem atender a uma demanda de estudantes e professores de Botânica, com especial ênfase para aqueles que utilizam chaves 
-                        de identificação de famílias. Seu conteúdo é apresentado sob a forma de quadros sinóticos, acompanhados, integralmente, de exemplos bem familiares e das respectivas ilustrações.</p>
-                    <a href="https://drive.google.com/file/d/1ciDJ6cejyuoSEbe8rJZcNEC8iLUgB4ZG/view" class="button" target="_blank">Abrir Livro</a>
-                </div>
+                <!-- Conteúdo existente dos livros -->
             </div>
         </section>
 
         <section id="apostilas">
             <h2 class="section-title">Apostilas de Biologia</h2>
             <div class="content">
-                <div>
-                    <h3>Origem da Vida e do Universo</h3>
-                    <p><b>Descrição:</b> Durante o texto você vai aprender um pouco mais sobre a Biologia como uma disicplina científica e também sobre a origem da vida, do universo e tudo mais.</p>
-                    <a href="https://drive.google.com/file/d/17Nvqqj7vP9DksPmGXxKQN4YGZb-s9PzR/view" class="button" target="_blank">Abrir Apostila</a>
-                </div>
-                <div>
-                    <h3>Organelas e suas funções</h3>
-                    <p><b>Descrição:</b> As organelas celulares são pequenas estruturas localizadas no citoplasma, mergulhadas no citosol da célula. A sua função é garantir um bom funcionamento das células.</p>
-                    <a href="https://drive.google.com/file/d/1_1KG4TcZ4zVylICbDFeEHPItPtMQh7Rq/view" class="button" target="_blank">Abrir Apostila</a>
-                </div>
-                <div>
-                    <h3>Zoologia Comparada</h3>
-                    <p><b>Descrição:</b> A Zoologia Comparada, como o próprio nome diz, se dedica a um estudo comparado entre os mais diversos grupos de animais e não apenas a um determinado grupo ou espécie.</p>
-                    <a href="https://drive.google.com/file/d/1phxHd761KPm6MZaiJxBaxFdESrRmFvgF/view" class="button" target="_blank">Abrir Apostila</a>
-                </div>
+                <!-- Conteúdo existente das apostilas -->
             </div>
         </section>
 
         <section id="videos">
             <h2 class="section-title">Canais Educativos</h2>
             <div class="content">
-                <div>
-                    <h3>Biologia com Samuel Cunha</h3>
-                    <img src="https://yt3.googleusercontent.com/cJL654Ip4Owno2Ijj0PotiXgKom76EeApOr3Srz5XNeZ4qOzIiUT1AhoSuPJ34d-SMsiWdZ-6A=s900-c-k-c0x00ffffff-no-rj" alt="Biologia Total" style="width:100%; border-radius: 5px;">
-                    <p>Um canal dedicado à educação! O prof. Samuel é biólogo licenciado, mestre em parasitologia, formado há mais de dez anos pela Universidade Federal de Pelotas..</p>
-                    <p><a href="https://www.youtube.com/@professorsamuelcunha" class="button" target="_blank">Visite o Canal</a></p>
-                </div>
-                <div>
-                    <h3>Guilherme Goulart - Biologia</h3>
-                    <img src="https://yt3.googleusercontent.com/OqHgHV9cRxmy4pWvIrsjnuPQU2wT7lONFAZ5zZdLRfzicBUGMehE2gmw1JC4-K5WWFU1lqyBKm8=s900-c-k-c0x00ffffff-no-rj" alt="Amo Biologia" style="width:100%; border-radius: 5px;">
-                    <p>Um canal voltado a estudantes com interesse em compreender a biologia como um todo, seja para passar no vestibular, seja para tirar uma boa nota em uma prova.</p>
-                    <p><a href="https://www.youtube.com/@ProfGuiGoulart" class="button" target="_blank">Visite o Canal</a></p>
-                </div>
-                <div>
-                    <h3>Paulo Jubilut</h3>
-                    <img src="https://yt3.googleusercontent.com/0jEzLg1ahcvQ1ZFJmPJRB9-DB7mNsPpqKRwptVqC4EOE7oNkuvdqFt6Lm3xXgNPyn55lXXtkuA=s900-c-k-c0x00ffffff-no-rj" alt="Khan Academy" style="width:100%; border-radius: 5px;">
-                    <p>Canal dedicado a mostrar a ciência da vida de forma criativa e divertida, pra que você veja que a biologia vai muito além dos nomezinhos complicados da escola.</p>
-                    <p><a href="https://www.youtube.com/@paulojubilut" class="button" target="_blank">Visite o Canal</a></p>
-                </div>
-                <div>
-                    <h3>Kennedy Ramos</h3>
-                    <img src="https://yt3.googleusercontent.com/RbbvpwulVlBrFIBWnyCZFuTaYLdoXztENIrZRa3cLoJSB0KpB2spYVkVXK2BVQjKWiblPafd790=s900-c-k-c0x00ffffff-no-rj" alt="Khan Academy" style="width:100%; border-radius: 5px;">
-                    <p>Prof. Kennedy ensina Biologia de forma simples, com aulas específicas voltado para o ENEM, Vestibulares, Reforço Escolar, Reforço Universitário e Curiosidades. </p>
-                    <p><a href="https://www.youtube.com/@bioexplica" class="button" target="_blank">Visite o Canal</a></p>
-                </div>
+                <!-- Conteúdo existente dos vídeos -->
             </div>
         </section>
 
         <section id="ferramentas">
             <h2 class="section-title">Ferramentas de Estudo</h2>
             <div class="content">
-                <div>
-                    <h3>Nerd Cursos</h3>
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts71/v4/64/df/12/64df121f-69d2-ad09-79dc-0e93514d8472/mza_5486812100272574891.jpg/1200x630wp.png" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>O Nerd Cursos Biologia é curso com vídeo aulas, exercícios, podcasts de revisão e mapas de estudo para você que está no ensino médio ou se preparando para o Enem e Vestibulares.</p>
-                    <p><a href="https://www.nerdcursos.com.br/" class="button" target="_blank">Acesse o Nerd Cursos</a></p>
-                </div>
-                <div>
-                    <h3>Khan Academy</h3>
-                    <img src="https://cdn.kastatic.org/images/khan-logo-dark-background-2.png" alt="Quizlet" style="width:100%; border-radius: 5px;">
-                    <p>Khan Academy é uma organização com a missão de proporcionar uma educação gratuita e de alta qualidade para todos, oferece uma coleção grátis de vídeos de biologia, entre outras matérias.</p>
-                    <p><a href="https://pt.khanacademy.org/" class="button" target="_blank">Acesse o Khan Academy</a></p>
-                </div>
-                <div>
-                    <h3>Coquinhos</h3>
-                    <img src="https://www.especiaismomentos.com.br/wp-content/uploads/2022/01/coq.jpg" alt="BioDigital Human" style="width:100%; border-radius: 5px;">
-                    <p>Coquinhos é um site que contém milhares de jogos educativos online gratuitos, jogos educativos como o sistema solar, o corpo humano, das ciências naturais ou ciências sociais em geral.</p>
-                    <p><a href="https://www.coquinhos.com/" class="button" target="_blank">Acesse o Coquinhos</a></p>
-                </div>
-                <div>
-                    <h3>PlanetaBio</h3>
-                    <img src="https://www.researchgate.net/publication/335041495/figure/fig1/AS:789617842343936@1565270972292/Figura-3-Layout-do-site-Plabetabiocom-as-abas-do-Reino-Animalia-visiveis-Fonte.ppm" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>O site PlanetaBio é voltado para o ensino de ciências biológicas e traz assuntos como: Citologia, Genética, Botânica, Ecologia, Evolução, Fisiologia, Embriologia e Zoologia. Os conteúdos são elaborados de forma multímidia com diversas animações.</p>
-                    <p><a href="https://www.planetabio.com.br/" class="button" target="_blank">Acesse o PlanetaBio</a></p>
-                </div>
-                
+                <!-- Conteúdo existente das ferramentas -->
             </div>
         </section>
 
         <section id="dicas">
             <h2 class="section-title">Dicas de Estudo</h2>
             <div class="content tips-section">
-                <div>
-                    <h3>Dica 1: Estabeleça horários fixos</h3>
-                    <p>A primeira dica para estudar em casa é definir horários fixos de estudo, de modo a manter uma rotina programada e criar um hábito.</p>
-                </div>
-                <div>
-                    <h3>Dica 2: Escolha um local de estudos adequado</h3>
-                    <p>Não é porque você está na sua casa que qualquer local serve para estudar. É essencial procurar o espaço adequado para esse momento, de modo a manter a concentração e melhorar o seu desempenho.</p>
-                </div>
-                <div>
-                    <h3>Dica 3: Elimine distrações</h3>
-                    <p>As distrações são grandes vilãs de quem estuda em casa. É muito fácil deixar se levar por estímulos que atrapalham o estudo, como televisão, computador e notificações do celular.</p>
-                </div>
-                <div>
-                    <h3>Dica 4: Faça anotações</h3>
-                    <p>Outra estratégia interessante para o seu estudo em casa ser produtivo é fazer anotações sobre as disciplinas e matérias que são vistas diariamente.</p>
-                </div>
-                <div>
-                    <h3>Dica 5: Conte com o auxílio da tecnologia</h3>
-                    <p>A tecnologia também oferece recursos que podem qualificar o seu estudo e trazer bons aprendizados de uma forma dinâmica e mais atraente.</p>
-                </div>
-                <div>
-                    <h3>Dica 6: Crie um cronograma de estudos</h3>
-                    <p>Outra dica relevante é criar um cronograma que direcionará a sua estratégia. Quando a pessoa não sabe o que estudar, é normal ela perder a motivação nos estudos e deixar essa atividade de lado.</p>
-                </div>
-                <div>
-                    <h3>Dica 7: Faça Resumos</h3>
-                    <p>Sem dúvidas, os resumos são uma ótima ferramenta para garantir a absorção máxima e a fixação do conteúdo. Eles também permitem revisitar os tópicos mais importantes sempre que for necessário.</p>
-                </div>
-                <div>
-                    <h3>Dica 8: Resolva exercícios</h3>
-                    <p>Resolver exercícios é outra maneira de verificar se, na prática, o conteúdo foi realmente absorvido. Muitos alunos deixam essa etapa para o final dos estudos.</p>
-                </div>
-                <div>
-                    <h3>Dica 9: Desenvolva mapas mentais</h3>
-                    <p>Para estudar em casa de forma mais produtiva: elaborar mapas mentais. Que podem serem elaborados por associações, com muitas cores, frases-chave, setas, entre outros destaques.</p>
-                </div>
-                <div>
-                    <h3>Dica 10: Tenha momentos de descanso e lazer</h3>
-                    <p>Os momentos de descanso e lazer também são importantes para manter a motivação nos estudos, afinal, ninguém consegue ficar horas estudando sem relaxar um pouco. </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="noticias">
-            <h2 class="section-title">Notícias</h2>
-            <div class="content">
-                <div>
-                    <h3>Onças-pintadas estão sendo 'expulsas' da Mata Atlântica pela ação humana, mostra estudo</h3>
-                    <img src="https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/0e0d/live/b3aa2f50-2377-11ef-8ff0-29fa9de7b50f.jpg.webp" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>Um monitoramento realizado desde 2017 em uma das poucas áreas ainda preservadas da Mata Atlântica reuniu dados preocupantes sobre a onça-pintada, um dos animais símbolos da fauna brasileira.</p>
-                    <a href="https://www.bbc.com/portuguese/articles/c4nnxzly84vo" class="button" target="_blank">Leia Mais</a>
-                </div>
-                <div>
-                    <h3>Pepino-do-mar translúcido e outros seres bizarros são descobertos no Pacífico</h3>
-                    <img src="https://s2-galileu.glbimg.com/UPK-48Ju6oNpbBFSzctB_8fgAqE=/540x304/top/smart/https://i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2024/e/B/OBdJ55T8aBHIAWr55hhA/4-unicimber.png" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>Zona a mais de 3 mil metros nas profundezas, explorada em expedição para mapear biodiversidade, é alvo de projetos de mineração que ameaçam a sobrevivência das espécies.</p>
-                    <a href="https://revistagalileu.globo.com/ciencia/biologia/noticia/2024/06/pepino-do-mar-translucido-e-outros-seres-bizarros-sao-descobertos-no-pacifico.ghtml" class="button" target="_blank">Leia Mais</a>
-                </div>
-                <div>
-                    <h3>Esta pequena (e rara) planta é o ser vivo com o maior genoma do mundo</h3>
-                    <img src="https://s2-galileu.glbimg.com/8JFNnhCTnUfqwOEpflIiiRtBsVU=/0x0:1920x1080/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_fde5cd494fb04473a83fa5fd57ad4542/internal_photos/bs/2024/Y/E/zB7AQ1Rdm0MBKwTQuxBg/puro-suco-de-fait-divers-4-.jpg" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>DNA desenrolado da samambaia "Tmesipteris oblanceolata" mede mais de 106 metros e é maior do que a torre onde fica o Big Ben, em Londres.</p>
-                    <a href="https://revistagalileu.globo.com/ciencia/biologia/noticia/2024/06/esta-pequena-e-rara-planta-e-o-ser-vivo-com-o-maior-genoma-do-mundo.ghtml" class="button" target="_blank">Leia Mais</a>
-                </div>
-                <div>
-                    <h3>Brasileira descobre como vírus da covid-19 engana sistema imunológico</h3>
-                    <img src="https://veja.abril.com.br/wp-content/uploads/2024/04/fusion-medical-animation-npjP0dCtoxo-unsplash.jpg?quality=90&strip=info&w=1280&h=720&crop=1" alt="Anki" style="width:100%; border-radius: 5px;">
-                    <p>Cientista de Harvard identificou mecanismo que permite ao patógeno escapar das células de defesa - o que abre caminho a novas estratégias terapêuticas.</p>
-                    <a href="https://veja.abril.com.br/saude/brasileira-descobre-como-virus-da-covid-19-engana-sistema-imunologico/" class="button" target="_blank">Leia Mais</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato">
-            <h2 class="section-title">Contato</h2>
-            <div class="content" style="display: flex; justify-content: center;">
-                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                    <label for="nome">Nome:</label><br>
-                    <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" /><br><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required /><br><br>
-                    <label for="mensagem">Mensagem:</label><br>
-                    <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem" rows="4"></textarea><br><br>
-                    <button type="submit" id="enviar" class="button">Enviar</button>
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://samukatech.netlify.app/pla_biologia.html">
-                    <input type="hidden" name="_template" value="table">
-                </form>
-                <br id="mensagem-status">
+                <!-- Conteúdo existente das dicas -->
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Explorando a Vida - Estudo de Biologia. Todos os direitos reservados.</p>
+        <!-- Conteúdo do rodapé -->
     </footer>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
 
-        // código referente ao formulário de contato
-document.getElementById("meu_form").addEventListener("submit", function(event) {
-            event.preventDefault();
-    
-            var nome = document.getElementById("nomeid").value;
-            var email = document.getElementById("emailid").value;
-            var mensa = document.getElementById("menid").value;
-    
-            if (nome && email && mensa) {
-                var submitButton = document.getElementById("enviar");
-                var mensagemStatus = document.getElementById("mensagem-status");
-    
-                submitButton.disabled = true;
-                submitButton.textContent = "Enviando...";
-                mensagemStatus.textContent = "";
-    
-                var formData = new FormData(this);
-    
-                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                })
-                .catch(error => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                });
+        function showNextSlide() {
+            currentIndex++;
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
             }
-        });
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
     </script>
 </body>
 </html>
+
