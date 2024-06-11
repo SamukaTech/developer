@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorando a Vida - Estudo de Biologia</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -131,6 +130,9 @@
         }
         form input[type="submit"]:hover {
             background-color: #006400;
+        }
+        #mensagem-status {
+            text-align: center;
         }
         .swiper-container {
             width: 100%;
@@ -428,23 +430,30 @@
         </section>
 
         <section id="contato">
-            <h2 class="section-title">Contato</h2>
-            <div class="content" style="display: flex; justify-content: center;">
-                <form>
-                    <label for="nome">Nome:</label><br>
-                    <input type="text" id="nome" name="nome"><br><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br><br>
-                    <label for="mensagem">Mensagem:</label><br>
-                    <textarea id="mensagem" name="mensagem" rows="4"></textarea><br><br>
-                    <input type="submit" value="Enviar" class="button">
+            <div class="container">
+                <h2 id="cont">Entre em Contato</h2>
+                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+                    <label for="email">Email:</label>
+                    <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                    <button type="submit" class="btn" id="enviar">Enviar</button>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                    <input type="hidden" name="_template" value="table">
                 </form>
+                <br>
+                <div id="mensagem-status"></div>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Explorando a Vida - Estudo de Biologia. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
             loop: true,
@@ -456,6 +465,43 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+        });
+
+        // código referente ao formulário de contato
+document.getElementById("meu_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            var nome = document.getElementById("nomeid").value;
+            var email = document.getElementById("emailid").value;
+            var mensa = document.getElementById("menid").value;
+    
+            if (nome && email && mensa) {
+                var submitButton = document.getElementById("enviar");
+                var mensagemStatus = document.getElementById("mensagem-status");
+    
+                submitButton.disabled = true;
+                submitButton.textContent = "Enviando...";
+                mensagemStatus.textContent = "";
+    
+                var formData = new FormData(this);
+    
+                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                    this.reset();
+                })
+                .catch(error => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                    this.reset();
+                });
+            }
         });
     </script>
 </body>
