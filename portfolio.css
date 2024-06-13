@@ -6,6 +6,8 @@ body {
 
 .portfolio {
     background-color: #c1fba4; /* Cor de fundo da seção de portfólio */
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-abstrato-da-curva-verde_53876-99569.jpg?t=st=1718308233~exp=1718308833~hmac=ae8f724ff6bfec2e059f750ab0fe068fca520e9e47892ba85d231553b67ffed9);
+    background-size: cover;
     padding: 20px;
     text-align: center;
 }
