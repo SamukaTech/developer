@@ -223,14 +223,14 @@ button:hover {
 #bot_port {
     margin-top: 15px;
     padding: 12px 22px;
-    background-color: #ffe710;
+    background-color: #0400fa;
     color: rgb(0, 0, 0);
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 #bot_port:hover {
-    background-color: #d4c600;
+    background-color: #001bb3;
 }
 
 #mensagem-status {
