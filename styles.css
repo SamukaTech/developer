@@ -212,6 +212,19 @@ button:hover {
     background-color: #555;
 }
 
+#bot_port {
+    margin-top: 15px;
+    padding: 12px 22px;
+    background-color: #1daf00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#bot_port:hover {
+    background-color: #0a7a00;
+}
+
 #mensagem-status {
     text-align: center;
 }
