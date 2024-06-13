@@ -84,6 +84,8 @@ header {
 
 .services {
     background-color: #00bbf9; /* Cor de fundo da seção de serviços */
+    background-image: url(https://static.vecteezy.com/system/resources/previews/001/377/174/large_2x/abstract-gradient-blue-angled-lines-design-vector.jpg);
+    background-size: cover;
     padding: 20px;
     text-align: center;
 }
@@ -117,6 +119,8 @@ header {
 
 .portfolio {
     background-color: #c1fba4; /* Cor de fundo da seção de portfólio */
+    background-image: url(https://i.pinimg.com/originals/11/a0/5d/11a05dae6baf0719508a144644f7833e.jpg);
+    background-size: cover;
     padding: 20px;
     text-align: center;
 }
@@ -156,6 +160,8 @@ header {
 
 .testimonials {
     background-color: #fcefb4; /* Cor de fundo da seção de depoimentos */
+    background-image: url(https://www.desktopbackground.org/download/2304x864/2013/07/17/608845_download-wallpapers-3840x1200-abstraction-yellow-white-line-dual_3840x1200_h.jpg);
+    background-size: cover;
     padding: 20px;
     text-align: center;
 }
@@ -174,6 +180,8 @@ header {
 
 #contato h2 {
     text-align: center;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/309/792/original/white-waves-background-free-vector.jpg);
+    background-size: cover;
 }
 
 #contato form {
