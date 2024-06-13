@@ -223,8 +223,8 @@ button:hover {
 #bot_port {
     margin-top: 15px;
     padding: 12px 22px;
-    background-color: #0400fa;
-    color: rgb(0, 0, 0);
+    background-color: rgb(4, 0, 255);
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
     cursor: pointer;
