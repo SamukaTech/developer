@@ -79,6 +79,7 @@ header {
     0% { transform: translateX(0); }
     33% { transform: translateX(-100%); }
     66% { transform: translateX(-200%); }
+    88% { transform: translateX(-300%); } /* Linha de código para aparecer a quarta imagem*/
     100% { transform: translateX(0); }
 }
 
