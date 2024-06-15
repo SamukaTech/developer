@@ -59,7 +59,7 @@ header {
 
 .slider {
     display: flex;
-    animation: slide 15s infinite;
+    animation: slide 20s infinite;
 }
 
 .slider img {
