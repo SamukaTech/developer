@@ -116,67 +116,6 @@
         return isFormValid;
     };
 </script>
-<section id="contato">
-    <div class="container">
-        <h2>Entre em Contato</h2>
-        <form id="meu_form" name="meu_form" method="post" enctype="multipart/form-data" autocomplete="off">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-            <label for="email">Email:</label>
-            <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
-            <label for="mensagem">Mensagem:</label>
-            <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-            <button type="submit" class="btn" id="enviar">Enviar</button>
-            <input type="hidden" name="_captcha" value="false">
-        </form>
-        <p id="confirmationMessage" style="display:none;">Sua mensagem foi enviada com sucesso!</p>
-    </div>
-</section>
-
-<script>
-    function validarForm() {
-        var nome = document.getElementById("nomeid").value;
-        var email = document.getElementById("emailid").value;
-        var mensagem = document.getElementById("menid").value;
-
-        if (nome !== "" && email !== "" && mensagem !== "") {
-            return true;
-        }
-        alert('Por favor, preencha todos os campos.');
-        return false;
-    }
-
-    document.getElementById('meu_form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio normal do formulário
-        if (validarForm()) {
-            var submitButton = document.getElementById("enviar");
-            submitButton.disabled = true;
-            submitButton.innerText = 'Enviando...';
-
-            var formData = new FormData(this);
-
-            fetch('https://formsubmit.co/samuel.araujonascimento.98@gmail.com', {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('confirmationMessage').style.display = 'block';
-                    submitButton.innerText = 'Enviar';
-                    submitButton.disabled = false;
-                    document.getElementById('meu_form').reset(); // Reseta o formulário após o envio
-                } else {
-                    alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-                    submitButton.innerText = 'Enviar';
-                    submitButton.disabled = false;
-                }
-            }).catch(error => {
-                alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
-                submitButton.innerText = 'Enviar';
-                submitButton.disabled = false;
-            });
-        }
-    });
-</script>
 
     <footer>
         <div class="container">
