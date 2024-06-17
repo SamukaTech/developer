@@ -94,6 +94,18 @@
       width: 24px;
       height: 24px;
     }
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1000;
+    }
     .footer {
       margin-top: 20px;
       color: #777;
@@ -121,18 +133,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-    .popup {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      display: none;
-      z-index: 1000;
     }
     @media (min-width: 768px) {
       input[type="text"], .task-list {
@@ -198,6 +198,8 @@
         li.textContent = task;
 
         const buttonDiv = document.createElement('div');
+        buttonDiv.style.display = 'flex';
+        buttonDiv.style.gap = '5px'; // Ajusta a proximidade dos ícones
 
         const deleteButton = document.createElement('button');
         const deleteImage = document.createElement('img');
@@ -272,6 +274,7 @@
     function showMessage(message, isWarning = false) {
       const popup = isWarning ? document.getElementById('meuPopupAviso') : document.getElementById('meuPopup');
       const messageElement = isWarning ? document.getElementById('mensagemAviso') : document.getElementById('mensagem');
+
       messageElement.innerText = message;
       popup.style.display = 'block';
 
@@ -282,5 +285,4 @@
   </script>
 
 </body>
-    </html>
-  
+</html>
