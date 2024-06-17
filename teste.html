@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anotações</title>
+  <link rel="icon" href="imagens/lt.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #444;
+    }
+    input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #botadiciona {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #botadiciona:hover {
+      background-color: #45a049;
+    }
+    #botsalva {
+      background-color: #008CBA;
+      color: white;
+    }
+    #botsalva:hover {
+      background-color: #007bb5;
+    }
+    #botlimpa {
+      background-color: #f44336;
+      color: white;
+    }
+    #botlimpa:hover {
+      background-color: #da190b;
+    }
+    .task-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .task-list li {
+      background: #fff;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .task-list li div {
+      display: flex;
+      gap: 10px;
+    }
+    .task-list button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .task-list button:hover {
+      transform: scale(1.1);
+    }
+    .task-list img {
+      width: 24px;
+      height: 24px;
+    }
+    .footer {
+      margin-top: 20px;
+      color: #777;
+      font-size: 12px;
+    }
+    .footer .icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .footer .icons a:hover {
+      transform: translateY(-10px);
+    }
+    .footer .icons a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1000;
+    }
+    @media (min-width: 768px) {
+      .container {
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="meuPopup" class="popup">
+    <p id="mensagem"></p>
+  </div>
+
+  <div id="meuPopupAviso" class="popup">
+    <p id="mensagemAviso"></p>
+  </div>
+
+  <div class="container">
+    <h1>📝 Anotações</h1>
+    <input type="text" id="taskInput" placeholder="Digite uma anotação">
+    <button onclick="addTask()" id="botadiciona">Adicionar</button>
+
+    <ul id="taskList" class="task-list">
+      <!-- As tarefas serão adicionadas aqui -->
+    </ul>
+
+    <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
+    <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+
+    <footer class="footer">
+      <div class="icons">
+        <a href="https://samukatech.github.io/developer/">
+          <img src="c:/Users/samue/OneDrive/Documents/Imagens/icon-samukatech9.jpg" alt="Ícone 1">
+        </a>
+      </div>
+      <div class="text">
+        <p>&copy; Samukatech - 2024</p>
+        <p>Desenvolvido por: Samuel Araújo.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Array para armazenar as tarefas
+    let tasks = [];
+
+    // Função para adicionar uma tarefa
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const task = taskInput.value.trim();
+      if (task !== '') {
+        tasks.push(task);
+        taskInput.value = ''; // Limpa o valor da caixa de texto antes de adicionar a tarefa
+        displayTasks();
+      }
+    }
+
+    // Função para exibir as tarefas
+    function displayTasks() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.textContent = task;
+
+        const buttonDiv = document.createElement('div');
+
+        const deleteButton = document.createElement('button');
+        const deleteImage = document.createElement('img');
+        deleteImage.src = "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-png-tempat-sampah-organik-merah-png-image_6107121.png";
+        deleteImage.alt = "Deletar";
+
+        deleteButton.addEventListener('click', function() {
+          removeTask(index);
+        });
+        deleteButton.appendChild(deleteImage);
+
+        const editButton = document.createElement('button');
+        const editImage = document.createElement('img');
+        editImage.src = "https://cdn-icons-png.flaticon.com/512/4226/4226577.png";
+        editImage.alt = "Editar";
+
+        editButton.addEventListener('click', function() {
+          editTask(index);
+        });
+        editButton.appendChild(editImage);
+
+        buttonDiv.appendChild(editButton);
+        buttonDiv.appendChild(deleteButton);
+
+        li.appendChild(buttonDiv);
+        taskList.appendChild(li);
+      });
+      saveTasks();
+    }
+
+    // Função para remover uma tarefa
+    function removeTask(index) {
+      tasks.splice(index, 1);
+      displayTasks();
+    }
+
+    // Função para salvar as tarefas
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      showMessage('Anotações salvas com sucesso! 🎉');
+    }
+
+    // Função para limpar as tarefas
+    function clearTasks() {
+      const confirmation = confirm('Tem certeza de que deseja apagar todas as anotações?');
+      if (confirmation) {
+        tasks = [];
+        displayTasks();
+        localStorage.removeItem('tasks');
+        showMessage('Todas as anotações foram apagadas com sucesso!', true);
+      }
+    }
+
+    // Função para editar uma tarefa
+    function editTask(index) {
+      const newTask = prompt('Editar a anotação:', tasks[index]);
+      if (newTask !== null) {
+        tasks[index] = newTask.trim();
+        displayTasks();
+      }
+    }
+
+    // Verificar se há tarefas salvas
+    window.onload = function() {
+      const storedTasks = localStorage.getItem('tasks');
+      if (storedTasks) {
+        tasks = JSON.parse(storedTasks);
+        displayTasks();
+      }
+    }
+
+    // Função para exibir mensagens
+    function showMessage(message, isWarning = false) {
+      const popup = isWarning ? document.getElementById('meuPopupAviso') : document.getElementById('meuPopup');
+      const messageElement = isWarning ? document.getElementById('mensagemAviso') : document.getElementById('mensagem');
+      messageElement.innerText = message;
+      popup.style.display = 'block';
+
+      setTimeout(function() {
+        popup.style.display = 'none';
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
