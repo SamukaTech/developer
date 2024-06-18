@@ -171,6 +171,7 @@
   </ul>
 
   <div class="button-container">
+    <button onclick="markAllCompleted()" id="botmarcar">Marcar Todas Como Concluídas</button>
     <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
     <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
   </div>
@@ -262,6 +263,12 @@
       displayTasks();
     }
 
+    // Função para marcar todas as tarefas como concluídas
+    function markAllCompleted() {
+      tasks.forEach(task => task.completed = true);
+      displayTasks();
+    }
+
     // Função para remover uma tarefa
     function removeTask(index) {
       tasks.splice(index, 1);
@@ -271,7 +278,7 @@
     // Função para salvar as tarefas
     function saveTasks() {
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      showMessage('Anotações salvas com sucesso! 🎉');
+      showMessage('Anotações salvas com sucesso!');
     }
 
     // Função para limpar as tarefas
@@ -316,5 +323,4 @@
   </script>
 
 </body>
-  </html>
-  
+</html>
