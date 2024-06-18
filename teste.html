@@ -17,6 +17,7 @@
       justify-content: center;
       min-height: 100vh;
       color: #333;
+      padding: 20px;
     }
     h1 {
       color: #444;
@@ -59,6 +60,12 @@
     #botlimpa:hover {
       background-color: #da190b;
     }
+    .button-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
     .task-list {
       list-style: none;
       padding: 0;
@@ -77,7 +84,11 @@
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    .task-list li div {
+    .task-list li.completed {
+      text-decoration: line-through;
+      color: #888;
+    }
+    .task-list div {
       display: flex;
       gap: 10px;
     }
@@ -159,8 +170,10 @@
     <!-- As tarefas serão adicionadas aqui -->
   </ul>
 
-  <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
-  <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+  <div class="button-container">
+    <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
+    <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+  </div>
 
   <footer class="footer">
     <div class="icons">
@@ -183,7 +196,7 @@
       const taskInput = document.getElementById('taskInput');
       const task = taskInput.value.trim();
       if (task !== '') {
-        tasks.push(task);
+        tasks.push({ text: task, completed: false });
         taskInput.value = ''; // Limpa o valor da caixa de texto antes de adicionar a tarefa
         displayTasks();
       }
@@ -195,21 +208,24 @@
       taskList.innerHTML = '';
       tasks.forEach((task, index) => {
         const li = document.createElement('li');
-        li.textContent = task;
+        li.textContent = task.text;
+        if (task.completed) {
+          li.classList.add('completed');
+        }
 
         const buttonDiv = document.createElement('div');
         buttonDiv.style.display = 'flex';
         buttonDiv.style.gap = '5px'; // Ajusta a proximidade dos ícones
 
-        const deleteButton = document.createElement('button');
-        const deleteImage = document.createElement('img');
-        deleteImage.src = "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-png-tempat-sampah-organik-merah-png-image_6107121.png";
-        deleteImage.alt = "Deletar";
+        const completeButton = document.createElement('button');
+        const completeImage = document.createElement('img');
+        completeImage.src = "https://cdn-icons-png.flaticon.com/512/190/190411.png";
+        completeImage.alt = "Concluir";
 
-        deleteButton.addEventListener('click', function() {
-          removeTask(index);
+        completeButton.addEventListener('click', function() {
+          toggleCompleteTask(index);
         });
-        deleteButton.appendChild(deleteImage);
+        completeButton.appendChild(completeImage);
 
         const editButton = document.createElement('button');
         const editImage = document.createElement('img');
@@ -221,12 +237,29 @@
         });
         editButton.appendChild(editImage);
 
+        const deleteButton = document.createElement('button');
+        const deleteImage = document.createElement('img');
+        deleteImage.src = "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-png-tempat-sampah-organik-merah-png-image_6107121.png";
+        deleteImage.alt = "Deletar";
+
+        deleteButton.addEventListener('click', function() {
+          removeTask(index);
+        });
+        deleteButton.appendChild(deleteImage);
+
+        buttonDiv.appendChild(completeButton);
         buttonDiv.appendChild(editButton);
         buttonDiv.appendChild(deleteButton);
 
         li.appendChild(buttonDiv);
         taskList.appendChild(li);
       });
+    }
+
+    // Função para alternar o estado de conclusão de uma tarefa
+    function toggleCompleteTask(index) {
+      tasks[index].completed = !tasks[index].completed;
+      displayTasks();
     }
 
     // Função para remover uma tarefa
@@ -254,20 +287,18 @@
 
     // Função para editar uma tarefa
     function editTask(index) {
-      const newTask = prompt('Editar a anotação:', tasks[index]);
+      const newTask = prompt('Editar a anotação:', tasks[index].text);
       if (newTask !== null) {
-        tasks[index] = newTask.trim();
+        tasks[index].text = newTask.trim();
         displayTasks();
       }
     }
 
     // Verificar se há tarefas salvas
-    window.onload = function() {
-      const storedTasks = localStorage.getItem('tasks');
-      if (storedTasks) {
-        tasks = JSON.parse(storedTasks);
-        displayTasks();
-      }
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      tasks = JSON.parse(storedTasks);
+      displayTasks();
     }
 
     // Função para exibir mensagens
@@ -285,4 +316,5 @@
   </script>
 
 </body>
-</html>
+  </html>
+  
