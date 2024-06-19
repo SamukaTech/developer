@@ -18,12 +18,24 @@
       min-height: 100vh;
       color: #333;
       padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: #333;
+      color: #f0f2f5;
+    }
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center;
+      margin-bottom: 20px;
     }
     h1 {
       color: #444;
       margin-bottom: 20px;
     }
-    input[type="text"] {
+    input[type="text"], select, input[type="date"], input[type="time"] {
       width: calc(100% - 22px);
       max-width: 500px;
       padding: 10px;
@@ -80,17 +92,19 @@
       border: 1px solid #ddd;
       border-radius: 5px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, color 0.3s;
     }
-    .task-list li.completed {
-      text-decoration: line-through;
-      color: #888;
+    .task-list li.dark-mode {
+      background: #444;
+      color: #f0f2f5;
     }
     .task-list div {
       display: flex;
       gap: 10px;
+      margin-top: 10px;
     }
     .task-list button {
       background: none;
@@ -145,33 +159,91 @@
       height: 100%;
       object-fit: cover;
     }
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 25px;
+      margin-left: 10px;
+    }
+    .toggle-switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 25px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 21px;
+      width: 21px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #008CBA;
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
     @media (min-width: 768px) {
-      input[type="text"], .task-list {
+      input[type="text"], select, input[type="date"], input[type="time"], .task-list {
         width: 50%;
       }
     }
   </style>
 </head>
 <body>
+  <header class="header">
+    <h1>📝 Anotações</h1>
+    <div class="dark-mode-toggle">
+      Modo Escuro
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
 
   <div id="meuPopup" class="popup">
     <p id="mensagem"></p>
   </div>
 
-  <div id="meuPopupAviso" class="popup">
-    <p id="mensagemAviso"></p>
-  </div>
-
-  <h1>📝 Anotações</h1>
   <input type="text" id="taskInput" placeholder="Digite uma anotação">
+  <select id="categoryInput">
+    <option value="">Escolha uma categoria</option>
+    <option value="Trabalho">Trabalho</option>
+    <option value="Pessoal">Pessoal</option>
+    <option value="Estudos">Estudos</option>
+  </select>
+  <input type="date" id="dateInput">
+  <input type="time" id="timeInput">
   <button onclick="addTask()" id="botadiciona">Adicionar</button>
+
+  <input type="text" id="searchInput" placeholder="Pesquisar anotações" onkeyup="searchTasks()">
 
   <ul id="taskList" class="task-list">
     <!-- As tarefas serão adicionadas aqui -->
   </ul>
 
   <div class="button-container">
-    <button onclick="markAllCompleted()" id="botmarcar">Marcar Todas Como Concluídas</button>
     <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
     <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
   </div>
@@ -188,45 +260,38 @@
     </div>
   </footer>
 
+
   <script>
-    // Array para armazenar as tarefas
     let tasks = [];
 
-    // Função para adicionar uma tarefa
     function addTask() {
       const taskInput = document.getElementById('taskInput');
+      const categoryInput = document.getElementById('categoryInput');
+      const dateInput = document.getElementById('dateInput');
+      const timeInput = document.getElementById('timeInput');
       const task = taskInput.value.trim();
+      const category = categoryInput.value;
+      const date = dateInput.value;
+      const time = timeInput.value;
+
       if (task !== '') {
-        tasks.push({ text: task, completed: false });
-        taskInput.value = ''; // Limpa o valor da caixa de texto antes de adicionar a tarefa
+        tasks.push({ text: task, category: category, date: date, time: time });
+        taskInput.value = '';
+        categoryInput.value = '';
+        dateInput.value = '';
+        timeInput.value = '';
         displayTasks();
       }
     }
 
-    // Função para exibir as tarefas
     function displayTasks() {
       const taskList = document.getElementById('taskList');
       taskList.innerHTML = '';
       tasks.forEach((task, index) => {
         const li = document.createElement('li');
-        li.textContent = task.text;
-        if (task.completed) {
-          li.classList.add('completed');
-        }
+        li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
 
         const buttonDiv = document.createElement('div');
-        buttonDiv.style.display = 'flex';
-        buttonDiv.style.gap = '5px'; // Ajusta a proximidade dos ícones
-
-        const completeButton = document.createElement('button');
-        const completeImage = document.createElement('img');
-        completeImage.src = "https://cdn-icons-png.flaticon.com/512/190/190411.png";
-        completeImage.alt = "Concluir";
-
-        completeButton.addEventListener('click', function() {
-          toggleCompleteTask(index);
-        });
-        completeButton.appendChild(completeImage);
 
         const editButton = document.createElement('button');
         const editImage = document.createElement('img');
@@ -248,7 +313,6 @@
         });
         deleteButton.appendChild(deleteImage);
 
-        buttonDiv.appendChild(completeButton);
         buttonDiv.appendChild(editButton);
         buttonDiv.appendChild(deleteButton);
 
@@ -257,42 +321,26 @@
       });
     }
 
-    // Função para alternar o estado de conclusão de uma tarefa
-    function toggleCompleteTask(index) {
-      tasks[index].completed = !tasks[index].completed;
-      displayTasks();
-    }
-
-    // Função para marcar todas as tarefas como concluídas
-    function markAllCompleted() {
-      tasks.forEach(task => task.completed = true);
-      displayTasks();
-    }
-
-    // Função para remover uma tarefa
     function removeTask(index) {
       tasks.splice(index, 1);
       displayTasks();
     }
 
-    // Função para salvar as tarefas
     function saveTasks() {
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      showMessage('Anotações salvas com sucesso!');
+      showPopup('Anotações salvas com sucesso!');
     }
 
-    // Função para limpar as tarefas
     function clearTasks() {
       const confirmation = confirm('Tem certeza de que deseja apagar todas as anotações?');
       if (confirmation) {
         tasks = [];
         displayTasks();
         localStorage.removeItem('tasks');
-        showMessage('Todas as anotações foram apagadas com sucesso!', true);
+        showPopup('Todas as anotações foram apagadas com sucesso!');
       }
     }
 
-    // Função para editar uma tarefa
     function editTask(index) {
       const newTask = prompt('Editar a anotação:', tasks[index].text);
       if (newTask !== null) {
@@ -301,26 +349,69 @@
       }
     }
 
-    // Verificar se há tarefas salvas
-    const storedTasks = localStorage.getItem('tasks');
-    if (storedTasks) {
-      tasks = JSON.parse(storedTasks);
-      displayTasks();
+    function searchTasks() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const filteredTasks = tasks.filter(task => task.text.toLowerCase().includes(searchInput));
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = '';
+      filteredTasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
+
+        const buttonDiv = document.createElement('div');
+
+        const editButton = document.createElement('button');
+        const editImage = document.createElement('img');
+        editImage.src = "https://cdn-icons-png.flaticon.com/512/4226/4226577.png";
+        editImage.alt = "Editar";
+
+        editButton.addEventListener('click', function() {
+          editTask(index);
+        });
+        editButton.appendChild(editImage);
+
+        const deleteButton = document.createElement('button');
+        const deleteImage = document.createElement('img');
+        deleteImage.src = "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-png-tempat-sampah-organik-merah-png-image_6107121.png";
+        deleteImage.alt = "Deletar";
+
+        deleteButton.addEventListener('click', function() {
+          removeTask(index);
+        });
+        deleteButton.appendChild(deleteImage);
+
+        buttonDiv.appendChild(editButton);
+        buttonDiv.appendChild(deleteButton);
+
+        li.appendChild(buttonDiv);
+        taskList.appendChild(li);
+      });
     }
 
-    // Função para exibir mensagens
-    function showMessage(message, isWarning = false) {
-      const popup = isWarning ? document.getElementById('meuPopupAviso') : document.getElementById('meuPopup');
-      const messageElement = isWarning ? document.getElementById('mensagemAviso') : document.getElementById('mensagem');
-
-      messageElement.innerText = message;
+    function showPopup(message) {
+      const popup = document.getElementById('meuPopup');
+      const mensagem = document.getElementById('mensagem');
+      mensagem.innerText = message;
       popup.style.display = 'block';
-
       setTimeout(function() {
         popup.style.display = 'none';
       }, 4000);
     }
-  </script>
 
+    function toggleDarkMode() {
+      const body = document.body;
+      const taskListItems = document.querySelectorAll('.task-list li');
+      body.classList.toggle('dark-mode');
+      taskListItems.forEach(item => item.classList.toggle('dark-mode'));
+    }
+
+    window.onload = function() {
+      const savedTasks = localStorage.getItem('tasks');
+      if (savedTasks) {
+        tasks = JSON.parse(savedTasks);
+        displayTasks();
+      }
+    }
+  </script>
 </body>
 </html>
