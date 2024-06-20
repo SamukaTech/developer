@@ -34,7 +34,7 @@
     }
     h1 {
       color: #444;
-      margin-bottom: 20px;
+      margin-bottom: 40px; /* Aumentar a distância do título */
       transition: color 0.3s;
     }
     body.dark-mode h1 {
@@ -259,11 +259,11 @@
     <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
     <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
   </div>
-<br><br>
+
   <footer class="footer">
     <div class="icons">
-      <a href="https://samukatech.github.io/developer/">
-        <img src="imagens/icon-samukatech9.2.png" alt="Ícone 1">
+      <a href="https://www.youtube.com/@SamukaTech" target="_blank">
+        <img src="c:/Users/samue/OneDrive/Documents/Imagens/icon-samukatech9.2.png" alt="Ícone 1">
       </a>
     </div>
     <div class="text">
@@ -274,7 +274,8 @@
 
   <script>
     let tasks = [];
-
+    let filteredTasks = [];
+    
     function addTask() {
       const taskInput = document.getElementById('taskInput');
       const categoryInput = document.getElementById('categoryInput');
@@ -298,11 +299,11 @@
     function displayTasks() {
       const taskList = document.getElementById('taskList');
       taskList.innerHTML = '';
-      tasks.forEach((task, index) => {
+      const tasksToDisplay = filteredTasks.length > 0 ? filteredTasks : tasks;
+      tasksToDisplay.forEach((task, index) => {
         const li = document.createElement('li');
         li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
         
-        // Verificar se o modo escuro está ativo
         if (document.body.classList.contains('dark-mode')) {
           li.classList.add('dark-mode');
         }
@@ -315,7 +316,7 @@
         editImage.alt = "Editar";
 
         editButton.addEventListener('click', function() {
-          editTask(index);
+          editTask(index, tasksToDisplay === filteredTasks);
         });
         editButton.appendChild(editImage);
 
@@ -325,7 +326,7 @@
         deleteImage.alt = "Deletar";
 
         deleteButton.addEventListener('click', function() {
-          removeTask(index);
+          removeTask(index, tasksToDisplay === filteredTasks);
         });
         deleteButton.appendChild(deleteImage);
 
@@ -337,8 +338,14 @@
       });
     }
 
-    function removeTask(index) {
-      tasks.splice(index, 1);
+    function removeTask(index, isFiltered) {
+      if (isFiltered) {
+        const taskToRemove = filteredTasks[index];
+        tasks = tasks.filter(task => task !== taskToRemove);
+        filteredTasks.splice(index, 1);
+      } else {
+        tasks.splice(index, 1);
+      }
       displayTasks();
     }
 
@@ -357,55 +364,19 @@
       }
     }
 
-    function editTask(index) {
-      const newTask = prompt('Editar a anotação:', tasks[index].text);
+    function editTask(index, isFiltered) {
+      const taskToEdit = isFiltered ? filteredTasks[index] : tasks[index];
+      const newTask = prompt('Editar a anotação:', taskToEdit.text);
       if (newTask !== null) {
-        tasks[index].text = newTask.trim();
+        taskToEdit.text = newTask.trim();
         displayTasks();
       }
     }
 
     function searchTasks() {
       const searchInput = document.getElementById('searchInput').value.toLowerCase();
-      const filteredTasks = tasks.filter(task => task.text.toLowerCase().includes(searchInput));
-      const taskList = document.getElementById('taskList');
-      taskList.innerHTML = '';
-      filteredTasks.forEach((task, index) => {
-        const li = document.createElement('li');
-        li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
-
-        if (document.body.classList.contains('dark-mode')) {
-          li.classList.add('dark-mode');
-        }
-
-        const buttonDiv = document.createElement('div');
-
-        const editButton = document.createElement('button');
-        const editImage = document.createElement('img');
-        editImage.src = "https://cdn-icons-png.flaticon.com/512/4226/4226577.png";
-        editImage.alt = "Editar";
-
-        editButton.addEventListener('click', function() {
-          editTask(index);
-        });
-        editButton.appendChild(editImage);
-
-        const deleteButton = document.createElement('button');
-        const deleteImage = document.createElement('img');
-        deleteImage.src = "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-png-tempat-sampah-organik-merah-png-image_6107121.png";
-        deleteImage.alt = "Deletar";
-
-        deleteButton.addEventListener('click', function() {
-          removeTask(index);
-        });
-        deleteButton.appendChild(deleteImage);
-
-        buttonDiv.appendChild(editButton);
-        buttonDiv.appendChild(deleteButton);
-
-        li.appendChild(buttonDiv);
-        taskList.appendChild(li);
-      });
+      filteredTasks = tasks.filter(task => task.text.toLowerCase().includes(searchInput));
+      displayTasks();
     }
 
     function showPopup(message) {
@@ -435,4 +406,3 @@
   </script>
 </body>
 </html>
-
