@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f2f5;
+      background-color: #eef0eb;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -27,21 +27,33 @@
     .header {
       width: 100%;
       display: flex;
-      justify-content: center; /* Centraliza horizontalmente */
+      justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      position: relative;
     }
     h1 {
       color: #444;
       margin-bottom: 20px;
+      transition: color 0.3s;
     }
-    input[type="text"], select, input[type="date"], input[type="time"] {
+    body.dark-mode h1 {
+      color: #f0f2f5;
+    }
+    input[type="text"], select, input[type="date"], input[type="time"], #searchInput {
       width: calc(100% - 22px);
       max-width: 500px;
       padding: 10px;
+      background-color: #fbfefb;
       margin: 10px 0;
       border: 1px solid #ddd;
       border-radius: 5px;
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+    body.dark-mode input[type="text"], body.dark-mode select, body.dark-mode input[type="date"], body.dark-mode input[type="time"], body.dark-mode #searchInput {
+      background-color: #444;
+      border-color: #555;
+      color: #f0f2f5;
     }
     button {
       padding: 10px 20px;
@@ -52,25 +64,25 @@
       transition: background-color 0.3s ease;
     }
     #botadiciona {
-      background-color: #4CAF50;
+      background-color: #38b000;
       color: white;
     }
     #botadiciona:hover {
-      background-color: #45a049;
+      background-color: #008000;
     }
     #botsalva {
-      background-color: #008CBA;
+      background-color: #0466c8;
       color: white;
     }
     #botsalva:hover {
-      background-color: #007bb5;
+      background-color: #072ac8;
     }
     #botlimpa {
-      background-color: #f44336;
+      background-color: #e61616;
       color: white;
     }
     #botlimpa:hover {
-      background-color: #da190b;
+      background-color: #d11306;
     }
     .button-container {
       display: flex;
@@ -86,7 +98,7 @@
       max-width: 500px;
     }
     .task-list li {
-      background: #fff;
+      background: #f8f9fa;
       padding: 10px;
       margin: 10px 0;
       border: 1px solid #ddd;
@@ -161,7 +173,7 @@
     }
     .dark-mode-toggle {
       position: absolute;
-      top: 20px;
+      top: 5px;
       right: 20px;
       display: flex;
       align-items: center;
@@ -214,10 +226,10 @@
   <header class="header">
     <h1>📝 Anotações</h1>
     <div class="dark-mode-toggle">
-      Modo Escuro
       <label class="toggle-switch">
         <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
         <span class="slider"></span>
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/partly-cloudy-day--v1.png" alt="Modo Escuro" style="position: absolute; right: -40px; top: -3px;">
       </label>
     </div>
   </header>
@@ -247,11 +259,11 @@
     <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
     <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
   </div>
-
+<br><br>
   <footer class="footer">
     <div class="icons">
       <a href="https://samukatech.github.io/developer/">
-        <img src="c:/Users/samue/OneDrive/Documents/Imagens/icon-samukatech9.jpg" alt="Ícone 1">
+        <img src="imagens/icon-samukatech9.2.png" alt="Ícone 1">
       </a>
     </div>
     <div class="text">
@@ -259,7 +271,6 @@
       <p>Desenvolvido por: Samuel Araújo.</p>
     </div>
   </footer>
-
 
   <script>
     let tasks = [];
@@ -290,6 +301,11 @@
       tasks.forEach((task, index) => {
         const li = document.createElement('li');
         li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
+        
+        // Verificar se o modo escuro está ativo
+        if (document.body.classList.contains('dark-mode')) {
+          li.classList.add('dark-mode');
+        }
 
         const buttonDiv = document.createElement('div');
 
@@ -358,6 +374,10 @@
         const li = document.createElement('li');
         li.textContent = task.text + (task.category ? ' [' + task.category + ']' : '') + (task.date ? ' ' + task.date : '') + (task.time ? ' ' + task.time : '');
 
+        if (document.body.classList.contains('dark-mode')) {
+          li.classList.add('dark-mode');
+        }
+
         const buttonDiv = document.createElement('div');
 
         const editButton = document.createElement('button');
@@ -415,3 +435,4 @@
   </script>
 </body>
 </html>
+
