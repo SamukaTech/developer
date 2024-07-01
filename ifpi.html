@@ -37,8 +37,66 @@
 		<br>
 	</nav>
 
-	<br><br><br>
-	
+	<br><br>
+
+	<div class="slider">
+		<div class="slide">
+		  <a href=""><img src="imagens/museu.jpg" alt="Imagem 1"></a>
+		</div>
+		<div class="slide">
+		  <a href=""><img src="imagens/lab.jpg" alt="Imagem 2"></a>
+		</div>
+		<div class="slide">
+			<a href=""><img src="imagens/arvore.jpg" alt="Imagem 3"></a>
+		</div>
+		<div class="slide">
+			<a href=""><img src="imagens/lab3.jpg" alt="Imagem 4"></a>
+		  </div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		<div class="dot-container">
+		  <span class="dot" onclick="currentSlide(1)"></span>
+		  <span class="dot" onclick="currentSlide(2)"></span>
+		  <span class="dot" onclick="currentSlide(3)"></span>
+		  <span class="dot" onclick="currentSlide(4)"></span>
+		</div>
+	  </div>
+
+	  <script>
+		let slideIndex = 0;
+let timeout;
+
+showSlides();
+
+function showSlides() {
+let i;
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) { slideIndex = 1 }
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].className += " active";
+clearTimeout(timeout);
+timeout = setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
+function plusSlides(n) {
+clearTimeout(timeout);
+showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+clearTimeout(timeout);
+showSlides(slideIndex = n);
+}
+	  </script>
+	<br><br>
 	<fieldset id="curso">
 		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSMVZdybTt79ULAIhmZLF5bv54iCp8KsXQPQ&usqp=CAU" id="imgcurso" alt=""><br>
 		<strong id="campus">Campus:</strong> <b id="local">Teresina Central</b><br>
