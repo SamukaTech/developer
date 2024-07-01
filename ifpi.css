@@ -38,6 +38,63 @@ nav {
     padding: 10px;
     text-align: center;
 }
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    }
+    
+    .slide {
+    display: none;
+    }
+    
+    .slide img {
+    width: 100%;
+    }
+    
+    .active {
+    display: block;
+    }
+    
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    user-select: none;
+    }
+    
+    .prev {
+    left: 0;
+    }
+    
+    .next {
+    right: 0;
+    }
+    
+    .dot-container {
+    text-align: center;
+    }
+    
+    .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 8px;
+    background-color: #a3a3a3;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    }
+    
+    .dot.active {
+    background-color: #059700;
+    }
 #buton {
     border: 1px solid rgb(2, 70, 0);
     border-radius: 6px;
@@ -268,6 +325,10 @@ h2 {
 nav {
     flex-direction: row;
 }
+.slider {
+    width: 100%;
+    margin: 0 auto; /* Centraliza o slider */
+  }
 #buton {
     padding: 10px;
 }
