@@ -176,7 +176,7 @@ nav {
 }
 #disc {
     border: 1px solid rgb(7, 7, 7);
-    background-color: #FFF5EE;
+    background-color: #50ffb1;
     padding: 5px;
 }
 #legdisc {
@@ -186,7 +186,7 @@ nav {
     text-align: center;
     font-size: 21px;
     font-weight: bold;
-    background-color: #defcf9;
+    background-color: #b2f7ef;
 }
 #nomprof{
     font-size: 14px;
@@ -200,8 +200,8 @@ nav {
     flex-wrap: wrap;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
-    color: #13542d;
-    background-color: #f0fffe;
+    color: #095f0a;
+    background-color: #f6fff8;
     font-size: 19px;
     padding: 16px;
 }
@@ -219,7 +219,8 @@ nav {
 }
 #bot:hover:not(.active) {
     background-color: rgb(93, 255, 174);
-    color: rgb(235, 0, 0);
+    color: navy;
+    border: 1px solid navy;
     border-radius: 5px 12px 5px 12px;
     background-position: center;
     background-size: contain;
@@ -228,7 +229,7 @@ nav {
     text-align: left;
     border-radius: 8px;
     font-size: 17px;
-    background-color: rgb(251, 255, 194);
+    background-color: #f5ffc6;
     border: 1px solid rgb(0, 0, 0);
     padding: 7px;
     font-weight: bold;
