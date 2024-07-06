@@ -177,6 +177,9 @@ nav {
 #disc {
     border: 1px solid rgb(7, 7, 7);
     background-color: #50ffb1;
+    background-image: url(https://www.healthsnap.tv/wp-content/uploads/2018/01/Depositphotos_84141258_m-2015.jpg);
+    background-position: center;
+    background-size: cover;
     padding: 5px;
 }
 #legdisc {
@@ -332,6 +335,10 @@ nav {
   }
 #buton {
     padding: 10px;
+}
+#disc {
+    background-position: center;
+    background-size: cover;
 }
 #d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9, #d10 {
         display: flex;
