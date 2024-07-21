@@ -189,7 +189,7 @@ footer {
 @media (max-width: 480px) {
     header h1 {
         font-size: 24px;
-        padding-left: 70px; /* Ajuste para espaço da imagem */
+        padding-left: 60px; /* Ajuste para espaço da imagem */
     }
 
     nav ul li a {
