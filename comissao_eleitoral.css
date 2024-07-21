@@ -182,14 +182,14 @@ footer {
     }
 
     header h1 {
-        padding-left: 45px; /* Ajuste para espaço da imagem */
+        padding-left: 60px; /* Ajuste para espaço da imagem */
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
         font-size: 24px;
-        padding-left: 90px; /* Ajuste para espaço da imagem */
+        padding-left: 80px; /* Ajuste para espaço da imagem */
     }
 
     nav ul li a {
