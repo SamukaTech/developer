@@ -53,8 +53,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #3e64ff;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #1d00a0;
+    background-color: rgb(236, 236, 236);
 }
 
 main {
@@ -107,7 +107,7 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.chapa, .portaria-info {
+.chapa, .resul, .portaria-info {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -116,7 +116,7 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.chapa:hover, .portaria-info:hover {
+.chapa:hover, .resul:hover, .portaria-info:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -163,6 +163,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    line-height: 5px;
     position: relative;
     margin-top: 40px;
 }
@@ -189,7 +190,7 @@ footer {
 @media (max-width: 480px) {
     header h1 {
         font-size: 24px;
-        padding-left: 60px; /* Ajuste para espaço da imagem */
+        padding-left: 61px; /* Ajuste para espaço da imagem */
     }
 
     nav ul li a {
