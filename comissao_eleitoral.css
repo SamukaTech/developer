@@ -14,7 +14,7 @@ header {
 }
 
 header .logo {
-    width: 83px; /* Ajuste o tamanho da imagem conforme necessário */
+    width: 82px; /* Ajuste o tamanho da imagem conforme necessário */
     height: auto;
     object-fit: cover;
     position: absolute;
@@ -189,7 +189,7 @@ footer {
 @media (max-width: 480px) {
     header h1 {
         font-size: 24px;
-        padding-left: 61px; /* Ajuste para espaço da imagem */
+        padding-left: 60px; /* Ajuste para espaço da imagem */
     }
 
     nav ul li a {
