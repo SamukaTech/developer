@@ -14,7 +14,7 @@ header {
 }
 
 header .logo {
-    width: 90px; /* Ajuste o tamanho da imagem conforme necessário */
+    width: 85px; /* Ajuste o tamanho da imagem conforme necessário */
     height: auto;
     object-fit: cover;
     position: absolute;
