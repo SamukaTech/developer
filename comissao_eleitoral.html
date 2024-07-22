@@ -53,7 +53,7 @@
                         <li>1 foto 3x4 de cada candidato</li>
                         <li>Requerimento assinado pelos candidatos conforme modelo do ANEXO I</li>
                     </ul>
-                    <p>As inscrições podem ser realizadas entre 17 de maio de 2024 e 01 de junho de 2024.</p>
+                    <p>As inscrições podem ser realizadas entre <b> 17 de maio de 2024 e 01 de junho de 2024.</b></p>
                 </div>
                 <div class="resumo-item">
                     <h4>III – Dos Eleitores</h4>
@@ -61,19 +61,19 @@
                         <li>Ter mais de 06 meses de moradia na CEPI</li>
                         <li>Declaração de matrícula atualizada</li>
                         <li>Estar em dia com as obrigações da CEPI</li>
-                    </ul>
+                    </ul>>
                 </div>
                 <div class="resumo-item">
                     <h4>IV – Da Divulgação das Chapas</h4>
-                    <p>Publicação das chapas inscritas até 03 de junho de 2024 nos murais da CEPI e nos grupos de WhatsApp.</p>
+                    <p>Publicação das chapas inscritas até 03 de junho de 2024 nos murais da CEPI, nos grupos de WhatsApp e no site da Comissão Eleitoral.</p>
                 </div>
                 <div class="resumo-item">
                     <h4>V – Da Eleição</h4>
-                    <p>A eleição será realizada no dia 10 de junho de 2024, das 18:00 às 22:45 horas, na Sala de estudos do Bloco A.</p>
+                    <p>A eleição será realizada no dia <b> 10 de junho de 2024</b>, das <b>18:00 às 22:45</b> horas, na <b>Sala de estudos</b> do <b>Bloco A</b>.</p>
                 </div>
                 <div class="resumo-item">
                     <h4>VI – Dos resultados da votação</h4>
-                    <p>A chapa vencedora será anunciada após a contagem dos votos e o resultado será publicado nos murais da casa e nos grupos de WhatsApp.</p>
+                    <p>A chapa vencedora será anunciada após a contagem dos votos e o resultado será publicado nos murais da casa, nos grupos de WhatsApp e no site da Comissão Eleitoral.</p>
                 </div>
                 <div class="resumo-item">
                     <h4>VII – Das Disposições Finais</h4>
@@ -86,13 +86,13 @@
             <h2>Candidatos</h2>
             <div class="chapa">
                 <h3>Chapa 1</h3>
-                <p><strong>Candidato a Presidente:</strong> Ana Costa</p>
-                <p><strong>Candidato a Vice-Presidente:</strong> Carlos Silva</p>
+                <p><strong>Candidato a Presidente:</strong> Nenhum candidato até o momento</p>
+                <p><strong>Candidato a Vice-Presidente:</strong> Nenhum candidato até o momento</p>
             </div>
             <div class="chapa">
                 <h3>Chapa 2</h3>
-                <p><strong>Candidato a Presidente:</strong> Beatriz Almeida</p>
-                <p><strong>Candidato a Vice-Presidente:</strong> Daniel Souza</p>
+                <p><strong>Candidato a Presidente:</strong> Nenhum candidato até o momento</p>
+                <p><strong>Candidato a Vice-Presidente:</strong> Nenhum candidato até o momento</p>
             </div>
         </section>
 
@@ -116,23 +116,27 @@
             <br><br>
             <div class="portaria-info">
                 <p><strong>Portaria CE nº 001/2024</strong></p>
-                <p><strong>Data:</strong> Teresina – PI, 16 de maio de 2024</p>
-                <p><strong>Presidente:</strong> José Alencar Diniz (Bloco A, 05)</p>
-                <p><strong>Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, 108)</p>
-                <p><strong>Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, 104)</p>
+                <p><strong>Presidente:</strong> José Alencar Diniz (Bloco A, Apt. 05)</p>
+                <p><strong>Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, Apt. 108)</p>
+                <p><strong>Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
             </div>
         </section>
 
         <section id="contato">
             <h2>Contato</h2>
-            <form>
+            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <input type="hidden" name="Site" value="Concursos">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" placeholder="Digite seu nome" required="required" name="Nome" />
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" placeholder="Digite seu e-mail" name="Email" required />
                 <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-                <button type="submit">Enviar</button>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="mensagem" name="Mensagem"></textarea>
+                <button type="submit" class="btn" id="enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                <input type="hidden" name="_template" value="table">
+                <p id="mensagem-status" align="center"></p>
             </form>
         </section>
     </main>
@@ -157,7 +161,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+//código referente ao formuláriode contato
+document.getElementById("meu_form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
+        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
+        var mensa = document.getElementById("mensagem").value;
+
+        if (nome && email && mensa) {
+            var submitButton = document.getElementById("enviar");
+            var mensagemStatus = document.getElementById("mensagem-status");
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+            mensagemStatus.textContent = "";
+
+            var formData = new FormData(this);
+
+            fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Enviar";
+                mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                this.reset();
+            })
+            .catch(error => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Enviar";
+                mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                this.reset();
+            });
+        }
+    });
     </script>
 </body>
 </html>

@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #3e64ff;
+    background-color: #072ac8;
     color: white;
     padding: 20px;
     position: relative;
@@ -64,7 +64,7 @@ main {
 }
 
 h2 {
-    color: #3e64ff;
+    color: #072ac8;
     margin-bottom: 20px;
 }
 
@@ -73,7 +73,7 @@ p {
 }
 
 .btn-download {
-    background-color: #3e64ff;
+    background-color: #072ac8;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -144,7 +144,7 @@ form input, form textarea {
 }
 
 form button {
-    background-color: #3e64ff;
+    background-color: #072ac8;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -159,7 +159,7 @@ form button:hover {
 }
 
 footer {
-    background-color: #3e64ff;
+    background-color: #072ac8;
     color: white;
     text-align: center;
     padding: 10px 0;
