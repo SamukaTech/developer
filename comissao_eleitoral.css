@@ -61,9 +61,10 @@ main {
     padding: 10px 20px;
     max-width: 1000px;
     margin: 0 auto;
-     text-align: justify;
 }
-
+#inicio p, #edital p{
+    text-align: justify;
+}
 h2 {
     color: #072ac8;
     margin-bottom: 20px;
