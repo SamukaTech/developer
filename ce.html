@@ -132,108 +132,59 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Digite seu e-mail" name="Email" required />
                 <label for="documentos">Documentos (Declaração de matrícula, RG, CPF, Foto 3x4):</label>
-                <input type="file" id="documentos" name="Documentos" required multiple />
-                <button type="submit" class="btn" id="enviar">Enviar</button>
+                <input type="file" id="documentos" name="Documentos[]" required multiple />
+                <button type="submit" class="btn" id="enviar_inscricao">Enviar Inscrição</button>
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
                 <input type="hidden" name="_template" value="table">
             </form>
-            <div id="mensagem-status"></div>
-        </section>
-        
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-                <label for="email">Email:</label>
-                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
-                <label for="mensagem">Mensagem:</label>
-                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-                <button type="submit" class="btn" id="enviar">Enviar</button>
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
-                <input type="hidden" name="_template" value="table">
-            </form>
-            <div id="mensagem-status"></div>
+            <div id="inscricao-status"></div>
         </section>
     </main>
 
     <footer>
-        <p>Comissão Eleitoral CEPI 2024 &copy; Todos os direitos reservados.</p>
+        <p>&copy; 2024 Comissão Eleitoral CEPI</p>
     </footer>
 
     <script>
-        document.getElementById("meu_form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var nome = document.getElementById("nomeid").value;
-            var email = document.getElementById("emailid").value;
-            var mensa = document.getElementById("menid").value;
-
-            if (nome && email && mensa) {
-                var submitButton = document.getElementById("enviar");
-                var mensagemStatus = document.getElementById("mensagem-status");
-
-                submitButton.disabled = true;
-                submitButton.textContent = "Enviando...";
-                mensagemStatus.textContent = "";
-
-                var formData = new FormData(this);
-
-                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                })
-                .catch(error => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                });
-            }
-        });
-
         document.getElementById("inscricao_form").addEventListener("submit", function(event) {
             event.preventDefault();
-
+    
             var nome = document.getElementById("nome").value;
             var email = document.getElementById("email").value;
             var documentos = document.getElementById("documentos").files;
-
+    
             if (nome && email && documentos.length > 0) {
-                var submitButton = document.getElementById("enviar");
-                var mensagemStatus = document.getElementById("mensagem-status");
-
+                var submitButton = document.getElementById("enviar_inscricao");
+                var inscricaoStatus = document.getElementById("inscricao-status");
+    
                 submitButton.disabled = true;
                 submitButton.textContent = "Enviando...";
-                mensagemStatus.textContent = "";
-
+                inscricaoStatus.textContent = "";
+    
                 var formData = new FormData(this);
-
+    
                 fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
                     method: "POST",
                     body: formData
                 })
                 .then(response => {
                     submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Documentos enviados com sucesso!";
+                    submitButton.textContent = "Enviar Inscrição";
+                    inscricaoStatus.textContent = "Inscrição enviada com sucesso!";
                     this.reset();
                 })
                 .catch(error => {
                     submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Erro ao enviar documentos. Tente novamente.";
+                    submitButton.textContent = "Enviar Inscrição";
+                    inscricaoStatus.textContent = "Erro ao enviar inscrição. Tente novamente.";
                 });
+            } else {
+                alert("Por favor, preencha todos os campos e anexe os documentos necessários.");
             }
         });
     </script>
 </body>
-</html>
+        </html>
+    
+                                                                                                             
