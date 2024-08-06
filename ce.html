@@ -1,53 +1,211 @@
         <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição para Candidatos</title>
+    <title>Comissão Eleitoral CEPI</title>
     <link rel="stylesheet" href="comissao_eleitoral.css">
+    <link rel="icon" href="https://ugc.production.linktr.ee/bb5436ba-a3c6-440b-9b28-75f11745929a_Sem-t-tulo-2.png?io=true&size=avatar-v3_0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <img src="https://ugc.production.linktr.ee/bb5436ba-a3c6-440b-9b28-75f11745929a_Sem-t-tulo-2.png?io=true&size=avatar-v3_0" alt="Logo da Comissão Eleitoral" class="logo">
         <h1>Comissão Eleitoral CEPI</h1>
+        <br>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="inscricao.html">Inscrição</a></li>
-                <li><a href="resultados.html">Resultados</a></li>
-                <li><a href="portaria.html">Portaria</a></li>
+                <li><a href="#edital" class="nav-link">Edital</a></li>
+                <li><a href="#candidatos" class="nav-link">Candidatos</a></li>
+                <li><a href="#resultado" class="nav-link">Resultado</a></li>
+                <li><a href="#portaria" class="nav-link">Portaria</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#inscricao" class="nav-link">Inscrição</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inscricao">
-            <div class="container">
-                <h2>Inscrição para Candidatos</h2>
-                <form id="inscricao_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="Nome" placeholder="Digite seu nome" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="Email" placeholder="Digite seu e-mail" required>
-                    
-                    <label for="documentos">Documentos (PDF):</label>
-                    <input type="file" id="documentos" name="Documentos[]" accept="application/pdf" multiple required>
-                    
-                    <button type="submit" class="btn" id="enviar_inscricao">Enviar Inscrição</button>
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
-                    <input type="hidden" name="_template" value="table">
-                </form>
-                <div id="inscricao-status"></div>
+        <section id="inicio">
+            <h2>Bem-vindo à Comissão Eleitoral CEPI 2024</h2>
+            <p>Bem-vindo ao site da comissão eleitoral da Casa dos Estudantes do Piauí para a eleição do presidente e vice-presidente. Aqui você encontrará todas as informações necessárias sobre o processo eleitoral.</p>
+        </section>
+
+        <section id="edital">
+            <h2>Edital</h2>
+            <p>Leia o edital completo das Eleições da CEPI 2024 clicando no botão abaixo:</p>
+            <button class="btn-download" onclick="window.location.href='edital-cepi-2024.pdf'">📥 Baixar Edital </button>
+            <div class="edital-resumo">
+                <h3>Resumo do Edital</h3>
+                <div class="resumo-item">
+                    <h4>I – Dos candidatos</h4>
+                    <ul>
+                        <li>Ser maior de 18 anos</li>
+                        <li>Estar com a declaração de matrícula atualizada</li>
+                        <li>Ter mais de 06 meses de moradia na CEPI</li>
+                        <li>Não estar devendo mais do que 10 taxas e mensalidades até o ato de inscrição</li>
+                    </ul>
+                </div>
+                <div class="resumo-item">
+                    <h4>II – Das inscrições</h4>
+                    <p>Documentos necessários para inscrição:</p>
+                    <ul>
+                        <li>Declaração de matrícula atualizada</li>
+                        <li>Fotocopia do RG e CPF dos candidatos</li>
+                        <li>1 foto 3x4 de cada candidato</li>
+                        <li>Requerimento assinado pelos candidatos conforme modelo do ANEXO I</li>
+                    </ul>
+                    <p>As inscrições podem ser realizadas entre <b> 17 de maio de 2024 e 01 de junho de 2024.</b></p>
+                </div>
+                <div class="resumo-item">
+                    <h4>III – Dos Eleitores</h4>
+                    <ul>
+                        <li>Ter mais de 06 meses de moradia na CEPI</li>
+                        <li>Declaração de matrícula atualizada</li>
+                        <li>Estar em dia com as obrigações da CEPI</li>
+                    </ul>
+                </div>
+                <div class="resumo-item">
+                    <h4>IV – Da Divulgação das Chapas</h4>
+                    <p>Publicação das chapas inscritas até <b>03 de junho de 2024</b> nos murais da CEPI, nos grupos de WhatsApp e no site da Comissão Eleitoral.</p>
+                </div>
+                <div class="resumo-item">
+                    <h4>V – Da Eleição</h4>
+                    <p>A eleição será realizada no dia <b> 10 de junho de 2024</b>, das <b>18:00 às 22:45</b> horas, na <b>Sala de estudos</b> do <b>Bloco A</b>.</p>
+                </div>
+                <div class="resumo-item">
+                    <h4>VI – Dos resultados da votação</h4>
+                    <p>A chapa vencedora será anunciada após a contagem dos votos e o resultado será publicado nos murais da casa, nos grupos de WhatsApp e no site da Comissão Eleitoral.</p>
+                </div>
+                <div class="resumo-item">
+                    <h4>VII – Das Disposições Finais</h4>
+                    <p>Em caso de empate, será eleito o mais velho ou o de maior tempo na CEPI.</p>
+                </div>
             </div>
+        </section>
+
+        <section id="candidatos">
+            <h2>Candidatos</h2>
+            <div class="chapa">
+                <h3>Chapa 1</h3>
+                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato 👀</p>
+                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato 👀</p>
+            </div>
+            <div class="chapa">
+                <h3>Chapa 2</h3>
+                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato 👀</p>
+                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato 👀</p>
+            </div>
+        </section>
+
+        <section id="resultado">
+            <h2>Resultado das Eleições</h2>
+            <div class="resul">
+            <p>📌 Os resultados serão exibidos aqui...</p>
+            <!--<p><strong>🏆 Chapa Vencedora:</strong> Chapa 1</p>
+            <p><strong>👤 Candidato a Presidente:</strong> Ana Costa</p>
+            <p><strong>👤 Candidato a Vice-Presidente:</strong> Carlos Silva</p>
+            <p><strong>🟢 Total de Votos:</strong> 150</p>
+            <p><strong>⚪ Votos em Branco:</strong> 10</p>
+            -->
+            </div>
+        </section>
+
+        <section id="portaria">
+            <h2>Portaria</h2>
+            <p>Leia a portaria que divulga os membros da Comissão Eleitoral 2024:</p>
+            <button class="btn-download" onclick="window.location.href='portaria-ce-001-2024.pdf'">Baixar Portaria</button>
+            <br><br>
+            <div class="portaria-info">
+                <p><strong>Portaria CE nº 001/2024</strong></p>
+                <p><strong>👤 Presidente:</strong> José Alencar Diniz (Bloco A, Apt. 05)</p>
+                <p><strong>👤 Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, Apt. 108)</p>
+                <p><strong>👤 Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
+            </div>
+        </section>
+
+        <section id="inscricao">
+            <h2>Inscrição dos Candidatos</h2>
+            <form id="inscricao_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required="required" name="Nome" />
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" name="Email" required />
+                <label for="documentos">Documentos (Declaração de matrícula):</label>
+                <input type="file" id="documentos" name="Documentos" required multiple />
+                <label for="documentos">Documentos (RG):</label>
+                <input type="file" id="documentos" name="Documentos" required multiple />
+                <label for="documentos">Documentos (CPF):</label>
+                <input type="file" id="documentos" name="Documentos" required multiple />
+                <label for="documentos">Documentos ( Foto 3x4):</label>
+                <input type="file" id="documentos" name="Documentos" required multiple />
+                <button type="submit" class="btn" id="enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                <input type="hidden" name="_template" value="table">
+            </form>
+            <div id="mensagem-status"></div>
+        </section>
+        
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+                <label for="email">Email:</label>
+                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+                <label for="mensagem">Mensagem:</label>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                <button type="submit" class="btn" id="enviar">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                <input type="hidden" name="_template" value="table">
+            </form>
+            <div id="mensagem-status"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Comissão Eleitoral CEPI</p>
+        <p>Comissão Eleitoral CEPI 2024 &copy; Todos os direitos reservados.</p>
     </footer>
 
     <script>
+        document.getElementById("meu_form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var nome = document.getElementById("nomeid").value;
+            var email = document.getElementById("emailid").value;
+            var mensa = document.getElementById("menid").value;
+
+            if (nome && email && mensa) {
+                var submitButton = document.getElementById("enviar");
+                var mensagemStatus = document.getElementById("mensagem-status");
+
+                submitButton.disabled = true;
+                submitButton.textContent = "Enviando...";
+                mensagemStatus.textContent = "";
+
+                var formData = new FormData(this);
+
+                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                    this.reset();
+                })
+                .catch(error => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                    this.reset();
+                });
+            }
+        });
+
         document.getElementById("inscricao_form").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -56,36 +214,30 @@
             var documentos = document.getElementById("documentos").files;
 
             if (nome && email && documentos.length > 0) {
-                var submitButton = document.getElementById("enviar_inscricao");
-                var inscricaoStatus = document.getElementById("inscricao-status");
+                var submitButton = document.getElementById("enviar");
+                var mensagemStatus = document.getElementById("mensagem-status");
 
                 submitButton.disabled = true;
                 submitButton.textContent = "Enviando...";
-                inscricaoStatus.textContent = "";
+                mensagemStatus.textContent = "";
 
                 var formData = new FormData(this);
 
-                fetch(this.action, {
+                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
                     method: "POST",
                     body: formData
                 })
                 .then(response => {
-                    if (response.ok) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = "Enviar Inscrição";
-                        inscricaoStatus.textContent = "Inscrição enviada com sucesso!";
-                        this.reset();
-                    } else {
-                        throw new Error('Erro no envio');
-                    }
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Documentos enviados com sucesso!";
+                    this.reset();
                 })
                 .catch(error => {
                     submitButton.disabled = false;
-                    submitButton.textContent = "Enviar Inscrição";
-                    inscricaoStatus.textContent = "Erro ao enviar inscrição. Tente novamente.";
+                    submitButton.textContent = "Enviar";
+                    mensagemStatus.textContent = "Erro ao enviar documentos. Tente novamente.";
                 });
-            } else {
-                alert("Por favor, preencha todos os campos e anexe os documentos necessários.");
             }
         });
     </script>
