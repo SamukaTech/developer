@@ -39,73 +39,29 @@
 
 	<br><br>
 
-	<div class="slider">
-		<div class="slide">
-		  <a href=""><img src="imagens/museu.jpg" alt="Imagem 1"></a>
-		</div>
-		<div class="slide">
-		  <a href=""><img src="imagens/lab.jpg" alt="Imagem 2"></a>
-		</div>
-		<div class="slide">
-			<a href=""><img src="imagens/arvore.jpg" alt="Imagem 3"></a>
-		</div>
-		<div class="slide">
-			<a href=""><img src="imagens/lab3.jpg" alt="Imagem 4"></a>
-		  </div>
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		<div class="dot-container">
-		  <span class="dot" onclick="currentSlide(1)"></span>
-		  <span class="dot" onclick="currentSlide(2)"></span>
-		  <span class="dot" onclick="currentSlide(3)"></span>
-		  <span class="dot" onclick="currentSlide(4)"></span>
-		</div>
-	  </div>
-
-	  <script>
-		let slideIndex = 0;
-let timeout;
-
-showSlides();
-
-function showSlides() {
-let i;
-let slides = document.getElementsByClassName("slide");
-let dots = document.getElementsByClassName("dot");
-for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-slideIndex++;
-if (slideIndex > slides.length) { slideIndex = 1 }
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex - 1].style.display = "block";
-dots[slideIndex - 1].className += " active";
-clearTimeout(timeout);
-timeout = setTimeout(showSlides, 5000); // Change image every 2 seconds
-}
-
-function plusSlides(n) {
-clearTimeout(timeout);
-showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-clearTimeout(timeout);
-showSlides(slideIndex = n);
-}
-	  </script>
-	<br><br>
+	<br>
 	<fieldset id="curso">
 		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSMVZdybTt79ULAIhmZLF5bv54iCp8KsXQPQ&usqp=CAU" id="imgcurso" alt=""><br>
 		<strong id="campus">Campus:</strong> <b id="local">Teresina Central</b><br>
-		<strong id="anoLet">Ano letivo:</strong>  <b id="ano">2024.1</b><br>
+		<strong id="anoLet">Ano letivo:</strong>  <b id="ano">2024.2</b><br>
 		<strong id="turno">Turno:</strong> <b id="tur">Manhâ</b><br>
+			<br><br>
+
+			<div class="auto-slider">
+				<div class="auto-slide fade">
+					<img src="imagens/museu.jpg" alt="Imagem 1">
+				</div>
+				<div class="auto-slide fade">
+					<img src="imagens/lab.jpg" alt="Imagem 2">
+				</div>
+				<div class="auto-slide fade">
+					<img src="imagens/arvore.jpg" alt="Imagem 3">
+				</div>
+			</div>
 			<br><br>
 			<table id="tabhora" border="1" align="center">
 				<tr>
-					<th  id="cabe" colspan="6">Horários das Aulas - 3º Módulo</th>
+					<th  id="cabe" colspan="6">Horários das Aulas - 4º Módulo</th>
 				</tr>
 				<tr>
 					<td id="horas">Horário</td>
@@ -118,67 +74,73 @@ showSlides(slideIndex = n);
 				<tr>
 					<td id="hrs">07:00 às 08:00</td>
 					<td id="discip">........</td>
-					<td id="discip">........</td>
-					<td id="discip">........</td>
-					<td id="discip">Gestão e organização escolar</td>
-					<td id="discip">Fundamentos de sistemática</td>
+					<td id="discip">Educação de jovens e adultos</td>
+					<td id="discip">Didática</td>
+					<td id="discip"></td>
+					<td id="discip">Biologia molecular</td>
 				</tr>
 				<tr>
 					<td id="hrs">08:00 às 09:00</td>
-					<td id="discip">Psicologia da educação</td>
-					<td id="discip">........</td>
-					<td id="discip">Psicologia da educação</td>
-					<td id="discip">Gestão e organização escolar</td>
-					<td id="discip">Fundamentos de sistemática</td>
+					<td id="discip"></td>
+					<td id="discip">Educação de jovens e adultos</td>
+					<td id="discip">Didática</td>
+					<td id="discip">Instrumentação para o ensino médio</td>
+					<td id="discip">Biologia molecular</td>
 				</tr>
 				<tr>
 					<td id="hrs">09:00 às 10:00</td>
-					<td id="discip">Psicologia da educação</td>
-					<td id="discip">........</td>
-					<td id="discip">Psicologia da educação</td>
-					<td id="discip">Gestão e organização escolar</td>
-					<td id="discip">Anatomia e morfologia vegetal</td>
+					<td id="discip">Diversidade vegetal I</td>
+					<td id="discip">Educação de jovens e adultos</td>
+					<td id="discip">Didática</td>
+					<td id="discip">Instrumentação para o ensino médio</td>
+					<td id="discip">Biologia molecular</td>
 				</tr>
 				<tr>
 					<td id="hrs">10:00 às 11:00</td></t>
-					<td id="discip">Instrumentação para o ensino fundamental</td>
-					<td id="discip">Língua brasileira de sinais</td>
-					<td id="discip">Atividade extensionista I</td>
-					<td id="discip">Língua brasileira de sinais</td>
-					<td id="discip">Anatomia e morfologia vegetal</td>
+					<td id="discip">Diversidade vegetal I</td>
+					<td id="discip">Embriologia e histologia animal comparada</td>
+					<td id="discip">Atividade extensionista II</td>
+					<td id="discip">Embriologia e histologia animal comparada</td>
+					<td id="discip"></td>
 				</tr>
 				<tr>
 					<td id="hrs">11:00 às 12:00</td>
-					<td id="discip">Instrumentação para o ensino fundamental</td>
-					<td id="discip">Língua brasileira de sinais</td>
-					<td id="discip">Atividade extensionista I</td>
-					<td id="discip">Língua brasileira de sinais</td>
-					<td id="discip">Anatomia e morfologia vegetal</td>
+					<td id="discip">Diversidade vegetal I</td>
+					<td id="discip">Embriologia e histologia animal comparada</td>
+					<td id="discip">Atividade extensionista II</td>
+					<td id="discip">Embriologia e histologia animal comparada</td>
+					<td id="discip"></td>
 				</tr>
 			</table>    
+
 <br><br><br><br><br>
 
 <fieldset id="disc">
-	<legend id="legdisc">Disciplinas do 3º Módulo</legend>
+	<legend id="legdisc">Disciplinas do 4º Módulo</legend>
 	<br>
 
 	<fieldset id="d1">
-		<legend id="dis">Anatomia e Morfologia Vegetal<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti / Prof°: Dr. Vitor Hugo Gomes Larceda Cavalcante </legend></legend>
+		<legend id="dis">Embriologia e Histologia Animal Comparada<legend id="nomprof">Prof°: Dr. Ivanaldo Ribeiro de Moura</legend></legend>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1ciDJ6cejyuoSEbe8rJZcNEC8iLUgB4ZG/view?usp=drivesdk" target="_blank" id="bot">Livro Botânica Organografia</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1ciXh2K6PTJCZmJQWyLW6bg8RwEzmitCN/view?usp=drivesdk" target="_blank" id="bot">Livro Anatomia Vegetal</a>
-	        <br><br>
-		<a href="https://drive.google.com/file/d/1o13N18FSX4SmO0UMfQ2ohR1hGZLE5scx/view?usp=drivesdk" target="_blank" id="bot">Livro Introdução à Botânica</a>
-	        <br><br>
-		<a href="https://drive.google.com/file/d/1GYI8XMSdmcsvNRONSt236v0b4wBSDCuc/view?usp=sharing" target="_blank" id="bot">Livro Morfologia Vegetal</a>
+		<p id="mat">Nenhum material disponível.</p>
 	        <br><br>
 	</fieldset>
 
 	<br><br>
 
+	<fieldset id="d4">
+		<legend id="dis">Diversidade Vegetal I
+			<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
+		<br><br>
+		<br><br>
+		<p id="mat">Nenhum material disponível.</p>
+		<br><br>
+	</fieldset>
+
+	<br><br>
+
 	<fieldset id="d8">
-		<legend id="dis">Atividade Extensionista I
+		<legend id="dis">Atividade Extensionista II
 			<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
 		<br><br>
 		<p id="mat">Nenhum material disponível.</p>
@@ -187,486 +149,612 @@ showSlides(slideIndex = n);
 
 	<br><br>
 
-	<fieldset id="d2">
-		<legend id="dis">Fundamentos de Sistemática
-			<legend id="nomprof">Profª: Dra. Valesca Paula Rocha</legend></legend>
+	<fieldset id="d3">
+		<legend id="dis">Biologia Molecular
+			<legend id="nomprof">Profº: Dr. José Williams</legend></legend>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1cG2nDytaE-prjiItKFXfloaFZVQHvYOz/view?usp=drivesdk" target="_blank" id="bot">Plano de Disciplina</a>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1cIIzsRNqSFQGIQRHK3c1x8E-df7MMgkd/view?usp=drivesdk" target="_blank" id="bot">Cronograma</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1Co-uywOZRK-QYldwNoTWzitcHBsNSMmx/view?usp=sharing" target="_blank" id="bot">Livro Fundamentos de Sistemática Filogenética</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1dF4y13pij688zMUBNuHuC42VvD82m00b/view?usp=drivesdk" target="_blank" id="bot">Conceitos de Espécie e suas Implicações para a Conservação</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1dDmRqGF8dKeguILk_0Z_K2wt9uRC37J2/view?usp=drivesdk" target="_blank" id="bot">Slides: Conceito de Espécie</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1fC5MlQ4lkQP6XkjLT8QPd5imC0RPJf0S/view?usp=sharing" target="_blank" id="bot">Slides: Fundamentos de Sistemática</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/10iSEix5dlvTYMnYQJs4r65lWVmOBg4mJ/view?usp=sharing" target="_blank" id="bot">Slides: Classificação Biológica</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/19sPJZ5sBDWDd_2kzkZBZSYcfBlCxKV8z/view?usp=sharing" target="_blank" id="bot">Slides: Códigos Nomenclaturais</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1gl_w3vaOYV1Q7tVl4HINkKHwCcQ309AQ/view?usp=sharing" target="_blank" id="bot">Slides: Códigos Nomenclaturais 2</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/10tHjal0x0ErtLLDJzpE1Rh3RS-h6pQFR/view?usp=sharing" target="_blank" id="bot">Slides: Coleções Biológicas</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1YcSLZrNFEIn6XaD36H4vRWf4SbGUMMF0/view?usp=sharing" target="_blank" id="bot">Slides: DNA Barcoding</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/16eEbCfSMXkFgHqz9sfkNj0tzLgIB0qxL/view?usp=sharing" target="_blank" id="bot">Slides: Sistemática Filogenética</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1_0iQG0cjeA3mFqGf_TzmfNJ7Ruutz9aL/view?usp=sharing" target="_blank" id="bot">Slides: Construindo Árvores Filogenética 1</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1ylsEEoB31HyuhWynnlRBtvpF6imVwqKa/view?usp=sharing" target="_blank" id="bot">Slides:  Construindo Árvores Filogenética 2</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1x3jHKLM3XgF3D1cUYAc2IBHTLZmhHHm1/view?usp=sharing" target="_blank" id="bot">Atividade de Cladograma Resolvido</a>
+		<p id="mat">Nenhum material disponível.</p>
 		<br><br>
 	</fieldset>
 
 	<br><br>
 
-	<fieldset id="d4">
-		<legend id="dis">Gestão e Organização Escolar
+	<fieldset id="d6">
+		<legend id="dis">Instrumentação para o Ensino Médio
+			<legend id="nomprof">Profª: Antonia Ravanche</legend></legend>
+		<br><br>
+		<p id="mat">Nenhum material disponível.</p>
+		<br><br>
+	</fieldset>
+
+	<br><br>
+
+	<fieldset id="d2">
+		<legend id="dis">Educação de Jovens e Adultos
+			<legend id="nomprof">Profª: Clarice Florencio</legend></legend>
+		<br><br>
+		<p id="mat">Nenhum material disponível.</p>
+		<br><br>
+	</fieldset>
+
+   <br><br>
+
+	<fieldset id="d5">
+		<legend id="dis">Didática
 			<legend id="nomprof">Profª: Mayara de Miranda Santos</legend></legend>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1dfYXP6sFm-lGRo4omZI7KVNba7t2MTsj/view?usp=sharing" target="_blank" id="bot">As Teorias da Gestão Escolar</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1di_D7ZGq9VdUa3J0wDKmhOp1Ooh7K7j9/view?usp=sharing" target="_blank" id="bot">Aspectos Históricos da Administração Escolar no Brasil</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1k-aPDYgx4szcB6aANGTJSBIHievDMsin/view?usp=sharing" target="_blank" id="bot">Orientações para os Seminários</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1qrZmPjjfg1tLWuBpJzT2xd1Fxv9fqaOe/view?usp=sharing" target="_blank" id="bot">Perfil do Gestor Escolar</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1yfLDqyfJtNBQIM3Vzm5AYiEUmsKQ0uJN/view?usp=sharing" target="_blank" id="bot">Coordenador Pedagógico</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1NnNsxbPSCV--Zo8IIQAvQquYKc_U8ZQS/view?usp=sharing" target="_blank" id="bot">Função Social da Escola</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/15Tq2sOsXyl_re38hRS9ICOeVyEHRBa_O/view?usp=sharing" target="_blank" id="bot">Regimento Interno</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1LQ1UeFaiwqJWwGWu3ACyeOz-fiFGGWUs/view?usp=sharing" target="_blank" id="bot">Grêmio Estudantil</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1_QSeV_V2GhKmuKsZvLih1mS8ONWZB907/view?usp=sharing" target="_blank" id="bot">Projeto Político Pedagógico e Proposta Curricular</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1q8i0cW5dYIPFlpHJRVBc6Mh8e7kXGpoj/view?usp=sharing" target="_blank" id="bot">Conselho de Classe</a>
-		<br><br>
-	</fieldset>
-
-   <br><br>
-
-	<fieldset id="d6">
-		<legend id="dis">Instrumentação para o Ensino Fundamental
-			<legend id="nomprof">Profª: Dra. Marlúcia da Silva Bezerra Lacerda</legend></legend>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1UaCgdhpVSfujBZ4IP0-tJfF_fESFpG4C/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1c1y_lnLDyGk9CF0GScbnqkc5HT-QjACf/view?usp=sharing" target="_blank" id="bot">Texto 1: Ensino de Ciências</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1JSmeOK_jWDMOAQgUWIAJhKwQmzAdfWtM/view?usp=sharing" target="_blank" id="bot">Diretrizes Curriculares do Município de Teresina</a>
-		<br><br>
-		<a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fsuap.ifpi.edu.br%2Fmedia%2Fedu%2Fmaterial_aula%2FROTEIRO_DO_INSTRUMENTO_DE_ENSINO_M%25C3%2593D._III-ca854e61da3a497db8614946591a22ac.docx&wdOrigin=BROWSELINK" target="_blank" id="bot">Roteiro para os Instrumentos de Ensino</a>
-		<br><br>
-		<a href="https://suap.ifpi.edu.br/media/edu/material_aula/UNIDADES_TEM%C3%81TICAS_POR_GT-4a0aa46c9f6b4780b6db5a75c76311e8.pdf" target="_blank" id="bot">Unidades Temáticas por GT</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/18Gq02aKEMg8TBDJD6NOvI--PjiYtSICP/view?usp=sharing" target="_blank" id="bot">BNCC Ensino Fundamental</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1gqo2S77RvGPIL9UPl5M8vWoD-JPS1Dnf/view?usp=drivesdk" target="_blank" id="bot">O que prevê a BNCC para o ensino de ciências </a>
-		<br><br>
-	</fieldset>
-
-	<br><br>
-
-	<fieldset id="d3">
-		<legend id="dis">Língua Brasileira de Sinais
-			<legend id="nomprof">Profª: Joaquina Maria Portela Cunha Melo</legend></legend>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1cNfj2PV75EjwHv1ll3MbL76K0_9__NRz/view?usp=drivesdk" target="_blank" id="bot">Livro de Libras</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1da-9KPGUIk1QmBvUJzmoqyf9X8Ga6z9l/view?usp=sharing" target="_blank" id="bot">Ebook: Se Liga nos Sinais</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1ruqF0tN7YNQ93G9kNjXCFU9WAwHRxkGQ/view?usp=sharing" target="_blank" id="bot">Slide: Conceito Sobre Surdez</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/13P7yeEAYFsKX81qq7vIfLQARrV_TyCr5/view?usp=sharing" target="_blank" id="bot">Legislação dos Surdos</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1UNhqE9Dop5oJ1qZw1qG9ZRffpCEXar0e/view?usp=sharing" target="_blank" id="bot">Identidade e Cultura Surda</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1hE3SXkj98PC6PoXz_4VWcHh7497DlPXl/view?usp=drivesdk" target="_blank" id="bot">Slide: Números em Libras</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1hKBUFofzf1153FWvCspAk4rHJSkiYXPQ/view?usp=drivesdk" target="_blank" id="bot">Slide: Caracterizando a Libras</a>
-		<br><br>
-		<a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fsuap.ifpi.edu.br%2Fmedia%2Fedu%2Fmaterial_aula%2FOrienta%25C3%25A7%25C3%25A3o_PCC-_Libras_2024-30054441b7294afebc57134eb2477023.docx&wdOrigin=BROWSELINK" target="_blank" id="bot">Orientação da Prática como Componente Curricular</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1fPg_T-kXLzVbriWAIDMctG5tA3cz7EbY/view?usp=sharing" target="_blank" id="bot">Parâmetros da Libras</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1qBIXylf4ZB1RNbV9KoqZJFYlcjbabH38/view?usp=sharing" target="_blank" id="bot">Pessoas da Família e Adjetivos</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1qCGFzMc9o3tOD3C3H1PSEYX_D29hLILY/view?usp=sharing" target="_blank" id="bot">Verbos em Libras</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1pA3zWD3lPqOjqm1dQeplS5QRpkER_uvj/view?usp=sharing" target="_blank" id="bot">Manual de Ciências em Libras</a>
-		<br><br>
-	</fieldset>
-
-	<br><br>
-
-	<fieldset id="d5">
-		<legend id="dis">Psicologia da Educação
-			<legend id="nomprof">Profª: Dra. Emanoela Moreira Maciel</legend></legend>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1yy8NaCRFoy-8n-dvsvvvlUiXFrisHET8/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1e5P6ODp_llpkPjY-YMiBa_om_SQ6Mzf2/view?usp=sharing" target="_blank" id="bot">Livro: Psicologias</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/11PLW6_1LrRfLZvPkMwHyaDluz-84CZHd/view?usp=sharing" target="_blank" id="bot">Cap. 1: A Psicologia ou as Psicologias</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/123Ve7Vjulm-fcoSxrToLXBdWruueoa-S/view?usp=sharing" target="_blank" id="bot">Cap. 2: A Evolução da Psicologia</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/12uaBJPoCVgeq4T-jGZ6Q_WSQ5kgLOicN/view?usp=sharing" target="_blank" id="bot">Abordagens do Processo de Ensino e Aprendizagem</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1Syh4jiZNwVt5y2VebQxc4vclTPvmLf_M/view?usp=sharing" target="_blank" id="bot">Papel das Funções Cognitivas, Conativas e Executivas na Aprendizagem</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1gonFh76Hvv_Fi8OhdjmcOzOIkjARQq5O/view?usp=sharing" target="_blank" id="bot">Artigo: Fracasso Escolar</a>
-		<br><br>
-		<a href="https://docs.google.com/presentation/d/1guDbDg59uqEMnTSa4iB8INAbkFt7ku0x/edit?usp=drivesdk&ouid=107271589796680354575&rtpof=true&sd=true" target="_blank" id="bot">Slide: Reflexões Sobre o Fracasso Escolar</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1hDNmKXmGSjNGQUFOb2LBJuNJtTBgTQmw/view?usp=drivesdk" target="_blank" id="bot">Desenv. das Habilidades Socioemocionais como Caminho p/ Aprendizagem e o Sucesso Escolar</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1ilVZEWEJnyPNpdQMKFYNTALfBMHENZ8V/view?usp=drivesdk" target="_blank" id="bot">Slides: Habilidades Socioemocionais</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1ik6159J5kaj9ZV2sEb8Fuz7eWpA3hdCf/view?usp=drivesdk" target="_blank" id="bot">As Competências e Habilidades Socioemocionais </a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1R-mGEMfHwgNPAiHzUAzR_COxDC_jd-tu/view?usp=sharing" target="_blank" id="bot">Psicanálise</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1F0O9XdfqmWJoFh3sj3u-EwAJ65IQOE9m/view?usp=sharing" target="_blank" id="bot">Behaviorismo</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1-E89N2ISU55a9XTwLBtmb_VY85eMXVm6/view?usp=sharing" target="_blank" id="bot">Introdução ao Pensamento de Vygotsky</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1BkAMgCgsiNwWQB6MGOsLLF_ECWnBJBoO/view?usp=sharing" target="_blank" id="bot">Teoria da Aprendizagem Significativa</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/14VqHzUXRkmbyVrYucF9UTbF7Ub1zReAu/view?usp=sharing" target="_blank" id="bot">A Teoria de Henri Wallon </a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/128JsSv38XEpgTtj6dss6-Kfwh45uL5AB/view?usp=sharing" target="_blank" id="bot">Teoria Humanista e a Educação</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1dywgBc-b9epIg12xIiovQMf3RiKtbbzG/view?usp=sharing" target="_blank" id="bot">A Epistemologia Genética de Piaget</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1F8s0b4uM1FRjPcyKF2fht34tJpzgxoUH/view?usp=sharing" target="_blank" id="bot">A Teoria das Inteligências Múltiplas</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1AthrHppfpz4JIzVGl1eZ5rZUFZy9ccbG/view?usp=sharing" target="_blank" id="bot">Transtornos do Neurodesenvolvimento</a>
+		<p id="mat">Nenhum material disponível.</p>
 		<br><br>
 	   </fieldset>
 
 	<br>
-	<p id="p"><b>Situação do 3º módulo: </b><i id="sit3"> Em andamento.</i></p>
+	<p id="p"><b>Situação do 4º módulo: </b><i id="sit4"> Em andamento.</i></p>
 </fieldset>
 
-<br><br><br><br><br><br>
+<br><br>
+
+<!-- Acordeão para os módulos -->
+<button class="accordion"><span class="arrow">&#9654;</span> Disciplinas do 3º Módulo</button>
+<div class="panel">
+	<!-- Conteúdo do 1º Módulo aqui -->
+	<br><br>
+	<fieldset id="disc">
+		<legend id="legdisc">Disciplinas do 3º Módulo</legend>
+		<!-- ... Coloque o conteúdo do primeiro módulo ... -->
+		<fieldset id="d1">
+			<legend id="dis">Anatomia e Morfologia Vegetal<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti / Prof°: Dr. Vitor Hugo Gomes Larceda Cavalcante </legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ciDJ6cejyuoSEbe8rJZcNEC8iLUgB4ZG/view?usp=drivesdk" target="_blank" id="bot">Livro Botânica Organografia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ciXh2K6PTJCZmJQWyLW6bg8RwEzmitCN/view?usp=drivesdk" target="_blank" id="bot">Livro Anatomia Vegetal</a>
+				<br><br>
+			<a href="https://drive.google.com/file/d/1o13N18FSX4SmO0UMfQ2ohR1hGZLE5scx/view?usp=drivesdk" target="_blank" id="bot">Livro Introdução à Botânica</a>
+				<br><br>
+			<a href="https://drive.google.com/file/d/1GYI8XMSdmcsvNRONSt236v0b4wBSDCuc/view?usp=sharing" target="_blank" id="bot">Livro Morfologia Vegetal</a>
+				<br><br>
+		</fieldset>
+	
+		<br><br>
+	
+		<fieldset id="d8">
+			<legend id="dis">Atividade Extensionista I
+				<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
+			<br><br>
+			<p id="mat">Nenhum material disponível.</p>
+			<br><br>
+	</fieldset>
+	
+		<br><br>
+	
+		<fieldset id="d2">
+			<legend id="dis">Fundamentos de Sistemática
+				<legend id="nomprof">Profª: Dra. Valesca Paula Rocha</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1cG2nDytaE-prjiItKFXfloaFZVQHvYOz/view?usp=drivesdk" target="_blank" id="bot">Plano de Disciplina</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1cIIzsRNqSFQGIQRHK3c1x8E-df7MMgkd/view?usp=drivesdk" target="_blank" id="bot">Cronograma</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1Co-uywOZRK-QYldwNoTWzitcHBsNSMmx/view?usp=sharing" target="_blank" id="bot">Livro Fundamentos de Sistemática Filogenética</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dF4y13pij688zMUBNuHuC42VvD82m00b/view?usp=drivesdk" target="_blank" id="bot">Conceitos de Espécie e suas Implicações para a Conservação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dDmRqGF8dKeguILk_0Z_K2wt9uRC37J2/view?usp=drivesdk" target="_blank" id="bot">Slides: Conceito de Espécie</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1fC5MlQ4lkQP6XkjLT8QPd5imC0RPJf0S/view?usp=sharing" target="_blank" id="bot">Slides: Fundamentos de Sistemática</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/10iSEix5dlvTYMnYQJs4r65lWVmOBg4mJ/view?usp=sharing" target="_blank" id="bot">Slides: Classificação Biológica</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/19sPJZ5sBDWDd_2kzkZBZSYcfBlCxKV8z/view?usp=sharing" target="_blank" id="bot">Slides: Códigos Nomenclaturais</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1gl_w3vaOYV1Q7tVl4HINkKHwCcQ309AQ/view?usp=sharing" target="_blank" id="bot">Slides: Códigos Nomenclaturais 2</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/10tHjal0x0ErtLLDJzpE1Rh3RS-h6pQFR/view?usp=sharing" target="_blank" id="bot">Slides: Coleções Biológicas</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1YcSLZrNFEIn6XaD36H4vRWf4SbGUMMF0/view?usp=sharing" target="_blank" id="bot">Slides: DNA Barcoding</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/16eEbCfSMXkFgHqz9sfkNj0tzLgIB0qxL/view?usp=sharing" target="_blank" id="bot">Slides: Sistemática Filogenética</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1_0iQG0cjeA3mFqGf_TzmfNJ7Ruutz9aL/view?usp=sharing" target="_blank" id="bot">Slides: Construindo Árvores Filogenética 1</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ylsEEoB31HyuhWynnlRBtvpF6imVwqKa/view?usp=sharing" target="_blank" id="bot">Slides:  Construindo Árvores Filogenética 2</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1x3jHKLM3XgF3D1cUYAc2IBHTLZmhHHm1/view?usp=sharing" target="_blank" id="bot">Atividade de Cladograma Resolvido</a>
+			<br><br>
+		</fieldset>
+	
+		<br><br>
+	
+		<fieldset id="d4">
+			<legend id="dis">Gestão e Organização Escolar
+				<legend id="nomprof">Profª: Mayara de Miranda Santos</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dfYXP6sFm-lGRo4omZI7KVNba7t2MTsj/view?usp=sharing" target="_blank" id="bot">As Teorias da Gestão Escolar</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1di_D7ZGq9VdUa3J0wDKmhOp1Ooh7K7j9/view?usp=sharing" target="_blank" id="bot">Aspectos Históricos da Administração Escolar no Brasil</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1k-aPDYgx4szcB6aANGTJSBIHievDMsin/view?usp=sharing" target="_blank" id="bot">Orientações para os Seminários</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1qrZmPjjfg1tLWuBpJzT2xd1Fxv9fqaOe/view?usp=sharing" target="_blank" id="bot">Perfil do Gestor Escolar</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1yfLDqyfJtNBQIM3Vzm5AYiEUmsKQ0uJN/view?usp=sharing" target="_blank" id="bot">Coordenador Pedagógico</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1NnNsxbPSCV--Zo8IIQAvQquYKc_U8ZQS/view?usp=sharing" target="_blank" id="bot">Função Social da Escola</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/15Tq2sOsXyl_re38hRS9ICOeVyEHRBa_O/view?usp=sharing" target="_blank" id="bot">Regimento Interno</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1LQ1UeFaiwqJWwGWu3ACyeOz-fiFGGWUs/view?usp=sharing" target="_blank" id="bot">Grêmio Estudantil</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1_QSeV_V2GhKmuKsZvLih1mS8ONWZB907/view?usp=sharing" target="_blank" id="bot">Projeto Político Pedagógico e Proposta Curricular</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1q8i0cW5dYIPFlpHJRVBc6Mh8e7kXGpoj/view?usp=sharing" target="_blank" id="bot">Conselho de Classe</a>
+			<br><br>
+		</fieldset>
+	
+	   <br><br>
+	
+		<fieldset id="d6">
+			<legend id="dis">Instrumentação para o Ensino Fundamental
+				<legend id="nomprof">Profª: Dra. Marlúcia da Silva Bezerra Lacerda</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1UaCgdhpVSfujBZ4IP0-tJfF_fESFpG4C/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1c1y_lnLDyGk9CF0GScbnqkc5HT-QjACf/view?usp=sharing" target="_blank" id="bot">Texto 1: Ensino de Ciências</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1JSmeOK_jWDMOAQgUWIAJhKwQmzAdfWtM/view?usp=sharing" target="_blank" id="bot">Diretrizes Curriculares do Município de Teresina</a>
+			<br><br>
+			<a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fsuap.ifpi.edu.br%2Fmedia%2Fedu%2Fmaterial_aula%2FROTEIRO_DO_INSTRUMENTO_DE_ENSINO_M%25C3%2593D._III-ca854e61da3a497db8614946591a22ac.docx&wdOrigin=BROWSELINK" target="_blank" id="bot">Roteiro para os Instrumentos de Ensino</a>
+			<br><br>
+			<a href="https://suap.ifpi.edu.br/media/edu/material_aula/UNIDADES_TEM%C3%81TICAS_POR_GT-4a0aa46c9f6b4780b6db5a75c76311e8.pdf" target="_blank" id="bot">Unidades Temáticas por GT</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/18Gq02aKEMg8TBDJD6NOvI--PjiYtSICP/view?usp=sharing" target="_blank" id="bot">BNCC Ensino Fundamental</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1gqo2S77RvGPIL9UPl5M8vWoD-JPS1Dnf/view?usp=drivesdk" target="_blank" id="bot">O que prevê a BNCC para o ensino de ciências </a>
+			<br><br>
+		</fieldset>
+	
+		<br><br>
+	
+		<fieldset id="d3">
+			<legend id="dis">Língua Brasileira de Sinais
+				<legend id="nomprof">Profª: Joaquina Maria Portela Cunha Melo</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1cNfj2PV75EjwHv1ll3MbL76K0_9__NRz/view?usp=drivesdk" target="_blank" id="bot">Livro de Libras</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1da-9KPGUIk1QmBvUJzmoqyf9X8Ga6z9l/view?usp=sharing" target="_blank" id="bot">Ebook: Se Liga nos Sinais</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ruqF0tN7YNQ93G9kNjXCFU9WAwHRxkGQ/view?usp=sharing" target="_blank" id="bot">Slide: Conceito Sobre Surdez</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/13P7yeEAYFsKX81qq7vIfLQARrV_TyCr5/view?usp=sharing" target="_blank" id="bot">Legislação dos Surdos</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1UNhqE9Dop5oJ1qZw1qG9ZRffpCEXar0e/view?usp=sharing" target="_blank" id="bot">Identidade e Cultura Surda</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1hE3SXkj98PC6PoXz_4VWcHh7497DlPXl/view?usp=drivesdk" target="_blank" id="bot">Slide: Números em Libras</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1hKBUFofzf1153FWvCspAk4rHJSkiYXPQ/view?usp=drivesdk" target="_blank" id="bot">Slide: Caracterizando a Libras</a>
+			<br><br>
+			<a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fsuap.ifpi.edu.br%2Fmedia%2Fedu%2Fmaterial_aula%2FOrienta%25C3%25A7%25C3%25A3o_PCC-_Libras_2024-30054441b7294afebc57134eb2477023.docx&wdOrigin=BROWSELINK" target="_blank" id="bot">Orientação da Prática como Componente Curricular</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1fPg_T-kXLzVbriWAIDMctG5tA3cz7EbY/view?usp=sharing" target="_blank" id="bot">Parâmetros da Libras</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1qBIXylf4ZB1RNbV9KoqZJFYlcjbabH38/view?usp=sharing" target="_blank" id="bot">Pessoas da Família e Adjetivos</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1qCGFzMc9o3tOD3C3H1PSEYX_D29hLILY/view?usp=sharing" target="_blank" id="bot">Verbos em Libras</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1pA3zWD3lPqOjqm1dQeplS5QRpkER_uvj/view?usp=sharing" target="_blank" id="bot">Manual de Ciências em Libras</a>
+			<br><br>
+		</fieldset>
+	
+		<br><br>
+	
+		<fieldset id="d5">
+			<legend id="dis">Psicologia da Educação
+				<legend id="nomprof">Profª: Dra. Emanoela Moreira Maciel</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1yy8NaCRFoy-8n-dvsvvvlUiXFrisHET8/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1e5P6ODp_llpkPjY-YMiBa_om_SQ6Mzf2/view?usp=sharing" target="_blank" id="bot">Livro: Psicologias</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/11PLW6_1LrRfLZvPkMwHyaDluz-84CZHd/view?usp=sharing" target="_blank" id="bot">Cap. 1: A Psicologia ou as Psicologias</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/123Ve7Vjulm-fcoSxrToLXBdWruueoa-S/view?usp=sharing" target="_blank" id="bot">Cap. 2: A Evolução da Psicologia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/12uaBJPoCVgeq4T-jGZ6Q_WSQ5kgLOicN/view?usp=sharing" target="_blank" id="bot">Abordagens do Processo de Ensino e Aprendizagem</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1Syh4jiZNwVt5y2VebQxc4vclTPvmLf_M/view?usp=sharing" target="_blank" id="bot">Papel das Funções Cognitivas, Conativas e Executivas na Aprendizagem</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1gonFh76Hvv_Fi8OhdjmcOzOIkjARQq5O/view?usp=sharing" target="_blank" id="bot">Artigo: Fracasso Escolar</a>
+			<br><br>
+			<a href="https://docs.google.com/presentation/d/1guDbDg59uqEMnTSa4iB8INAbkFt7ku0x/edit?usp=drivesdk&ouid=107271589796680354575&rtpof=true&sd=true" target="_blank" id="bot">Slide: Reflexões Sobre o Fracasso Escolar</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1hDNmKXmGSjNGQUFOb2LBJuNJtTBgTQmw/view?usp=drivesdk" target="_blank" id="bot">Desenv. das Habilidades Socioemocionais como Caminho p/ Aprendizagem e o Sucesso Escolar</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ilVZEWEJnyPNpdQMKFYNTALfBMHENZ8V/view?usp=drivesdk" target="_blank" id="bot">Slides: Habilidades Socioemocionais</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1ik6159J5kaj9ZV2sEb8Fuz7eWpA3hdCf/view?usp=drivesdk" target="_blank" id="bot">As Competências e Habilidades Socioemocionais </a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1R-mGEMfHwgNPAiHzUAzR_COxDC_jd-tu/view?usp=sharing" target="_blank" id="bot">Psicanálise</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1F0O9XdfqmWJoFh3sj3u-EwAJ65IQOE9m/view?usp=sharing" target="_blank" id="bot">Behaviorismo</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1-E89N2ISU55a9XTwLBtmb_VY85eMXVm6/view?usp=sharing" target="_blank" id="bot">Introdução ao Pensamento de Vygotsky</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1BkAMgCgsiNwWQB6MGOsLLF_ECWnBJBoO/view?usp=sharing" target="_blank" id="bot">Teoria da Aprendizagem Significativa</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/14VqHzUXRkmbyVrYucF9UTbF7Ub1zReAu/view?usp=sharing" target="_blank" id="bot">A Teoria de Henri Wallon </a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/128JsSv38XEpgTtj6dss6-Kfwh45uL5AB/view?usp=sharing" target="_blank" id="bot">Teoria Humanista e a Educação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dywgBc-b9epIg12xIiovQMf3RiKtbbzG/view?usp=sharing" target="_blank" id="bot">A Epistemologia Genética de Piaget</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1F8s0b4uM1FRjPcyKF2fht34tJpzgxoUH/view?usp=sharing" target="_blank" id="bot">A Teoria das Inteligências Múltiplas</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1AthrHppfpz4JIzVGl1eZ5rZUFZy9ccbG/view?usp=sharing" target="_blank" id="bot">Transtornos do Neurodesenvolvimento</a>
+			<br><br>
+		   </fieldset>
+	
+		<br>
+		<p id="p"><b>Situação do 3º módulo: </b><i id="sit3"> Concluido.</i></p>
+	</fieldset>
+</div>
+<br>
+<button class="accordion"><span class="arrow">&#9654;</span> Disciplinas do 2º Módulo</button>
+<div class="panel">
+	<!-- Conteúdo do 2º Módulo aqui -->
+	 <br><br>
+	<fieldset id="disc">
+		<legend id="legdisc">Disciplinas do 2º Módulo</legend>
+		<!-- ... Coloque o conteúdo do segundo módulo ... -->
+			<fieldset id="d1">
+				<legend id="dis">Bioestatística<legend id="nomprof">Profº: Dr. Igor Ferreira do Nascimento</legend></legend>
+				<br><br>
+				<p id="mat">Nenhum material disponível.</p>
+			<br><br>
+			</fieldset>
 		
-<fieldset id="disc">
-	<legend id="legdisc">Disciplinas do 2º Módulo</legend>
-	<br>
-
-	<fieldset id="d1">
-		<legend id="dis">Bioestatística<legend id="nomprof">Profº: Dr. Igor Ferreira do Nascimento</legend></legend>
+			<br><br>
+		
+			<fieldset id="d8">
+				<legend id="dis">Biologia Celular<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti </legend></legend>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1N0W7HGnJJlqqPLMhIPKfu5KJ61NhDw37/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1UfvEJFeK3SPmXg9f1swIOk2epNlZviL0/view?usp=sharing" target="_blank" id="bot">Fundamentos da Biologia Celular</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/12Kt-ouQGN2PGiL8WQooVE9W6b-LAjvUF/view?usp=sharing" target="_blank" id="bot">Biologia Celular e Molecular</a>
+		</fieldset>
+		
+			<br><br>
+		
+			<fieldset id="d2">
+				<legend id="dis">Bioquímica<legend id="nomprof">Profº: Dr. Ivanaldo Ribeiro de Moura</legend></legend>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1JSMlHj2UPPiRkvT_urXUHhenY2HjZTzd/view?usp=sharing" target="_blank" id="bot">Aminoácidos</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1h_roFp5pnOAAT7uc2iV8vSFAAKtOx4lo/view?usp=sharing" target="_blank" id="bot">Lipidios</a>
+			<br><br>
+			</fieldset>
+		
+			<br><br>
+		
+			<fieldset id="d4">
+				<legend id="dis">Física Aplicada às Ciências Biológicas<legend id="nomprof">Profº: Etevaldo Macedo Valadao / Francisco de Assis Diniz Sobrinho</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/13cyD3tNwgGBz6WzF7RtQavaFG9U67uvb/view?usp=sharing" target="_blank" id="bot">Medição</a>
+			<br><br>
+			</fieldset>
+		
+		   <br><br>
+		
+			<fieldset id="d6">
+				<legend id="dis">Planejamento Extensionista<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
+				<br><br>
+				<p id="mat">Nenhum material disponível.</p>
+			<br><br>
+			</fieldset>
+		
+			<br><br>
+		
+			<fieldset id="d3">
+				<legend id="dis">Política e Organização da Educação Nacional<legend id="nomprof">Profº: John Kennedy Viana Rocha</legend></legend>
+				<br><br>
+				<a href="https://drive.google.com/file/d/18oE2asGeYxlykgn69U26qfP_3WMyzsI4/view?usp=sharing" target="_blank" id="bot">CF - Educação</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1xLoaPZL56jShD1DS2xyRCRXCpDLI5M0R/view?usp=sharing" target="_blank" id="bot">Plano Nacional de Educação</a>
+			<br><br>
+			</fieldset>
+		
+			<br><br>
+		
+			<fieldset id="d5">
+				<legend id="dis">Sociologia da Educação<legend id="nomprof">Profº: Alaim Passos Bispo</legend></legend>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1jT6GA7zr2ePPL2dAo-9jibyh29KL2Fso/view?usp=sharing" target="_blank" id="bot">Texto 01</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1wEkunifvSVRSKgZkRm7gQWyMXu95jPc8/view?usp=sharing" target="_blank" id="bot">Texto 02: Estigma e Currículo Oculto</a>
+				<br><br>
+				<a href="https://drive.google.com/file/d/1E2ORC1rGCH1Qno-ep07PsGojrdDee5wU/view?usp=sharing" target="_blank" id="bot">Texto 03</a>
+				<br><br>
+			   </fieldset>
+		
+			   <br><br>
+		
+			<fieldset id="d7">
+				<legend id="dis">Tecnologias na Educação<legend id="nomprof">Profª: Léia Soares da Silva</legend></legend>
+				<br><br>
+				<p id="mat">Nenhum material disponível.</p>
+				<br><br>
+			</fieldset>
+		
+			<br>
+			<p id="p"><b>Situação do 2º módulo: </b><i id="sit2"> Concluido.</i></p>
+	</fieldset>
+</div>
+<br>
+<button class="accordion"><span class="arrow">&#9654;</span> Disciplinas do 1º Módulo</button>
+<div class="panel">
+	<!-- Conteúdo do 3º Módulo aqui -->
+	 <br><br>
+	<fieldset id="disc">
+		<legend id="legdisc">Disciplinas do 1º Módulo</legend>
+		<!-- ... Coloque o conteúdo do terceiro módulo ... -->
+		<fieldset id="d1">
+			<legend id="dis">Fundamentos e Metodologia de Extensão do Ensino Superior<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/1aBt04pv04Hdl_6RXWFfnGKp5C5wwAGFE/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
 		<br><br>
-		<p id="mat">Nenhum material disponível.</p>
-	<br><br>
+		<a href="https://drive.google.com/file/d/1JslE2vhk3Pit71wcMrBzsHjTe0AI6naR/view?usp=sharing"target="_blank" id="bot">Projeto de Ext. Universitária e Iniciação à Extensão Universitária</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1UOQx78ZP2AVW0M4Is20VXdH97Zughyyu/view?usp=sharing"target="_blank" id="bot">Livro Didático: Compreendendo a Inovação Social e a Extensão</a>
+		<br><br>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset id="d8">
+			<legend id="dis">Introdução ao Laboratório de Biologia<legend id="nomprof">Profª: Dra. Marlúcia da Silva Bezerra Lacerda / Profº: Dr. Ivanaldo Ribeiro de Moura</legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/1Nj_EIjSkPMUzlUFjirQhQ2p8wHYyBwBo/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/18meXq34XZqIAR_NBd0qb4EzhPjibpyv_/view?usp=sharing"target="_blank" id="bot">Orientações Para a Utilização dos Laboratórios</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1ptDPaWhGnv0AJ3N91U7Ur7f5DQJjqKg_/view?usp=sharing"target="_blank" id="bot">Normas de Biossegurança: Sua Origem e Prática</a>
 	</fieldset>
 
-	<br><br>
+		<br><br>
 
-	<fieldset id="d8">
-		<legend id="dis">Biologia Celular<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti </legend></legend>
+		<fieldset id="d2">
+			<legend id="dis">Seminário de Introdução ao Curso<legend id="nomprof">Profº: Dr. Francisco de Assis Diniz Sobrinho</legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/12fdl-knBourvx9JkjPBLt4BNIdAsHRdt/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1N0W7HGnJJlqqPLMhIPKfu5KJ61NhDw37/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1UfvEJFeK3SPmXg9f1swIOk2epNlZviL0/view?usp=sharing" target="_blank" id="bot">Fundamentos da Biologia Celular</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/12Kt-ouQGN2PGiL8WQooVE9W6b-LAjvUF/view?usp=sharing" target="_blank" id="bot">Biologia Celular e Molecular</a>
-</fieldset>
+		</fieldset>
 
-	<br><br>
-
-	<fieldset id="d2">
-		<legend id="dis">Bioquímica<legend id="nomprof">Profº: Dr. Ivanaldo Ribeiro de Moura</legend></legend>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1JSMlHj2UPPiRkvT_urXUHhenY2HjZTzd/view?usp=sharing" target="_blank" id="bot">Aminoácidos</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1h_roFp5pnOAAT7uc2iV8vSFAAKtOx4lo/view?usp=sharing" target="_blank" id="bot">Lipidios</a>
-	<br><br>
-	</fieldset>
 
-	<br><br>
-
-	<fieldset id="d4">
-		<legend id="dis">Física Aplicada às Ciências Biológicas<legend id="nomprof">Profº: Etevaldo Macedo Valadao / Francisco de Assis Diniz Sobrinho</legend></legend>
-	<br><br>
-	<a href="https://drive.google.com/file/d/13cyD3tNwgGBz6WzF7RtQavaFG9U67uvb/view?usp=sharing" target="_blank" id="bot">Medição</a>
-	<br><br>
-	</fieldset>
-
-   <br><br>
-
-	<fieldset id="d6">
-		<legend id="dis">Planejamento Extensionista<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
+		<fieldset id="d4">
+			<legend id="dis">Fundamentos de Matemática<legend id="nomprof">Profº: Robson Fonseca</legend></legend>
 		<br><br>
-		<p id="mat">Nenhum material disponível.</p>
-	<br><br>
-	</fieldset>
-
-	<br><br>
-
-	<fieldset id="d3">
-		<legend id="dis">Política e Organização da Educação Nacional<legend id="nomprof">Profº: John Kennedy Viana Rocha</legend></legend>
+		<a href="https://drive.google.com/file/d/1hKR8WT6ipcc5Osd9uPYr8dtoID-52Hpa/view?usp=sharing"target="_blank" id="bot">Funções</a>
 		<br><br>
-		<a href="https://drive.google.com/file/d/18oE2asGeYxlykgn69U26qfP_3WMyzsI4/view?usp=sharing" target="_blank" id="bot">CF - Educação</a>
+		<a href="https://drive.google.com/file/d/1QpLbXsDNIMXSQ5gK32_pYrFCP3dhIAbM/view?usp=sharing"target="_blank" id="bot">Potência e Função Logaritmica</a>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1xLoaPZL56jShD1DS2xyRCRXCpDLI5M0R/view?usp=sharing" target="_blank" id="bot">Plano Nacional de Educação</a>
-	<br><br>
-	</fieldset>
-
-	<br><br>
-
-	<fieldset id="d5">
-		<legend id="dis">Sociologia da Educação<legend id="nomprof">Profº: Alaim Passos Bispo</legend></legend>
+		<a href="https://drive.google.com/file/d/1bxDXDHuuT5Ye4ywn1mbGFCRv1tWXpGby/view?usp=sharing"target="_blank" id="bot">Função Quadrática</a>
 		<br><br>
-		<a href="https://drive.google.com/file/d/1jT6GA7zr2ePPL2dAo-9jibyh29KL2Fso/view?usp=sharing" target="_blank" id="bot">Texto 01</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1wEkunifvSVRSKgZkRm7gQWyMXu95jPc8/view?usp=sharing" target="_blank" id="bot">Texto 02: Estigma e Currículo Oculto</a>
-		<br><br>
-		<a href="https://drive.google.com/file/d/1E2ORC1rGCH1Qno-ep07PsGojrdDee5wU/view?usp=sharing" target="_blank" id="bot">Texto 03</a>
-		<br><br>
-	   </fieldset>
+		</fieldset>
 
 	   <br><br>
 
-	<fieldset id="d7">
-		<legend id="dis">Tecnologias na Educação<legend id="nomprof">Profª: Léia Soares da Silva</legend></legend>
+		<fieldset id="d6">
+			<legend id="dis">Fundamentos de Química<legend id="nomprof">Profª: Dra. Irlene Silva </legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/14xMFyMU3IQd9SG_jqs755NPxrjR0J3XZ/view?usp=sharing"target="_blank" id="bot">Estrutura Atômica - Aula 1</a>
 		<br><br>
-		<p id="mat">Nenhum material disponível.</p>
+		<a href="https://drive.google.com/file/d/1bNBZplsLJ36L_Nvu0E730o6bEBUsmmF5/view?usp=sharing"target="_blank" id="bot">Estrutura Atômica - Aula 2</a>
 		<br><br>
-	</fieldset>
+		<a href="https://drive.google.com/file/d/1MYoNG02EO3vN0f4v1EcexGZ5Ezb2TocZ/view?usp=sharing"target="_blank" id="bot">Ligação Iônica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1XoRlBkec5IdYc-xSgwfxcZzl6Xf9FQBa/view?usp=sharing"target="_blank" id="bot">Ligação Covalente</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1yhfc_ASm3fnmtrm5L55kSl2ZQB-O4mfK/view?usp=sharing"target="_blank" id="bot">Ligações Químicas - Geometria Molecular</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1pVh6a04IR2YWVwOjveGGN9VoACDXRPkV/view?usp=sharing"target="_blank" id="bot">Geometria Molecular, Polaridade de Moléculas e Forças Intermoleculares</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1QzHiu317KT8ddM-yh_MDkDfTdr0znGls/view?usp=sharing"target="_blank" id="bot">Reações Químicas</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/12l0kDZ8VPjOXATwo22Qem2EDia0Rb63b/view?usp=sharing"target="_blank" id="bot">Balanceamento de Equações Químicas</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1dL00_RsDOdgVKAWtkIVQXI2H1YUx4M_j/view?usp=sharing"target="_blank" id="bot">Cálculos Estequiométricos</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1WfOg_Oh4UyS2qfMdXIDKX1N5jsQajae0/view?usp=sharing"target="_blank" id="bot">Sistemas e Soluções</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1fpLztJkm0_TzGX0Ixixxocz5o8bLJOYU/view?usp=sharing"target="_blank" id="bot">Cinética Química</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1TBvBkw6qPHxrWk3P33LE2McDpeZ6wCo2/view?usp=sharing"target="_blank" id="bot">Química Orgânica: Cadeias Carbônicas e Grupos Funcionais</a>
+		<br><br>
+		</fieldset>
 
-	<br>
-	<p id="p"><b>Situação do 2º módulo: </b><i id="sit2"> Concluido.</i></p>
+		<br><br>
+
+		<fieldset id="d3">
+			<legend id="dis">Profissionalização Docente<legend id="nomprof">Profª: Me. Leia Soares da Silva</legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/11Q7wKUowBKd7yLZLKgH-OEok7ZqbXg0I/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1YryDhfYtnIHRNQxQBIqLL0zR0tJUEXyj/view?usp=sharing"target="_blank" id="bot">Profissionalização Docente: Entre Vocação e Formação</a>
+		<br><br>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset id="d5">
+			<legend id="dis">Atividades Linguísticas<legend id="nomprof">Profª: Dra. Leila Patrícia Alves Dantas</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dTFxnkKRKtlNxodHMrLcCHlvzujlLlbb/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1XIGLfu3nqjXnMYIsXTvMXCfIVH-bbaof/view?usp=sharing"target="_blank" id="bot">Linguagem e Célebro</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1P7mTlb1ymRVmxGF_dsR07bKANDHbTZos/view?usp=sharing"target="_blank" id="bot">Língua, Linguagem e Comunicação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1L35DGSYEUvdWTU4jz3BVyEiCTMQ3NTq-/view?usp=sharing"target="_blank" id="bot">Gêneros e Tipos Textuais</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1iiBk1Qa2WgtS7V_jJGGFMGLlHWmv0NWa/view?usp=sharing"target="_blank" id="bot">Manual de Gêneros Acadêmicos</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1FhrxDG9GPk3oxibBgyYIrVBlDUbTKeJF/view?usp=sharing"target="_blank" id="bot">ABNT - Referências e Citações </a>
+			<br><br>
+		   </fieldset>
+
+		   <br><br>
+
+		<fieldset id="d7">
+			<legend id="dis">Filosofia da Educação<legend id="nomprof">Profª: Dra. Isabel Cristina Rocha Hipólito Gonçalves</legend></legend>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1Uw006o6HT6yxlUTI_Z9WTzTQ2NsO2oRH/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1xpyesKwQE_6MCVJ_KH_5aJv4zdY18saV/view?usp=sharing"target="_blank" id="bot">Cronograma de Aulas</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1WQnB0GHkngxFKMISbuUH_BqKv9-uJeMM/view?usp=sharing"target="_blank" id="bot">Lista de Textos</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1TVV0BAxzafWgpTUaUfQ7ZBCx2K9_7YwV/view?usp=sharing"target="_blank" id="bot">Texto 1: Filosofia e Filosofia da Educação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1wQRjtN7o9Oi_U9AVj4UpLIiIaWSyKI2R/view?usp=sharing"target="_blank" id="bot">Texto 2: Filosofia e Educação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1Su6bz7pVLUQXr6ZgmgFlLHK_h5bOZ_HM/view?usp=sharing"target="_blank" id="bot">Texto 3: Educação e Pedagogia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1m8b7BYeiymRNGNy1MxRaxP2Db5vqAIbh/view?usp=sharing"target="_blank" id="bot">Texto 4: A Formação do Educador</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1tJ-5uCEnOdz7SinzOlGWO5ziTeieMbcm/view?usp=sharing"target="_blank" id="bot">Texto 5: Antropologia Filosofica</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1yDOdOAEjeCyJM8gB3q5TLTYFsLTBJBZA/view?usp=sharing"target="_blank" id="bot">Texto 6,8 e 13: Pressupostos e Concepções de Educação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1dtw-e0qEaVf9shnVFsXbEdd_rdyS6V8v/view?usp=sharing"target="_blank" id="bot">Texto 7: Epistemologia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1mpyzXI1rBJkqexoQYypJS-9RyVKmQEYa/view?usp=sharing"target="_blank" id="bot">Texto 9: Axiologia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1I0-BCOmnHN83krXR_fI01ffV0mf0XPN5/view?usp=sharing"target="_blank" id="bot">Texto 10: Educação e Sociedade: Redenção, Reprodução e Transformação</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1whRzz3PYBPmE30W_8xPOJ9iTqjFcZcWy/view?usp=sharing"target="_blank" id="bot">Texto 11: Alienação e Ideologia</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/19O4XBqsVOayvxfb6wnN1ILdjlELM5fyU/view?usp=sharing"target="_blank" id="bot">Texto 12: Reflexões e Debates filosófico-educacionais</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1bIF27CX7vkyvpmqelJScV9hlhZWIGPgY/view?usp=sharing"target="_blank" id="bot">Texto 14: Filosofia: Teorias e Práticas na Educação Brasileira</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1yCIVi8uRidX1phtaeJBsWBcSWa6wtptK/view?usp=sharing"target="_blank" id="bot">Texto 15: Concepções Liberais do Século XX</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1SvBVJlB4kWlfrF5jGF7sQ4YQ2Z2w1iQ8/view?usp=sharing"target="_blank" id="bot">Texto 16: Críticas à Escola</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1o9D2x-Wh0DwpJqPKwzdabXIag6EtGYN8/view?usp=sharing"target="_blank" id="bot">Texto 17: Pedagogias Histórico-sociais e outras Tendências</a>
+			<br><br>
+			<a href="https://drive.google.com/file/d/1c90eWTgJ22aiwc46LuQ1Gxec9h1P-Hky/view?usp=sharing"target="_blank" id="bot">Slide: Pressupostos Axiológicos da Educação</a>
+			<br><br>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset id="d9">
+			<legend id="dis">Metodologia Científica<legend id="nomprof">Profª: Dra. Isabel Cristina Rocha Hipólito Gonçalves / Profª: Me. Marcia Marques 
+				Damasceno</legend></legend>
+			<br><br>
+		<a href="https://drive.google.com/file/d/1wMdjmj3OxIxn_ZFJBvS4hBYjFoxfH3OE/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1c-WG8kWj9eaIosD2yWadvSbp9kr7cony/view?usp=sharing"target="_blank" id="bot">Cronograma de Aulas</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1Yl56FFRXUSei9AaEy688DNdDb6eVNIvX/view?usp=sharing"target="_blank" id="bot">Lista de Textos</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1ogROjjlVOv2pyEnkpowKLi5y6wPX8oSr/view?usp=sharing"target="_blank" id="bot">Texto 1: Universidade, Ciência e Formação Acadêmica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1xjstDxWUZdMJDtoBoTjFm_z31azPbzyz/view?usp=sharing"target="_blank" id="bot">Texto 2: O Conhecimento Científico</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1Qn2TdTVLwE64yeghc36Syhv3oWI9e67k/view?usp=sharing"target="_blank" id="bot">Texto 3: Teoria e Prática Científica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1dr360X6qXpHLPbjFDNQ1lZX8B6v1l0KR/view?usp=sharing"target="_blank" id="bot">Texto 4: Ciência e Método: uma Visão Histórica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1M3BWfQLjB8Q_asG5gBfL2sQCdkvHMUV8/view?usp=sharing"target="_blank" id="bot">Texto 5: Leis e Teorias</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/10ZjoxO1C05nGPFGG9bZ9zAvUoBT-Z2RN/view?usp=sharing"target="_blank" id="bot">Texto 6: Problemas, Hipóteses e Variáveis</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1f49XwHez5T1unpkiEGe2ZGBrFXxHA1U2/view?usp=sharing"target="_blank" id="bot">Texto 7: Modalidades e Metodologias de Pesq. Científica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1lbPuSJ0phI1Vh96FJ78olU_XbQy3KpOd/view?usp=sharing"target="_blank" id="bot">Texto 8: O Fluxograma da Pesquisa Científica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1SVlLGEqvX1gsORsMG6oLcfWwwSfazPED/view?usp=sharing"target="_blank" id="bot">Texto 9: As Modalidades de Trabalhos Científicos</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1k3iHduxiBOdp-LpqgqAaig2JFLlI6kGv/view?usp=sharing"target="_blank" id="bot">Pedagogia Histórico-Crítica</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1P51avxe_AmFwxCUDniULMLqsPR7qNMPh/view?usp=sharing"target="_blank" id="bot">ABNT: Artigos Científicos</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/17ek3xvk3bWDBTCeO8Y40ZfYScG5T2Mqd/view?usp=sharing"target="_blank" id="bot">ABNT: Trabalhos Acadêmicos</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1TC-g4rHRkDtAKKu9iP1F8SrT-2Z5xpj1/view?usp=sharing"target="_blank" id="bot">ABNT: Projeto de Pesquisa</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1YJaXoPbCrdD2pNR2kfx9r_yOfVTOk1Ja/view?usp=sharing"target="_blank" id="bot">Componentes do Projeto de Pesquisa</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1REPB85dSnnnJcfIsPQOwXVPoINfWsXiR/view?usp=sharing"target="_blank" id="bot">Elaboração do Projeto de Pesquisa</a>
+		<br><br>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset id="d10">
+			<legend id="dis">Inglês Instrumental<legend id="nomprof">Profª: Francisca de Fátima de Lima Sousa</legend></legend>
+		<br><br>
+		<a href="https://drive.google.com/file/d/16YhOA5ozLi4Jn1kyTVPViWJ5wsjJtdTX/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
+		<br><br>
+		<a href="https://drive.google.com/file/d/1L3xemfrdOEs248eRKeNDqQ9FaCITu_u0/view?usp=sharing"target="_blank" id="bot">Reading Strategies</a>
+		<br><br>
+		</fieldset>
+		<br>
+		<p id="p"><b>Situação do 1º módulo: </b><i id="sit1"> Concluido.</i></p>
+	</fieldset>
 </fieldset>
+</div>
+<br><br><br>
+<script>
+	var acc = document.getElementsByClassName("accordion");
+        var i;
 
-<br><br><br><br><br><br>
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                var arrow = this.querySelector(".arrow");
 
-			<fieldset id="disc">
-				<legend id="legdisc">Disciplinas do 1º Módulo</legend>
-				<br>
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    arrow.innerHTML = "&#9654;"; // Seta para a direita
+                } else {
+                    panel.style.display = "block";
+                    arrow.innerHTML = "&#9660;"; // Seta para baixo
+                }
+            });
+        }
 
-				<fieldset id="d1">
-					<legend id="dis">Fundamentos e Metodologia de Extensão do Ensino Superior<legend id="nomprof">Profª: Dra. Maria Irisvalda Leal Gondim Cavalcanti</legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/1aBt04pv04Hdl_6RXWFfnGKp5C5wwAGFE/view?usp=sharing" target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1JslE2vhk3Pit71wcMrBzsHjTe0AI6naR/view?usp=sharing"target="_blank" id="bot">Projeto de Ext. Universitária e Iniciação à Extensão Universitária</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1UOQx78ZP2AVW0M4Is20VXdH97Zughyyu/view?usp=sharing"target="_blank" id="bot">Livro Didático: Compreendendo a Inovação Social e a Extensão</a>
-				<br><br>
-				</fieldset>
+		let slideIndex = 0;
+autoShowSlides();
 
-				<br><br>
+function autoShowSlides() {
+    let slides = document.getElementsByClassName("auto-slide");
 
-				<fieldset id="d8">
-					<legend id="dis">Introdução ao Laboratório de Biologia<legend id="nomprof">Profª: Dra. Marlúcia da Silva Bezerra Lacerda / Profº: Dr. Ivanaldo Ribeiro de Moura</legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/1Nj_EIjSkPMUzlUFjirQhQ2p8wHYyBwBo/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/18meXq34XZqIAR_NBd0qb4EzhPjibpyv_/view?usp=sharing"target="_blank" id="bot">Orientações Para a Utilização dos Laboratórios</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1ptDPaWhGnv0AJ3N91U7Ur7f5DQJjqKg_/view?usp=sharing"target="_blank" id="bot">Normas de Biossegurança: Sua Origem e Prática</a>
-				<br><br>
-			</fieldset>
+    // Esconde todas as imagens
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 
-				<br><br>
+    // Incrementa o índice do slide
+    slideIndex++;
 
-				<fieldset id="d2">
-					<legend id="dis">Seminário de Introdução ao Curso<legend id="nomprof">Profº: Dr. Francisco de Assis Diniz Sobrinho</legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/12fdl-knBourvx9JkjPBLt4BNIdAsHRdt/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				</fieldset>
+    // Volta ao primeiro slide se ultrapassar o total
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
 
-				<br><br>
+    // Exibe o slide atual
+    slides[slideIndex - 1].style.display = "block";
 
-				<fieldset id="d4">
-					<legend id="dis">Fundamentos de Matemática<legend id="nomprof">Profº: Robson Fonseca</legend></legend>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1hKR8WT6ipcc5Osd9uPYr8dtoID-52Hpa/view?usp=sharing"target="_blank" id="bot">Funções</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1QpLbXsDNIMXSQ5gK32_pYrFCP3dhIAbM/view?usp=sharing"target="_blank" id="bot">Potência e Função Logaritmica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1bxDXDHuuT5Ye4ywn1mbGFCRv1tWXpGby/view?usp=sharing"target="_blank" id="bot">Função Quadrática</a>
-				<br><br>
-				</fieldset>
-
-			   <br><br>
-
-				<fieldset id="d6">
-					<legend id="dis">Fundamentos de Química<legend id="nomprof">Profª: Dra. Irlene Silva </legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/14xMFyMU3IQd9SG_jqs755NPxrjR0J3XZ/view?usp=sharing"target="_blank" id="bot">Estrutura Atômica - Aula 1</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1bNBZplsLJ36L_Nvu0E730o6bEBUsmmF5/view?usp=sharing"target="_blank" id="bot">Estrutura Atômica - Aula 2</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1MYoNG02EO3vN0f4v1EcexGZ5Ezb2TocZ/view?usp=sharing"target="_blank" id="bot">Ligação Iônica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1XoRlBkec5IdYc-xSgwfxcZzl6Xf9FQBa/view?usp=sharing"target="_blank" id="bot">Ligação Covalente</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1yhfc_ASm3fnmtrm5L55kSl2ZQB-O4mfK/view?usp=sharing"target="_blank" id="bot">Ligações Químicas - Geometria Molecular</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1pVh6a04IR2YWVwOjveGGN9VoACDXRPkV/view?usp=sharing"target="_blank" id="bot">Geometria Molecular, Polaridade de Moléculas e Forças Intermoleculares</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1QzHiu317KT8ddM-yh_MDkDfTdr0znGls/view?usp=sharing"target="_blank" id="bot">Reações Químicas</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/12l0kDZ8VPjOXATwo22Qem2EDia0Rb63b/view?usp=sharing"target="_blank" id="bot">Balanceamento de Equações Químicas</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1dL00_RsDOdgVKAWtkIVQXI2H1YUx4M_j/view?usp=sharing"target="_blank" id="bot">Cálculos Estequiométricos</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1WfOg_Oh4UyS2qfMdXIDKX1N5jsQajae0/view?usp=sharing"target="_blank" id="bot">Sistemas e Soluções</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1fpLztJkm0_TzGX0Ixixxocz5o8bLJOYU/view?usp=sharing"target="_blank" id="bot">Cinética Química</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1TBvBkw6qPHxrWk3P33LE2McDpeZ6wCo2/view?usp=sharing"target="_blank" id="bot">Química Orgânica: Cadeias Carbônicas e Grupos Funcionais</a>
-				<br><br>
-				</fieldset>
-
-				<br><br>
-
-				<fieldset id="d3">
-					<legend id="dis">Profissionalização Docente<legend id="nomprof">Profª: Me. Leia Soares da Silva</legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/11Q7wKUowBKd7yLZLKgH-OEok7ZqbXg0I/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1YryDhfYtnIHRNQxQBIqLL0zR0tJUEXyj/view?usp=sharing"target="_blank" id="bot">Profissionalização Docente: Entre Vocação e Formação</a>
-				<br><br>
-				</fieldset>
-
-				<br><br>
-
-				<fieldset id="d5">
-					<legend id="dis">Atividades Linguísticas<legend id="nomprof">Profª: Dra. Leila Patrícia Alves Dantas</legend></legend>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1dTFxnkKRKtlNxodHMrLcCHlvzujlLlbb/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1XIGLfu3nqjXnMYIsXTvMXCfIVH-bbaof/view?usp=sharing"target="_blank" id="bot">Linguagem e Célebro</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1P7mTlb1ymRVmxGF_dsR07bKANDHbTZos/view?usp=sharing"target="_blank" id="bot">Língua, Linguagem e Comunicação</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1L35DGSYEUvdWTU4jz3BVyEiCTMQ3NTq-/view?usp=sharing"target="_blank" id="bot">Gêneros e Tipos Textuais</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1iiBk1Qa2WgtS7V_jJGGFMGLlHWmv0NWa/view?usp=sharing"target="_blank" id="bot">Manual de Gêneros Acadêmicos</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1FhrxDG9GPk3oxibBgyYIrVBlDUbTKeJF/view?usp=sharing"target="_blank" id="bot">ABNT - Referências e Citações </a>
-					<br><br>
-				   </fieldset>
-
-				   <br><br>
-
-				<fieldset id="d7">
-					<legend id="dis">Filosofia da Educação<legend id="nomprof">Profª: Dra. Isabel Cristina Rocha Hipólito Gonçalves</legend></legend>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1Uw006o6HT6yxlUTI_Z9WTzTQ2NsO2oRH/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1xpyesKwQE_6MCVJ_KH_5aJv4zdY18saV/view?usp=sharing"target="_blank" id="bot">Cronograma de Aulas</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1WQnB0GHkngxFKMISbuUH_BqKv9-uJeMM/view?usp=sharing"target="_blank" id="bot">Lista de Textos</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1TVV0BAxzafWgpTUaUfQ7ZBCx2K9_7YwV/view?usp=sharing"target="_blank" id="bot">Texto 1: Filosofia e Filosofia da Educação</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1wQRjtN7o9Oi_U9AVj4UpLIiIaWSyKI2R/view?usp=sharing"target="_blank" id="bot">Texto 2: Filosofia e Educação</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1Su6bz7pVLUQXr6ZgmgFlLHK_h5bOZ_HM/view?usp=sharing"target="_blank" id="bot">Texto 3: Educação e Pedagogia</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1m8b7BYeiymRNGNy1MxRaxP2Db5vqAIbh/view?usp=sharing"target="_blank" id="bot">Texto 4: A Formação do Educador</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1tJ-5uCEnOdz7SinzOlGWO5ziTeieMbcm/view?usp=sharing"target="_blank" id="bot">Texto 5: Antropologia Filosofica</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1yDOdOAEjeCyJM8gB3q5TLTYFsLTBJBZA/view?usp=sharing"target="_blank" id="bot">Texto 6,8 e 13: Pressupostos e Concepções de Educação</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1dtw-e0qEaVf9shnVFsXbEdd_rdyS6V8v/view?usp=sharing"target="_blank" id="bot">Texto 7: Epistemologia</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1mpyzXI1rBJkqexoQYypJS-9RyVKmQEYa/view?usp=sharing"target="_blank" id="bot">Texto 9: Axiologia</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1I0-BCOmnHN83krXR_fI01ffV0mf0XPN5/view?usp=sharing"target="_blank" id="bot">Texto 10: Educação e Sociedade: Redenção, Reprodução e Transformação</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1whRzz3PYBPmE30W_8xPOJ9iTqjFcZcWy/view?usp=sharing"target="_blank" id="bot">Texto 11: Alienação e Ideologia</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/19O4XBqsVOayvxfb6wnN1ILdjlELM5fyU/view?usp=sharing"target="_blank" id="bot">Texto 12: Reflexões e Debates filosófico-educacionais</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1bIF27CX7vkyvpmqelJScV9hlhZWIGPgY/view?usp=sharing"target="_blank" id="bot">Texto 14: Filosofia: Teorias e Práticas na Educação Brasileira</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1yCIVi8uRidX1phtaeJBsWBcSWa6wtptK/view?usp=sharing"target="_blank" id="bot">Texto 15: Concepções Liberais do Século XX</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1SvBVJlB4kWlfrF5jGF7sQ4YQ2Z2w1iQ8/view?usp=sharing"target="_blank" id="bot">Texto 16: Críticas à Escola</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1o9D2x-Wh0DwpJqPKwzdabXIag6EtGYN8/view?usp=sharing"target="_blank" id="bot">Texto 17: Pedagogias Histórico-sociais e outras Tendências</a>
-					<br><br>
-					<a href="https://drive.google.com/file/d/1c90eWTgJ22aiwc46LuQ1Gxec9h1P-Hky/view?usp=sharing"target="_blank" id="bot">Slide: Pressupostos Axiológicos da Educação</a>
-					<br><br>
-				</fieldset>
-
-				<br><br>
-
-				<fieldset id="d9">
-					<legend id="dis">Metodologia Científica<legend id="nomprof">Profª: Dra. Isabel Cristina Rocha Hipólito Gonçalves / Profª: Me. Marcia Marques 
-						Damasceno</legend></legend>
-					<br><br>
-				<a href="https://drive.google.com/file/d/1wMdjmj3OxIxn_ZFJBvS4hBYjFoxfH3OE/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1c-WG8kWj9eaIosD2yWadvSbp9kr7cony/view?usp=sharing"target="_blank" id="bot">Cronograma de Aulas</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1Yl56FFRXUSei9AaEy688DNdDb6eVNIvX/view?usp=sharing"target="_blank" id="bot">Lista de Textos</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1ogROjjlVOv2pyEnkpowKLi5y6wPX8oSr/view?usp=sharing"target="_blank" id="bot">Texto 1: Universidade, Ciência e Formação Acadêmica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1xjstDxWUZdMJDtoBoTjFm_z31azPbzyz/view?usp=sharing"target="_blank" id="bot">Texto 2: O Conhecimento Científico</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1Qn2TdTVLwE64yeghc36Syhv3oWI9e67k/view?usp=sharing"target="_blank" id="bot">Texto 3: Teoria e Prática Científica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1dr360X6qXpHLPbjFDNQ1lZX8B6v1l0KR/view?usp=sharing"target="_blank" id="bot">Texto 4: Ciência e Método: uma Visão Histórica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1M3BWfQLjB8Q_asG5gBfL2sQCdkvHMUV8/view?usp=sharing"target="_blank" id="bot">Texto 5: Leis e Teorias</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/10ZjoxO1C05nGPFGG9bZ9zAvUoBT-Z2RN/view?usp=sharing"target="_blank" id="bot">Texto 6: Problemas, Hipóteses e Variáveis</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1f49XwHez5T1unpkiEGe2ZGBrFXxHA1U2/view?usp=sharing"target="_blank" id="bot">Texto 7: Modalidades e Metodologias de Pesq. Científica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1lbPuSJ0phI1Vh96FJ78olU_XbQy3KpOd/view?usp=sharing"target="_blank" id="bot">Texto 8: O Fluxograma da Pesquisa Científica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1SVlLGEqvX1gsORsMG6oLcfWwwSfazPED/view?usp=sharing"target="_blank" id="bot">Texto 9: As Modalidades de Trabalhos Científicos</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1k3iHduxiBOdp-LpqgqAaig2JFLlI6kGv/view?usp=sharing"target="_blank" id="bot">Pedagogia Histórico-Crítica</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1P51avxe_AmFwxCUDniULMLqsPR7qNMPh/view?usp=sharing"target="_blank" id="bot">ABNT: Artigos Científicos</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/17ek3xvk3bWDBTCeO8Y40ZfYScG5T2Mqd/view?usp=sharing"target="_blank" id="bot">ABNT: Trabalhos Acadêmicos</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1TC-g4rHRkDtAKKu9iP1F8SrT-2Z5xpj1/view?usp=sharing"target="_blank" id="bot">ABNT: Projeto de Pesquisa</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1YJaXoPbCrdD2pNR2kfx9r_yOfVTOk1Ja/view?usp=sharing"target="_blank" id="bot">Componentes do Projeto de Pesquisa</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1REPB85dSnnnJcfIsPQOwXVPoINfWsXiR/view?usp=sharing"target="_blank" id="bot">Elaboração do Projeto de Pesquisa</a>
-				<br><br>
-				</fieldset>
-
-				<br><br>
-
-				<fieldset id="d10">
-					<legend id="dis">Inglês Instrumental<legend id="nomprof">Profª: Francisca de Fátima de Lima Sousa</legend></legend>
-				<br><br>
-				<a href="https://drive.google.com/file/d/16YhOA5ozLi4Jn1kyTVPViWJ5wsjJtdTX/view?usp=sharing"target="_blank" id="bot">Plano de Disciplina</a>
-				<br><br>
-				<a href="https://drive.google.com/file/d/1L3xemfrdOEs248eRKeNDqQ9FaCITu_u0/view?usp=sharing"target="_blank" id="bot">Reading Strategies</a>
-				<br><br>
-				</fieldset>
-				<br>
-				<p id="p"><b>Situação do 1º módulo: </b><i id="sit1"> Concluido.</i></p>
-	</fieldset>
-	
-	</fieldset>
-	<br><br><br><br><br>
-	<br><br><br><br><br>
+    // Configura o tempo de exibição do slide (4 segundos)
+    setTimeout(autoShowSlides, 4000);
+}
+</script>
 
 	<footer class="footer">
         <div class="icons">
