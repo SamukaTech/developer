@@ -3,7 +3,7 @@ body {
 	background-color: azure;
 	margin: 0px;
     padding: 0px;
-	background-image: url(imagens/1624525147_1GG.webp);
+	background-image: url(imagens/1624521904_1GG.webp);
 }
 html,
 body {
@@ -38,63 +38,37 @@ nav {
     padding: 10px;
     text-align: center;
 }
-.slider {
+/* Estilos do novo slider automático */
+.auto-slider {
     position: relative;
-    width: 100%;
+    max-width: 100%;
+    height: 100%; /* Ajuste a altura conforme necessário */
     overflow: hidden;
-    }
-    
-    .slide {
+    margin: auto;
+}
+
+.auto-slide {
     display: none;
-    }
-    
-    .slide img {
     width: 100%;
-    }
-    
-    .active {
-    display: block;
-    }
-    
-    .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 2px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 20px;
-    user-select: none;
-    }
-    
-    .prev {
-    left: 0;
-    }
-    
-    .next {
-    right: 0;
-    }
-    
-    .dot-container {
-    text-align: center;
-    }
-    
-    .dot {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    margin: 0 8px;
-    background-color: #a3a3a3;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-    }
-    
-    .dot.active {
-    background-color: #059700;
-    }
+    height: 100%;
+}
+
+.auto-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço do slide */
+    border-radius: 5px;
+}
+
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
 #buton {
     border: 1px solid rgb(2, 70, 0);
     border-radius: 6px;
@@ -153,7 +127,7 @@ nav {
 #curso {
     border: 0px;
     background-color: rgb(107, 194, 252);
-    background-image: url('https://a-static.mlcdn.com.br/1500x1500/papel-de-parede-adesivo-vinilico-laboratorio-ciencia-proveta-gf-casa-decor/gfcasadecor/casual-10/f781f7c08273ab8e4704aa44c1578f9a.jpg');
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/26549722-abstrato-dna-estrutura-biotecnologia-projeto-conceito-com-hexagonal-textura-dentro-azul-fundo-vetor.jpg');
     background-size: contain;
     background-position: center;
     padding: 0px;
@@ -176,9 +150,8 @@ nav {
 }
 #disc {
     border: 1px solid rgb(7, 7, 7);
-    background-color: #50ffb1;
-    background-image: url(https://www.healthsnap.tv/wp-content/uploads/2018/01/Depositphotos_84141258_m-2015.jpg);
-    background-position: center;
+    background-color: #7ae582;
+    background-image: url(https://media.istockphoto.com/id/545642886/pt/vetorial/chemical-seamless-pattern-chemical-laboratory-supplies-seamless-pattern.jpg?s=612x612&w=0&k=20&c=sqNnl708aPballBI1yyaZ2litwbTNolcWlLEyyON5Fo=);
     background-size: cotain;
     padding: 5px;
 }
@@ -189,7 +162,7 @@ nav {
     text-align: center;
     font-size: 21px;
     font-weight: bold;
-    background-color: #b2f7ef;
+    background-color: #35fdfd;
 }
 #nomprof{
     font-size: 14px;
@@ -245,15 +218,15 @@ nav {
     text-align: center;
     font-size: 17px;
 }
-#sit3 {
-    color: white;
-    background-color: blue;
+#sit4 {
+    color: rgb(0, 0, 0);
+    background-color: rgb(236, 221, 0);
     border-radius: 8px;
     font-style: italic;
     font-size: 15px;
     padding: 4px;
 }
-#sit2, #sit1 {
+#sit3, #sit2, #sit1 {
     color: rgb(0, 0, 0);
     background-color: rgb(79, 248, 0);
     border-radius: 8px;
@@ -295,6 +268,53 @@ nav {
  .footer .text {
       margin: 5px 0;
         }
+        
+/* Estilo para o acordeão */
+.accordion {
+    background-color: #38b000;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.accordion .arrow {
+    margin-right: 10px; /* Espaço entre a seta e o texto */
+    transition: transform 0.4s ease;
+    font-size: 20px;
+}
+
+.active .arrow {
+    transform: rotate(0deg); /* Gira a seta para apontar para baixo */
+}
+
+.accordion:hover, .active {
+    background-color: #007200;
+}
+
+.panel {
+    padding: 0px;
+    display: none;
+    background-color: rgb(160, 239, 250);
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-top: none;
+    animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 
 @media screen and (min-width: 768px) { 
 
@@ -313,6 +333,10 @@ nav {
 h2 {
     font-size: 25px;
 }
+.auto-slider {
+    width: 100%;
+    height: 500px;
+}
 #cabe {
     font-size: 17px;
 }
@@ -324,21 +348,17 @@ h2 {
     width: 27%;
 }
 #tabhora {
-    width: 65%;
+    width: 90%;
 }
 nav {
     flex-direction: row;
 }
-.slider {
-    width: 100%;
-    margin: 0 auto; /* Centraliza o slider */
-  }
 #buton {
     padding: 10px;
 }
 #disc {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 #d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9, #d10 {
         display: flex;
