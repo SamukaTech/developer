@@ -1,5 +1,5 @@
 function acesso(form){
-    if (form.usuario.value == "samuelnaslima.98@gmail.com" && form.senha.value == "concurso23") {
+    if (form.usuario.value == "samuelnaslima.98@gmail.com" && form.senha.value == "concurso24") {
         location = "concursos.html"
     }
     else if (form.usuario.value == "") {
