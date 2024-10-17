@@ -15,6 +15,45 @@ body{
     text-align: center;
 	font-size: 20px;
 }
+#gcm_geral {
+	background-color: #0c0038;
+	padding-bottom: 3px;
+}
+#fiel-gcm {
+	background-image: url(https://www.viagora.com.br/media/images/2023/03/16/entrega-de-viaturas-para-guarda-civil-municipal-de-teresina_aantXgO.JPG.950x0_q95_crop.webp);
+	background-position: center;
+	background-size: cover;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	display: flex;
+}
+#botao-gcm {
+	background-color: #021981;
+	color: #ffffff;
+	border: 1.5px solid rgb(0, 0, 0);
+	border-radius: 12px;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 6px;
+}
+#botao-gcm:hover{
+	background-color: #00146e;
+	color: white;
+}
+#h1_gcm {
+	background-color: #0d0177;
+	color: #ffffff;
+}
+#sit_gcm {
+	color: white;
+}
+#sit-gcm {
+	background-color: rgb(9, 107, 0);
+	color: #ffffff;
+	padding: 3.5px;
+	border-radius: 15px;
+}
 #fiel-uespi {
 	border: 1px solid black;
 	background-image: url(https://180graus.com/180graus/media/image_bank/2022/11/1_7256461761309286866.jpg.696x0_q85_upscale.jpg);
@@ -82,7 +121,7 @@ body{
 	justify-content: space-around;
 	display: flex;
 }
-#logo-uespi {
+#logo-gcm, #logo-uespi {
 	width: 60%;
 	border-radius: 5px;
 }
@@ -156,7 +195,7 @@ footer {
 	#fiel-uespi {
 		flex-direction: row;
 	}
-	#logo-uespi {
+	#logo-gcm, #logo-uespi {
 	width: 45%;
 	border-radius: 5px;
 }
