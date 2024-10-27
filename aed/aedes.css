@@ -1,0 +1,300 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e3f2fd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho - Fixação condicional */
+header {
+    background-color: #358600;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+}
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+/* Menu de Navegação */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+.nav-list.active {
+    display: flex;
+    max-height: 500px; /* Define um limite para o menu expandido */
+}
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.nav-list li {
+    padding: 10px;
+}
+.nav-list a:hover {
+    background: #166d00;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+/* Menu "Hambúrguer" no canto superior esquerdo */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+
+/* Responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+    header h1 {
+    padding-top: 18px;
+}
+    .nav-list {
+        display: none; /* Esconde o menu em telas menores */
+        flex-direction: column;
+        max-height: 0; /* Mantém o menu fechado */
+        overflow: hidden;
+        line-height: 6px;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-list.active {
+        display: flex; /* Exibe o menu quando ativo */
+        max-height: 500px;
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o botão "Hambúrguer" em telas menores */
+    }
+    #slider {
+        padding: 0px;
+    }
+}
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Slider */
+#slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slider-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Seção de Apresentação com imagem de fundo */
+#apresentacao {
+    background-image: url('https://www.bhs.org.au/media/2vnfqnvg/mosquito.jpg'); /* Substitua com a URL da imagem do mosquito */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    padding: 3rem 2rem;
+    z-index: 1;
+}
+
+#apresentacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+#apresentacao h2, #apresentacao p {
+    color: #fff;
+}
+
+/* Estilo para alinhar os ícones das doenças e o texto */
+.doencas-lista, .prevencao-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.doencas-lista li, .prevencao-lista li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.icone-doenca, .icone-prevencao {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+
+/* Seções */
+section {
+    padding: 3rem 2rem;
+    margin: 1.5rem auto;
+    max-width: 920px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #006400;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+ul li {
+    font-size: 1.05rem;
+    color: #333;
+    padding: 0.3rem 0;
+}
+
+ul li strong {
+    color: #004d40;
+    font-weight: bold;
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: #007f5f;
+    align-self: flex-start;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+button {
+    background-color: #007f5f;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #004b23;
+}
+
+/* Estilo de animação para aparecer ao rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    background-color: #006400;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+#mensagem-status {
+    margin-top: 1rem;
+    text-align: center;
+    color: #006400;
+}
