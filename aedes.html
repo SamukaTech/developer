@@ -8,60 +8,51 @@
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho com Menu Responsivo -->
     <header>
         <h1>Projeto Aedes Aegypti: Sensibilização e Atitude</h1>
-        <nav>
-            <a href="#apresentacao">Apresentação</a>
-            <a href="#doencas">Doenças Relacionadas</a>
-            <a href="#prevencao">Medidas de Prevenção</a>
-            <a href="#objetivos">Objetivos</a>
-            <a href="#metodologia">Metodologia</a>
-            <a href="#resultados">Resultados Esperados</a>
-            <a href="#contato">Contato</a>
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="#apresentacao">Apresentação</a></li>
+                <li><a href="#mosquito">O Mosquito Aedes Aegypti</a></li>
+                <li><a href="#doencas">Doenças Relacionadas</a></li>
+                <li><a href="#prevencao">Prevenção</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#resultados">Resultados Esperados</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
     <!-- Seção de Apresentação -->
-    <section id="apresentacao">
-        <h2>Apresentação do Projeto</h2>
-        <p>O projeto "Aedes Aegypti: Sensibilização e Atitude" é uma iniciativa que visa conscientizar a população da Praça Rio Branco, em Teresina, sobre os perigos do mosquito Aedes aegypti, transmissor de diversas doenças graves, como dengue, zika e chikungunya.</p>
-        <p><strong>Objetivo:</strong> Sensibilizar a comunidade sobre os riscos da proliferação do mosquito e incentivar práticas preventivas para reduzir a incidência de doenças.</p>
-        <p>A importância deste projeto reside no seu papel em educar e mobilizar a comunidade local, promovendo saúde e bem-estar para todos os frequentadores da região.</p>
+    <section id="apresentacao" class="reveal">
+        <h2>Sobre o Projeto</h2>
+        <p>O projeto "Aedes Aegypti: Sensibilização e Atitude", realizado pelos acadêmicos do 4° período do curso de Ciências Biológicas do IFPI, tem como objetivo conscientizar os frequentadores da Praça Rio Branco, em Teresina, sobre os riscos associados ao mosquito Aedes aegypti, transmissor de doenças como dengue, zika e chikungunya.
+            Com foco na sensibilização dos visitantes da praça, o projeto incentiva a adoção de práticas preventivas que ajudam a reduzir a presença do mosquito e, consequentemente, a incidência dessas doenças.
+            Esta iniciativa desempenha um papel importante na promoção da saúde e bem-estar dos frequentadores, contribuindo para um ambiente mais seguro para todos.</p>
     </section>
 
+    <!-- Nova Seção: Sobre o Mosquito Aedes Aegypti -->
+    <section id="mosquito" class="reveal">
+        <h2>O Mosquito Aedes Aegypti</h2>
+        <p>O <i>Aedes aegypti</i> é um mosquito originário da África que, atualmente, se encontra distribuído globalmente, especialmente em áreas tropicais e subtropicais. Ele é conhecido como o principal transmissor de doenças como a dengue, zika e chikungunya.</p>
+        <p>Este mosquito se reproduz em água parada e é altamente adaptado ao ambiente urbano. A conscientização sobre suas características e os métodos de prevenção é essencial para o controle de sua proliferação e a redução de doenças.</p>
+    </section>
+
+   
+
     <!-- Slider Automático -->
-    <section id="slider">
+    <section id="slider" class="reveal">
         <div class="slider-container">
-            <img src="https://i.pinimg.com/originals/73/b8/2e/73b82ee799b13c0441609fd6f3779584.jpg" alt="Imagem da praça Rio Branco">
+            <img src="https://i.ytimg.com/vi/jzbaQhghayE/maxresdefault.jpg" alt="Imagem da praça Rio Branco">
             <img src="https://avatars.mds.yandex.net/get-mpic/1865652/img_id8306432619260845998.jpeg/orig" alt="Banner de conscientização">
-            <img src="https://i.ytimg.com/vi/jzbaQhghayE/maxresdefault.jpg" alt="Distribuição de panfletos">
+            <img src="https://devdiscourse.blob.core.windows.net/devnews/31_05_2023_15_49_07_3608384.jpg" alt="Distribuição de panfletos">
         </div>
     </section>
 
-    <!-- Seção Doenças Relacionadas -->
-    <section id="doencas">
-        <h2>Principais Doenças Relacionadas ao Aedes Aegypti</h2>
-        <ul>
-            <li><strong>Dengue:</strong> Doença infecciosa que pode causar febre alta, dores intensas e, em casos graves, levar a complicações hemorrágicas.</li>
-            <li><strong>Zika:</strong> Pode provocar sintomas leves em adultos, mas é especialmente perigosa para gestantes, pois está associada a casos de microcefalia em bebês.</li>
-            <li><strong>Chikungunya:</strong> Caracteriza-se por dores intensas nas articulações, podendo se tornar crônica e causar limitações de movimento.</li>
-        </ul>
-    </section>
-
-    <!-- Seção Medidas de Prevenção -->
-    <section id="prevencao">
-        <h2>Medidas Necessárias para Prevenção</h2>
-        <ul>
-            <li>Evitar o acúmulo de água parada em locais como pneus, vasos de plantas e garrafas.</li>
-            <li>Manter caixas d'água, tonéis e barris bem fechados.</li>
-            <li>Limpar semanalmente recipientes que acumulam água, como bandejas de ar-condicionado.</li>
-            <li>Colaborar com campanhas de conscientização e incentivar práticas de higiene e limpeza.</li>
-        </ul>
-    </section>
-
-    <!-- Seção Objetivos do Projeto -->
-    <section id="objetivos">
+     <!-- Seção Objetivos do Projeto -->
+     <section id="objetivos" class="reveal">
         <h2>Objetivos do Projeto</h2>
         <h3>Objetivo Geral</h3>
         <p>Sensibilizar os frequentadores da Praça Rio Branco sobre os riscos associados ao Aedes aegypti, promovendo mudanças comportamentais para prevenir doenças transmitidas pelo mosquito.</p>
@@ -76,13 +67,35 @@
     </section>
 
     <!-- Seção Metodologia -->
-    <section id="metodologia">
+    <section id="metodologia" class="reveal">
         <h2>Metodologia</h2>
         <p>O projeto inclui visitas à Praça Rio Branco, entrevistas com frequentadores para compreender os desafios enfrentados, e ações de conscientização por meio de panfletos e banners que explicam os métodos de prevenção contra o mosquito Aedes aegypti...</p>
     </section>
 
+    <!-- Seção Doenças Relacionadas -->
+    <section id="doencas" class="reveal">
+        <h2>Principais Doenças Relacionadas ao Aedes Aegypti</h2>
+        <ul class="doencas-lista">
+            <li><img src="https://img.myloview.com.br/quadros/aedes-aegypti-mosquito-pernilongo-segurando-cartazes-dengue-400-66296127.jpg" alt="Dengue" class="icone-doenca"> Doença infecciosa que pode causar febre alta, dores intensas e, em casos graves, levar a complicações hemorrágicas.</li>
+            <li><img src="https://img.myloview.com.br/quadros/aedes-aegypti-mosquito-stilt-exploracao-cartaz-zika-virus-400-66449334.jpg" alt="Zika" class="icone-doenca"> Pode provocar sintomas leves em adultos, mas é especialmente perigosa para gestantes, pois está associada a casos de microcefalia em bebês.</li>
+            <li><img src="c:\Users\samue\OneDrive\Documents\Imagens\chicun.jpg" alt="Chikungunya" class="icone-doenca"> Caracteriza-se por dores intensas nas articulações, podendo se tornar crônica e causar limitações de movimento.</li>
+        </ul>
+    </section>
+
+   <!-- Seção Medidas de Prevenção com imagens ao lado dos itens -->
+<section id="prevencao" class="reveal">
+    <h2>Medidas Necessárias para Prevenção</h2>
+    <ul class="prevencao-lista">
+        <li><img src="https://cbx-prod.b-cdn.net/COLOURBOX64602192.jpg?width=800&height=800&quality=70" alt="Evitar água parada" class="icone-prevencao">Evitar o acúmulo de água parada em locais como pneus, vasos de plantas e garrafas.</li>
+        <li><img src="https://d2u9hui909q9sw.cloudfront.net/loja/arquivos_loja/58751/Fotos/thumbs3/produto_Foto1_12209286.png" alt="Caixas d'água fechadas" class="icone-prevencao">Manter caixas d'água, tonéis e barris bem fechados.</li>
+        <li><img src="https://blog.aricanduva.com.br/wp-content/uploads/2024/03/M%C3%A3o-colocando-areia-no-pratinho-de-planta-1024x1024.jpeg" alt="Limpeza" class="icone-prevencao">Limpar semanalmente recipientes que acumulam água, como bandejas de ar-condicionado.</li>
+        <li><img src="https://i.pinimg.com/474x/af/27/ed/af27ed84beaadea1a3b87718546a3737.jpg" alt="Conscientização" class="icone-prevencao">Colaborar com campanhas de conscientização e incentivar práticas de higiene e limpeza.</li>
+    </ul>
+</section>
+
+
     <!-- Seção Resultados Esperados -->
-    <section id="resultados">
+    <section id="resultados" class="reveal">
         <h2>Resultados Esperados</h2>
         <p>Espera-se que os frequentadores da Praça Rio Branco adquiram conhecimento sobre o Aedes aegypti e adotem atitudes para reduzir a proliferação do mosquito. Além disso, o projeto visa diminuir o número de casos de doenças causadas pelo mosquito na região.</p>
         <ul>
@@ -92,8 +105,9 @@
         </ul>
     </section>
 
+
     <!-- Formulário de Contato -->
-    <section id="contato">
+    <section id="contato" class="reveal">
         <h2>Contato</h2>
         <p>Interessado em apoiar o projeto ou saber mais? Entre em contato conosco:</p>
         <form action="enviar_formulario.php" method="POST">
@@ -115,6 +129,7 @@
         <p>&copy; 2024 Projeto Aedes Aegypti: Sensibilização e Atitude. Todos os direitos reservados.</p>
     </footer>
 
+    
    
 
 
@@ -129,6 +144,38 @@ function showSlides() {
 }
 
 setInterval(showSlides, 5000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150; 
+
+        reveals.forEach((reveal) => {
+            const revealTop = reveal.getBoundingClientRect().top;
+
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add('active');
+            } else {
+                reveal.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Trigger on page load
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+});
+
 
 </script>
 
@@ -148,13 +195,27 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho - Fixação condicional */
-header {
-    background-color: #00695c;
-    color: #fff;
-    padding: 1.5rem 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #1965f3;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: inline;
+        cursor: pointer;
+    }
 }
 
 @media (min-width: 769px) {
@@ -163,6 +224,51 @@ header {
         top: 0;
         z-index: 1000;
     }
+}
+
+/* Estilos de Navegação */
+header {
+    background-color: #1965f3;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b2dfdb;
+}
+
+/* Menu Responsivo */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 header h1 {
@@ -203,11 +309,67 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Seção de Apresentação com imagem de fundo */
+#apresentacao {
+    background-image: url('https://s2-g1.glbimg.com/l_hUbcRUcRhDDRmkT-antjj4ZGQ=/0x0:700x394/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/y/o/g155hBRNCebMRKRJBGzw/mosquito-da-dengue.png'); /* Substitua com a URL da imagem do mosquito */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    padding: 3rem 2rem;
+}
+
+#apresentacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+#apresentacao h2, #apresentacao p {
+    color: #fff;
+}
+
+/* Seção do Mosquito Aedes Aegypti */
+#mosquito {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    max-width: 850px;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para alinhar os ícones das doenças e o texto */
+.doencas-lista, .prevencao-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.doencas-lista li, .prevencao-lista li {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.icone-doenca, .icone-prevencao {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+
 /* Seções */
 section {
     padding: 3rem 2rem;
     margin: 1.5rem auto;
-    max-width: 800px;
+    max-width: 850px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -215,7 +377,7 @@ section {
 
 h2 {
     font-size: 1.8rem;
-    color: #004d40;
+    color: #006400;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -286,6 +448,18 @@ button {
 
 button:hover {
     background-color: #004d40;
+}
+
+/* Estilo de animação para aparecer ao rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Rodapé */
