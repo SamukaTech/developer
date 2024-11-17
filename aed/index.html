@@ -460,12 +460,12 @@
         // Adicionar novos focos
         spawnFocos();
 
-        // Iniciar temporizador para encerrar o jogo após 30 segundos
+        // Iniciar temporizador para encerrar o jogo após 20 segundos
         gameTimer = setTimeout(() => {
             if (totalFocos > 0) {
-                endGame(false); // False significa que o tempo acabou
+                endGame(false); // False significa que o jogador perdeu
             }
-        }, 30000);
+        }, 20000);
     }
 
     function spawnFocos() {
@@ -488,7 +488,7 @@
 
                 // Encerrar o jogo se todos os focos forem eliminados
                 if (totalFocos === 0) {
-                    endGame(true); // True significa que todos os focos foram eliminados
+                    endGame(true); // True significa que o jogador ganhou
                 }
             };
 
@@ -506,24 +506,24 @@
         gameArea.classList.add("hidden");
         startButton.parentElement.classList.remove("hidden");
 
-        // Mensagem personalizada dependendo de como o jogo terminou
+        // Mensagem personalizada dependendo do resultado
         const message = allFocosCleared
             ? `Parabéns! Você eliminou todos os focos e marcou ${score} pontos!`
             : `O tempo acabou! Você eliminou ${score} de 10 focos.`;
 
+        // O botão sempre será exibido para começar novamente
         startButton.parentElement.innerHTML = `
             <p>${message}</p>
-            <button id="start-game">Jogar Novamente</button>
+            <button id="start-game">Jogar do Início</button>
         `;
 
-        // Adicionar evento ao botão para reiniciar o jogo
         const newStartButton = document.getElementById("start-game");
         newStartButton.onclick = startGame;
     }
 
     startButton.onclick = startGame;
 </script>
-
+    
 
 
 </body>
