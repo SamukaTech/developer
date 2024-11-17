@@ -511,18 +511,19 @@
             ? `Parabéns! Você eliminou todos os focos e marcou ${score} pontos!`
             : `O tempo acabou! Você eliminou ${score} de 10 focos.`;
 
-        // O botão sempre será exibido para começar novamente
+        // O botão sempre será exibido para recarregar a página
         startButton.parentElement.innerHTML = `
             <p>${message}</p>
             <button id="start-game">Jogar do Início</button>
         `;
 
         const newStartButton = document.getElementById("start-game");
-        newStartButton.onclick = startGame;
+        newStartButton.onclick = () => location.reload(); // Recarrega a página
     }
 
     startButton.onclick = startGame;
 </script>
+    
     
 
 
