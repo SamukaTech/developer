@@ -142,8 +142,13 @@
          sobre as estratégias de combate ao mosquito, além da exposição de banners na praça com informações sobre as doenças transmitidas pelo mosquito e a importância de erradicar esse vetor.</p>
     </section>
 
+    <!-- Seção Resultados Esperados -->
+    <section id="resultados" class="reveal">
+        <h2>Resultados Esperados</h2>
+        <p>Com este projeto, espera-se que os frequentadores da Praça Rio Branco, no centro de Teresina, reflitam sobre as consequências do descarte inadequado de resíduos, uma prática que pode gerar criadouros do mosquito <i>Aedes aegypti</i>. Além disso, ao disponibilizar panfletos informativos com orientações para identificar o mosquito, entender os sintomas, o período de incubação e a transmissibilidade das doenças, o projeto visa fornecer informações claras sobre essas enfermidades e como preveni-las. O objetivo final é contribuir para a redução do número de casos dessas arboviroses na área.</p>
+    </section>
     
-    <!-- Seção de Quiz -->
+     <!-- Seção de Quiz -->
     <section id="quiz" class="reveal">
         <h2>Teste seus Conhecimentos</h2>
         <div id="quiz-container">
@@ -158,17 +163,15 @@
         </div>
     </section>
 
-    <!-- Seção Resultados Esperados -->
-    <section id="resultados" class="reveal">
-        <h2>Resultados Esperados</h2>
-        <p>Com este projeto, espera-se que os frequentadores da Praça Rio Branco, no centro de Teresina, reflitam sobre as consequências do descarte inadequado de resíduos, uma prática que pode gerar criadouros do mosquito <i>Aedes aegypti</i>. Além disso, ao disponibilizar panfletos informativos com orientações para identificar o mosquito, entender os sintomas, o período de incubação e a transmissibilidade das doenças, o projeto visa fornecer informações claras sobre essas enfermidades e como preveni-las. O objetivo final é contribuir para a redução do número de casos dessas arboviroses na área.</p>
-    </section>
-
     <section id="jogo-educativo" class="reveal">
-        <h2>Elimine os Focos do Mosquito!</h2>
+        <div id="jogo-titulo">
+            <h2>Elimine os Focos do Mosquito!</h2>
+            <img src="https://media.istockphoto.com/id/1670368698/pt/vetorial/dengue-prevention-avoid-water-collection-stock-illustration.jpg?s=612x612&w=0&k=20&c=YlBL7Zj8EUzvzQytrYdlXzQrR73Ulp_pgnh24aTYoo4=" alt="Ícone de mosquito" />
+        </div>
         <div id="game-container">
             <div id="game-instructions">
-                <p>Identifique e clique nos focos de água parada para eliminá-los. Você tem 30 segundos!</p>
+                <p>Identifique e clique nos focos de água parada para eliminá-los. Você tem 20 segundos!</p>
+                <br>
                 <button id="start-game">Iniciar Jogo</button>
             </div>
             <div id="game-area" class="hidden">
@@ -178,9 +181,6 @@
         </div>
     </section>
     
-    
-
-
     <!-- Formulário de Contato -->
     <section id="contato" class="reveal">
         <h2>Contato</h2>
@@ -514,7 +514,8 @@
         // O botão sempre será exibido para recarregar a página
         startButton.parentElement.innerHTML = `
             <p>${message}</p>
-            <button id="start-game">Jogar do Início</button>
+            <br>
+            <button id="start-game">Jogar novamente</button>
         `;
 
         const newStartButton = document.getElementById("start-game");
@@ -523,9 +524,6 @@
 
     startButton.onclick = startGame;
 </script>
-    
-    
-
 
 </body>
 </html>

@@ -457,7 +457,7 @@ footer {
     height: 400px;
     margin: 1rem auto;
     border: 2px solid #004b23;
-    background-color: #e3f2fd;
+    background-color: #58f3f8;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -470,8 +470,49 @@ footer {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url('game-background.jpg') center center / cover no-repeat; /* Substitua pela imagem do fundo */
+    background-size: cover;
+    background: url('https://img.freepik.com/vetores-premium/cena-dos-desenhos-animados-da-paisagem-com-campo-verde-e-ceu-azul_120819-2570.jpg') center center / cover no-repeat; /* Substitua pela imagem do fundo */
 }
+/* Estilo do título com imagem */
+#jogo-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#jogo-titulo h2 {
+    font-size: 1.8rem;
+    color: #007f5f;
+    margin: 0;
+    text-align: center;
+     /* Remover possíveis traços */
+     border-bottom: none; /* Caso o traço seja gerado por borda */
+     text-decoration: none; /* Caso o traço seja gerado por decoração de texto */
+}
+
+#jogo-titulo h2::after {
+    content: none; /* Remove pseudo-elementos que podem estar criando o traço */
+}
+
+#jogo-titulo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #jogo-titulo {
+        flex-direction: column; /* Alinha os itens verticalmente */
+    }
+
+    #jogo-titulo img {
+        margin-top: 0.5rem; /* Espaço entre o título e a imagem */
+    }
+}
+
 
 /* Estilo dos focos */
 .foco {
@@ -489,21 +530,21 @@ footer {
 }
 
 .foco.tipo1 {
-    background-image: url('https://guaranta.sp.gov.br/arquivos_site//imagens_dengue/garrafas.png'); /* Substitua pelo caminho da imagem */
+    background-image: url('https://blog.h2opurificadores.com.br/wp-content/uploads/2020/12/agua-parada-h2O-purificadores-810x540.jpg'); /* Substitua pelo caminho da imagem */
 }
 
 .foco.tipo2 {
-    background-image: url('https://media.istockphoto.com/id/1319963130/pt/vetorial/fighting-the-aedes-aegypti-mosquito-the-insect-reproduces-in-still-water-empty-tire-with.jpg?s=612x612&w=0&k=20&c=V0FPTrPeceFWgx1qZ1UWpM5_ne48bJnfd1_jeliNswc='); /* Substitua pelo caminho da imagem */
+    background-image: url('https://tribunadejundiai.com.br/wp-content/uploads/2024/04/Previna-a-dengue-no-seu-quintal-em-10-minutos.jpg'); /* Substitua pelo caminho da imagem */
 }
 
 .foco.tipo3 {
-    background-image: url('https://st4.depositphotos.com/6723736/39027/v/450/depositphotos_390273156-stock-illustration-illustration-mosquito-mosquito-gathering-water.jpg'); /* Substitua pelo caminho da imagem */
+    background-image: url('https://vitorianews.com.br/wp-content/uploads/2023/12/VASO-COM-AGUA-PARADA-dengue.jpg'); /* Substitua pelo caminho da imagem */
 }
 .foco.tipo4 {
-    background-image: url('https://s2-g1.glbimg.com/paYjrpiX1JooeDjfKLbirgQrtIY=/0x0:960x720/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/Q/x/kcuhkBRvK3nlgXQ7LHzw/calha-limpeza.jpg'); /* Substitua pelo caminho da imagem */
+    background-image: url('https://www.folha1.com.br/_midias/folha1/arquivos/2014/10/0c7b49a2f64428a533cbdcef705705fb_390x293.jpg'); /* Substitua pelo caminho da imagem */
 }
 
 .foco.tipo5 {
-    background-image: url('https://cdn.awsli.com.br/600x450/1112/1112786/produto/59158507/453d34eca7.jpg'); /* Substitua pelo caminho da imagem */
+    background-image: url('https://sulcapixaba.com.br/wp-content/uploads/sites/18/2024/02/IMG_5732.jpeg'); /* Substitua pelo caminho da imagem */
 }
 
