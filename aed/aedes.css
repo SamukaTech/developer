@@ -37,8 +37,9 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     text-align: center;
+    
 }
 .nav-list.active {
     display: flex;
@@ -99,6 +100,7 @@ header h1 {
         max-height: 0; /* Mantém o menu fechado */
         overflow: hidden;
         line-height: 6px;
+        padding-top: 10px;
         transition: max-height 0.4s ease;
     }
 
@@ -146,6 +148,7 @@ header h1 {
     background-size: cover;
     background-position: center;
     color: #fff;
+    text-align: justify;
     position: relative;
     padding: 3rem 2rem;
     z-index: 1;
@@ -197,6 +200,9 @@ section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+#mosquito, #metodologia, #resultados {
+    text-align: justify;
+}
 h2 {
     font-size: 1.8rem;
     color: #006400;
@@ -298,3 +304,206 @@ footer {
     text-align: center;
     color: #006400;
 }
+/* Estilos para o Quiz */
+#quiz {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#quiz-container {
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+#quiz-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+#quiz-options li {
+    margin: 0.5rem 0;
+}
+
+#quiz-options button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007f5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007f5f;
+    color: #fff;
+    border: 2px solid #004b23; /* Borda verde escura */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0.5rem 0; /* Espaçamento entre as alternativas */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.quiz-button:hover {
+    background-color: #004b23;
+    border-color: #007f5f; /* Muda a cor da borda ao passar o mouse */
+}
+
+#quiz-options button:hover {
+    background-color: #004b23;
+}
+
+#quiz-feedback {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+/* Seção de Animação */
+#animacao-reproducao {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.animacao-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+}
+
+.icone {
+    width: 100px;
+    height: 100px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
+    overflow: hidden; /* Garantir que a imagem não saia do círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.icone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para ocupar todo o círculo */
+    display: block;
+}
+
+.icone::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.etapa p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Estilo do Jogo Educativo */
+#game-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#game-instructions button {
+    background-color: #007f5f;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#game-instructions button:hover {
+    background-color: #004b23;
+}
+
+#game-area {
+    position: relative;
+    width: 80%;
+    height: 400px;
+    margin: 1rem auto;
+    border: 2px solid #004b23;
+    background-color: #e3f2fd;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('game-background.jpg') center center / cover no-repeat; /* Substitua pela imagem do fundo */
+}
+
+/* Estilo dos focos */
+.foco {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.foco:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.foco.tipo1 {
+    background-image: url('https://guaranta.sp.gov.br/arquivos_site//imagens_dengue/garrafas.png'); /* Substitua pelo caminho da imagem */
+}
+
+.foco.tipo2 {
+    background-image: url('https://media.istockphoto.com/id/1319963130/pt/vetorial/fighting-the-aedes-aegypti-mosquito-the-insect-reproduces-in-still-water-empty-tire-with.jpg?s=612x612&w=0&k=20&c=V0FPTrPeceFWgx1qZ1UWpM5_ne48bJnfd1_jeliNswc='); /* Substitua pelo caminho da imagem */
+}
+
+.foco.tipo3 {
+    background-image: url('https://st4.depositphotos.com/6723736/39027/v/450/depositphotos_390273156-stock-illustration-illustration-mosquito-mosquito-gathering-water.jpg'); /* Substitua pelo caminho da imagem */
+}
+.foco.tipo4 {
+    background-image: url('https://s2-g1.glbimg.com/paYjrpiX1JooeDjfKLbirgQrtIY=/0x0:960x720/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/Q/x/kcuhkBRvK3nlgXQ7LHzw/calha-limpeza.jpg'); /* Substitua pelo caminho da imagem */
+}
+
+.foco.tipo5 {
+    background-image: url('https://cdn.awsli.com.br/600x450/1112/1112786/produto/59158507/453d34eca7.jpg'); /* Substitua pelo caminho da imagem */
+}
+
