@@ -275,7 +275,7 @@ button {
 }
 
 button:hover {
-    background-color: #004b23;
+    background-color: #006400;
 }
 
 /* Estilo de animação para aparecer ao rolar */
@@ -288,6 +288,77 @@ button:hover {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Estilo da seção de panfleto */
+#panfleto {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 920px;
+}
+
+#panfleto h2 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 1.5rem;
+}
+
+.panfleto-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Garante que os itens fiquem empilhados em telas menores */
+    justify-content: center;
+}
+
+.panfleto-content img {
+    width: 250px; /* Tamanho da prévia do panfleto */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.panfleto-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.panfleto-text p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.btn-download button {
+    background-color: #007f5f;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download button:hover {
+    background-color: #006400;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .panfleto-content {
+        flex-direction: column; /* Itens empilhados em telas pequenas */
+    }
+
+    .panfleto-content img {
+        width: 100%; /* Imagem ocupa a largura total disponível */
+        max-width: 300px;
+    }
+
+    .panfleto-text {
+        text-align: center; /* Centralizar texto em telas pequenas */
+    }
 }
 
 /* Rodapé */
@@ -308,24 +379,24 @@ footer {
 #quiz {
     text-align: center;
     margin-top: 2rem;
-}
-
-#quiz-container {
+  }
+  
+  #quiz-container {
     margin: 1rem auto;
     max-width: 800px;
-}
-
-#quiz-options {
+  }
+  
+  #quiz-options {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
-}
-
-#quiz-options li {
+  }
+  
+  #quiz-options li {
     margin: 0.5rem 0;
-}
-
-#quiz-options button {
+  }
+  
+  #quiz-options button {
     width: 100%;
     padding: 0.8rem;
     background-color: #007f5f;
@@ -335,9 +406,9 @@ footer {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.quiz-button {
+  }
+  
+  .quiz-button {
     width: 100%;
     padding: 0.8rem;
     background-color: #007f5f;
@@ -348,23 +419,24 @@ footer {
     cursor: pointer;
     margin: 0.5rem 0; /* Espaçamento entre as alternativas */
     transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.quiz-button:hover {
-    background-color: #004b23;
-    border-color: #007f5f; /* Muda a cor da borda ao passar o mouse */
-}
-
-#quiz-options button:hover {
-    background-color: #004b23;
-}
-
-#quiz-feedback {
+  }
+  
+  .quiz-button:hover {
+    background-color: #006400;
+    border-color: #104911; /* Muda a cor da borda ao passar o mouse */
+  }
+  
+  #quiz-options button:hover {
+    background-color: #006400;
+  }
+  
+  #quiz-feedback {
     margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
-}
+  }
+  
 /* Seção de Animação */
 #animacao-reproducao {
     text-align: center;
@@ -448,7 +520,7 @@ footer {
 }
 
 #game-instructions button:hover {
-    background-color: #004b23;
+    background-color: #006400;
 }
 
 #game-area {
@@ -457,7 +529,7 @@ footer {
     height: 400px;
     margin: 1rem auto;
     border: 2px solid #004b23;
-    background-color: #58f3f8;
+    background-color: #a4f7fa;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -484,7 +556,7 @@ footer {
 
 #jogo-titulo h2 {
     font-size: 1.8rem;
-    color: #007f5f;
+    color: #006400;
     margin: 0;
     text-align: center;
      /* Remover possíveis traços */
@@ -497,8 +569,8 @@ footer {
 }
 
 #jogo-titulo img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 

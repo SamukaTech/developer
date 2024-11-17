@@ -63,7 +63,7 @@
     </section>
 
     <section id="animacao-reproducao" class="reveal">
-        <h2>Como o Aedes aegypti se reproduz e espalha doenças</h2>
+        <h2>Como o <i>Aedes aegypti</i> se reproduz e espalha doenças</h2>
         <div class="animacao-container">
             <div class="etapa">
                 <div class="icone">
@@ -147,6 +147,19 @@
         <h2>Resultados Esperados</h2>
         <p>Com este projeto, espera-se que os frequentadores da Praça Rio Branco, no centro de Teresina, reflitam sobre as consequências do descarte inadequado de resíduos, uma prática que pode gerar criadouros do mosquito <i>Aedes aegypti</i>. Além disso, ao disponibilizar panfletos informativos com orientações para identificar o mosquito, entender os sintomas, o período de incubação e a transmissibilidade das doenças, o projeto visa fornecer informações claras sobre essas enfermidades e como preveni-las. O objetivo final é contribuir para a redução do número de casos dessas arboviroses na área.</p>
     </section>
+
+    <section id="panfleto" class="reveal">
+        <h2>Baixe Nosso Panfleto Educativo</h2>
+        <div class="panfleto-content">
+            <img src="Panfleto.png" alt="Prévia do Panfleto" />
+            <div class="panfleto-text">
+                <p>Nosso panfleto contém dicas essenciais para prevenir focos do mosquito <i>Aedes aegypti</i> e combater a proliferação de doenças como dengue, zika e chikungunya.</p>
+                <a href="https://drive.google.com/file/d/1iOW6-1fmymWjQRRRR0TFH9WHj8U2ZREm/view?usp=sharing" download class="btn-download">
+                    <button>Baixar Panfleto</button>
+                </a>
+            </div>
+        </div>
+    </section>    
     
      <!-- Seção de Quiz -->
     <section id="quiz" class="reveal">
@@ -162,7 +175,7 @@
             <p id="quiz-feedback"></p>
         </div>
     </section>
-
+    
     <section id="jogo-educativo" class="reveal">
         <div id="jogo-titulo">
             <h2>Elimine os Focos do Mosquito!</h2>
@@ -385,15 +398,15 @@
             const correctButton = Array.from(optionsButtons).find(
                 (btn, index) => currentQuestion.options[index].correct
             );
-            correctButton.style.backgroundColor = "green";
+            correctButton.style.backgroundColor = "#009c00";
         }
 
         // Carregar próxima pergunta após um atraso
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
-            setTimeout(loadQuestion, 2000);
+            setTimeout(loadQuestion, 3000);
         } else {
-            setTimeout(showFinalScore, 2000);
+            setTimeout(showFinalScore, 3000);
         }
     }
 
