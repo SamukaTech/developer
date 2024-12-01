@@ -10,6 +10,7 @@ body, h1, h2, h3, p, ul, li, a, button {
   body {
     font-family: Arial, sans-serif;
     background-color: #000;
+    background-image: url('tela_fundo3.png');
     color: #fff;
     line-height: 1.6;
   }
@@ -18,15 +19,29 @@ body, h1, h2, h3, p, ul, li, a, button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: #111;
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+    position: relative;
   }
   
   header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
+    font-size: 1.5em;
   }
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff9800;
+  }    
   
   header .logo span {
     color: red;
@@ -47,6 +62,62 @@ body, h1, h2, h3, p, ul, li, a, button {
     color: red;
   }
   
+  /* Menu Hambúrguer */
+#menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#menu-hamburguer span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Ocultando o menu para dispositivos móveis */
+#menu-navegacao {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #menu-hamburguer {
+    display: flex; /* Exibe o menu hambúrguer */
+  }
+
+  #menu-navegacao {
+    display: none; /* Oculta o menu padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  #menu-navegacao.active {
+    display: flex; /* Exibe o menu ao ativar */
+  }
+
+  #menu-navegacao ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu-navegacao ul li a {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
   /* Barra de busca */
   #busca {
     text-align: center;
@@ -54,7 +125,7 @@ body, h1, h2, h3, p, ul, li, a, button {
   }
   
   #barra-pesquisa {
-    width: 80%;
+    width: 90%;
     padding: 10px;
     font-size: 16px;
     border: 2px solid red;
@@ -319,28 +390,6 @@ button.imprimir-btn:hover {
   border-radius: 10px;
 }
   
-  /* Pop-up promocional */
-  .popup {
-    display: none;
-    position: fixed;
-    bottom: 10%;
-    right: 10%;
-    background: #ff0000;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-  }
-  
-  .popup .close {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
   /* Botão Tema */
   #tema-btn {
     background: none;
@@ -366,52 +415,13 @@ button.imprimir-btn:hover {
     color: red;
     box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
   }
-    /* Modo Escuro */
-body.dark-theme {
-  background-color: #333;
-  color: #fff;
-}
-
-header.dark-theme {
-  background-color: #444;
-}
-
-header.dark-theme ul li a {
-  color: #ccc;
-}
-
-header.dark-theme ul li a:hover {
-  color: red;
-}
-
-#barra-pesquisa.dark-theme {
-  background: #444;
-  color: white;
-  border: 2px solid #888;
-}
-
-.produto-card.dark-theme {
-  background: #444;
-  color: #fff;
-}
-
-.produto-card.dark-theme .preco {
-  color: #f77;
-}
-
-.modal.dark-theme {
-  background: rgba(50, 50, 50, 0.9);
-}
-
-.modal-content.dark-theme {
-  background: #555;
-  color: #fff;
-}
-
+ 
 /* Seção de Contato */
 #contato {
   padding: 50px 20px;
   background: #d10000;
+  margin-bottom: 0;
+  background-image: url('tela_fundo2.png');
   text-align: center;
   overflow-x: hidden; /* Evita barras horizontais indesejadas */
 }
@@ -525,14 +535,5 @@ header.dark-theme ul li a:hover {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
-}
-
-#footer a {
-  color: #ff9800;
-  text-decoration: none;
-}
-
-#footer a:hover {
-  text-decoration: underline;
+  margin-top: 0px;
 }
