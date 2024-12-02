@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png">
   <title>SamShop</title>
   <link rel="stylesheet" href="loja.css">
 </head>
@@ -16,7 +17,7 @@
     </button>
     <nav id="menu-navegacao">
       <ul>
-        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#produtos">Serviços</a></li>
         <li><a href="#carrinho">Carrinho</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="hero-content">
       <h1>Bem-vindo à <span>SamShop</span></h1>
       <p>Encontre os melhores serviços digitais: sites, aplicativos e sistemas personalizados!</p>
-      <button class="btn">Explore Agora</button>
+      <a href="#produtos"><button class="btn">Explore Agora</button></a>
     </div>
     <div class="hero-image">
       <img src="samshop.gif" alt="Imagem Representativa da Loja">
@@ -68,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <section class="container" id="produtos">
     <div class="produtos-grid">
     <div class="produto-card">
-      <a href="imagens/loja-virtual.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/loja virtual.jpg" alt="projeto1" /></a>
+      <a href="loja-virtual.gif" title="Clique na imagem para visualizar" class="image featured"><img src="loja virtual.jpg" alt="projeto1" /></a>
       <h3>Loja Virtual</h3>
       <p>Loja virtual completa para vendas de produtos.</p>
       <p class="preco">R$ 3.000,00</p>
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="imagens/bioestudos.png" alt="BioEstudos">
+      <img src="bioestudos.png" alt="BioEstudos">
       <h3>BioEstudos</h3>
       <p>Plataforma destinada ao estudo de biologia contendo livros, apostilas, ferramentas de estudos entre outras coisas.</p>
       <p class="preco">R$ 150,00</p>
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="imagens/concurso.png" alt="Concursos">
+      <img src="concurso.png" alt="Concursos">
       <h3>Concursos Públicos</h3>
       <p>Plataforma destinada ao acesso a diversos materiais de concursos, cronogramas, planos de estudos e muito mais.</p>
       <p class="preco">R$ 250,00</p>
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <section class="container" id="produtos">
     <div class="produtos-grid">
       <div class="produto-card">
-        <img src="imagens\anotacoes.png" alt="Aplicativo de Anotações Personalizado">
+        <img src="anotacoes.png" alt="Aplicativo de Anotações Personalizado">
         <h3>Aplicativo de Anotações Personalizado</h3>
         <p>Aplicativo de anotações personalizável com botões salvar, editar, deletar anotações e modo claro/escuro.</p>
         <p class="preco">R$ 75,00</p>
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       
       <div class="produto-card">
-        <img src="imagens\qrcode.png" alt="Gerador de QR Code Personalizado">
+        <img src="qrcode.png" alt="Gerador de QR Code Personalizado">
         <h3>Gerador de QR Code Personalizado</h3>
         <p>Aplicativo gerador de QR Code personalizável.</p>
         <p class="preco">R$ 30,00</p>
@@ -112,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       
       <div class="produto-card">
-        <img src="imagens\livrosam.png" alt="Plataforma de Livros em PDF">
+        <img src="livrosam.png" alt="Plataforma de Livros em PDF">
         <h3>Plataforma de Livros em PDF</h3>
         <p>Plataforma com variados tipos de livros em formato pdf, com opção de download.</p>
         <p class="preco">R$ 25,00</p>
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <section class="container" id="produtos">
     <div class="produtos-grid">
     <div class="produto-card">
-      <img src="imagens/pagenem.PNG" alt="enem">
+      <img src="pagenem.PNG" alt="enem">
       <h3>Enem</h3>
       <p>Plataforma de estudo para o ENEM com apostilas e videoaulas.</p>
       <p class="preco">R$ 270,00</p>
@@ -132,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="imagens/pagnotas.PNG" alt="notas">
+      <img src="pagnotas.PNG" alt="notas">
       <h3>Sistema de Notas</h3>
       <p>Sistema para consulta de notas de provas para alunos matriculados em cursos.</p>
       <p class="preco">R$ 150,00</p>
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="imagens/quiz.png" alt="quiz">
+      <img src="quiz.png" alt="quiz">
       <h3>Quiz de Perguntas e Respostas</h3>
       <p>Quiz de perguntas e respostas para testar e avaliar os conhecimentos sobre temas específicos.</p>
       <p class="preco">R$ 25,00</p>
@@ -194,7 +195,7 @@ const carrinho = [];
         const li = document.createElement("li");
         li.textContent = `${item.servico} - R$ ${item.preco.toFixed(2)}`;
         const removerBtn = document.createElement("button");
-        removerBtn.textContent = " Remover";
+        removerBtn.textContent = "Remover";
         removerBtn.className = "remover-btn"; // Adiciona a classe para aplicar o estilo
         removerBtn.onclick = () => removerDoCarrinho(index);
         li.appendChild(removerBtn);

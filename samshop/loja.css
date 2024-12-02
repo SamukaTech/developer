@@ -192,6 +192,7 @@ body, h1, h2, h3, p, ul, li, a, button {
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
+    border: 0.5px solid rgb(124, 124, 124);
     width: 90%;
     max-width: 400px;
   }
@@ -223,9 +224,10 @@ body, h1, h2, h3, p, ul, li, a, button {
 
 /* Botão Remover */
 button.remover-btn {
-  background: #e91e63;
+  background: #e02200;
   color: white;
   border: none;
+  margin: 5px;
   padding: 5px 10px;
   font-size: 14px;
   border-radius: 5px;
@@ -276,6 +278,9 @@ button.imprimir-btn:hover {
     transition: transform 0.3s, box-shadow 0.3s;
   }
   
+  .produto-card p{
+    color: #e4e4e4;
+  }
   .produto-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(255, 0, 0, 0.5);
