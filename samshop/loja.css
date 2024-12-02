@@ -274,6 +274,7 @@ button.imprimir-btn:hover {
     background: #111;
     padding: 20px;
     border-radius: 8px;
+    border: 0.5px solid rgb(112, 112, 112);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
   }

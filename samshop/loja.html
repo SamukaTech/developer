@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="bioestudos.png" alt="BioEstudos">
+      <a href="bioestudos.gif" title="Clique na imagem para visualizar" class="image featured"><img src="bioestudos.png" alt="BioEstudos"></a>
+      <h3>PLATAFORMA DE ESTUDO DE BIOLOGIA</h3>
       <h3>BioEstudos</h3>
       <p>Plataforma destinada ao estudo de biologia contendo livros, apostilas, ferramentas de estudos entre outras coisas.</p>
       <p class="preco">R$ 150,00</p>
@@ -85,7 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="concurso.png" alt="Concursos">
+      <a href="concurso.gif" title="Clique na imagem para visualizar" class="image featured"><img src="concurso.png" alt="concursos"></a>
+      <h3>CONCURSOS</h3>
       <h3>Concursos Públicos</h3>
       <p>Plataforma destinada ao acesso a diversos materiais de concursos, cronogramas, planos de estudos e muito mais.</p>
       <p class="preco">R$ 250,00</p>
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <section class="container" id="produtos">
     <div class="produtos-grid">
       <div class="produto-card">
-        <img src="anotacoes.png" alt="Aplicativo de Anotações Personalizado">
+        <a href="anotacoes.gif" title="Clique na imagem para visualizar" class="image featured"><img src="anotacoes.png" alt="Anotações"></a>
         <h3>Aplicativo de Anotações Personalizado</h3>
         <p>Aplicativo de anotações personalizável com botões salvar, editar, deletar anotações e modo claro/escuro.</p>
         <p class="preco">R$ 75,00</p>
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       
       <div class="produto-card">
-        <img src="qrcode.png" alt="Gerador de QR Code Personalizado">
+        <a href="qrcode2.gif" title="Clique na imagem para visualizar" class="image featured"><img src="qrcode.png" alt="qrcode"></a>
         <h3>Gerador de QR Code Personalizado</h3>
         <p>Aplicativo gerador de QR Code personalizável.</p>
         <p class="preco">R$ 30,00</p>
@@ -113,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       
       <div class="produto-card">
-        <img src="livrosam.png" alt="Plataforma de Livros em PDF">
+        <a href="livrosam.gif" title="Clique na imagem para visualizar" class="image featured"><img src="livrosam.png" alt="Plataforma de livros"></a>
         <h3>Plataforma de Livros em PDF</h3>
         <p>Plataforma com variados tipos de livros em formato pdf, com opção de download.</p>
         <p class="preco">R$ 25,00</p>
@@ -125,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <section class="container" id="produtos">
     <div class="produtos-grid">
     <div class="produto-card">
-      <img src="pagenem.PNG" alt="enem">
+      <a href="pag-enem.gif" title="Clique na imagem para visualizar" class="image featured"><img src="pagenem.PNG" alt="enem"></a>
       <h3>Enem</h3>
       <p>Plataforma de estudo para o ENEM com apostilas e videoaulas.</p>
       <p class="preco">R$ 270,00</p>
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="pagnotas.PNG" alt="notas">
+      <a href="pag-notas.gif" title="Clique na imagem para visualizar" class="image featured"><img src="pagnotas.png" alt="sistema de notas"></a>
       <h3>Sistema de Notas</h3>
       <p>Sistema para consulta de notas de provas para alunos matriculados em cursos.</p>
       <p class="preco">R$ 150,00</p>
@@ -141,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>   
 
     <div class="produto-card">
-      <img src="quiz.png" alt="quiz">
+      <a href="quiz.gif" title="Clique na imagem para visualizar" class="image featured"><img src="quiz.png" alt="quiz"></a>
       <h3>Quiz de Perguntas e Respostas</h3>
       <p>Quiz de perguntas e respostas para testar e avaliar os conhecimentos sobre temas específicos.</p>
       <p class="preco">R$ 25,00</p>
@@ -153,7 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
   <section id="contato">
     <h2>Fale Conosco</h2>
     <p>Tem alguma dúvida ou deseja mais informações? Envie uma mensagem para nós!</p>
-    <form id="form-contato" action="mailto:seuemail@dominio.com" method="post" enctype="text/plain">
+      <form id="form-contato" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+        <input type="hidden" name="Site" value="SamShop">
       <label for="nome">Seu Nome</label>
       <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
   
@@ -163,8 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
       <label for="mensagem">Mensagem</label>
       <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" rows="5" required></textarea>
   
-      <button type="submit" class="btn">Enviar Mensagem</button>
+      <button type="submit" class="btn" id="enviar">Enviar Mensagem</button>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#">
+      <input type="hidden" name="_template" value="table">
     </form>
+    <br>
+    <div id="mensagem-status"></div>
   </section>
 
   <footer id="footer">
@@ -302,6 +310,43 @@ const carrinho = [];
         }
       });
     }
+
+//script referente ao formulário de contato
+document.getElementById("form-contato").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
+        var mensa = document.getElementById("mensagem").value;
+
+        if (nome && email && mensa) {
+            var submitButton = document.getElementById("enviar");
+            var mensagemStatus = document.getElementById("mensagem-status");
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+            mensagemStatus.textContent = "";
+
+            var formData = new FormData(this);
+
+            fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Enviar";
+                mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                this.reset();
+            })
+            .catch(error => {
+                submitButton.disabled = false;
+                submitButton.textContent = "Enviar";
+                mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+                this.reset();
+            });
+        }
+    });
 
   </script>
 </body>
