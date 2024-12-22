@@ -65,73 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="modal-content">
       <span class="close" onclick="fecharModal()">&times;</span>
       <div id="dados-pagamento">
-        <!-- O conteúdo do modal será atualizado pelo JavaScript -->
-         
+        <!-- O conteúdo do modal será atualizado dinamicamente pelo JavaScript -->
       </div>
       <button class="imprimir-btn" onclick="imprimirComprovante()">Baixar Comprovante</button>
-
     </div>
   </div>
   
-  <script>
-
-function enviarPedido() {
-  const emailCliente = document.getElementById("email-cliente").value;
-
-  // Validação do e-mail antes de enviar
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(emailCliente)) {
-    alert("Por favor, insira um e-mail válido.");
-    return;
-  }
-
-  if (!emailCliente) {
-    alert("Por favor, insira o e-mail do cliente.");
-    return;
-  }
-
-  // Gera a lista de serviços adquiridos
-  const servicosAdquiridos = carrinho.map(
-    (item) => `${item.servico} - R$ ${item.preco.toFixed(2)}`
-  ).join("\n");
-
-  // Configuração do EmailJS
-  const serviceID = "service_tj6dzjb"; // Substitua pelo seu Service ID
-  const templateID = "template_ae0mk6j"; // Substitua pelo seu Template ID
-  const publicKey = "awQWGguZKkGPe0f23"; // Substitua pela sua Public Key do EmailJS
-
-  const templateParams = {
-    cliente_email: emailCliente,
-    servicos: servicosAdquiridos,
-  };
-
-  // Inicializa o EmailJS
-  emailjs.init(publicKey);
-
-  // Envia o e-mail
-  emailjs.send(serviceID, templateID, templateParams)
-    .then(() => {
-      document.getElementById("mensagem-status").innerHTML = `
-        <p>Obrigado por sua compra!</p>
-        <p>Seu pedido foi enviado para nosso sistema e entraremos em contato pelo e-mail: <strong>${emailCliente}</strong>.</p>
-      `;
-      document.getElementById("mensagem-status").style.display = "block";
-
-      // Limpa o carrinho (manual)
-      limparCarrinho();
-    })
-    .catch(() => {
-      alert("Erro ao enviar o pedido. Tente novamente.");
-    });
-}
-
-function limparCarrinho() {
-  carrinho.length = 0; // Esvazia o carrinho
-  document.getElementById("lista-carrinho").innerHTML = ""; // Atualiza a lista do carrinho na interface
-  document.getElementById("total-carrinho").textContent = "Total: R$ 0,00";
-}
-
-  </script>
+  
   
   
   <section class="container" id="produtos">
@@ -252,6 +192,7 @@ function limparCarrinho() {
   </footer>
 
   <script>
+let dadosCompra = null; // Armazena temporariamente os dados da compra
 
 const carrinho = [];
     let total = 0;
@@ -261,7 +202,23 @@ const carrinho = [];
       carrinho.push({ servico, preco });
       total += preco;
       atualizarCarrinho();
+
+      // Exibe o aviso
+  mostrarAviso(`O serviço "${servico}" foi adicionado ao carrinho!`);
     }
+
+    function mostrarAviso(mensagem) {
+  const toast = document.getElementById("toast");
+  toast.textContent = mensagem;
+  toast.classList.remove("hidden");
+  toast.classList.add("visible");
+
+  // Remove o aviso após 3 segundos
+  setTimeout(() => {
+    toast.classList.remove("visible");
+    toast.classList.add("hidden");
+  }, 3000);
+}
 
     // Atualiza o carrinho
     function atualizarCarrinho() {
@@ -308,6 +265,15 @@ const carrinho = [];
   resumoCarrinho += `
     </ul>
     <p><strong>Total:</strong> R$ ${totalModal.toFixed(2)}</p>
+    <h4>Dados do Cliente</h4>
+    <p>
+      <label for="nome-cliente">Seu Nome:</label>
+      <input type="text" id="nome-cliente" placeholder="Digite seu nome" required>
+    </p>
+    <p>
+      <label for="email-cliente">Seu E-mail:</label>
+      <input type="email" id="email-cliente" placeholder="Digite seu e-mail" required>
+    </p>
     <h4>Pagamento via PIX</h4>
     <div class="pix-container">
       <p>
@@ -318,10 +284,6 @@ const carrinho = [];
         <img src="meuqrcode.jpg" alt="QR Code PIX" style="max-width: 200px;"> <!-- Substitua pelo QR Code correto -->
       </div>
     </div>
-    <p>
-      <label for="email-cliente">Seu E-mail:</label>
-      <input type="email" id="email-cliente" placeholder="Digite seu e-mail" required>
-    </p>
     <button class="confirmar-btn" onclick="enviarPedido()">Finalizar Compra</button>
     <p id="mensagem-status" style="margin-top: 20px; display: none;"></p>
   `;
@@ -330,29 +292,93 @@ const carrinho = [];
 }
 
 
-function imprimirComprovante() {
+
+
+function enviarPedido() {
+  const nomeCliente = document.getElementById("nome-cliente").value;
   const emailCliente = document.getElementById("email-cliente").value;
 
-  // Validação do e-mail antes de gerar o comprovante
-  if (!emailCliente) {
-    alert("Por favor, insira um e-mail válido antes de baixar o comprovante.");
+  // Validação de nome e e-mail
+  if (!nomeCliente.trim()) {
+    alert("Por favor, insira seu nome.");
     return;
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailCliente)) {
+    alert("Por favor, insira um e-mail válido.");
+    return;
+  }
+
+  // Gera a lista de serviços adquiridos
   const servicosAdquiridos = carrinho.map(
-    (item, index) => `${index + 1}. ${item.servico} - R$ ${item.preco.toFixed(2)}`
-  ).join("\n");
+    (item) => `${item.servico} - R$ ${item.preco.toFixed(2)}`
+  );
 
   const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+
+  // Armazena os dados da compra
+  dadosCompra = {
+    nome: nomeCliente,
+    email: emailCliente,
+    servicos: servicosAdquiridos,
+    total: total.toFixed(2)
+  };
+
+  // Configuração do EmailJS
+  const serviceID = "service_tj6dzjb";
+  const templateID = "template_ae0mk6j";
+  const publicKey = "awQWGguZKkGPe0f23";
+
+  const templateParams = {
+    cliente_nome: nomeCliente,
+    cliente_email: emailCliente,
+    servicos: servicosAdquiridos.join("\n"),
+    total: `R$ ${total.toFixed(2)}`
+  };
+
+  emailjs.init(publicKey);
+
+  emailjs.send(serviceID, templateID, templateParams)
+    .then(() => {
+      document.getElementById("mensagem-status").innerHTML = `
+        <p>Obrigado por sua compra, ${nomeCliente}!</p>
+        <p>Seu pedido foi enviado para nosso sistema e entraremos em contato pelo e-mail: <strong>${emailCliente}</strong>.</p>
+      `;
+      document.getElementById("mensagem-status").style.display = "block";
+
+      limparCarrinho();
+    })
+    .catch(() => {
+      alert("Erro ao enviar o pedido. Tente novamente.");
+    });
+}
+
+  
+
+function limparCarrinho() {
+  carrinho.length = 0; // Esvazia o carrinho
+  document.getElementById("lista-carrinho").innerHTML = ""; // Atualiza a lista do carrinho na interface
+  document.getElementById("total-carrinho").textContent = "Total: R$ 0,00";
+}
+
+function imprimirComprovante() {
+  if (!dadosCompra) {
+    alert("Nenhum dado disponível para gerar o comprovante. Finalize a compra primeiro.");
+    return;
+  }
+
+  const { nome, email, servicos, total } = dadosCompra;
 
   const comprovante = `
     *** Comprovante de Compra ***
     
-    Cliente: ${emailCliente}
+    Cliente: ${nome}
+    E-mail: ${email}
     Serviços Contratados:
-    ${servicosAdquiridos}
+    ${servicos.join("\n")}
 
-    Total: R$ ${total.toFixed(2)}
+    Total: R$ ${total}
 
     Pagamento via PIX
     Chave PIX: 86994200398
@@ -360,13 +386,15 @@ function imprimirComprovante() {
     Obrigado por comprar na SamShop!
   `;
 
-  // Criar um arquivo de texto para download
-  const blob = new Blob([comprovante], { type: "text/plain" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "comprovante.txt";
-  link.click();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+  pdf.setFont("Helvetica", "normal");
+  pdf.setFontSize(12);
+  pdf.text(comprovante, 10, 10);
+  pdf.save("comprovante.pdf");
 }
+
+
 
     // Função para copiar a chave PIX
     function copyPixKey() {
@@ -437,6 +465,8 @@ document.getElementById("form-contato").addEventListener("submit", function(even
     });
     
   </script>
+  <div id="toast" class="toast hidden"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
 </html>

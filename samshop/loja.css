@@ -331,7 +331,7 @@ button.remover-btn:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  #email-cliente {
+  #nome-cliente, #email-cliente {
     width: 100%; /* Ajusta o campo para ocupar 100% da largura disponível */
     max-width: calc(100% - 20px); /* Garante que o campo não ultrapasse os limites do modal */
     padding: 10px;
@@ -342,11 +342,10 @@ button.remover-btn:hover {
     box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura */
   }
   
-  #email-cliente:focus {
+  #nome-cliente:focus, #email-cliente:focus {
     border-color: #ff9800;
     outline: none;
   }
-  
   
   .modal-content .close {
     position: absolute;
@@ -582,3 +581,28 @@ button.remover-btn:hover {
   background: linear-gradient(90deg, #ff5722, #ff9800);
 }
 
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
