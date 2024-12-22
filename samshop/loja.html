@@ -6,6 +6,8 @@
   <link rel="icon" href="logo.png">
   <title>SamShop</title>
   <link rel="stylesheet" href="loja.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 <body>
   <header>
@@ -59,12 +61,78 @@ document.addEventListener("DOMContentLoaded", () => {
     <button class="btn" onclick="exibirCarrinhoPagamento()">Finalizar Contratação</button>
   </section>
 
-  <div class="modal" id="modal-pagamento">
+  <div id="modal-pagamento" class="modal">
     <div class="modal-content">
       <span class="close" onclick="fecharModal()">&times;</span>
-      <div id="dados-pagamento"></div>
+      <div id="dados-pagamento">
+        <!-- O conteúdo do modal será atualizado pelo JavaScript -->
+         
+      </div>
+      <button class="imprimir-btn" onclick="imprimirComprovante()">Baixar Comprovante</button>
+
+    </div>
   </div>
-  </div>
+  
+  <script>
+
+function enviarPedido() {
+  const emailCliente = document.getElementById("email-cliente").value;
+
+  // Validação do e-mail antes de enviar
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailCliente)) {
+    alert("Por favor, insira um e-mail válido.");
+    return;
+  }
+
+  if (!emailCliente) {
+    alert("Por favor, insira o e-mail do cliente.");
+    return;
+  }
+
+  // Gera a lista de serviços adquiridos
+  const servicosAdquiridos = carrinho.map(
+    (item) => `${item.servico} - R$ ${item.preco.toFixed(2)}`
+  ).join("\n");
+
+  // Configuração do EmailJS
+  const serviceID = "service_tj6dzjb"; // Substitua pelo seu Service ID
+  const templateID = "template_ae0mk6j"; // Substitua pelo seu Template ID
+  const publicKey = "awQWGguZKkGPe0f23"; // Substitua pela sua Public Key do EmailJS
+
+  const templateParams = {
+    cliente_email: emailCliente,
+    servicos: servicosAdquiridos,
+  };
+
+  // Inicializa o EmailJS
+  emailjs.init(publicKey);
+
+  // Envia o e-mail
+  emailjs.send(serviceID, templateID, templateParams)
+    .then(() => {
+      document.getElementById("mensagem-status").innerHTML = `
+        <p>Obrigado por sua compra!</p>
+        <p>Seu pedido foi enviado para nosso sistema e entraremos em contato pelo e-mail: <strong>${emailCliente}</strong>.</p>
+      `;
+      document.getElementById("mensagem-status").style.display = "block";
+
+      // Limpa o carrinho (manual)
+      limparCarrinho();
+    })
+    .catch(() => {
+      alert("Erro ao enviar o pedido. Tente novamente.");
+    });
+}
+
+function limparCarrinho() {
+  carrinho.length = 0; // Esvazia o carrinho
+  document.getElementById("lista-carrinho").innerHTML = ""; // Atualiza a lista do carrinho na interface
+  document.getElementById("total-carrinho").textContent = "Total: R$ 0,00";
+}
+
+  </script>
+  
   
   <section class="container" id="produtos">
     <div class="produtos-grid">
@@ -219,66 +287,86 @@ const carrinho = [];
       atualizarCarrinho();
     }
 
-    // Exibe o modal com os serviços selecionados e os dados do PIX
     function exibirCarrinhoPagamento() {
-      if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio. Adicione serviços antes de finalizar a contratação.");
-        return;
-      }
+  if (carrinho.length === 0) {
+    alert("Seu carrinho está vazio. Adicione serviços antes de finalizar a contratação.");
+    return;
+  }
 
-      const modal = document.getElementById("modal-pagamento");
-      const dadosPagamento = document.getElementById("dados-pagamento");
-      modal.style.display = "flex";
+  const modal = document.getElementById("modal-pagamento");
+  const dadosPagamento = document.getElementById("dados-pagamento");
+  modal.style.display = "flex";
 
-      let resumoCarrinho = "<h4>Serviços Selecionados</h4><ul>";
-      let totalModal = 0;
+  let resumoCarrinho = "<h4>Serviços Selecionados</h4><ul>";
+  let totalModal = 0;
 
-      carrinho.forEach((item, index) => {
-        totalModal += item.preco;
-        resumoCarrinho += `<li>${index + 1}. ${item.servico} - R$ ${item.preco.toFixed(2)}</li>`;
-      });
+  carrinho.forEach((item, index) => {
+    totalModal += item.preco;
+    resumoCarrinho += `<li>${index + 1}. ${item.servico} - R$ ${item.preco.toFixed(2)}</li>`;
+  });
 
-      resumoCarrinho += `</ul><p><strong>Total:</strong> R$ ${totalModal.toFixed(2)}</p>`;
-      resumoCarrinho += `
-        <h4>Pagamento via PIX</h4>
-        <div class="pix-container">
-          <p><strong>Chave PIX:</strong> <span id="pix-key">86994200398</span>
-            <button class="copy-btn" onclick="copyPixKey()" title="Copiar Chave PIX">📋</button>
-           </p>
-          <div class="qrcode">
-            <img src="meuqrcode.jpg" alt="QR Code PIX"> <!-- Substitua pelo caminho correto do seu QR Code -->
-          </div>
-        </div>
-        <button class="imprimir-btn" onclick="imprimirComprovante()">Imprimir Comprovante</button>
-      `;
+  resumoCarrinho += `
+    </ul>
+    <p><strong>Total:</strong> R$ ${totalModal.toFixed(2)}</p>
+    <h4>Pagamento via PIX</h4>
+    <div class="pix-container">
+      <p>
+        <strong>Chave PIX:</strong> <span id="pix-key">86994200398</span>
+        <button class="copy-btn" onclick="copyPixKey()" title="Copiar Chave PIX">📋</button>
+      </p>
+      <div class="qrcode">
+        <img src="meuqrcode.jpg" alt="QR Code PIX" style="max-width: 200px;"> <!-- Substitua pelo QR Code correto -->
+      </div>
+    </div>
+    <p>
+      <label for="email-cliente">Seu E-mail:</label>
+      <input type="email" id="email-cliente" placeholder="Digite seu e-mail" required>
+    </p>
+    <button class="confirmar-btn" onclick="enviarPedido()">Finalizar Compra</button>
+    <p id="mensagem-status" style="margin-top: 20px; display: none;"></p>
+  `;
 
-      dadosPagamento.innerHTML = resumoCarrinho;
-    }
+  dadosPagamento.innerHTML = resumoCarrinho;
+}
 
-    // Gera e imprime o comprovante com os serviços contratados e os dados do PIX
-    function imprimirComprovante() {
-      if (carrinho.length === 0) {
-        alert("Nenhum serviço no carrinho.");
-        return;
-      }
 
-      let comprovante = "SamShop - Comprovante de Serviços Contratados\n\n";
-      carrinho.forEach((item, index) => {
-        comprovante += `${index + 1}. Serviço: ${item.servico}\n`;
-        comprovante += `   Valor: R$ ${item.preco.toFixed(2)}\n\n`;
-      });
-      comprovante += `Total: R$ ${total.toFixed(2)}\n\n`;
-      comprovante += "Pagamento via PIX\n";
-      comprovante += "Chave PIX: joao.silva@email.com\n";
-      comprovante += "Nome: João Silva\n";
-      comprovante += "Banco: Banco XYZ\n";
-      comprovante += "\nObrigado por contratar os serviços da SamShop!\n";
+function imprimirComprovante() {
+  const emailCliente = document.getElementById("email-cliente").value;
 
-      const janela = window.open("", "Comprovante");
-      janela.document.write(`<pre>${comprovante}</pre>`);
-      janela.document.close();
-      janela.print();
-    }
+  // Validação do e-mail antes de gerar o comprovante
+  if (!emailCliente) {
+    alert("Por favor, insira um e-mail válido antes de baixar o comprovante.");
+    return;
+  }
+
+  const servicosAdquiridos = carrinho.map(
+    (item, index) => `${index + 1}. ${item.servico} - R$ ${item.preco.toFixed(2)}`
+  ).join("\n");
+
+  const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+
+  const comprovante = `
+    *** Comprovante de Compra ***
+    
+    Cliente: ${emailCliente}
+    Serviços Contratados:
+    ${servicosAdquiridos}
+
+    Total: R$ ${total.toFixed(2)}
+
+    Pagamento via PIX
+    Chave PIX: 86994200398
+
+    Obrigado por comprar na SamShop!
+  `;
+
+  // Criar um arquivo de texto para download
+  const blob = new Blob([comprovante], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "comprovante.txt";
+  link.click();
+}
 
     // Função para copiar a chave PIX
     function copyPixKey() {
@@ -347,7 +435,8 @@ document.getElementById("form-contato").addEventListener("submit", function(even
             });
         }
     });
-
+    
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
 </html>

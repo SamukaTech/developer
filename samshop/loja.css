@@ -241,20 +241,20 @@ button.remover-btn:hover {
 }
 
 /* Botão Imprimir Comprovante */
-button.imprimir-btn {
+.imprimir-btn {
   background: linear-gradient(90deg, #4caf50, #8bc34a);
   color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
-button.imprimir-btn:hover {
-  background: linear-gradient(90deg, #8bc34a, #4caf50);
-  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.5);
+.imprimir-btn:hover {
+  background: linear-gradient(90deg, #388e3c, #689f38);
+  box-shadow: 0 4px 8px rgba(56, 142, 60, 0.5);
 }
 
   /* Produtos */
@@ -318,6 +318,7 @@ button.imprimir-btn:hover {
   
   .modal-content {
     background: #fff;
+    overflow-y: auto; /* Adiciona scroll vertical se necessário */
     color: #000;
     width: 90%;
     max-width: 400px;
@@ -325,7 +326,27 @@ button.imprimir-btn:hover {
     border-radius: 8px;
     text-align: center;
     position: relative;
+    max-height: 80%; /* Limita a altura do modal */
+    overflow-y: auto; /* Adiciona scroll vertical se necessário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  #email-cliente {
+    width: 100%; /* Ajusta o campo para ocupar 100% da largura disponível */
+    max-width: calc(100% - 20px); /* Garante que o campo não ultrapasse os limites do modal */
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo da largura */
+  }
+  
+  #email-cliente:focus {
+    border-color: #ff9800;
+    outline: none;
+  }
+  
   
   .modal-content .close {
     position: absolute;
@@ -334,7 +355,9 @@ button.imprimir-btn:hover {
     font-size: 24px;
     cursor: pointer;
   }
-  
+  .close:hover {
+    color: #ff5722;
+  }
   /* Dados de Pagamento */
   .dados-pagamento {
     margin-top: 20px;
@@ -543,3 +566,19 @@ button.imprimir-btn:hover {
   padding: 20px;
   margin-top: 0px;
 }
+
+.confirmar-btn {
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.confirmar-btn:hover {
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+}
+
