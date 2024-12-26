@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="samlivros.jpg">
+<title>Sam Livros</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    html {
+        font-size: 16px;
+        background-color: #f0f2f5;
+        font-family: 'Roboto', sans-serif;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #333;
+    }
+    .header {
+        background-color: #007bff;
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .header h3 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0 0;
+    }
+    .search-bar {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .search-bar input {
+        width: 80%;
+        max-width: 500px;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .categories {
+        text-align: center;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .categories button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .categories button:hover {
+        background-color: #0056b3;
+    }
+    .slider-container {
+            width: 90%;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider .slide {
+            flex: 0 0 calc(100% / 3);
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .slider .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .slider .slide a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .slider .slide h4 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        #butFechar {
+            background-color: rgb(245, 18, 18);
+            border: 1px;
+            cursor: pointer;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .slider .slide {
+                flex: 0 0 100%;
+            }
+        }
+    .cards {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        text-align: center;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .card-content {
+        padding: 1rem;
+    }
+    .card h4 {
+        font-size: 1.25rem;
+        margin: 0.5rem 0;
+        color: #333;
+    }
+    .card p {
+        font-size: 1rem;
+        margin: 0.5rem 0 1rem;
+        color: #555;
+    }
+    .card a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background-color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .card a:hover {
+        background-color: #0056b3;
+    }
+
+    @media (min-width: 600px) {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 900px) {
+        .cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    /*código referente ao slider*/
+    .slider-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .slider-title {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        flex: 0 0 33.33%; /* Exibe 3 slides ao mesmo tempo em telas grandes */
+        box-sizing: border-box;
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .slide h4 {
+        font-size: 1.2em;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .synopsis {
+        font-size: 0.9em;
+        color: #666;
+        margin: 10px 0;
+    }
+
+    .price {
+        font-size: 1.1em;
+        color: #e63946;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+
+    .buy-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background-color 0.3s;
+    }
+
+    .buy-btn:hover {
+        background-color: #45a049;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Ajuste para dispositivos menores */
+    @media (max-width: 768px) {
+        .slide {
+            flex: 0 0 100%; /* Exibe 1 slide por vez em telas menores */
+        }
+    }
+    .options-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .options-title {
+            font-size: 1.8em;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .option-card {
+            flex: 0 1 calc(33% - 20px);
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .option-card:hover {
+            transform: scale(1.05);
+        }
+
+        .option-card h3 {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .option-card p {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .option-card .price {
+            font-size: 1.2em;
+            color: #e63946;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .option-card button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option-card button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .option-card {
+                flex: 0 1 100%;
+            }
+        }
+        /* código do formulário de contato*/
+        .contact-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-title {
+            font-size: 1.8em;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 97%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+        
+</style>
+</head>
+<body>
+    <header class="header">
+        <h1>Sam Livros</h1>
+        <h3>Seu portal para o conhecimento ilimitado</h3>
+    </header>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Busque por livros...">
+    </div>
+
+    <!-- Categorias -->
+    <div class="categories">
+        <button onclick="filterCategory('all')">Todos</button>
+        <button onclick="filterCategory('autoajuda')">Autoajuda</button>
+        <button onclick="filterCategory('comunicacao')">Comunicação</button>
+        <button onclick="filterCategory('financas')">Finanças</button>
+        <button onclick="filterCategory('fantasia')">Fantasia</button>
+        <button onclick="filterCategory('ficção')">Ficção</button>
+        <button onclick="filterCategory('religiao')">Religião</button>
+    </div>
+
+    
+
+    <!-- Cards de Livros -->
+    <div class="cards" id="bookCards">
+        <div class="card" data-category="financas">
+            <img src="bibliaparaummilhao.png" alt="A Bíblia para o Milhão">
+            <div class="card-content">
+                <h4>A Bíblia para o Milhão</h4>
+                <p>Com quase 2 milhões de seguidores, o perfil Projeto Milhão vem ajudando através de um conteúdo exclusivo milhares de pessoas por mês a atingirem suas metas pessoais e profissionais.
+
+                    O livro está dividido em 4 grandes partes e 30 principais capítulos, incluindo: os grandes segredos dos ricos, os hábitos que criam pessoas de sucesso, as principais ferramentas utilizadas por quem conquista muito dinheiro e como dar o primeiro passo rumo ao caminho das conquistas pessoais e profissionais.</p>
+                <a href="c:/Users/samue/Documents/Livros/A Bíblia para o Milhão.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="comunicacao">
+            <img src="artedelerpessoas.png" alt="A Arte de Ler Pessoas">
+            <div class="card-content">
+                <h4>A Arte de Ler Pessoas</h4>
+                <p>Em A Arte de Ler Pessoas, iremos nos aprofundar na exploração da linguagem corporal não apenas para entender as pessoas - mas também para nos conectarmos com elas. Afinal, por que encontramos a necessidade de interpretar e entender o que as pessoas dizem e fazem?</p>
+                <a href="c:/Users/samue/Documents/Livros/A arte de ler pessoas.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="comunicacao">
+            <img src="comunicaenriquece.png" alt="Quem se Comunica Enriquece">
+            <div class="card-content">
+                <h4>Quem se Comunica Enriquece</h4>
+                <p>O livro: Quem se comunica enriquece apresenta ferramentas conceituais e práticas para você extrair o máximo do potencial de seu cérebro. Falar bem depende de treino e mudança de comportamento. Você vai desenvolver uma nova percepção da realidade, aprender a influenciar pessoas e conquistar os resultados que deseja.</p>
+                <a href="c:/Users/samue/Documents/Livros/Quem se comunica enriquece - Cintia Lopes.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="comunicacao">
+            <img src="falarbem.png" alt="29 Minutos para Falar Bem em Público">
+            <div class="card-content">
+                <h4>29 Minutos para Falar Bem em Público</h4>
+                <p>Com este livro você vai aprender, em apenas 29 minutos, a falar em público e a conversar com as pessoas de maneira segura e desembaraçada. Por que 29 e não 30 minutos ou uma hora? Simples: para que você saiba que as técnicas mais relevantes da comunicação podem ser aprendidas em menos de meia hora.</p>
+                <a href="c:/Users/samue/Documents/Livros/29-minutos-para-falar-bem-em-publico-reinaldo-polito-rachel-polito.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="autoajuda">
+            <img src="antiotario.png" alt="Antiotário Vol. 1, 2 e 3">
+            <div class="card-content">
+                <h4>Antiotário</h4>
+                <p>O Antiotário tem ensinamentos que demorariam anos para um homem comum aprender, você pode optar agora por aprender essas lições pelo amor ou pode preferir aprendê-las pela dor, “quebrando a cara” e com muito sofrimento. Garanto que a primeira opção é a melhor, porque a segunda pode trazer consequências negativas que te perseguirão ...</p>
+                <a href="c:/Users/samue/Documents/Livros/Antiotário Vol. 1, 2 e 3 - Rafael Aires.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="autoajuda">
+            <img src="psicanalise.png" alt="Tudo sobre Psicanálise">
+            <div class="card-content">
+                <h4>Tudo sobre Psicanálise</h4>
+                <p>Impossível reunir em um livro tudo o que precisamos saber sobre psicanálise”. É esse o alerta que a psicanalista Silvia Ons faz ao leitor no prólogo deste livro. E não sem motivo. Tamanha é a complexidade do tema, que nem uma centena de livros dariam conta do “tudo”, mesmo porque, defende a autora, “tudo” não combina com a psicanálise. Lacan, cita ela, dizia que o analista deveria reinventar a psicanálise todos os dias. Mas isso não impediu a autora de reunir, neste volume, um compêndio bastante abrangente dos principais conceitos psicanalíticos, apresentados com grande clareza e síntese e contextualizados na história.</p>
+                <a href="c:/Users/samue/Documents/Livros/Comunicar-para-Liderar.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="comunicacao">
+            <img src="aprenda.png" alt="Linguagem Corporal">
+            <div class="card-content">
+                <h4>Aprenda a ser mais interessante</h4>
+                <p>Como descobrir o seu poder, usá-lo a seu favor e ser uma pessoa a cada dia mais atraente. 100 lições para atrair relações produtivas e incríveis. De maneira simples você vai aprender nesse livro como ser ainda mais interessante. Especialmente no jogo do amor e das relações afetivas. Cada lição contém uma profunda reflexão para que você desenvolva habilidades integradas ao seu ser, para se tornar um imã positivo de amor, prosperidade, autoconfiança, amor próprio e autenticidade.</p>
+                <a href="c:/Users/samue/Documents/Livros/Linguagem Corporal - Vitor Santos.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="comunicacao">
+            <img src="argumentaçao.png" alt="Manual Prático de Argumentação e Oratória">
+            <div class="card-content">
+                <h4>Manual Prático de Argumentação e Oratória</h4>
+                <p>O receio de falhar, a preocupação de não ser aceito pelos ouvintes e a sensação de inferioridade torna o medo de falar em público um dos maiores temores entre os profissionais.
+                    Muitos afirmam que as principais causas dos seus receios estão relacionadas a situações desfavoráveis passadas em
+                    suas residências, escolas ou no ambiente de trabalho, sendo essas circunstâncias vexatórias que os colocaram desconfortáveis e sem confiança em si mesmos.</p>
+                <a href="c:/Users/samue/Documents/Livros/e-book-Manual-de-Argumentação-e-Oratória.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="autoajuda">
+            <img src="influenciar.png" alt="Como Fazer Amigos e Influenciar Pessoas">
+            <div class="card-content">
+                <h4>Como Fazer Amigos e Influenciar Pessoas</h4>
+                <p>Como fazer amigos e influenciar pessoas" é um clássico escrito por Dale Carnegie, que oferece um guia prático sobre como estabelecer relacionamentos sólidos e influenciar positivamente as pessoas ao nosso redor. Publicado pela primeira vez em 1936, o livro continua sendo uma referência importante para aqueles que desejam aprimorar suas habilidades sociais e profissionais.</p>
+                <a href="c:/Users/samue/Documents/Livros/Como Fazer Amigos e Influenciar Pessoas - Dale Carnegie.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="ficção">
+            <img src="diarios.png" alt="Diários de um vampiro">
+            <div class="card-content">
+                <h4>Diários do Vampiro</h4>
+                <p>Após ser traído por seu irmão, Stefan resolve fugir para sempre dele e de qualquer contato humano. Mas Damon está disposto a tudo para arruinar os planos do irmão, e, ao contrário de Stefan, ele não se importa com quantos humanos vai ferir pelo caminho. No entanto, uma força maligna e muito mais antiga do que os dois vampiros parece ter voltado à Terra, e os sobreviventes da família Salvatore vão se ver obrigados a deixar as desavenças em segundo plano.</p>
+                <a href="c:/Users/samue/Documents/Livros/EBOOK_GUIA_PARA_FALAR_EM_PÚBLICO.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="fantasia">
+            <img src="senhor.png" alt="Senhor dos áneis">
+            <div class="card-content">
+                <h4>Senhor dos Anéis</h4>
+                <p>Um Anel que a todos rege, Um Anel para achá-los, Um Anel que a todos traz para a escuridão atá-los". O grande épico de J.R.R. Tolkien em volume único e capa especial da série do Prime Video.</p>
+                <a href="c:/Users/samue/Documents/Livros/oratoria.pdf">Ler livro</a>
+            </div>
+        </div>
+        <div class="card" data-category="religiao">
+            <img src="nos.png" alt="nós e a Bíblia">
+            <div class="card-content">
+                <h4>Nós e a Bíblia</h4>
+                <p>Em Nós e a Bíblia, André Daniel Reinke investiga o fenômeno de como o mesmo texto bíblico pode ser interpretado de maneiras tão distintas e produzir culturas tão plurais.</p>
+                <a href="c:/Users/samue/Documents/Livros/Livro - O Corpo Fala (Pierre Weil).pdf">Ler livro</a>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="slider-wrapper">
+        <h2 class="slider-title">Livros em destaque</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="linguagemcorporal.png" alt="linguagemcorporal">
+                    <h4>Linguagem Corporal - Vitor Santos</h4>
+                    <p class="synopsis">
+                        O criador do Metaforando, o maior canal de linguagem corporal do mundo, mostra o passo a passo para entender melhor as pessoas ao seu redor e identificar incongruências entre expressões emocionais, discurso e comportamento. Você já teve a sensação de não ir com a cara de alguém sem saber o porquê?
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="poder.png" alt="poder">
+                    <h4>O Poder do Foco - Louise Sallow</h4>
+                    <p class="synopsis">
+                        Este livro inclui várias instruções passo a passo para ajudar você com a visão, execução, definição de metas e comportamento do consumidor. Neste livro, você aprenderá conceitos básicos de execução de metas e você aprenderá as principais técnicas de forma direta e simplificada!
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="harry.png" alt="harry">
+                    <h4>Harry Potter e a Pedra Filosofal</h4>
+                    <p class="synopsis">
+                        Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="gatilhos.png" alt="gatilhos">
+                    <h4>Gatilhos Mentais - Yasmin Fleming</h4>
+                    <p class="synopsis">
+                        Em busca da lealdade à marca, apelamos para as emoções que ela causa, desencadeando fantasias, imaginação e prazeres. Consumidores buscam experimentar sentimentos agradáveis. Nesse livro, conversaremos sobre as duas maneiras de influenciar o comportamento humano: manipulando ou inspirando.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="aprendendo.png" alt="aprendendo">
+                    <h4>Aprendendo a Aprender - Barbara Oakley</h4>
+                    <p class="synopsis">
+                        Neste livro, a Professora Barbara Oakley mostra como você pode aprender e aperfeiçoar-se muito mais fácil e rapidamente aplicando técnicas comprovadas pela pesquisa e usadas por peritos nos campos da arte, música, literatura, ciências, esportes e muitas outras disciplinas.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="melhor.png" alt="harry">
+                    <h4>Seja sua melhor versão - Cécile Duret</h4>
+                    <p class="synopsis">
+                        Este livro é a sua oportunidade para desenvolver a sua mentalidade e as ações adequadas para criar os resultados que você sonha ver se tornar realidade. Lendo um capítulo por dia, você pode gerar um grande impacto na sua vida.
+                    A cada dia, a autora compartilha técnicas, insights e exercícios práticos que transformaram a vida dela e convida você a aplicá-los e adotá-los como estilo de vida.
+                    Você tem a oportunidade, com essa obra, de criar hábitos poderosos para desenvolver quem você realmente é, quem aspira ser e assim conquistar sua melhor versão!
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="psicopata.png" alt="psicopata">
+                    <h4>Como Identificar um Psicopata - Daynes, Fellowes</h4>
+                    <p class="synopsis">
+                        Nem todos os psicopatas são assassinos compulsivos ou criminosos, como você pode pensar. Alguns, aparentemente, são pessoas comuns. Na verdade, 1% a 3% da população em geral tem fortes tendências psicopatas. Neste livro, a psicóloga forense Kerry Daynes explica como funciona a mente de um psicopata. Ela revela os traços de comportamento que os vários tipos de psicopata têm em comum e dá sugestões de como lidar com eles ou, melhor ainda, de como evitá-los a todo custo. Por meio de estudos de caso, este livro o ajudará a identificar os possíveis psicopatas em sua vida.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="quietos.png" alt="O Poder dos Quietos">
+                    <h4>O Poder dos Quietos - Susan Cain</h4>
+                    <p class="synopsis">
+                        Com base em entrevistas e a compilação de diversas pesquisas, a autora nos mostra as diferenças dos introvertidos e extrovertidos em nossa sociedade. Ela também mostra que não é errado ser introvertido. Não é um problema. Não é uma patologia, por mais que nossa sociedade atual tente pregar isso a todo o momento.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="foco.png" alt="O Poder do Foco">
+                    <h4>O Poder do Foco - Canfield, Hansen e Hewitt </h4>
+                    <p class="synopsis">
+                        Em O PODER DO FOCO, analisam como pequenas mudanças, desvios ao longo do caminho, podem afetar o seu destino final. Por isso, é preciso focar toda atençãoaos nos detalhes que compõem a rotina de cada um. O poder desse foco é o diferencial das pessoas bem-sucedidas. Elas são capazes de manter o que está correto em suas vidas e descartar o resto. Mudam hábitos equivocados e equilibram os lados pessoal e profissional, já que são as escolhas detodo cada dia são as que determinam seuma a sua história será vivida na pobreza ou na abundância
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+                <div class="slide">
+                    <img src="freud.png" alt="freud">
+                    <h4>Freud Sobre a Psicopatologia da Vida Cotidiana</h4>
+                    <p class="synopsis">
+                        Uma das obras mais acessíveis de Freud Não há teoria psicológica que já tenha conseguido prestar contas de maneira coerente do fenômeno fundamental do recordar e do esquecer. Sobre a psicopatologia da vida cotidiana, de Sigmund Freud (1856-1939), é, a um só tempo, uma das obras do autor mais acessíveis ao público leigo e um dos textos fundadores do método psicanalítico. Trata-se de uma coletânea de pequenas histórias que compõem uma amostra da presença do inconsciente em atos falhos do cotidiano de pessoas saudáveis: esquecimentos aparentemente sem razão, lapsos de fala, enganos e erros.
+                    </p>
+                    <p class="price">R$ 10,00</p>
+                    <button class="buy-btn">Adquirir</button>
+                </div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider .slide');
+        const totalSlides = slides.length;
+        const visibleSlides = window.innerWidth > 768 ? 3 : 1; // Ajusta entre 3 e 1 slide visível
+    
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }
+    
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+    
+        function updateSlider() {
+            const slider = document.querySelector('.slider');
+            const slideWidth = document.querySelector('.slider-container').offsetWidth / visibleSlides;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+    
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+        document.querySelector('.next').addEventListener('click', nextSlide);
+    
+        let autoSlide = setInterval(nextSlide, 3000);
+    
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        sliderContainer.addEventListener('mouseleave', () => (autoSlide = setInterval(nextSlide, 3000)));
+    
+        window.addEventListener('resize', updateSlider);
+    
+        updateSlider();
+    </script>
+    
+    
+    <section class="options-section">
+        <h2 class="options-title">Opções de Compra</h2>
+        <div class="options-container">
+            <!-- Compra individual -->
+            <div class="option-card">
+                <h3>Compra Individual</h3>
+                <p>Adquira apenas o livro que desejar. Ideal para quem quer algo específico.</p>
+                <p class="price">R$ 10,00 por livro</p>
+                <button onclick="redirectToContact('Compra Individual')">Comprar Agora</button>
+            </div>
+    
+            <!-- Acesso à plataforma -->
+            <div class="option-card">
+                <h3>Acesso Completo</h3>
+                <p>Tenha acesso imediato a 12 livros exclusivos para leitura e download. Após o acesso inicial, você pode renovar por apenas R$ 25,00 e desbloquear novos livros a cada renovação!</p>
+                <p class="price">R$ 25,00</p>
+                <button onclick="redirectToContact('Acesso Completo')">Assinar Agora</button>
+            </div>
+
+            <!-- Assinatura mensal -->
+            <div class="option-card">
+                <h3>Assinatura Mensal</h3>
+                <p>Assine e tenha acesso a um catálogo crescente de livros por apenas R$ 35,00 mensais. Ideal para quem busca diversidade e atualização constante.</p>
+                <p class="price">R$ 35,00 por mês</p>
+                <button onclick="redirectToContact('Assinatura Mensal')">Assinar Agora</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <h2 class="contact-title">Entre em Contato</h2>
+        <form class="contact-form">
+            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+            <input type="email" id="email" name="email" placeholder="Seu email" required>
+            <textarea id="message" name="message" rows="5" placeholder="Mensagem ou dúvida" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <script>
+        function redirectToContact(option) {
+            const messageField = document.getElementById('message');
+            messageField.value = `Gostaria de obter mais informações sobre: ${option}`;
+            document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    
+    <br><br>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <div class="footer-content" style="text-align: center; padding: 1rem; background-color: #474747; color: #fff;">
+                <p>&copy; 2024 Sam Livros. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Samuel Araújo.</p>
+            </div>
+        </footer>
+    
+        <script>
+            // Sistema de Favoritos
+            document.querySelectorAll('.card').forEach(card => {
+                const favButton = document.createElement('span');
+                favButton.innerHTML = '&#9734;'; // Ícone de estrela vazia
+                favButton.style.fontSize = '1.5rem';
+                favButton.style.cursor = 'pointer';
+                favButton.style.color = '#007bff';
+    
+                // Verificar se está nos favoritos
+                const bookTitle = card.querySelector('h4').textContent;
+                if (localStorage.getItem(bookTitle)) {
+                    favButton.innerHTML = '&#9733;'; // Ícone de estrela cheia
+                    favButton.style.color = '#ffc107';
+                }
+    
+                favButton.addEventListener('click', () => {
+                    if (localStorage.getItem(bookTitle)) {
+                        localStorage.removeItem(bookTitle);
+                        favButton.innerHTML = '&#9734;'; // Estrela vazia
+                        favButton.style.color = '#007bff';
+                    } else {
+                        localStorage.setItem(bookTitle, 'favorito');
+                        favButton.innerHTML = '&#9733;'; // Estrela cheia
+                        favButton.style.color = '#ffc107';
+                    }
+                });
+    
+                card.querySelector('.card-content').appendChild(favButton);
+            });
+    
+            // Modo Escuro
+            const darkModeToggle = document.createElement('button');
+            darkModeToggle.innerHTML = '<span style="font-size: 1.5rem;">&#9728;</span>'; // Ícone de sol
+            darkModeToggle.style.position = 'absolute';
+            darkModeToggle.style.top = '10px';
+            darkModeToggle.style.right = '10px';
+            darkModeToggle.style.padding = '0.5rem';
+            darkModeToggle.style.backgroundColor = '#007bff';
+            darkModeToggle.style.border = 'none';
+            darkModeToggle.style.cursor = 'pointer';
+            darkModeToggle.style.color = '#fff';
+            darkModeToggle.style.borderRadius = '5px';
+    
+            // Aplicar preferência do modo escuro
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<span style="font-size: 1.5rem;">&#9790;</span>'; // Ícone de lua
+            }
+    
+            darkModeToggle.addEventListener('click', () => {
+                if (document.body.classList.contains('dark-mode')) {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.innerHTML = '<span style="font-size: 1.5rem;">&#9728;</span>'; // Ícone de sol
+                } else {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.innerHTML = '<span style="font-size: 1.5rem;">&#9790;</span>'; // Ícone de lua
+                }
+            });
+    
+            document.body.appendChild(darkModeToggle);
+    
+            // Estilos para o modo escuro
+            const darkModeStyles = document.createElement('style');
+            darkModeStyles.textContent = `
+                .dark-mode {
+                    background-color: #121212;
+                    color: #fff;
+                }
+                .dark-mode .card {
+                    background-color: #1e1e1e;
+                    color: #fff;
+                }
+                .dark-mode .card h4 {
+                    color: #fff;
+                }
+                .dark-mode .card p {
+                    color: #ddd;
+                }
+                .dark-mode .slider-wrapper h2 {
+                    color: #fff;
+                }
+                .dark-mode .options-section h2{
+                    color: #fff;
+                }
+                .dark-mode .options-section {
+                    background-color: #333;
+                }
+                .dark-mode .option-card {
+                    background-color: #1e1e1e;
+                }
+                .dark-mode .option-card p{
+                    color: #fff;
+                }
+                .dark-mode .slide {
+                    background-color: #1e1e1e;
+                }
+                .dark-mode .slide h4 {
+                    color: #fff;
+                }
+                .dark-mode .slide p {
+                    color: #ddd;
+                }
+                .dark-mode .header {
+                    background-color: #333;
+                }
+                .dark-mode .categories button {
+                    background-color: #555;
+                }
+                .dark-mode .categories button:hover {
+                    background-color: #777;
+                }
+                .dark-mode button {
+                    background-color: #333 !important;
+                    color: #fff !important;
+                }
+                .dark-mode .contact-section h2 {
+                    color: #fff;
+                }
+                .dark-mode .contact-section {
+                    background-color: #1e1e1e;
+                    color: #fff;
+                }
+                .dark-mode input {
+                    background-color: #343a40;
+                    color: #fff;
+                }
+                .dark-mode textarea {
+                    background-color: #343a40;
+                    color: #fff;
+                }
+            `;
+            document.head.appendChild(darkModeStyles);
+    
+            // Filtrar Favoritos
+            const filterFavoritesButton = document.createElement('button');
+            filterFavoritesButton.textContent = 'Mostrar Favoritos';
+            filterFavoritesButton.style.margin = '0 0.5rem';
+            filterFavoritesButton.style.display = 'block';
+            filterFavoritesButton.style.padding = '0.5rem 1rem';
+            filterFavoritesButton.style.backgroundColor = '#007bff';
+            filterFavoritesButton.style.color = '#fff';
+            filterFavoritesButton.style.border = 'none';
+            filterFavoritesButton.style.borderRadius = '5px';
+            filterFavoritesButton.style.cursor = 'pointer';
+    
+            filterFavoritesButton.addEventListener('click', () => {
+                const cards = document.querySelectorAll('.card');
+                const showingFavorites = filterFavoritesButton.textContent === 'Mostrar Todos';
+    
+                cards.forEach(card => {
+                    const bookTitle = card.querySelector('h4').textContent;
+                    if (showingFavorites || localStorage.getItem(bookTitle)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+    
+                filterFavoritesButton.textContent = 'Mostrar Favoritos';
+            });
+    
+            document.querySelector('.categories').appendChild(filterFavoritesButton);
+        </script>
+   
+
+    <script>
+        // Função para filtrar categorias
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Função para barra de pesquisa
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
