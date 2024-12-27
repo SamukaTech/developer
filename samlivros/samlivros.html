@@ -17,6 +17,66 @@
         margin: 0;
         color: #333;
     }
+
+    /* Melhorias no modo escuro */
+    body.dark-mode .options-section,
+    body.dark-mode .contact-section,
+    body.dark-mode .slider-container {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .option-card {
+        background-color: #292929;
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .option-card .price {
+        color: #e63946; /* Mantém o mesmo tom do modo claro */
+    }
+
+    body.dark-mode .option-card button,
+    body.dark-mode .buy-btn {
+        background-color: #4CAF50; /* Mesma cor do modo claro */
+        color: white;
+    }
+
+    body.dark-mode .option-card button:hover,
+    body.dark-mode .buy-btn:hover {
+        background-color: #45a049; /* Efeito de hover consistente */
+    }
+
+    body.dark-mode .contact-form input,
+    body.dark-mode .contact-form textarea {
+        background-color: #292929;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    body.dark-mode .contact-form input::placeholder,
+    body.dark-mode .contact-form textarea::placeholder {
+        color: #aaa;
+    }
+
+    body.dark-mode .slider .slide {
+        background-color: #292929;
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .slider .slide h4,
+    body.dark-mode .slider .slide .price {
+        color: #e63946; /* Valores mantêm a cor original */
+    }
+
+    body.dark-mode .slider .slide .buy-btn {
+        background-color: #4CAF50; /* Mesma cor do modo claro */
+        color: white;
+    }
+
+    body.dark-mode .slider .slide .buy-btn:hover {
+        background-color: #45a049; /* Hover consistente */
+    }
+
     .header {
         background-color: #007bff;
         color: white;
@@ -32,6 +92,80 @@
     .header h3 {
         font-size: 1.5rem;
         margin: 0.5rem 0 0;
+    }
+    /* Banner promocional */
+    .notification-banner {
+        position: relative;
+        width: 100%;
+        max-width: 100%; /* Evita a barra de rolagem horizontal */
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .notification-banner p {
+        margin: 0;
+        font-size: 1em;
+        flex: 1; /* Permite que o texto ocupe o espaço necessário */
+        text-align: center;
+    }
+
+    .notification-banner a {
+        color: #ffd700;
+        text-decoration: underline;
+        margin-left: 10px;
+    }
+
+    .notification-banner button {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .notification-banner button:hover {
+        background-color: #d32f2f;
+    }
+
+    /* Pop-up promocional */
+    .notification-popup {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+    }
+
+    .notification-popup a {
+        color: #ffd700;
+        text-decoration: underline;
+    }
+
+    .notification-popup .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+
+    .notification-popup .close-btn:hover {
+        color: #f44336;
     }
     .search-bar {
         text-align: center;
@@ -425,6 +559,22 @@
         <h3>Seu portal para o conhecimento ilimitado</h3>
     </header>
 
+    <!-- Banner Promocional -->
+<div class="notification-banner" id="promoBanner">
+    <p>📚 Promoção: Compre 2 livros e ganhe 1 grátis! 
+        <a href="#contactSection">Aproveitar Agora</a>
+    </p>
+    <button onclick="closeBanner()">Fechar</button>
+</div>
+
+<!-- Pop-up Promocional -->
+<div class="notification-popup" id="promoPopup">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <p><strong>Oferta Exclusiva:</strong> Assine por R$ 25,00 e tenha acesso a 12 livros!
+        <a href="#contactSection">Saiba Mais</a>
+    </p>
+</div>
+
     <!-- Barra de Pesquisa -->
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Busque por livros...">
@@ -543,7 +693,7 @@
             </div>
         </div>
     </div>
-<br>
+<br><br>
     <div class="slider-wrapper">
         <h2 class="slider-title">Livros em destaque</h2>
         <div class="slider-container">
@@ -628,7 +778,7 @@
                     <img src="foco.png" alt="O Poder do Foco">
                     <h4>O Poder do Foco - Canfield, Hansen e Hewitt </h4>
                     <p class="synopsis">
-                        Em O PODER DO FOCO, analisam como pequenas mudanças, desvios ao longo do caminho, podem afetar o seu destino final. Por isso, é preciso focar toda atençãoaos nos detalhes que compõem a rotina de cada um. O poder desse foco é o diferencial das pessoas bem-sucedidas. Elas são capazes de manter o que está correto em suas vidas e descartar o resto. Mudam hábitos equivocados e equilibram os lados pessoal e profissional, já que são as escolhas detodo cada dia são as que determinam seuma a sua história será vivida na pobreza ou na abundância
+                        Em O PODER DO FOCO, analisam como pequenas mudanças, desvios ao longo do caminho, podem afetar o seu destino final. Por isso, é preciso focar toda atenção aos detalhes que compõem a rotina de cada um. O poder desse foco é o diferencial das pessoas bem-sucedidas. Elas são capazes de manter o que está correto em suas vidas e descartar o resto. Mudam hábitos equivocados e equilibram os lados pessoal e profissional, já que são as escolhas de cada dia que determinam se sua história será vivida na pobreza ou na abundância
                     </p>
                     <p class="price">R$ 10,00</p>
                     <button class="buy-btn">Adquirir</button>
@@ -647,7 +797,34 @@
             <button class="next">❯</button>
         </div>
     </div>
-
+    <script>
+        // Fecha o banner promocional
+        function closeBanner() {
+            const banner = document.getElementById('promoBanner');
+            banner.style.display = 'none';
+        }
+    
+        // Fecha o pop-up promocional
+        function closePopup() {
+            const popup = document.getElementById('promoPopup');
+            popup.style.display = 'none';
+        }
+    
+        // Mostra o pop-up automaticamente após 5 segundos
+        setTimeout(() => {
+            const popup = document.getElementById('promoPopup');
+            popup.style.display = 'block';
+        }, 5000);
+    
+        // Rola para o formulário ao clicar no link
+        document.querySelectorAll('.notification-banner a, .notification-popup a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                document.querySelector('#contactSection').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    
     <script>
         let currentIndex = 0;
         const slides = document.querySelectorAll('.slider .slide');
@@ -699,7 +876,7 @@
             <!-- Acesso à plataforma -->
             <div class="option-card">
                 <h3>Acesso Completo</h3>
-                <p>Escolha um livro e tenha acesso imediato a mais 11 livros exclusivos para leitura e download. Após o acesso inicial, você pode renovar por apenas R$ 25,00 e desbloquear novos livros a cada renovação!</p>
+                <p>Escolha um livro e tenha acesso imediato a mais 11 livros exclusivos para leitura e download. Após o acesso inicial, você pode renovar quando quiser por apenas R$ 25,00 e desbloquear novos livros a cada renovação!</p>
                 <p class="price">R$ 25,00</p>
                 <button onclick="redirectToContact('Acesso Completo')">Assinar Agora</button>
             </div>
@@ -714,7 +891,7 @@
         </div>
     </section>
     
-    <section class="contact-section">
+    <section class="contact-section" id="contactSection">
         <h2 class="contact-title">Entre em Contato</h2>
         <form class="contact-form" id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
             <input type="hidden" name="Site" value="Sam Livros">
@@ -772,6 +949,21 @@
                 });
             }
         });
+
+        // Vincula os botões "Adquirir" dos livros em destaque ao formulário de contato
+    document.querySelectorAll('.buy-btn').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // Obtém o título do livro correspondente
+            const bookTitle = button.parentElement.querySelector('h4').innerText;
+
+            // Preenche a caixa de mensagem do formulário de contato
+            const messageField = document.getElementById('message');
+            messageField.value = `Gostaria de adquirir o livro: ${bookTitle}`;
+
+            // Rola suavemente até o formulário de contato
+            document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
     </script>
     
     <br><br>
@@ -922,7 +1114,7 @@
     
             // Filtrar Favoritos
             const filterFavoritesButton = document.createElement('button');
-            filterFavoritesButton.textContent = 'Mostrar Favoritos';
+            filterFavoritesButton.textContent = 'Favoritos';
             filterFavoritesButton.style.margin = '0 0.5rem';
             filterFavoritesButton.style.display = 'block';
             filterFavoritesButton.style.padding = '0.5rem 1rem';
@@ -945,7 +1137,7 @@
                     }
                 });
     
-                filterFavoritesButton.textContent = 'Mostrar Favoritos';
+                filterFavoritesButton.textContent = 'Favoritos';
             });
     
             document.querySelector('.categories').appendChild(filterFavoritesButton);
