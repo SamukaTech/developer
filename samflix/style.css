@@ -6,50 +6,68 @@ body {
     color: #fff;
 }
 
+/* Estilo do cabeçalho */
 header {
-    background-color: #1e1e1e;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    position: relative;
 }
 
-.navbar .logo {
+.logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #e50914;
+    color: #ff0000;
 }
 
-.navbar .menu {
-    list-style: none;
+.menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
-.navbar .menu li a {
-    text-decoration: none;
+.menu a {
     color: #fff;
-    transition: color 0.3s;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-.navbar .menu li a:hover {
-    color: #e50914;
+.menu a:hover {
+    color: #ff0000;
 }
 
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
-    color: #fff;
-    background: none;
-    border: none;
     cursor: pointer;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Oculta o menu no início */
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .menu.active {
+        display: flex; /* Mostra o menu ao ativar */
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o botão hambúrguer */
+    }
+}
+
 
 .banner {
     text-align: center;
@@ -101,26 +119,3 @@ footer {
     margin-top: 2rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu {
-        display: none; /* Menu escondido por padrão */
-        flex-direction: column;
-        gap: 1rem;
-        background-color: #1e1e1e;
-        padding: 1rem;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        z-index: 1000;
-    }
-
-    .menu.active {
-        display: flex; /* Mostra o menu somente com a classe 'active' */
-    }
-
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
-}
