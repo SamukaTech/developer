@@ -1,3 +1,4 @@
-
-// JavaScript básico para funcionalidades futuras
-console.log("Plataforma de Filmes carregada com sucesso!");
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
