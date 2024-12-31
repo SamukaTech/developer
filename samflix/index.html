@@ -1,16 +1,15 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Filmes</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="slider.js" defer></script>
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <header>
-        <div class="logo">Filmoteca</div>
+        <div class="logo">Samflix</div>
         <div class="menu-toggle">☰</div>
         <nav class="menu">
             <a href="#home">Home</a>
@@ -22,109 +21,630 @@
 
     <main>
         <section class="banner">
-            <h1>Bem-vindo à Filmoteca</h1>
-            <p>Explore os melhores filmes em um só lugar!</p>
-            <button class="btn-destaque">Comece Agora</button>
+            <div class="banner-overlay"></div>
+            <h1>Bem-vindo à Samflix</h1>
+            <p>Explore os melhores filmes e séries em um só lugar!</p>
+            <button class="btn-destaque" id="#lancamentos">Comece Agora</button>
         </section>
+        
 
-        <section class="destaques">
-            <h2>Destaques</h2>
-            <div class="slider">
-                <div class="filme"><img src="https://cdn.cineart.com.br/vibezz_211176357.jpg" alt="Filme 1"></div>
-                <div class="filme"><img src="https://ingresso-a.akamaihd.net/prd/img/movie/a-arca-de-noe/b3fe928b-c364-444c-a397-a8e578c75658.webp" alt="Filme 2"></div>
-                <div class="filme"><img src="https://i0.wp.com/www.guiadecinema.com/wp-content/uploads/2022/03/morbius.jpg?fit=540%2C801&ssl=1" alt="Filme 3"></div>
-                <div class="filme"><img src="https://ucicinemas.com.br/Content/Upload/Filmes/Posters/10923/filme_10923.jpg" alt="Filme 4"></div>
-            </div>
-        </section>
-
-        <section id="lancamentos" class="dark-section">
-            <h2>Lançamentos</h2>
-            <div class="filmes-container">
-                <div class="filme" onclick="mostrarDetalhes('lancamento1')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 1">
-                    <h3>Filme 1</h3>
+        <div class="slider-wrapper" id="slider">
+            <h2 class="slider-title">Filmes em Destaque</h2>
+            <div class="slider-container">
+                <div class="slider">
+                      <div class="slide">
+                        <img src="https://i0.wp.com/www.guiadecinema.com/wp-content/uploads/2022/03/morbius.jpg?fit=540%2C801&ssl=1" alt="Como ficar rico">
+                        <h4>Nome do filme</h4>
+                        <p class="synopsis">
+                            Sinopse:
+                        </p>
+                        <p class="price">R$ 10,00</p>
+                        <button class="buy-btn">Adquirir</button>
+                    </div>
+                    <div class="slide">
+                        <img src="https://cdn.cineart.com.br/vibezz_211176357.jpg" alt="Seja Homem">
+                        <h4>Nome do filme</h4>
+                        <p class="synopsis">
+                            Sinopse:
+                        </p>
+                        <p class="price">R$ 10,00</p>
+                        <button class="buy-btn">Adquirir</button>
+                    </div>
+                    <div class="slide">
+                        <img src="https://gsobmidia.com.br/uploads/filmes/2838/15850-medio_1726062587.jpg" alt="O Senhor dos Anéis">
+                        <h4>Nome do filme</h4>
+                        <p class="synopsis">
+                            Sinopse:
+                        </p>
+                        <p class="price">R$ 10,00</p>
+                        <button class="buy-btn">Adquirir</button>
+                    </div>
+                    <div class="slide">
+                        <img src="https://cinecataratas.com.br/wp-content/uploads/2024/11/banner_filme_moana-cinemaemfoz.jpg" alt="A serpente e as asas feitas de noite">
+                        <h4>Nome do filme</h4>
+                        <p class="synopsis">
+                           Sinopse:
+                        </p>
+                        <p class="price">R$ 10,00</p>
+                        <button class="buy-btn">Adquirir</button>
+                    </div>
                 </div>
-                <div class="filme" onclick="mostrarDetalhes('lancamento2')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 2">
-                    <h3>Filme 2</h3>
-                </div>
-                <div class="filme" onclick="mostrarDetalhes('lancamento3')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 3">
-                    <h3>Filme 3</h3>
-                </div>
-            </div>
-        </section>
-
-        <section id="mais-assistidos" class="dark-section">
-            <h2>Mais Assistidos</h2>
-            <div class="filmes-container">
-                <div class="filme" onclick="mostrarDetalhes('maisAssistido1')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 4">
-                    <h3>Filme 4</h3>
-                </div>
-                <div class="filme" onclick="mostrarDetalhes('maisAssistido2')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 5">
-                    <h3>Filme 5</h3>
-                </div>
-                <div class="filme" onclick="mostrarDetalhes('maisAssistido3')">
-                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 6">
-                    <h3>Filme 6</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal para exibir detalhes -->
-        <div id="detalhes-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModal()">&times;</span>
-                <h3 id="detalhes-titulo"></h3>
-                <p id="detalhes-sinopse"></p>
-                <p id="detalhes-classificacao"></p>
-                <button onclick="adquirirFilme()">Adquirir Filme</button>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
             </div>
         </div>
+<br><br>
+<section id="lancamentos" class="dark-section">
+    <h2>Lançamentos</h2>
+    <div class="filmes-container">
+        <div class="filme" onclick="mostrarDetalhes('lancamento1')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 1">
+            <h3>Filme 1</h3>
+            <p>Gênero: Ação</p>
+            <img src="livre.png" alt="Classificação L" style="width: 30px; height: auto;">
+        </div>
+        <div class="filme" onclick="mostrarDetalhes('lancamento2')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 2">
+            <h3>Filme 2</h3>
+            <p>Gênero: Drama</p>
+            <img src="16.png" alt="Classificação 12" style="width: 30px; height: auto;">
+        </div>
+        <div class="filme" onclick="mostrarDetalhes('lancamento3')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 3">
+            <h3>Filme 3</h3>
+            <p>Gênero: Comédia</p>
+            <img src="12.png" alt="Classificação 12" style="width: 30px; height: auto;">
+        </div>
+    </div>
+</section>
 
-        <section id="planos" class="dark-section">
-            <h2>Escolha seu Plano</h2>
-            <div class="planos-container">
-                <div class="plano">
-                    <h3>Básico</h3>
-                    <p>Apenas R$ 19,90/mês</p>
-                    <ul>
-                        <li>Resolução: SD (480p)</li>
-                        <li>Acesso em 1 dispositivo</li>
-                        <li>Catálogo completo</li>
-                    </ul>
-                    <button>Assine Agora</button>
-                </div>
-                <div class="plano destaque">
-                    <h3>Padrão</h3>
-                    <p>Apenas R$ 29,90/mês</p>
-                    <ul>
-                        <li>Resolução: HD (720p)</li>
-                        <li>Acesso em até 2 dispositivos</li>
-                        <li>Catálogo completo</li>
-                    </ul>
-                    <button>Assine Agora</button>
-                </div>
-                <div class="plano">
-                    <h3>Premium</h3>
-                    <p>Apenas R$ 49,90/mês</p>
-                    <ul>
-                        <li>Resolução: Ultra HD (4K)</li>
-                        <li>Acesso em até 4 dispositivos</li>
-                        <li>Catálogo completo</li>
-                    </ul>
-                    <button>Assine Agora</button>
-                </div>
-            </div>
-        </section>
-    </main>
+<section id="mais-assistidos" class="dark-section">
+    <h2>Mais Assistidos</h2>
+    <div class="filmes-container">
+        <div class="filme" onclick="mostrarDetalhes('maisAssistido1')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 4">
+            <h3>Filme 4</h3>
+            <p>Gênero: Aventura</p>
+            <img src="14.png" alt="Classificação 14" style="width: 30px; height: auto;">
+        </div>
+        <div class="filme" onclick="mostrarDetalhes('maisAssistido2')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 5">
+            <h3>Filme 5</h3>
+            <p>Gênero: Romance</p>
+            <img src="12.png" alt="Classificação 12" style="width: 30px; height: auto;">
+        </div>
+        <div class="filme" onclick="mostrarDetalhes('maisAssistido3')">
+            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 6">
+            <h3>Filme 6</h3>
+            <p>Gênero: Suspense</p>
+            <img src="18.png" alt="Classificação 16" style="width: 30px; height: auto;">
+        </div>
+    </div>
+</section>
+
+<!-- Modal para exibir detalhes -->
+<div id="detalhes-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h3 id="detalhes-titulo"></h3>
+        <p id="detalhes-sinopse"></p>
+        <p id="detalhes-classificacao"></p>
+        <button onclick="window.location.href='#planos'">Adquirir Filme</button>
+    </div>
+</div>
+
+<section id="planos" class="dark-section">
+    <h2>Escolha seu Plano</h2>
+    <div class="planos-container">
+        <div class="plano">
+            <h3>Básico</h3>
+            <p>Apenas R$ 9,99 por filme</p>
+            <ul>
+                <li>Adquira um filme específico</li>
+                <li>Sem assinatura mensal</li>
+                <li>Possibilidade de baixar os filmes</li>
+            </ul>
+            <button onclick="window.location.href='#planos'">Adquira Agora</button>
+        </div>
+        <div class="plano destaque">
+            <h3>Padrão</h3>
+            <p>Apenas R$ 29,90/mês</p>
+            <ul>
+                <li>Resolução: HD (720p)</li>
+                <li>Acesso em até 2 dispositivos</li>
+                <li>Catálogo completo</li>
+                <li>Possibilidade de baixar os filmes</li>
+            </ul>
+            <button onclick="window.location.href='#planos'">Assine Agora</button>
+        </div>
+        <div class="plano">
+            <h3>Premium</h3>
+            <p>Apenas R$ 49,90/mês</p>
+            <ul>
+                <li>Resolução: Ultra HD (4K)</li>
+                <li>Acesso em até 4 dispositivos</li>
+                <li>Catálogo completo</li>
+                <li>Possibilidade de baixar os filmes</li>
+            </ul>
+            <button onclick="window.location.href='#planos'">Assine Agora</button>
+        </div>
+    </div>
+</section>
+</main>
 
     <footer>
-        <p>&copy; 2024 Filmoteca - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    color: #fff;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.menu a:hover {
+    color: #ff0000;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Oculta o menu no início */
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .menu.active {
+        display: flex; /* Mostra o menu ao ativar */
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o botão hambúrguer */
+    }
+}
+
+
+.banner {
+    position: relative;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: url("https://www.jigsawplanet.com/Pauline666/films-series?rc=face") no-repeat center center/cover;
+    color: #fff;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    z-index: 1; /* Mantém a sobreposição abaixo do texto */
+}
+
+.banner h1, .banner p, .banner .btn-destaque {
+    position: relative;
+    z-index: 2; /* Garante que o texto e o botão fiquem acima da sobreposição */
+}
+
+.banner .btn-destaque {
+    background-color: #fff;
+    color: #e50914;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner .btn-destaque:hover {
+    background-color: #f40612;
+    color: #fff;
+}
+
+
+/*código referente ao slider*/
+.slider-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 33.33%; /* Exibe 3 slides ao mesmo tempo em telas grandes */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #444;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.slide h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.synopsis {
+    font-size: 0.9em;
+    color: #ddd;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 1.1em;
+    color: #ff0000;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.buy-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #cc0000;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 100%; /* Exibe 1 slide por vez em telas menores */
+    }
+}
+
+.destaques .filme img {
+    width: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.destaques .filme img:hover {
+    transform: scale(1.1);
+}
+/* Seções escuras */
+.dark-section {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    text-align: center;
+}
+
+.dark-section h2 {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1.5rem;
+}
+.slider-title {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1.5rem;
+}
+/* Planos */
+.planos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.plano {
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plano:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.2);
+}
+
+.plano h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.plano p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.plano ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.plano ul li {
+    margin: 0.5rem 0;
+    color: #aaa;
+}
+
+.plano button {
+    padding: 0.7rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.plano button:hover {
+    background-color: #cc0000;
+}
+
+.filmes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.filme {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.filme:hover {
+    transform: scale(1.1);
+}
+
+.filme img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filme h3 {
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+
+/* Modal de Detalhes */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+    </style>
+    <script>
+        // Seleciona o botão e o menu
+const toggleButton = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+// Alterna a visibilidade do menu
+toggleButton.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+const filmesDetalhes = {
+    lancamento1: {
+        titulo: "Filme 1",
+        sinopse: "Sinopse do Filme 1. Uma emocionante aventura!",
+        classificacao: "Classificação: 12+",
+    },
+    lancamento2: {
+        titulo: "Filme 2",
+        sinopse: "Sinopse do Filme 2. Um drama emocionante.",
+        classificacao: "Classificação: 16+",
+    },
+    lancamento3: {
+        titulo: "Filme 3",
+        sinopse: "Sinopse do Filme 3. Comédia para toda a família!",
+        classificacao: "Classificação: Livre",
+    },
+    maisAssistido1: {
+        titulo: "Filme 4",
+        sinopse: "Sinopse do Filme 4. Uma jornada épica.",
+        classificacao: "Classificação: 14+",
+    },
+    maisAssistido2: {
+        titulo: "Filme 5",
+        sinopse: "Sinopse do Filme 5. Romance inesquecível.",
+        classificacao: "Classificação: 12+",
+    },
+    maisAssistido3: {
+        titulo: "Filme 6",
+        sinopse: "Sinopse do Filme 6. Ação do começo ao fim!",
+        classificacao: "Classificação: 16+",
+    },
+};
+
+function mostrarDetalhes(filmeId) {
+    const modal = document.getElementById("detalhes-modal");
+    const titulo = document.getElementById("detalhes-titulo");
+    const sinopse = document.getElementById("detalhes-sinopse");
+    const classificacao = document.getElementById("detalhes-classificacao");
+
+    const filme = filmesDetalhes[filmeId];
+    titulo.textContent = filme.titulo;
+    sinopse.textContent = filme.sinopse;
+    classificacao.textContent = filme.classificacao;
+
+    modal.style.display = "flex";
+}
+
+function fecharModal() {
+    const modal = document.getElementById("detalhes-modal");
+    modal.style.display = "none";
+}
+
+function adquirirFilme() {
+    alert("Filme adquirido com sucesso!");
+}
+
+//Código do slider
+let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider .slide');
+        const totalSlides = slides.length;
+        const visibleSlides = window.innerWidth > 768 ? 3 : 1; // Ajusta entre 3 e 1 slide visível
+    
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }
+    
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+    
+        function updateSlider() {
+            const slider = document.querySelector('.slider');
+            const slideWidth = document.querySelector('.slider-container').offsetWidth / visibleSlides;
+            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+    
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+        document.querySelector('.next').addEventListener('click', nextSlide);
+    
+        let autoSlide = setInterval(nextSlide, 3000);
+    
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        sliderContainer.addEventListener('mouseleave', () => (autoSlide = setInterval(nextSlide, 3000)));
+    
+        window.addEventListener('resize', updateSlider);
+    
+        updateSlider();
+    </script>
 </body>
 </html>
