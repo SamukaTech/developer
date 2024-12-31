@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    color: #e50914;
+}
+
+.banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #e50914, #b81d24);
+    color: #fff;
+}
+
+.banner .btn-destaque {
+    background-color: #fff;
+    color: #e50914;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner .btn-destaque:hover {
+    background-color: #f40612;
+}
+
+.destaques {
+    padding: 2rem;
+    text-align: center;
+}
+
+.destaques .slider {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.destaques .filme img {
+    width: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.destaques .filme img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
