@@ -6,39 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Filmes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="slider.js" defer></script>
 </head>
 <body>
     <header>
-    <div class="logo">Filmoteca</div>
-    <div class="menu-toggle">☰</div>
-    <nav class="menu">
-        <a href="#home">Home</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#minha-lista">Minha Lista</a>
-        <a href="#login">Login</a>
-    </nav>
+        <div class="logo">Filmoteca</div>
+        <div class="menu-toggle">☰</div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#minha-lista">Minha Lista</a>
+            <a href="#login">Login</a>
+        </nav>
     </header>
-        
+
     <main>
         <section class="banner">
             <h1>Bem-vindo à Filmoteca</h1>
             <p>Explore os melhores filmes em um só lugar!</p>
             <button class="btn-destaque">Comece Agora</button>
         </section>
+
         <section class="destaques">
             <h2>Destaques</h2>
             <div class="slider">
-                <div class="filme"><img src="https://via.placeholder.com/200x300?text=Filme+1" alt="Filme 1"></div>
-                <div class="filme"><img src="https://via.placeholder.com/200x300?text=Filme+2" alt="Filme 2"></div>
-                <div class="filme"><img src="https://via.placeholder.com/200x300?text=Filme+3" alt="Filme 3"></div>
-                <div class="filme"><img src="https://via.placeholder.com/200x300?text=Filme+4" alt="Filme 4"></div>
+                <div class="filme"><img src="https://cdn.cineart.com.br/vibezz_211176357.jpg" alt="Filme 1"></div>
+                <div class="filme"><img src="https://ingresso-a.akamaihd.net/prd/img/movie/a-arca-de-noe/b3fe928b-c364-444c-a397-a8e578c75658.webp" alt="Filme 2"></div>
+                <div class="filme"><img src="https://i0.wp.com/www.guiadecinema.com/wp-content/uploads/2022/03/morbius.jpg?fit=540%2C801&ssl=1" alt="Filme 3"></div>
+                <div class="filme"><img src="https://ucicinemas.com.br/Content/Upload/Filmes/Posters/10923/filme_10923.jpg" alt="Filme 4"></div>
+            </div>
+        </section>
+
+        <section id="lancamentos" class="dark-section">
+            <h2>Lançamentos</h2>
+            <div class="filmes-container">
+                <div class="filme" onclick="mostrarDetalhes('lancamento1')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 1">
+                    <h3>Filme 1</h3>
+                </div>
+                <div class="filme" onclick="mostrarDetalhes('lancamento2')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 2">
+                    <h3>Filme 2</h3>
+                </div>
+                <div class="filme" onclick="mostrarDetalhes('lancamento3')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 3">
+                    <h3>Filme 3</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="mais-assistidos" class="dark-section">
+            <h2>Mais Assistidos</h2>
+            <div class="filmes-container">
+                <div class="filme" onclick="mostrarDetalhes('maisAssistido1')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 4">
+                    <h3>Filme 4</h3>
+                </div>
+                <div class="filme" onclick="mostrarDetalhes('maisAssistido2')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 5">
+                    <h3>Filme 5</h3>
+                </div>
+                <div class="filme" onclick="mostrarDetalhes('maisAssistido3')">
+                    <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 6">
+                    <h3>Filme 6</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para exibir detalhes -->
+        <div id="detalhes-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h3 id="detalhes-titulo"></h3>
+                <p id="detalhes-sinopse"></p>
+                <p id="detalhes-classificacao"></p>
+                <button onclick="adquirirFilme()">Adquirir Filme</button>
+            </div>
+        </div>
+
+        <section id="planos" class="dark-section">
+            <h2>Escolha seu Plano</h2>
+            <div class="planos-container">
+                <div class="plano">
+                    <h3>Básico</h3>
+                    <p>Apenas R$ 19,90/mês</p>
+                    <ul>
+                        <li>Resolução: SD (480p)</li>
+                        <li>Acesso em 1 dispositivo</li>
+                        <li>Catálogo completo</li>
+                    </ul>
+                    <button>Assine Agora</button>
+                </div>
+                <div class="plano destaque">
+                    <h3>Padrão</h3>
+                    <p>Apenas R$ 29,90/mês</p>
+                    <ul>
+                        <li>Resolução: HD (720p)</li>
+                        <li>Acesso em até 2 dispositivos</li>
+                        <li>Catálogo completo</li>
+                    </ul>
+                    <button>Assine Agora</button>
+                </div>
+                <div class="plano">
+                    <h3>Premium</h3>
+                    <p>Apenas R$ 49,90/mês</p>
+                    <ul>
+                        <li>Resolução: Ultra HD (4K)</li>
+                        <li>Acesso em até 4 dispositivos</li>
+                        <li>Catálogo completo</li>
+                    </ul>
+                    <button>Assine Agora</button>
+                </div>
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Filmoteca - Todos os direitos reservados.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
-        </html>
-        
+</html>

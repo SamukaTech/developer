@@ -74,6 +74,8 @@ header {
     text-align: center;
     padding: 4rem 2rem;
     background: linear-gradient(to right, #e50914, #b81d24);
+    background-image: url("banner.webp");
+    background-size: cover;
     color: #fff;
 }
 
@@ -112,6 +114,142 @@ header {
 .destaques .filme img:hover {
     transform: scale(1.1);
 }
+/* Seções escuras */
+.dark-section {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    text-align: center;
+}
+
+.dark-section h2 {
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 1.5rem;
+}
+
+/* Planos */
+.planos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.plano {
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plano:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.2);
+}
+
+.plano h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.plano p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.plano ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.plano ul li {
+    margin: 0.5rem 0;
+    color: #aaa;
+}
+
+.plano button {
+    padding: 0.7rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.plano button:hover {
+    background-color: #cc0000;
+}
+
+.filmes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.filme {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.filme:hover {
+    transform: scale(1.1);
+}
+
+.filme img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filme h3 {
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+
+/* Modal de Detalhes */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content button {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #cc0000;
+}
 
 footer {
     background-color: #1e1e1e;
@@ -119,4 +257,3 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
-
