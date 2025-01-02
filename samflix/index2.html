@@ -273,41 +273,60 @@
                 <span class="close" onclick="fecharModal()">&times;</span>
                 <h3>Finalizar Compra</h3>
                 <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                    <input type="hidden" name="Site" value="Samflix">
-                    <input type="text" id="nome" placeholder="Nome" name="Nome" required>
-                    <input type="email" id="email" placeholder="E-mail" name="Email" required>
-                    <input type="password" id="senha" placeholder="Senha" name="Senha"required>
-                
-                <div id="mensagem-status"></div>
-               
-                <h3>Resumo da Compra</h3>
-                <ul id="resumo-itens"></ul>
-                <p>Total: R$ <span id="resumo-total"></span></p>
-                <h3>Pagamento PIX</h3>
-                <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
-                <p>Chave PIX: 000.111.222-33</p>
-                <button onclick="copiarPix()">Copiar Chave</button>
-                <button onclick="enviarDados()" type="submit" id="enviar">Confirmar e Finalizar</button>
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
-                <input type="hidden" name="_template" value="table">
+            
+    <input type="hidden" name="Site" value="Samflix">
+    <input type="text" id="nome" placeholder="Nome" name="Nome" required>
+    <input type="email" id="email" placeholder="E-mail" name="Email" required>
+    <input type="password" id="senha" placeholder="Senha" name="Senha" required>
+
+    <!-- Campos ocultos para o resumo da compra e total -->
+    <input type="hidden" id="resumo_compra" name="Resumo">
+    <input type="hidden" id="total_compra" name="Total">
+
+    <div id="mensagem-status"></div>
+
+    <h3>Resumo da Compra</h3>
+    <ul id="resumo-itens"></ul>
+    <p>Total: R$ <span id="resumo-total"></span></p>
+    <h3>Pagamento PIX</h3>
+    <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
+    <p>Chave PIX: 000.111.222-33</p>
+    <button onclick="copiarPix()">Copiar Chave</button>
+    <button type="submit" id="enviar">Confirmar e Finalizar</button>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
+    <input type="hidden" name="_template" value="table">
                 </form>
+                    
             </div>
         </div>
     </main>
     <script>
         // código referente ao formulário de contato
 document.getElementById("meu_form").addEventListener("submit", function(event) {
-event.preventDefault();
+    event.preventDefault();
 
-var nome = document.getElementById("nome").value;
-var email = document.getElementById("email").value;
-var mensa = document.getElementById("senha").value;
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
-if (nome && email && senha) {
-    var submitButton = document.getElementById("enviar");
-    var mensagemStatus = document.getElementById("mensagem-status");
+    if (!nome || !email || !senha) {
+        alert("Por favor, preencha todos os campos antes de finalizar a compra.");
+        return;
+    }
 
+    // Preencher os campos ocultos com o resumo da compra e total
+    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
+    const totalCompra = total.toFixed(2);
+
+    document.getElementById("resumo_compra").value = resumoCompra;
+    document.getElementById("total_compra").value = `R$ ${totalCompra}`;
+
+    // Enviar o formulário
+    this.submit();
+});
+        
     submitButton.disabled = true;
     submitButton.textContent = "Enviando...";
     mensagemStatus.textContent = "";
