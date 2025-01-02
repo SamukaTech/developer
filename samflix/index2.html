@@ -272,18 +272,15 @@
             <div class="modal-content">
                 <span class="close" onclick="fecharModal()">&times;</span>
                 <h3>Finalizar Compra</h3>
-                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-            
+                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" autocomplete="off">
     <input type="hidden" name="Site" value="Samflix">
     <input type="text" id="nome" placeholder="Nome" name="Nome" required>
     <input type="email" id="email" placeholder="E-mail" name="Email" required>
     <input type="password" id="senha" placeholder="Senha" name="Senha" required>
 
-    <!-- Campos ocultos para o resumo da compra e total -->
+    <!-- Campos ocultos para resumo e total -->
     <input type="hidden" id="resumo_compra" name="Resumo">
     <input type="hidden" id="total_compra" name="Total">
-
-    <div id="mensagem-status"></div>
 
     <h3>Resumo da Compra</h3>
     <ul id="resumo-itens"></ul>
@@ -291,32 +288,38 @@
     <h3>Pagamento PIX</h3>
     <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
     <p>Chave PIX: 000.111.222-33</p>
-    <button onclick="copiarPix()">Copiar Chave</button>
-    <button type="submit" id="enviar">Confirmar e Finalizar</button>
+    <button type="button" onclick="copiarPix()">Copiar Chave</button>
+    <button type="submit">Confirmar e Finalizar</button>
 
+    <!-- Campos do FormSubmit -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
     <input type="hidden" name="_template" value="table">
                 </form>
+                
                     
             </div>
         </div>
     </main>
     <script>
-        // código referente ao formulário de contato
-document.getElementById("meu_form").addEventListener("submit", function(event) {
+        
+        
+    document.getElementById("meu_form").addEventListener("submit", function(event) {
+    // Prevenir o envio imediato
     event.preventDefault();
 
+    // Obter os valores do formulário
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
 
+    // Validar campos obrigatórios
     if (!nome || !email || !senha) {
         alert("Por favor, preencha todos os campos antes de finalizar a compra.");
         return;
     }
 
-    // Preencher os campos ocultos com o resumo da compra e total
+    // Preencher os campos ocultos com os dados do resumo e total
     const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
     const totalCompra = total.toFixed(2);
 
@@ -327,30 +330,7 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
     this.submit();
 });
         
-    submitButton.disabled = true;
-    submitButton.textContent = "Enviando...";
-    mensagemStatus.textContent = "";
-
-    var formData = new FormData(this);
-
-    fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        submitButton.disabled = false;
-        submitButton.textContent = "Enviar";
-        mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-        this.reset();
-    })
-    .catch(error => {
-        submitButton.disabled = false;
-        submitButton.textContent = "Enviar";
-        mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-        this.reset();
-    });
-}
-});
+    
     </script>
     <footer>
         <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
