@@ -6,11 +6,7 @@
     <title>Plataforma de Filmes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init('awQWGguZKkGPe0f23'); // Substitua pela sua chave pública do EmailJS
-        })();
-    </script>
+    
     <style>
        /* Estilos gerais */
        body {
@@ -276,11 +272,14 @@
             <div class="modal-content">
                 <span class="close" onclick="fecharModal()">&times;</span>
                 <h3>Finalizar Compra</h3>
-                <form>
-                    <input type="text" id="nome" placeholder="Nome" required>
-                    <input type="email" id="email" placeholder="E-mail" required>
-                    <input type="password" id="senha" placeholder="Senha" required>
-                </form>
+                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                    <input type="hidden" name="Site" value="Samflix">
+                    <input type="text" id="nome" placeholder="Nome" name="Nome" required>
+                    <input type="email" id="email" placeholder="E-mail" name="Email" required>
+                    <input type="password" id="senha" placeholder="Senha" name="Senha"required>
+                
+                <div id="mensagem-status"></div>
+               
                 <h3>Resumo da Compra</h3>
                 <ul id="resumo-itens"></ul>
                 <p>Total: R$ <span id="resumo-total"></span></p>
@@ -288,11 +287,52 @@
                 <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
                 <p>Chave PIX: 000.111.222-33</p>
                 <button onclick="copiarPix()">Copiar Chave</button>
-                <button onclick="enviarDados()">Confirmar e Finalizar</button>
+                <button onclick="enviarDados()" type="submit" id="enviar">Confirmar e Finalizar</button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
+                <input type="hidden" name="_template" value="table">
+                </form>
             </div>
         </div>
     </main>
+    <script>
+        // código referente ao formulário de contato
+document.getElementById("meu_form").addEventListener("submit", function(event) {
+event.preventDefault();
 
+var nome = document.getElementById("nome").value;
+var email = document.getElementById("email").value;
+var mensa = document.getElementById("senha").value;
+
+if (nome && email && senha) {
+    var submitButton = document.getElementById("enviar");
+    var mensagemStatus = document.getElementById("mensagem-status");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+    mensagemStatus.textContent = "";
+
+    var formData = new FormData(this);
+
+    fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar";
+        mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+        this.reset();
+    })
+    .catch(error => {
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar";
+        mensagemStatus.textContent = "Mensagem enviada com sucesso!";
+        this.reset();
+    });
+}
+});
+    </script>
     <footer>
         <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
     </footer>
@@ -384,25 +424,8 @@
             return;
         }
 
-        const templateParams = {
-            nome: nome,
-            email: email,
-            senha: senha,
-            resumo: carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(', '),
-            total: total.toFixed(2)
-        };
-
-        emailjs
-            .send('service_tj6dzjb', 'template_ae0mk6j', templateParams)
-            .then(() => {
-                alert('Compra finalizada com sucesso!');
-                fecharModal();
-                limparCarrinho();
-            })
-            .catch(() => {
-                alert('Erro ao enviar os dados. Tente novamente.');
-            });
     }
+    
 
     // Função para limpar o carrinho após a compra
     function limparCarrinho() {
