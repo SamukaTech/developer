@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init('awQWGguZKkGPe0f23'); // Substitua pela sua chave pública do EmailJS
+        })();
+    </script>
+    <style>
+       /* Estilos gerais */
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(to right, #e50914, #b81d24);
+            color: #fff;
+        }
+
+        .btn-destaque {
+            background-color: #fff;
+            color: #e50914;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-destaque:hover {
+            background-color: #f5f5f5;
+        }
+
+        .slider-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .slide {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            min-width: 200px;
+            flex: none;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .dark-section {
+            padding: 2rem;
+            background-color: #1e1e1e;
+        }
+
+        .planos-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .plano {
+            background: #2a2a2a;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .plano button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 0.75rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .plano button:hover {
+            background-color: #d40813;
+        }
+
+        /* Estilos do carrinho */
+        #carrinho {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #lista-carrinho {
+            list-style: none; /* Remove marcadores */
+            padding: 0;
+        }
+
+        #lista-carrinho li {
+            background: #2a2a2a;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #lista-carrinho button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #lista-carrinho button:hover {
+            background-color: #d40813;
+        }
+
+        #total-carrinho {
+            margin-top: 1rem;
+        }
+
+        .btn-finalizar {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-finalizar:hover {
+            background-color: #d40813;
+        }
+
+        /* Estilos do modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content {
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .modal-content form input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .qrcode {
+            margin: 10px 0;
+            display: block;
+            width: 150px; /* Tamanho ajustado */
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Samflix</div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#minha-lista">Minha Lista</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Bem-vindo à Samflix</h1>
+            <p>Explore os melhores filmes e séries em um só lugar!</p>
+            <button class="btn-destaque" onclick="scrollToSection('#planos')">Veja os Planos</button>
+        </section>
+        <section class="slider-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/150" alt="Filme 1">
+                <h3>Filme 1</h3>
+                <p>R$ 10,00</p>
+                <button onclick="adicionarAoCarrinho('Filme 1', 10)">Adquirir</button>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/150" alt="Filme 2">
+                <h3>Filme 2</h3>
+                <p>R$ 12,00</p>
+                <button onclick="adicionarAoCarrinho('Filme 2', 12)">Adquirir</button>
+            </div>
+        </section>
+
+        <section id="planos" class="dark-section">
+            <h2>Escolha seu Plano</h2>
+            <div class="planos-container">
+                <div class="plano">
+                    <h3>Básico</h3>
+                    <p>R$ 19,90/mês</p>
+                    <button onclick="adicionarAoCarrinho('Plano Básico', 19.90)">Adquirir</button>
+                </div>
+                <div class="plano">
+                    <h3>Padrão</h3>
+                    <p>R$ 29,90/mês</p>
+                    <button onclick="adicionarAoCarrinho('Plano Padrão', 29.90)">Adquirir</button>
+                </div>
+            </div>
+        </section>
+        <section id="carrinho">
+            <h2>Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p id="total-carrinho">Total: R$ 0,00</p>
+            <button class="btn-finalizar" onclick="exibirCarrinhoPagamento()">Finalizar Compra</button>
+        </section>
+
+        <div id="modal-pagamento" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h3>Finalizar Compra</h3>
+                <form>
+                    <input type="text" id="nome" placeholder="Nome" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                </form>
+                <h3>Resumo da Compra</h3>
+                <ul id="resumo-itens"></ul>
+                <p>Total: R$ <span id="resumo-total"></span></p>
+                <h3>Pagamento PIX</h3>
+                <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
+                <p>Chave PIX: 000.111.222-33</p>
+                <button onclick="copiarPix()">Copiar Chave</button>
+                <button onclick="enviarDados()">Confirmar e Finalizar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+
+    let carrinho = [];
+    let total = 0;
+
+    // Função para adicionar itens ao carrinho
+    function adicionarAoCarrinho(nome, preco) {
+        carrinho.push({ nome, preco });
+        total += preco;
+        atualizarCarrinho();
+    }
+
+    // Função para atualizar o carrinho
+    function atualizarCarrinho() {
+        const listaCarrinho = document.getElementById('lista-carrinho');
+        const totalCarrinho = document.getElementById('total-carrinho');
+        listaCarrinho.innerHTML = '';
+
+        carrinho.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+
+            // Botão para remover itens
+            const btnRemover = document.createElement('button');
+            btnRemover.textContent = 'Remover';
+            btnRemover.onclick = () => removerDoCarrinho(index);
+
+            li.appendChild(btnRemover);
+            listaCarrinho.appendChild(li);
+        });
+
+        totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+
+    // Função para remover itens do carrinho
+    function removerDoCarrinho(index) {
+        total -= carrinho[index].preco;
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+
+    // Função para exibir o modal de pagamento
+    function exibirCarrinhoPagamento() {
+        if (carrinho.length === 0) {
+            alert('Seu carrinho está vazio.');
+            return;
+        }
+
+        const modal = document.getElementById('modal-pagamento');
+        const resumoItens = document.getElementById('resumo-itens');
+        const resumoTotal = document.getElementById('resumo-total');
+
+        resumoItens.innerHTML = '';
+        carrinho.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+            resumoItens.appendChild(li);
+        });
+
+        resumoTotal.textContent = total.toFixed(2);
+        modal.style.display = 'block';
+    }
+
+    // Função para fechar o modal de pagamento
+    function fecharModal() {
+        document.getElementById('modal-pagamento').style.display = 'none';
+    }
+
+    // Função para copiar a chave PIX
+    function copiarPix() {
+        const chavePix = '000.111.222-33';
+        navigator.clipboard.writeText(chavePix).then(() => {
+            alert('Chave PIX copiada!');
+        });
+    }
+
+    // Função para validar campos e enviar dados
+    function enviarDados() {
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+
+        if (!nome || !email || !senha) {
+            alert('Por favor, preencha todos os campos antes de finalizar a compra.');
+            return;
+        }
+
+        const templateParams = {
+            nome: nome,
+            email: email,
+            senha: senha,
+            resumo: carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(', '),
+            total: total.toFixed(2)
+        };
+
+        emailjs
+            .send('service_tj6dzjb', 'template_ae0mk6j', templateParams)
+            .then(() => {
+                alert('Compra finalizada com sucesso!');
+                fecharModal();
+                limparCarrinho();
+            })
+            .catch(() => {
+                alert('Erro ao enviar os dados. Tente novamente.');
+            });
+    }
+
+    // Função para limpar o carrinho após a compra
+    function limparCarrinho() {
+        carrinho = [];
+        total = 0;
+        atualizarCarrinho();
+    }
+</script>
+
+</body>
+</html>
