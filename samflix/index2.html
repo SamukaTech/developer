@@ -272,7 +272,8 @@
             <div class="modal-content">
                 <span class="close" onclick="fecharModal()">&times;</span>
                 <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-    <h3>Dados do Cliente</h3>
+    
+<h3>Dados do Cliente</h3>
     <input type="text" id="nome" placeholder="Nome" name="Nome" required>
     <input type="email" id="email" placeholder="E-mail" name="Email" required>
     <input type="password" id="senha" placeholder="Senha" name="Senha" required>
@@ -302,37 +303,25 @@
 <div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
     Pedido realizado com sucesso! Assim que o pagamento for confirmado, você receberá mais detalhes em seu e-mail. Obrigado por escolher Samflix!
 </div>
-</form>
  
             </div>      
             </div>
     </main>
     <script>
         
-        document.getElementById("meu_form").addEventListener("submit", function(event) {
-    // Prevenir o envio imediato
-    event.preventDefault();
-
-    // Obter os valores do formulário
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-
-    // Validar campos obrigatórios
-    if (!nome || !email) {
-        alert("Por favor, preencha todos os campos antes de finalizar a compra.");
-        return;
-    }
-
-    // Preencher os campos ocultos com o resumo da compra e total
+       document.getElementById("meu_form").addEventListener("submit", function() {
+    // Preencher os campos ocultos com o resumo e o total da compra
     const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
     const totalCompra = total.toFixed(2);
 
     document.getElementById("resumo_compra").value = resumoCompra;
     document.getElementById("total_compra").value = `R$ ${totalCompra}`;
 
-    // Exibir mensagem de sucesso no modal
+    // Exibir mensagem de sucesso (não impede o envio)
     const mensagemSucesso = document.getElementById("mensagem-sucesso");
     mensagemSucesso.style.display = "block";
+});
+
 
     // Simular envio para permanecer no modal
     const formData = new FormData(this);
