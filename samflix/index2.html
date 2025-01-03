@@ -6,6 +6,7 @@
     <title>Plataforma de Filmes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     
     <style>
        /* Estilos gerais */
@@ -291,6 +292,8 @@
     <p>Chave PIX: 000.111.222-33</p>
     <button type="button" onclick="copiarPix()">Copiar Chave</button>
     <button type="submit">Confirmar e Finalizar</button>
+    <button type="button" onclick="baixarPedidoPDF()">Baixar Detalhes do Pedido (PDF)</button>
+                    
 
     <!-- Campos do FormSubmit -->
     <input type="hidden" name="_captcha" value="false">
@@ -342,7 +345,42 @@
         })
         .catch(error => console.error("Erro:", error));
 });
+function baixarPedidoPDF() {
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
 
+    if (!nome || !email) {
+        alert("Por favor, preencha os campos de Nome e E-mail para baixar o PDF.");
+        return;
+    }
+
+    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join("\n");
+    const totalCompra = total.toFixed(2);
+    const chavePix = "000.111.222-33";
+
+    // Criar o conteúdo do PDF
+    const conteudo = `
+        Samflix - Confirmação de Pedido
+
+        Nome do Cliente: ${nome}
+        E-mail: ${email}
+
+        Resumo da Compra:
+        ${resumoCompra}
+
+        Total: R$ ${totalCompra}
+
+        Pagamento PIX:
+        Chave PIX: ${chavePix}
+    `;
+
+    // Gerar o PDF
+    const pdf = new jsPDF();
+    pdf.setFontSize(12);
+    pdf.text(conteudo, 10, 10);
+    pdf.save(`Pedido_Samflix_${nome}.pdf`);
+        }
+        
     </script>
     <footer>
         <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
