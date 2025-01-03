@@ -329,8 +329,9 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
 
     // Enviar o e-mail usando EmailJS
     emailjs
-        .send("service_tj6dzjb", "template_aclg2f4", templateParams)
+        .send("seu_servico_emailjs", "seu_template_emailjs", templateParams)
         .then(() => {
+            console.log("E-mail enviado com sucesso!");
             // Exibir mensagem de sucesso
             const mensagemSucesso = document.getElementById("mensagem-sucesso");
             mensagemSucesso.style.display = "block";
