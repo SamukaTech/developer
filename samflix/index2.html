@@ -345,7 +345,7 @@
         })
         .catch(error => console.error("Erro:", error));
 });
-function baixarPedidoPDF() {
+async function baixarPedidoPDF() {
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
 
@@ -358,29 +358,11 @@ function baixarPedidoPDF() {
     const totalCompra = total.toFixed(2);
     const chavePix = "000.111.222-33";
 
-    // Criar o conteúdo do PDF
-    const conteudo = `
-        Samflix - Confirmação de Pedido
+    // Carregar jsPDF
+    const { jsPDF } = window.jspdf;
 
-        Nome do Cliente: ${nome}
-        E-mail: ${email}
-
-        Resumo da Compra:
-        ${resumoCompra}
-
-        Total: R$ ${totalCompra}
-
-        Pagamento PIX:
-        Chave PIX: ${chavePix}
-    `;
-
-    // Gerar o PDF
-    const pdf = new jsPDF();
-    pdf.setFontSize(12);
-    pdf.text(conteudo, 10, 10);
-    pdf.save(`Pedido_Samflix_${nome}.pdf`);
-        }
-        
+    //
+           
     </script>
     <footer>
         <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
