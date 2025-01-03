@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    
     <style>
        /* Estilos gerais */
        body {
@@ -292,7 +291,7 @@
     <p>Chave PIX: 000.111.222-33</p>
     <button type="button" onclick="copiarPix()">Copiar Chave</button>
     <button type="submit">Confirmar e Finalizar</button>
-    <button type="button" onclick="baixarPedidoPDF()">Baixar Detalhes do Pedido (PDF)</button>
+      <button type="button" onclick="baixarPedidoPDF()">Baixar Detalhes do Pedido (PDF)</button>
                     
 
     <!-- Campos do FormSubmit -->
@@ -345,7 +344,7 @@
         })
         .catch(error => console.error("Erro:", error));
 });
-async function baixarPedidoPDF() {
+function baixarPedidoPDF() {
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
 
@@ -358,10 +357,27 @@ async function baixarPedidoPDF() {
     const totalCompra = total.toFixed(2);
     const chavePix = "000.111.222-33";
 
-    // Carregar jsPDF
-    const { jsPDF } = window.jspdf;
+    // Criar o conteúdo do PDF
+    const pdf = new jsPDF();
+    pdf.setFontSize(12);
 
-    //
+    // Adicionar título e informações ao PDF
+    pdf.text("Samflix - Confirmação de Pedido", 10, 10);
+    pdf.text(`Nome do Cliente: ${nome}`, 10, 20);
+    pdf.text(`E-mail: ${email}`, 10, 30);
+
+    pdf.text("Resumo da Compra:", 10, 40);
+    const linhasResumo = pdf.splitTextToSize(resumoCompra, 180); // Quebra de linha para resumo
+    pdf.text(linhasResumo, 10, 50);
+
+    pdf.text(`Total: R$ ${totalCompra}`, 10, 60 + linhasResumo.length * 10);
+    pdf.text("Pagamento PIX:", 10, 70 + linhasResumo.length * 10);
+    pdf.text(`Chave PIX: ${chavePix}`, 10, 80 + linhasResumo.length * 10);
+
+    // Baixar o PDF
+    pdf.save(`Pedido_Samflix_${nome}.pdf`);
+            }
+             
            
     </script>
     <footer>
