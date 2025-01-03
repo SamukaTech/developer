@@ -347,36 +347,6 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
 });
 
 
-function limparFormulario() {
-    document.getElementById("meu_form").reset();
-}
-
-function limparCarrinho() {
-    carrinho = [];
-    total = 0;
-    atualizarCarrinho();
-}
-
-
-const templateParams = {
-    nome: nome,
-    email: email,
-    resumo: resumoCompra,
-    total: `R$ ${totalCompra}`,
-    mensagem: "Obrigado por realizar seu pedido na Samflix! Assim que o pagamento for confirmado, entraremos em contato com mais detalhes.",
-};
-
-emailjs.send("service_tj6dzjb", "template_aclg2f4", templateParams)
-    .then(() => {
-        console.log("E-mail enviado com sucesso!");
-        // Exibir mensagem de sucesso
-        document.getElementById("mensagem-sucesso").style.display = "block";
-    })
-    .catch(error => {
-        console.error("Erro ao enviar o e-mail:", error);
-        alert("Ocorreu um erro ao finalizar o pedido. Tente novamente.");
-    });
-
 
     </script>
     <footer>
