@@ -271,12 +271,18 @@
         <div id="modal-pagamento" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="fecharModal()">&times;</span>
-               <form id="meu_form">
+                <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
     <h3>Dados do Cliente</h3>
     <input type="text" id="nome" placeholder="Nome" name="Nome" required>
     <input type="email" id="email" placeholder="E-mail" name="Email" required>
-    <input type="password" id="senha" placeholder="Senha" name="Senha" required>
 
+    <!-- Campos ocultos para resumo da compra e total -->
+    <input type="hidden" id="resumo_compra" name="Resumo">
+    <input type="hidden" id="total_compra" name="Total">
+<!-- Mensagem de sucesso -->
+<div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
+    Pedido realizado com sucesso! Assim que o pagamento for confirmado em nosso sistema, você receberá mais detalhes em seu e-mail. Obrigado por escolher a Samflix!
+</div>
     <h3>Resumo da Compra</h3>
     <ul id="resumo-itens"></ul>
     <p>Total: R$ <span id="resumo-total"></span></p>
@@ -285,68 +291,57 @@
     <p>Chave PIX: 000.111.222-33</p>
     <button type="button" onclick="copiarPix()">Copiar Chave</button>
     <button type="submit">Confirmar e Finalizar</button>
+
+    <!-- Campos do FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 </form>
-
-<!-- Mensagem de sucesso -->
-<div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
-    Pedido realizado com sucesso! Assim que o pagamento for confirmado, você receberá mais detalhes em seu e-mail.
-</div>
-
+ 
             </div>      
             </div>
     </main>
     <script>
-     // Inicializar o EmailJS
-(function() {
-    emailjs.init("awQWGguZKkGPe0f23"); // Substitua pela sua chave pública
-})();
-
-document.getElementById("meu_form").addEventListener("submit", function(event) {
+        
+        document.getElementById("meu_form").addEventListener("submit", function(event) {
+    // Prevenir o envio imediato
     event.preventDefault();
 
     // Obter os valores do formulário
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
 
-    if (!nome || !email || !senha) {
+    // Validar campos obrigatórios
+    if (!nome || !email) {
         alert("Por favor, preencha todos os campos antes de finalizar a compra.");
         return;
     }
 
-    // Preencher o resumo da compra
+    // Preencher os campos ocultos com o resumo da compra e total
     const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
     const totalCompra = total.toFixed(2);
 
-    // Configurar os parâmetros do template
-    const templateParams = {
-        nome: nome,
-        email: email,
-        resumo: resumoCompra,
-        total: `R$ ${totalCompra}`,
-        mensagem: "Obrigado por realizar seu pedido na Samflix! Assim que o pagamento for confirmado, entraremos em contato com mais detalhes.",
-    };
+    document.getElementById("resumo_compra").value = resumoCompra;
+    document.getElementById("total_compra").value = `R$ ${totalCompra}`;
 
-    // Enviar o e-mail usando EmailJS
-    emailjs
-        .send("seu_servico_emailjs", "seu_template_emailjs", templateParams)
-        .then(() => {
-            console.log("E-mail enviado com sucesso!");
-            // Exibir mensagem de sucesso
-            const mensagemSucesso = document.getElementById("mensagem-sucesso");
-            mensagemSucesso.style.display = "block";
+    // Exibir mensagem de sucesso no modal
+    const mensagemSucesso = document.getElementById("mensagem-sucesso");
+    mensagemSucesso.style.display = "block";
 
-            // Limpar o formulário e o carrinho
-            limparFormulario();
-            limparCarrinho();
+    // Simular envio para permanecer no modal
+    const formData = new FormData(this);
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log("Dados enviados com sucesso!");
+            } else {
+                console.error("Erro ao enviar os dados.");
+            }
         })
-        .catch(error => {
-            console.error("Erro ao enviar o e-mail:", error);
-            alert("Ocorreu um erro ao finalizar o pedido. Tente novamente.");
-        });
+        .catch(error => console.error("Erro:", error));
 });
-
-
 
     </script>
     <footer>
