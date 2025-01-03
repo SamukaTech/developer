@@ -292,21 +292,20 @@
 
     <!-- Campos do FormSubmit -->
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
+    <input type="hidden" name="_next" value="#">
     <input type="hidden" name="_template" value="table">
 </form>
 
 <!-- Mensagem de sucesso -->
 <div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
     Compra realizada com sucesso! Verifique o e-mail para mais detalhes.
-</div>         
+</div>   
+            </div>      
             </div>
-        </div>
     </main>
     <script>
         
-        
-    document.getElementById("meu_form").addEventListener("submit", function(event) {
+        document.getElementById("meu_form").addEventListener("submit", function(event) {
     // Prevenir o envio imediato
     event.preventDefault();
 
@@ -328,23 +327,17 @@
     document.getElementById("resumo_compra").value = resumoCompra;
     document.getElementById("total_compra").value = `R$ ${totalCompra}`;
 
-    // Enviar o formulário
-    this.submit();
+    // Exibir mensagem de sucesso
+    const mensagemSucesso = document.getElementById("mensagem-sucesso");
+    mensagemSucesso.style.display = "block";
+
+    // Após 2 segundos, enviar o formulário
+    setTimeout(() => {
+        mensagemSucesso.style.display = "none";
+        this.submit(); // Enviar o formulário
+    }, 2000);
 });
-        
-       // Exibir mensagem de sucesso após o envio do formulário
-    document.getElementById("meu_form").addEventListener("submit", function(event) {
-        event.preventDefault();
 
-        // Exibir mensagem de sucesso
-        document.getElementById("mensagem-sucesso").style.display = "block";
-
-        // Simular envio do formulário (pode ser substituído por um envio real)
-        setTimeout(() => {
-            alert("Compra realizada com sucesso!");
-            this.submit();
-        }, 500);
-    }); 
     </script>
     <footer>
         <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
@@ -352,44 +345,66 @@
 
     <script>
 
-    let carrinho = [];
-    let total = 0;
+let carrinho = [];
+let total = 0;
 
-    // Função para adicionar itens ao carrinho
-    function adicionarAoCarrinho(nome, preco) {
-        carrinho.push({ nome, preco });
-        total += preco;
-        atualizarCarrinho();
-    }
+function adicionarAoCarrinho(nome, preco) {
+    // Adicionar ao carrinho
+    carrinho.push({ nome, preco });
+    total += preco;
+    atualizarCarrinho();
 
-    // Função para atualizar o carrinho
-    function atualizarCarrinho() {
-        const listaCarrinho = document.getElementById('lista-carrinho');
-        const totalCarrinho = document.getElementById('total-carrinho');
-        listaCarrinho.innerHTML = '';
+    // Exibir mensagem de aviso
+    exibirMensagem(`${nome} foi adicionado ao carrinho!`);
+}
 
-        carrinho.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+function atualizarCarrinho() {
+    const listaCarrinho = document.getElementById('lista-carrinho');
+    const totalCarrinho = document.getElementById('total-carrinho');
+    listaCarrinho.innerHTML = '';
 
-            // Botão para remover itens
-            const btnRemover = document.createElement('button');
-            btnRemover.textContent = 'Remover';
-            btnRemover.onclick = () => removerDoCarrinho(index);
+    carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
 
-            li.appendChild(btnRemover);
-            listaCarrinho.appendChild(li);
-        });
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'Remover';
+        btnRemover.onclick = () => removerDoCarrinho(index);
 
-        totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
+        li.appendChild(btnRemover);
+        listaCarrinho.appendChild(li);
+    });
 
-    // Função para remover itens do carrinho
-    function removerDoCarrinho(index) {
-        total -= carrinho[index].preco;
-        carrinho.splice(index, 1);
-        atualizarCarrinho();
-    }
+    totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
+}
+
+function removerDoCarrinho(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
+function exibirMensagem(mensagem) {
+    const mensagemDiv = document.createElement('div');
+    mensagemDiv.textContent = mensagem;
+    mensagemDiv.style.position = 'fixed';
+    mensagemDiv.style.bottom = '20px';
+    mensagemDiv.style.right = '20px';
+    mensagemDiv.style.backgroundColor = '#4caf50';
+    mensagemDiv.style.color = '#fff';
+    mensagemDiv.style.padding = '10px';
+    mensagemDiv.style.borderRadius = '5px';
+    mensagemDiv.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+    mensagemDiv.style.zIndex = '1000';
+
+    document.body.appendChild(mensagemDiv);
+
+    // Remover a mensagem após 3 segundos
+    setTimeout(() => {
+        mensagemDiv.remove();
+    }, 3000);
+}
+
 
     // Função para exibir o modal de pagamento
     function exibirCarrinhoPagamento() {
