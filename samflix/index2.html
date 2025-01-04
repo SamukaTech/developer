@@ -281,12 +281,17 @@
     <input type="hidden" id="total_compra" name="Total">
 <!-- Mensagem de sucesso -->
 <div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
-    Pedido realizado com sucesso! Assim que o pagamento for confirmado em nosso sistema, você receberá mais detalhes em seu e-mail. Obrigado por escolher a Samflix!
+    Pedido realizado com sucesso! Assim que o pagamento for confirmado em nosso sistema, entraremos em contato por meio do seu e-mail. Obrigado por escolher a Samflix!
 </div>
     <h3>Resumo da Compra</h3>
     <ul id="resumo-itens"></ul>
     <p>Total: R$ <span id="resumo-total"></span></p>
     <h3>Pagamento PIX</h3>
+    <p>
+        O pagamento deve ser feito via Pix. Você pode copiar a chave Pix abaixo 
+        ou escanear o QR Code diretamente no aplicativo do seu banco. Após o pagamento, 
+        guarde o comprovante como garantia.
+    </p>
     <img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
     <p>Chave PIX: 000.111.222-33</p>
     <button type="button" onclick="copiarPix()">Copiar Chave</button>
