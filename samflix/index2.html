@@ -362,27 +362,37 @@ function baixarPedidoPDF() {
     const totalCompra = total.toFixed(2);
     const chavePix = "000.111.222-33";
 
-    // Criar o PDF usando jsPDF
+    // Carregar jsPDF
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
 
+    // Criar o PDF
+    const pdf = new jsPDF();
     pdf.setFontSize(12);
     pdf.text("Samflix - Confirmação de Pedido", 10, 10);
     pdf.text(`Nome do Cliente: ${nome}`, 10, 20);
     pdf.text(`E-mail: ${email}`, 10, 30);
-
     pdf.text("Resumo da Compra:", 10, 40);
+
+    // Adicionar itens do resumo
     const linhasResumo = pdf.splitTextToSize(resumoCompra, 180);
-    pdf.text(linhasResumo, 10, 50);
+    let alturaAtual = 50; // Começa logo após o título "Resumo da Compra"
+    linhasResumo.forEach(linha => {
+        pdf.text(linha, 10, alturaAtual);
+        alturaAtual += 10; // Incrementa a altura a cada linha
+    });
 
-    pdf.text(`Total: R$ ${totalCompra}`, 10, 60 + linhasResumo.length * 10);
-    pdf.text("Pagamento PIX:", 10, 70 + linhasResumo.length * 10);
-    pdf.text(`Chave PIX: ${chavePix}`, 10, 80 + linhasResumo.length * 10);
+    // Adicionar total e PIX próximos ao resumo
+    alturaAtual += 10; // Espaço adicional antes do total
+    pdf.text(`Total: R$ ${totalCompra}`, 10, alturaAtual);
+    alturaAtual += 10;
+    pdf.text("Pagamento PIX:", 10, alturaAtual);
+    alturaAtual += 10;
+    pdf.text(`Chave PIX: ${chavePix}`, 10, alturaAtual);
 
-    // Salvar o PDF com um nome personalizado
+    // Salvar o PDF
     pdf.save(`Pedido_Samflix_${nome.replace(/\s+/g, "_")}.pdf`);
-      }
-    
+}
+
            
     </script>
     <footer>
