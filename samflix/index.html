@@ -3,1078 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Filmes</title>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="">
-</head>
-<body>
-    <header>
-        <div class="logo">Samflix</div>
-        <div class="menu-toggle">☰</div>
-        <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#minha-lista">Minha Lista</a>
-            <a href="#login">Login</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="banner">
-            <div class="banner-overlay"></div>
-            <h1>Bem-vindo à Samflix</h1>
-            <p>Explore os melhores filmes e séries em um só lugar!</p>
-            <button class="btn-destaque" id="#lancamentos">Comece Agora</button>
-        </section>
-        
-
-        <div class="slider-wrapper1" id="slider1">
-            <h2 class="slider-title1">Filmes em Destaque</h2>
-            <div class="slider-container1">
-                <div class="slider1">
-                      <div class="slide1">
-                        <img src="https://i0.wp.com/www.guiadecinema.com/wp-content/uploads/2022/03/morbius.jpg?fit=540%2C801&ssl=1" alt="Como ficar rico">
-                        <h4>Nome do filme</h4>
-                        <p class="synopsis">
-                            Sinopse:
-                        </p>
-                        <p class="price">R$ 10,00</p>
-                        <button class="buy-btn">Adquirir</button>
-                    </div>
-                    <div class="slide1">
-                        <img src="https://cdn.cineart.com.br/vibezz_211176357.jpg" alt="Seja Homem">
-                        <h4>Nome do filme</h4>
-                        <p class="synopsis">
-                            Sinopse:
-                        </p>
-                        <p class="price">R$ 10,00</p>
-                        <button class="buy-btn">Adquirir</button>
-                    </div>
-                    <div class="slide1">
-                        <img src="https://gsobmidia.com.br/uploads/filmes/2838/15850-medio_1726062587.jpg" alt="O Senhor dos Anéis">
-                        <h4>Nome do filme</h4>
-                        <p class="synopsis">
-                            Sinopse:
-                        </p>
-                        <p class="price">R$ 10,00</p>
-                        <button class="buy-btn">Adquirir</button>
-                    </div>
-                    <div class="slide1">
-                        <img src="https://cinecataratas.com.br/wp-content/uploads/2024/11/banner_filme_moana-cinemaemfoz.jpg" alt="A serpente e as asas feitas de noite">
-                        <h4>Nome do filme</h4>
-                        <p class="synopsis">
-                           Sinopse:
-                        </p>
-                        <p class="price">R$ 10,00</p>
-                        <button class="buy-btn">Adquirir</button>
-                    </div>
-                </div>
-                <button class="prev">❮</button>
-                <button class="next">❯</button>
-            </div>
-        </div>
-<br><br>
-<h2 class="titulo-secao">Filmes de Ação</h2>
-        <section class="slider-container">
-            <div class="slide">
-                <img src="https://img.elo7.com.br/product/300x400/264FCC6/big-poster-filme-batman-o-cavaleiro-das-trevas-lo02-90x60-cm-batman.jpg" alt="Filme 1">
-                <h3>Filme 1</h3>
-                <p>R$ 10,00</p>
-                <button class="btn-trailer" onclick="adicionarAoCarrinho('Filme 1', 10)">Adquirir</button>
-                <button class="btn-trailer" onclick="abrirTrailer('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">Ver Trailer</button>
-            </div>
-            <div class="slide">
-                <img src="https://www.mansaowayne.com.br/wp-content/uploads/2017/10/posterliga40.jpg" alt="Filme 2">
-                <h3>Filme 2</h3>
-                <p>R$ 12,00</p>
-                <button class="btn-trailer" onclick="adicionarAoCarrinho('Filme 2', 12)">Adquirir</button>
-                <button class="btn-trailer" onclick="abrirTrailer('https://www.youtube.com/watch?v=3ig38rNMdgE')">Ver Trailer</button> 
-            </div>
-        </section>
-<section id="lancamentos" class="dark-section">
-    <h2>Lançamentos</h2>
-    <div class="filmes-container">
-        <div class="filme" onclick="mostrarDetalhes('lancamento1')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 1">
-            <h3>Filme 1</h3>
-            <p>Gênero: Ação</p>
-            <img src="livre.png" alt="Classificação L" style="width: 30px; height: auto;">
-        </div>
-        <div class="filme" onclick="mostrarDetalhes('lancamento2')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 2">
-            <h3>Filme 2</h3>
-            <p>Gênero: Drama</p>
-            <img src="16.png" alt="Classificação 12" style="width: 30px; height: auto;">
-        </div>
-        <div class="filme" onclick="mostrarDetalhes('lancamento3')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 3">
-            <h3>Filme 3</h3>
-            <p>Gênero: Comédia</p>
-            <img src="12.png" alt="Classificação 12" style="width: 30px; height: auto;">
-        </div>
-    </div>
-</section>
-
-<section id="mais-assistidos" class="dark-section">
-    <h2>Mais Assistidos</h2>
-    <div class="filmes-container">
-        <div class="filme" onclick="mostrarDetalhes('maisAssistido1')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 4">
-            <h3>Filme 4</h3>
-            <p>Gênero: Aventura</p>
-            <img src="14.png" alt="Classificação 14" style="width: 30px; height: auto;">
-        </div>
-        <div class="filme" onclick="mostrarDetalhes('maisAssistido2')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 5">
-            <h3>Filme 5</h3>
-            <p>Gênero: Romance</p>
-            <img src="12.png" alt="Classificação 12" style="width: 30px; height: auto;">
-        </div>
-        <div class="filme" onclick="mostrarDetalhes('maisAssistido3')">
-            <img src="https://br.web.img3.acsta.net/c_310_420/img/7e/31/7e31d6246c6f32fbb227b4739fb5440f.jpg" alt="Filme 6">
-            <h3>Filme 6</h3>
-            <p>Gênero: Suspense</p>
-            <img src="18.png" alt="Classificação 16" style="width: 30px; height: auto;">
-        </div>
-        
-    </div>
-</section>
-
-<!-- Modal para exibir detalhes -->
-<div id="detalhes-modal1" class="modal1">
-    <div class="modal-content1">
-        <span class="close" onclick="fecharModal()">&times;</span>
-        <h3 id="detalhes-titulo"></h3>
-        <p id="detalhes-sinopse"></p>
-        <p id="detalhes-classificacao"></p>
-        <button onclick="window.location.href='#planos'">Adquirir Filme</button>
-    </div>
-</div>
-
-<section id="planos" class="dark-section">
-    <h2>Escolha seu Plano</h2>
-    <div class="planos-container">
-        <div class="plano">
-            <h3>Básico</h3>
-            <p>Apenas R$ 9,99 por filme</p>
-            <ul>
-                <li>Adquira um filme específico</li>
-                <li>Sem assinatura mensal</li>
-                <li>Possibilidade de baixar os filmes</li>
-            </ul>
-            <button onclick="adicionarAoCarrinho('Plano Básico', 9.99)">Adquirir</button>
-        </div>
-        <div class="plano destaque">
-            <h3>Padrão</h3>
-            <p>Apenas R$ 29,90/mês</p>
-            <ul>
-                <li>Resolução: HD (720p)</li>
-                <li>Acesso em até 2 dispositivos</li>
-                <li>Catálogo completo</li>
-                <li>Possibilidade de baixar os filmes</li>
-            </ul>
-            <button onclick="adicionarAoCarrinho('Plano Padrão', 29.90)">Adquirir</button>
-        </div>
-        <div class="plano">
-            <h3>Premium</h3>
-            <p>Apenas R$ 49,90/mês</p>
-            <ul>
-                <li>Resolução: Ultra HD (4K)</li>
-                <li>Acesso em até 4 dispositivos</li>
-                <li>Catálogo completo</li>
-                <li>Possibilidade de baixar os filmes</li>
-            </ul>
-            <button onclick="adicionarAoCarrinho('Plano Premium', 49.90)">Adquirir</button>
-        </div>
-    </div>
-</section>
-<section id="carrinho">
-    <h2>Carrinho</h2>
-    <ul id="lista-carrinho"></ul>
-    <p id="total-carrinho">Total: R$ 0,00</p>
-    <button class="btn-finalizar" onclick="exibirCarrinhoPagamento()">Finalizar Compra</button>
-</section>
-
-<div id="modal-pagamento" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="fecharModal()">&times;</span>
-        <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-<h3>Dados do Cliente</h3>
-<input type="text" id="nome" placeholder="Nome" name="Nome" required>
-<input type="email" id="email" placeholder="E-mail" name="Email" required>
-
-<!-- Campos ocultos para resumo da compra e total -->
-<input type="hidden" id="resumo_compra" name="Resumo">
-<input type="hidden" id="total_compra" name="Total">
-<!-- Mensagem de sucesso -->
-<div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
-Pedido realizado com sucesso! Assim que o pagamento for confirmado em nosso sistema, entraremos em contato por meio do seu e-mail. Obrigado por escolher a Samflix!
-</div>
-<h3>Resumo da Compra</h3>
-<ul id="resumo-itens"></ul>
-<p>Total: R$ <span id="resumo-total"></span></p>
-<h3>Pagamento PIX</h3>
-<p>
-O pagamento deve ser feito via Pix. Você pode copiar a chave Pix abaixo 
-ou escanear o QR Code diretamente no aplicativo do seu banco. Após o pagamento, 
-guarde o comprovante como garantia.
-</p>
-<img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
-<p>Chave PIX: 000.111.222-33</p>
-<button type="button" onclick="copiarPix()">Copiar Chave</button>
-<button type="submit">Confirmar e Finalizar</button>
-<button type="button" onclick="baixarPedidoPDF()">Baixar Detalhes do Pedido (PDF)</button>
-            
-
-<!-- Campos do FormSubmit -->
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-</form>
-
-    </div>      
-    </div>
-</main>
-
-    <footer>
-        <p>&copy; 2024 Samflix - Todos os direitos reservados.</p>
-    </footer>
-
+    <title>Samflix - Filmes e Séries</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #fff;
-}
-
-/* Estilo do cabeçalho */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #1e1e1e;
-    color: #fff;
-    position: relative;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.menu {
-    display: flex;
-    gap: 1rem;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.menu a:hover {
-    color: #ff0000;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu {
-        display: none; /* Oculta o menu no início */
-        flex-direction: column;
-        gap: 1rem;
-        background-color: #1e1e1e;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding: 1rem;
-        z-index: 1000;
-    }
-
-    .menu.active {
-        display: flex; /* Mostra o menu ao ativar */
-    }
-
-    .menu-toggle {
-        display: block; /* Exibe o botão hambúrguer */
-    }
-}
-
-
-.banner {
-    position: relative;
-    text-align: center;
-    padding: 4rem 2rem;
-    background: url("https://www.jigsawplanet.com/Pauline666/films-series?rc=face") no-repeat center center/cover;
-    color: #fff;
-}
-
-.banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
-    z-index: 1; /* Mantém a sobreposição abaixo do texto */
-}
-
-.banner h1, .banner p, .banner .btn-destaque {
-    position: relative;
-    z-index: 2; /* Garante que o texto e o botão fiquem acima da sobreposição */
-}
-
-.banner .btn-destaque {
-    background-color: #fff;
-    color: #e50914;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.banner .btn-destaque:hover {
-    background-color: #f40612;
-    color: #fff;
-}
-
-
-/*código referente ao slider*/
-.slider-wrapper1 {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
-}
-
-.slider-container1 {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.slider1 {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide1 {
-    flex: 0 0 33.33%; /* Exibe 3 slides ao mesmo tempo em telas grandes */
-    box-sizing: border-box;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #444;
-    background-color: #1e1e1e;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.slide1 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.slide1 h4 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #fff;
-}
-
-.synopsis {
-    font-size: 0.9em;
-    color: #ddd;
-    text-align: justify;
-    margin: 10px 0;
-}
-
-.price {
-    font-size: 1.1em;
-    color: #ff0000;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.buy-btn {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-}
-
-.buy-btn:hover {
-    background-color: #cc0000;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Ajuste para dispositivos menores */
-@media (max-width: 768px) {
-    .slide1 {
-        flex: 0 0 100%; /* Exibe 1 slide por vez em telas menores */
-    }
-}
-
-.destaques .filme img {
-    width: 200px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.destaques .filme img:hover {
-    transform: scale(1.1);
-}
-/* Seções escuras */
-.dark-section {
-    background-color: #1e1e1e;
-    padding: 2rem;
-    text-align: center;
-}
-
-.dark-section h2 {
-    font-size: 2rem;
-    color: #ff0000;
-    margin-bottom: 1.5rem;
-}
-.slider1-title1 {
-    font-size: 2rem;
-    color: #ff0000;
-    margin-bottom: 1.5rem;
-}
-/* Planos */
-.planos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.plano {
-    background: #2a2a2a;
-    border: 2px solid #444;
-    border-radius: 10px;
-    padding: 1.5rem;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.plano:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.2);
-}
-
-.plano h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
-
-.plano p {
-    font-size: 1.2rem;
-    color: #ddd;
-    margin-bottom: 1rem;
-}
-
-.plano ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1rem;
-}
-
-.plano ul li {
-    margin: 0.5rem 0;
-    color: #aaa;
-}
-
-.plano button {
-    padding: 0.7rem 1rem;
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.plano button:hover {
-    background-color: #cc0000;
-}
-
-.filmes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.filme {
-    width: 200px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.filme:hover {
-    transform: scale(1.1);
-}
-
-.filme img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.filme h3 {
-    margin-top: 0.5rem;
-    color: #fff;
-}
-
-.btn-trailer {
-        background-color: #0066cc;
-        color: #fff;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-        font-size: 0.9rem;
-    }
-
-    .btn-trailer:hover {
-        background-color: #005bb5;
-    }
-        .slider-container {
-            display: flex;
-            overflow-x: scroll;
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .slide {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            min-width: 200px;
-            flex: none;
-        }
-
-        .slide img {
-        width: 150px; /* Define a largura padrão */
-        height: 225px; /* Define a altura padrão */
-        object-fit: cover; /* Ajusta a imagem para cobrir completamente o espaço definido */
-        border-radius: 8px; /* Opcional: adiciona bordas arredondadas */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: adiciona uma sombra */
-        margin-bottom: 10px; /* Espaçamento inferior */
-        }
-
-        .titulo-secao {
-        font-size: 1.8rem; /* Tamanho da fonte */
-        color: #333; /* Cor do texto */
-        margin-bottom: 20px; /* Espaçamento abaixo do título */
-        text-align: center; /* Centralizar o texto */
-        font-weight: bold; /* Deixar o texto em negrito */
-    }
-        .dark-section {
-            padding: 2rem;
-            background-color: #1e1e1e;
-        }
-
-/* Modal de Detalhes */
-.modal1 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content1 .close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.modal-content1 button {
-    margin-top: 1rem;
-    padding: 0.7rem 1rem;
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.modal-content1 button:hover {
-    background-color: #cc0000;
-}
- /* Estilos do carrinho */
- #carrinho {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        #lista-carrinho {
-            list-style: none; /* Remove marcadores */
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
             padding: 0;
         }
 
-        #lista-carrinho li {
-            background: #2a2a2a;
-            margin: 0.5rem 0;
-            padding: 0.75rem;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header {
+            background-color: #1e1e1e;
+            padding: 1rem;
+            text-align: center;
+            color: #ff0000;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        #lista-carrinho button {
-            background-color: #e50914;
-            color: #fff;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 5px;
-            cursor: pointer;
+        main {
+            padding: 2rem;
         }
 
-        #lista-carrinho button:hover {
-            background-color: #d40813;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
-        #total-carrinho {
-            margin-top: 1rem;
-        }
-
-        .btn-finalizar {
-            background-color: #ff0000;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn-finalizar:hover {
-            background-color: #d40813;
-        }
-
-        /* Estilos do modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            color: #000;
+        .card {
+            background-color: #1e1e1e;
             border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            z-index: 1000;
+            padding: 1rem;
+            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .modal-content {
-            padding: 20px;
-            text-align: center;
-            overflow-y: auto;
-            max-height: 80vh;
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        .modal-content form input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
+        .card h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .card button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
             cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
         }
 
-        .qrcode {
-            margin: 10px 0;
-            display: block;
-            width: 150px; /* Tamanho ajustado */
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
+        .card button:hover {
+            background-color: #d40813;
         }
-footer {
-    background-color: #1e1e1e;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
 
+        footer {
+            background-color: #1e1e1e;
+            color: #aaa;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
     </style>
-    <script>
-        document.getElementById("meu_form").addEventListener("submit", function(event) {
-    // Prevenir o envio imediato
-    event.preventDefault();
+</head>
+<body>
+    <header>
+        Samflix - Seus Filmes e Séries
+    </header>
+    <main>
+        <h1>Bem-vindo à sua biblioteca</h1>
+        <p>Selecione o filme ou série que você adquiriu para assistir. Certifique-se de que seu e-mail foi autorizado para acessar o vídeo.</p>
 
-    // Obter os valores do formulário
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
+        <div class="grid-container">
+            <!-- Filme 1 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                <h3>Filme 1</h3>
+                <p>Descrição breve do filme 1.</p>
+                <button onclick="window.open('https://drive.google.com/file/d/ID_DO_VIDEO/view', '_blank')">Assistir</button>
+            </div>
 
-    // Validar campos obrigatórios
-    if (!nome || !email) {
-        alert("Por favor, preencha todos os campos antes de finalizar a compra.");
-        return;
-    }
+            <!-- Filme 2 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                <h3>Filme 2</h3>
+                <p>Descrição breve do filme 2.</p>
+                <button onclick="window.open('https://drive.google.com/file/d/ID_DO_VIDEO/view', '_blank')">Assistir</button>
+            </div>
 
-    // Preencher os campos ocultos com o resumo da compra e total
-    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
-    const totalCompra = total.toFixed(2);
-
-    document.getElementById("resumo_compra").value = resumoCompra;
-    document.getElementById("total_compra").value = `R$ ${totalCompra}`;
-
-    // Exibir mensagem de sucesso no modal
-    const mensagemSucesso = document.getElementById("mensagem-sucesso");
-    mensagemSucesso.style.display = "block";
-
-    // Simular envio para permanecer no modal
-    const formData = new FormData(this);
-    fetch(this.action, {
-        method: this.method,
-        body: formData,
-    })
-        .then(response => {
-            if (response.ok) {
-                console.log("Dados enviados com sucesso!");
-            } else {
-                console.error("Erro ao enviar os dados.");
-            }
-        })
-        .catch(error => console.error("Erro:", error));
-});
-
-function baixarPedidoPDF() {
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-
-    if (!nome || !email) {
-        alert("Por favor, preencha os campos de Nome e E-mail para baixar o PDF.");
-        return;
-    }
-
-    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join("\n");
-    const totalCompra = total.toFixed(2);
-    const chavePix = "000.111.222-33";
-
-    // Carregar jsPDF
-    const { jsPDF } = window.jspdf;
-
-    // Criar o PDF
-    const pdf = new jsPDF();
-    pdf.setFontSize(12);
-    pdf.text("Samflix - Confirmação de Pedido", 10, 10);
-    pdf.text(`Nome do Cliente: ${nome}`, 10, 20);
-    pdf.text(`E-mail: ${email}`, 10, 30);
-    pdf.text("Resumo da Compra:", 10, 40);
-
-    // Adicionar itens do resumo
-    const linhasResumo = pdf.splitTextToSize(resumoCompra, 180);
-    let alturaAtual = 50; // Começa logo após o título "Resumo da Compra"
-    linhasResumo.forEach(linha => {
-        pdf.text(linha, 10, alturaAtual);
-        alturaAtual += 7; // Incrementa a altura a cada linha
-    });
-
-    // Adicionar total e PIX próximos ao resumo
-    alturaAtual += 5; // Espaço adicional antes do total
-    pdf.text(`Total: R$ ${totalCompra}`, 10, alturaAtual);
-    alturaAtual += 10;
-    pdf.text("Pagamento PIX:", 10, alturaAtual);
-    alturaAtual += 10;
-    pdf.text(`Chave PIX: ${chavePix}`, 10, alturaAtual);
-
-    // Salvar o PDF
-    pdf.save(`Pedido_Samflix_${nome.replace(/\s+/g, "_")}.pdf`);
-}
-
-function abrirTrailer(url) {
-    if (url) {
-        window.open(url, '_blank'); // Abre o link em uma nova aba
-    } else {
-        alert('Trailer indisponível para este filme.');
-    }
-}
-    </script>
-
-<script>
-
-    let carrinho = [];
-    let total = 0;
-    
-    function adicionarAoCarrinho(nome, preco) {
-        // Adicionar ao carrinho
-        carrinho.push({ nome, preco });
-        total += preco;
-        atualizarCarrinho();
-    
-        // Exibir mensagem de aviso
-        exibirMensagem(`${nome} foi adicionado ao carrinho!`);
-    }
-    
-    function atualizarCarrinho() {
-        const listaCarrinho = document.getElementById('lista-carrinho');
-        const totalCarrinho = document.getElementById('total-carrinho');
-        listaCarrinho.innerHTML = '';
-    
-        carrinho.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-    
-            const btnRemover = document.createElement('button');
-            btnRemover.textContent = 'Remover';
-            btnRemover.onclick = () => removerDoCarrinho(index);
-    
-            li.appendChild(btnRemover);
-            listaCarrinho.appendChild(li);
-        });
-    
-        totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
-    
-    function removerDoCarrinho(index) {
-        total -= carrinho[index].preco;
-        carrinho.splice(index, 1);
-        atualizarCarrinho();
-    }
-    
-    function exibirMensagem(mensagem) {
-        const mensagemDiv = document.createElement('div');
-        mensagemDiv.textContent = mensagem;
-        mensagemDiv.style.position = 'fixed';
-        mensagemDiv.style.bottom = '20px';
-        mensagemDiv.style.right = '20px';
-        mensagemDiv.style.backgroundColor = '#4caf50';
-        mensagemDiv.style.color = '#fff';
-        mensagemDiv.style.padding = '10px';
-        mensagemDiv.style.borderRadius = '5px';
-        mensagemDiv.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
-        mensagemDiv.style.zIndex = '1000';
-    
-        document.body.appendChild(mensagemDiv);
-    
-        // Remover a mensagem após 3 segundos
-        setTimeout(() => {
-            mensagemDiv.remove();
-        }, 3000);
-    }
-    
-    
-        // Função para exibir o modal de pagamento
-        function exibirCarrinhoPagamento() {
-            if (carrinho.length === 0) {
-                alert('Seu carrinho está vazio.');
-                return;
-            }
-    
-            const modal = document.getElementById('modal-pagamento');
-            const resumoItens = document.getElementById('resumo-itens');
-            const resumoTotal = document.getElementById('resumo-total');
-    
-            resumoItens.innerHTML = '';
-            carrinho.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-                resumoItens.appendChild(li);
-            });
-    
-            resumoTotal.textContent = total.toFixed(2);
-            modal.style.display = 'block';
-        }
-    
-        // Função para fechar o modal de pagamento
-        function fecharModal() {
-            document.getElementById('modal-pagamento').style.display = 'none';
-        }
-    
-        // Função para copiar a chave PIX
-        function copiarPix() {
-            const chavePix = '000.111.222-33';
-            navigator.clipboard.writeText(chavePix).then(() => {
-                alert('Chave PIX copiada!');
-            });
-        }
-    
-        // Função para validar campos e enviar dados
-        function enviarDados() {
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-    
-            if (!nome || !email || !senha) {
-                alert('Por favor, preencha todos os campos antes de finalizar a compra.');
-                return;
-            }
-    
-        }
-        
-    
-        // Função para limpar o carrinho após a compra
-        function limparCarrinho() {
-            carrinho = [];
-            total = 0;
-            atualizarCarrinho();
-        }
-    </script>
-    
-    <script>
-        // Seleciona o botão e o menu
-const toggleButton = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-// Alterna a visibilidade do menu
-toggleButton.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
-
-const filmesDetalhes = {
-    lancamento1: {
-        titulo: "Filme 1",
-        sinopse: "Sinopse do Filme 1. Uma emocionante aventura!",
-        classificacao: "Classificação: 12+",
-    },
-    lancamento2: {
-        titulo: "Filme 2",
-        sinopse: "Sinopse do Filme 2. Um drama emocionante.",
-        classificacao: "Classificação: 16+",
-    },
-    lancamento3: {
-        titulo: "Filme 3",
-        sinopse: "Sinopse do Filme 3. Comédia para toda a família!",
-        classificacao: "Classificação: Livre",
-    },
-    maisAssistido1: {
-        titulo: "Filme 4",
-        sinopse: "Sinopse do Filme 4. Uma jornada épica.",
-        classificacao: "Classificação: 14+",
-    },
-    maisAssistido2: {
-        titulo: "Filme 5",
-        sinopse: "Sinopse do Filme 5. Romance inesquecível.",
-        classificacao: "Classificação: 12+",
-    },
-    maisAssistido3: {
-        titulo: "Filme 6",
-        sinopse: "Sinopse do Filme 6. Ação do começo ao fim!",
-        classificacao: "Classificação: 16+",
-    },
-};
-
-function mostrarDetalhes(filmeId) {
-    const modal = document.getElementById("detalhes-modal1");
-    const titulo = document.getElementById("detalhes-titulo");
-    const sinopse = document.getElementById("detalhes-sinopse");
-    const classificacao = document.getElementById("detalhes-classificacao");
-
-    const filme = filmesDetalhes[filmeId];
-    titulo.textContent = filme.titulo;
-    sinopse.textContent = filme.sinopse;
-    classificacao.textContent = filme.classificacao;
-
-    modal.style.display = "flex";
-}
-
-function fecharModal2() {
-    const modal = document.getElementById("detalhes-modal1");
-    modal.style.display = "none";
-}
-
-function adquirirFilme() {
-    alert("Filme adquirido com sucesso!");
-}
-
-//Código do slider
-let currentIndex = 0;
-        const slides = document.querySelectorAll('.slider1 .slide1');
-        const totalSlides = slides.length;
-        const visibleSlides = window.innerWidth > 768 ? 3 : 1; // Ajusta entre 3 e 1 slide visível
-    
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        }
-    
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-    
-        function updateSlider() {
-            const slider = document.querySelector('.slider1');
-            const slideWidth = document.querySelector('.slider-container1').offsetWidth / visibleSlides;
-            slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-    
-        document.querySelector('.prev').addEventListener('click', prevSlide);
-        document.querySelector('.next').addEventListener('click', nextSlide);
-    
-        let autoSlide = setInterval(nextSlide, 3000);
-    
-        const sliderContainer = document.querySelector('.slider-container1');
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
-        sliderContainer.addEventListener('mouseleave', () => (autoSlide = setInterval(nextSlide, 3000)));
-    
-        window.addEventListener('resize', updateSlider);
-    
-        updateSlider();
-        
-    </script>
+            <!-- Filme 3 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/200x300" alt="Filme 3">
+                <h3>Filme 3</h3>
+                <p>Descrição breve do filme 3.</p>
+                <button onclick="window.open('https://drive.google.com/file/d/ID_DO_VIDEO/view', '_blank')">Assistir</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Samflix - Todos os direitos reservados.
+    </footer>
 </body>
 </html>
