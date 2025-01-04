@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de Filmes</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="">
 </head>
 <body>
@@ -28,11 +29,11 @@
         </section>
         
 
-        <div class="slider-wrapper" id="slider">
-            <h2 class="slider-title">Filmes em Destaque</h2>
-            <div class="slider-container">
-                <div class="slider">
-                      <div class="slide">
+        <div class="slider-wrapper1" id="slider1">
+            <h2 class="slider-title1">Filmes em Destaque</h2>
+            <div class="slider-container1">
+                <div class="slider1">
+                      <div class="slide1">
                         <img src="https://i0.wp.com/www.guiadecinema.com/wp-content/uploads/2022/03/morbius.jpg?fit=540%2C801&ssl=1" alt="Como ficar rico">
                         <h4>Nome do filme</h4>
                         <p class="synopsis">
@@ -41,7 +42,7 @@
                         <p class="price">R$ 10,00</p>
                         <button class="buy-btn">Adquirir</button>
                     </div>
-                    <div class="slide">
+                    <div class="slide1">
                         <img src="https://cdn.cineart.com.br/vibezz_211176357.jpg" alt="Seja Homem">
                         <h4>Nome do filme</h4>
                         <p class="synopsis">
@@ -50,7 +51,7 @@
                         <p class="price">R$ 10,00</p>
                         <button class="buy-btn">Adquirir</button>
                     </div>
-                    <div class="slide">
+                    <div class="slide1">
                         <img src="https://gsobmidia.com.br/uploads/filmes/2838/15850-medio_1726062587.jpg" alt="O Senhor dos Anéis">
                         <h4>Nome do filme</h4>
                         <p class="synopsis">
@@ -59,7 +60,7 @@
                         <p class="price">R$ 10,00</p>
                         <button class="buy-btn">Adquirir</button>
                     </div>
-                    <div class="slide">
+                    <div class="slide1">
                         <img src="https://cinecataratas.com.br/wp-content/uploads/2024/11/banner_filme_moana-cinemaemfoz.jpg" alt="A serpente e as asas feitas de noite">
                         <h4>Nome do filme</h4>
                         <p class="synopsis">
@@ -74,6 +75,23 @@
             </div>
         </div>
 <br><br>
+<h2 class="titulo-secao">Filmes de Ação</h2>
+        <section class="slider-container">
+            <div class="slide">
+                <img src="https://img.elo7.com.br/product/300x400/264FCC6/big-poster-filme-batman-o-cavaleiro-das-trevas-lo02-90x60-cm-batman.jpg" alt="Filme 1">
+                <h3>Filme 1</h3>
+                <p>R$ 10,00</p>
+                <button class="btn-trailer" onclick="adicionarAoCarrinho('Filme 1', 10)">Adquirir</button>
+                <button class="btn-trailer" onclick="abrirTrailer('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">Ver Trailer</button>
+            </div>
+            <div class="slide">
+                <img src="https://www.mansaowayne.com.br/wp-content/uploads/2017/10/posterliga40.jpg" alt="Filme 2">
+                <h3>Filme 2</h3>
+                <p>R$ 12,00</p>
+                <button class="btn-trailer" onclick="adicionarAoCarrinho('Filme 2', 12)">Adquirir</button>
+                <button class="btn-trailer" onclick="abrirTrailer('https://www.youtube.com/watch?v=3ig38rNMdgE')">Ver Trailer</button> 
+            </div>
+        </section>
 <section id="lancamentos" class="dark-section">
     <h2>Lançamentos</h2>
     <div class="filmes-container">
@@ -119,12 +137,13 @@
             <p>Gênero: Suspense</p>
             <img src="18.png" alt="Classificação 16" style="width: 30px; height: auto;">
         </div>
+        
     </div>
 </section>
 
 <!-- Modal para exibir detalhes -->
-<div id="detalhes-modal" class="modal">
-    <div class="modal-content">
+<div id="detalhes-modal1" class="modal1">
+    <div class="modal-content1">
         <span class="close" onclick="fecharModal()">&times;</span>
         <h3 id="detalhes-titulo"></h3>
         <p id="detalhes-sinopse"></p>
@@ -144,7 +163,7 @@
                 <li>Sem assinatura mensal</li>
                 <li>Possibilidade de baixar os filmes</li>
             </ul>
-            <button onclick="window.location.href='#planos'">Adquira Agora</button>
+            <button onclick="adicionarAoCarrinho('Plano Básico', 9.99)">Adquirir</button>
         </div>
         <div class="plano destaque">
             <h3>Padrão</h3>
@@ -155,7 +174,7 @@
                 <li>Catálogo completo</li>
                 <li>Possibilidade de baixar os filmes</li>
             </ul>
-            <button onclick="window.location.href='#planos'">Assine Agora</button>
+            <button onclick="adicionarAoCarrinho('Plano Padrão', 29.90)">Adquirir</button>
         </div>
         <div class="plano">
             <h3>Premium</h3>
@@ -166,10 +185,55 @@
                 <li>Catálogo completo</li>
                 <li>Possibilidade de baixar os filmes</li>
             </ul>
-            <button onclick="window.location.href='#planos'">Assine Agora</button>
+            <button onclick="adicionarAoCarrinho('Plano Premium', 49.90)">Adquirir</button>
         </div>
     </div>
 </section>
+<section id="carrinho">
+    <h2>Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p id="total-carrinho">Total: R$ 0,00</p>
+    <button class="btn-finalizar" onclick="exibirCarrinhoPagamento()">Finalizar Compra</button>
+</section>
+
+<div id="modal-pagamento" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+<h3>Dados do Cliente</h3>
+<input type="text" id="nome" placeholder="Nome" name="Nome" required>
+<input type="email" id="email" placeholder="E-mail" name="Email" required>
+
+<!-- Campos ocultos para resumo da compra e total -->
+<input type="hidden" id="resumo_compra" name="Resumo">
+<input type="hidden" id="total_compra" name="Total">
+<!-- Mensagem de sucesso -->
+<div id="mensagem-sucesso" style="display: none; text-align: center; padding: 1rem; background-color: #d4edda; color: #155724; margin-top: 1rem; border-radius: 5px;">
+Pedido realizado com sucesso! Assim que o pagamento for confirmado em nosso sistema, entraremos em contato por meio do seu e-mail. Obrigado por escolher a Samflix!
+</div>
+<h3>Resumo da Compra</h3>
+<ul id="resumo-itens"></ul>
+<p>Total: R$ <span id="resumo-total"></span></p>
+<h3>Pagamento PIX</h3>
+<p>
+O pagamento deve ser feito via Pix. Você pode copiar a chave Pix abaixo 
+ou escanear o QR Code diretamente no aplicativo do seu banco. Após o pagamento, 
+guarde o comprovante como garantia.
+</p>
+<img src="meuqrcode.jpg" alt="QR Code PIX" class="qrcode">
+<p>Chave PIX: 000.111.222-33</p>
+<button type="button" onclick="copiarPix()">Copiar Chave</button>
+<button type="submit">Confirmar e Finalizar</button>
+<button type="button" onclick="baixarPedidoPDF()">Baixar Detalhes do Pedido (PDF)</button>
+            
+
+<!-- Campos do FormSubmit -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+</form>
+
+    </div>      
+    </div>
 </main>
 
     <footer>
@@ -289,25 +353,25 @@ header {
 
 
 /*código referente ao slider*/
-.slider-wrapper {
+.slider-wrapper1 {
     width: 100%;
     max-width: 1000px;
     margin: auto;
     text-align: center;
 }
 
-.slider-container {
+.slider-container1 {
     position: relative;
     overflow: hidden;
     width: 100%;
 }
 
-.slider {
+.slider1 {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.slide {
+.slide1 {
     flex: 0 0 33.33%; /* Exibe 3 slides ao mesmo tempo em telas grandes */
     box-sizing: border-box;
     text-align: center;
@@ -318,14 +382,14 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.slide img {
+.slide1 img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.slide h4 {
+.slide1 h4 {
     font-size: 1.2em;
     margin: 10px 0;
     color: #fff;
@@ -382,7 +446,7 @@ header {
 
 /* Ajuste para dispositivos menores */
 @media (max-width: 768px) {
-    .slide {
+    .slide1 {
         flex: 0 0 100%; /* Exibe 1 slide por vez em telas menores */
     }
 }
@@ -408,7 +472,7 @@ header {
     color: #ff0000;
     margin-bottom: 1.5rem;
 }
-.slider-title {
+.slider1-title1 {
     font-size: 2rem;
     color: #ff0000;
     margin-bottom: 1.5rem;
@@ -501,9 +565,59 @@ header {
     color: #fff;
 }
 
+.btn-trailer {
+        background-color: #0066cc;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-trailer:hover {
+        background-color: #005bb5;
+    }
+        .slider-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .slide {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            min-width: 200px;
+            flex: none;
+        }
+
+        .slide img {
+        width: 150px; /* Define a largura padrão */
+        height: 225px; /* Define a altura padrão */
+        object-fit: cover; /* Ajusta a imagem para cobrir completamente o espaço definido */
+        border-radius: 8px; /* Opcional: adiciona bordas arredondadas */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: adiciona uma sombra */
+        margin-bottom: 10px; /* Espaçamento inferior */
+        }
+
+        .titulo-secao {
+        font-size: 1.8rem; /* Tamanho da fonte */
+        color: #333; /* Cor do texto */
+        margin-bottom: 20px; /* Espaçamento abaixo do título */
+        text-align: center; /* Centralizar o texto */
+        font-weight: bold; /* Deixar o texto em negrito */
+    }
+        .dark-section {
+            padding: 2rem;
+            background-color: #1e1e1e;
+        }
 
 /* Modal de Detalhes */
-.modal {
+.modal1 {
     display: none;
     position: fixed;
     top: 0;
@@ -515,7 +629,7 @@ header {
     align-items: center;
 }
 
-.modal-content .close {
+.modal-content1 .close {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -523,7 +637,7 @@ header {
     cursor: pointer;
 }
 
-.modal-content button {
+.modal-content1 button {
     margin-top: 1rem;
     padding: 0.7rem 1rem;
     background-color: #ff0000;
@@ -533,10 +647,110 @@ header {
     cursor: pointer;
 }
 
-.modal-content button:hover {
+.modal-content1 button:hover {
     background-color: #cc0000;
 }
+ /* Estilos do carrinho */
+ #carrinho {
+            padding: 2rem;
+            text-align: center;
+        }
 
+        #lista-carrinho {
+            list-style: none; /* Remove marcadores */
+            padding: 0;
+        }
+
+        #lista-carrinho li {
+            background: #2a2a2a;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #lista-carrinho button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #lista-carrinho button:hover {
+            background-color: #d40813;
+        }
+
+        #total-carrinho {
+            margin-top: 1rem;
+        }
+
+        .btn-finalizar {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-finalizar:hover {
+            background-color: #d40813;
+        }
+
+        /* Estilos do modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content {
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .modal-content form input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .qrcode {
+            margin: 10px 0;
+            display: block;
+            width: 150px; /* Tamanho ajustado */
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
 footer {
     background-color: #1e1e1e;
     text-align: center;
@@ -545,6 +759,221 @@ footer {
 }
 
     </style>
+    <script>
+        document.getElementById("meu_form").addEventListener("submit", function(event) {
+    // Prevenir o envio imediato
+    event.preventDefault();
+
+    // Obter os valores do formulário
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+
+    // Validar campos obrigatórios
+    if (!nome || !email) {
+        alert("Por favor, preencha todos os campos antes de finalizar a compra.");
+        return;
+    }
+
+    // Preencher os campos ocultos com o resumo da compra e total
+    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join(", ");
+    const totalCompra = total.toFixed(2);
+
+    document.getElementById("resumo_compra").value = resumoCompra;
+    document.getElementById("total_compra").value = `R$ ${totalCompra}`;
+
+    // Exibir mensagem de sucesso no modal
+    const mensagemSucesso = document.getElementById("mensagem-sucesso");
+    mensagemSucesso.style.display = "block";
+
+    // Simular envio para permanecer no modal
+    const formData = new FormData(this);
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log("Dados enviados com sucesso!");
+            } else {
+                console.error("Erro ao enviar os dados.");
+            }
+        })
+        .catch(error => console.error("Erro:", error));
+});
+
+function baixarPedidoPDF() {
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+
+    if (!nome || !email) {
+        alert("Por favor, preencha os campos de Nome e E-mail para baixar o PDF.");
+        return;
+    }
+
+    const resumoCompra = carrinho.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join("\n");
+    const totalCompra = total.toFixed(2);
+    const chavePix = "000.111.222-33";
+
+    // Carregar jsPDF
+    const { jsPDF } = window.jspdf;
+
+    // Criar o PDF
+    const pdf = new jsPDF();
+    pdf.setFontSize(12);
+    pdf.text("Samflix - Confirmação de Pedido", 10, 10);
+    pdf.text(`Nome do Cliente: ${nome}`, 10, 20);
+    pdf.text(`E-mail: ${email}`, 10, 30);
+    pdf.text("Resumo da Compra:", 10, 40);
+
+    // Adicionar itens do resumo
+    const linhasResumo = pdf.splitTextToSize(resumoCompra, 180);
+    let alturaAtual = 50; // Começa logo após o título "Resumo da Compra"
+    linhasResumo.forEach(linha => {
+        pdf.text(linha, 10, alturaAtual);
+        alturaAtual += 7; // Incrementa a altura a cada linha
+    });
+
+    // Adicionar total e PIX próximos ao resumo
+    alturaAtual += 5; // Espaço adicional antes do total
+    pdf.text(`Total: R$ ${totalCompra}`, 10, alturaAtual);
+    alturaAtual += 10;
+    pdf.text("Pagamento PIX:", 10, alturaAtual);
+    alturaAtual += 10;
+    pdf.text(`Chave PIX: ${chavePix}`, 10, alturaAtual);
+
+    // Salvar o PDF
+    pdf.save(`Pedido_Samflix_${nome.replace(/\s+/g, "_")}.pdf`);
+}
+
+function abrirTrailer(url) {
+    if (url) {
+        window.open(url, '_blank'); // Abre o link em uma nova aba
+    } else {
+        alert('Trailer indisponível para este filme.');
+    }
+}
+    </script>
+
+<script>
+
+    let carrinho = [];
+    let total = 0;
+    
+    function adicionarAoCarrinho(nome, preco) {
+        // Adicionar ao carrinho
+        carrinho.push({ nome, preco });
+        total += preco;
+        atualizarCarrinho();
+    
+        // Exibir mensagem de aviso
+        exibirMensagem(`${nome} foi adicionado ao carrinho!`);
+    }
+    
+    function atualizarCarrinho() {
+        const listaCarrinho = document.getElementById('lista-carrinho');
+        const totalCarrinho = document.getElementById('total-carrinho');
+        listaCarrinho.innerHTML = '';
+    
+        carrinho.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+    
+            const btnRemover = document.createElement('button');
+            btnRemover.textContent = 'Remover';
+            btnRemover.onclick = () => removerDoCarrinho(index);
+    
+            li.appendChild(btnRemover);
+            listaCarrinho.appendChild(li);
+        });
+    
+        totalCarrinho.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+    
+    function removerDoCarrinho(index) {
+        total -= carrinho[index].preco;
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+    
+    function exibirMensagem(mensagem) {
+        const mensagemDiv = document.createElement('div');
+        mensagemDiv.textContent = mensagem;
+        mensagemDiv.style.position = 'fixed';
+        mensagemDiv.style.bottom = '20px';
+        mensagemDiv.style.right = '20px';
+        mensagemDiv.style.backgroundColor = '#4caf50';
+        mensagemDiv.style.color = '#fff';
+        mensagemDiv.style.padding = '10px';
+        mensagemDiv.style.borderRadius = '5px';
+        mensagemDiv.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+        mensagemDiv.style.zIndex = '1000';
+    
+        document.body.appendChild(mensagemDiv);
+    
+        // Remover a mensagem após 3 segundos
+        setTimeout(() => {
+            mensagemDiv.remove();
+        }, 3000);
+    }
+    
+    
+        // Função para exibir o modal de pagamento
+        function exibirCarrinhoPagamento() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio.');
+                return;
+            }
+    
+            const modal = document.getElementById('modal-pagamento');
+            const resumoItens = document.getElementById('resumo-itens');
+            const resumoTotal = document.getElementById('resumo-total');
+    
+            resumoItens.innerHTML = '';
+            carrinho.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+                resumoItens.appendChild(li);
+            });
+    
+            resumoTotal.textContent = total.toFixed(2);
+            modal.style.display = 'block';
+        }
+    
+        // Função para fechar o modal de pagamento
+        function fecharModal() {
+            document.getElementById('modal-pagamento').style.display = 'none';
+        }
+    
+        // Função para copiar a chave PIX
+        function copiarPix() {
+            const chavePix = '000.111.222-33';
+            navigator.clipboard.writeText(chavePix).then(() => {
+                alert('Chave PIX copiada!');
+            });
+        }
+    
+        // Função para validar campos e enviar dados
+        function enviarDados() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+    
+            if (!nome || !email || !senha) {
+                alert('Por favor, preencha todos os campos antes de finalizar a compra.');
+                return;
+            }
+    
+        }
+        
+    
+        // Função para limpar o carrinho após a compra
+        function limparCarrinho() {
+            carrinho = [];
+            total = 0;
+            atualizarCarrinho();
+        }
+    </script>
+    
     <script>
         // Seleciona o botão e o menu
 const toggleButton = document.querySelector('.menu-toggle');
@@ -589,7 +1018,7 @@ const filmesDetalhes = {
 };
 
 function mostrarDetalhes(filmeId) {
-    const modal = document.getElementById("detalhes-modal");
+    const modal = document.getElementById("detalhes-modal1");
     const titulo = document.getElementById("detalhes-titulo");
     const sinopse = document.getElementById("detalhes-sinopse");
     const classificacao = document.getElementById("detalhes-classificacao");
@@ -602,8 +1031,8 @@ function mostrarDetalhes(filmeId) {
     modal.style.display = "flex";
 }
 
-function fecharModal() {
-    const modal = document.getElementById("detalhes-modal");
+function fecharModal2() {
+    const modal = document.getElementById("detalhes-modal1");
     modal.style.display = "none";
 }
 
@@ -613,7 +1042,7 @@ function adquirirFilme() {
 
 //Código do slider
 let currentIndex = 0;
-        const slides = document.querySelectorAll('.slider .slide');
+        const slides = document.querySelectorAll('.slider1 .slide1');
         const totalSlides = slides.length;
         const visibleSlides = window.innerWidth > 768 ? 3 : 1; // Ajusta entre 3 e 1 slide visível
     
@@ -628,8 +1057,8 @@ let currentIndex = 0;
         }
     
         function updateSlider() {
-            const slider = document.querySelector('.slider');
-            const slideWidth = document.querySelector('.slider-container').offsetWidth / visibleSlides;
+            const slider = document.querySelector('.slider1');
+            const slideWidth = document.querySelector('.slider-container1').offsetWidth / visibleSlides;
             slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         }
     
@@ -638,13 +1067,14 @@ let currentIndex = 0;
     
         let autoSlide = setInterval(nextSlide, 3000);
     
-        const sliderContainer = document.querySelector('.slider-container');
+        const sliderContainer = document.querySelector('.slider-container1');
         sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
         sliderContainer.addEventListener('mouseleave', () => (autoSlide = setInterval(nextSlide, 3000)));
     
         window.addEventListener('resize', updateSlider);
     
         updateSlider();
+        
     </script>
 </body>
 </html>
