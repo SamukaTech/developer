@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Araújo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="imagens/icon-samukatech9.2.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Projeto Aedes Aegypti: Sensibilização e Atitude</title>
+    <link rel="icon" href="https://st2.depositphotos.com/4297405/9913/v/450/depositphotos_99134324-stock-illustration-nature-aedes-aegypti-mosquito-stilt.jpg">
+    <link rel="stylesheet" href="aedes.css">
 </head>
 <body>
+
+    <!-- Cabeçalho -->
     <header>
+        <h1>Projeto Aedes Aegypti: Sensibilização e Atitude</h1>
         <nav>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -17,159 +19,292 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-list">
-                <li><a href="#serv">Serviços</a></li>
-                <li><a href="#port">Portfólio</a></li>
-                <li><a href="concursos_publicos.html">Concursos</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
-                <li><a href="#cont">Contato</a></li>
+                <li><a href="#mosquito">O Mosquito Aedes aegypti</a></li>
+                <li><a href="#prevencao">Prevenção</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#metodologia">Material e Métodos</a></li>
+                <li><a href="#resultados">Resultados Esperados</a></li>
+                <li><a href="#panfleto">Panfleto</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="slider">
-            <img src="imagens/criacaosite.png" alt="criação de sites">
-            <img src="imagens/bio.png" alt="BioEstudos">
-            <img src="imagens/concu.png" alt="concursos">
-            <img src="imagens/projetos.png" alt="projetos">
+    <!-- Seção de Apresentação -->
+    <section id="apresentacao" class="reveal">
+        <h2>Sobre o Projeto</h2>
+        <p>O projeto "<i>Aedes aegypti</i>: Sensibilização e Atitude", realizado pelos acadêmicos do 4° período do curso de Ciências Biológicas do IFPI, tem como objetivo conscientizar os frequentadores da Praça Rio Branco, em Teresina, sobre os riscos associados ao mosquito <i>Aedes aegypti</i>, transmissor de doenças como dengue, zika e chikungunya.
+            Com foco na sensibilização dos visitantes da praça, o projeto incentiva a adoção de práticas preventivas que ajudem a reduzir a presença do mosquito e, consequentemente, a incidência dessas doenças.
+            Esta iniciativa desempenha um papel importante na promoção da saúde e bem-estar dos frequentadores, contribuindo para um ambiente mais seguro para todos.</p>
+    </section>
+
+    <!-- Slider Automático -->
+    <section id="slider" class="reveal">
+        <h2>Imagens da Praça Rio Branco</h2>
+        <div class="slider-container">
+            <img src="IMG_20240821_105147.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_105157.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_105221.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_105056.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_105102.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_110400.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_110340_1.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_110314_1.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_110319_1.jpg" alt="Imagem da praça Rio Branco">
+            <img src="IMG_20240821_110323_1.jpg" alt="Imagem da praça Rio Branco">
         </div>
     </section>
 
-    <section class="services" id="serv">
-        <h2>Serviços</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <img src="imagens/criacao-sites.png" alt="Criação de Sites">
-                <h3>Criação de Sites Personalizados</h3>
-                <p>Desenvolvimento de sites modernos e totalmente personalizados para atender às suas necessidades e destacar sua marca na internet.</p>
+    <!-- Sobre o Mosquito Aedes Aegypti -->
+    <section id="mosquito" class="reveal">
+        <h2>O Mosquito <i>Aedes aegypti</i></h2>
+        <p>O <i>Aedes aegypti</i> é um mosquito originário da África que, atualmente, se encontra distribuído globalmente, especialmente em áreas tropicais e subtropicais. Ele é conhecido como o principal transmissor de doenças como a dengue, zika e chikungunya.
+       Este mosquito se reproduz em água parada e é altamente adaptado ao ambiente urbano. A conscientização sobre suas características e os métodos de prevenção é essencial para o controle de sua proliferação e a redução de doenças.</p>
+    </section>
+
+    <section id="animacao-reproducao" class="reveal">
+        <h2>Como o <i>Aedes aegypti</i> se reproduz e espalha doenças</h2>
+        <div class="animacao-container">
+            <div class="etapa">
+                <div class="icone">
+                    <img src="https://nexciencia.exactas.uba.ar/wp-content/uploads/2019/10/huevos-aedes_N2.jpg" alt="Ovo do mosquito"> <!-- Substitua pelo caminho da imagem -->
+                </div>
+                <p>1. A fêmea deposita ovos em água parada.</p>
             </div>
-            <div class="service-item">
-                <img src="imagens/sistema web.png" alt="Sistemas Web">
-                <h3>Desenvolvimento de Sistemas Web</h3>
-                <p>Desenvolvimento de sistemas web sob medida para simplificar processos, aumentar a eficiência e impulsionar seus negócios.</p>
+            <div class="etapa">
+                <div class="icone">
+                    <img src="https://www.shutterstock.com/shutterstock/videos/16346713/thumb/1.jpg?ip=x480" alt="Larva do mosquito"> <!-- Substitua pelo caminho da imagem -->
+                </div>
+                <p>2. Os ovos eclodem em larvas.</p>
             </div>
-            <div class="service-item">
-                <img src="imagens/criacao_aplicativos.png" alt="criação de aplicativos">
-                <h3>Criação de Aplicativos</h3>
-                <p>Criação de aplicativos mobile personalizados, otimizados para desempenho e usabilidade, transformando suas ideias em realidade.</p>
+            <div class="etapa">
+                <div class="icone">
+                    <img src="https://www.jornaljoca.com.br/wp-content/uploads/2023/03/GettyImages-1263464608.jpeg" alt="Mosquito adulto"> <!-- Substitua pelo caminho da imagem -->
+                </div>
+                <p>3. As larvas se tornam mosquitos adultos.</p>
             </div>
-            <div class="service-item">
-                <img src="imagens/hospedagem.png" alt="Hospedagem de Sites">
-                <h3>Hospedagem Confiável e Segura</h3>
-                <p>Serviços de hospedagem de sites confiáveis, com alta disponibilidade e suporte técnico personalizado para garantir o melhor desempenho online.</p>
+            <div class="etapa">
+                <div class="icone">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D12AQETSnS5eJ4YUg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1712235925057?e=2147483647&v=beta&t=NSdFyfktXzn3GvuLztse7u2WGjy7kZbKkerq1pLW1RU" alt="Picada do mosquito"> <!-- Substitua pelo caminho da imagem -->
+                </div>
+                <p>4. O mosquito infectado transmite doenças ao picar pessoas.</p>
+            </div>
+        </div>
+    </section>    
+        
+     <!-- Seção Doenças Relacionadas -->
+     <section id="doencas" class="reveal">
+        <h2>Principais Doenças Relacionadas ao <i>Aedes aegypti</i></h2>
+        <ul class="doencas-lista">
+            <li><img src="dengue.jpg" alt="Dengue" class="icone-doenca"> Doença infecciosa que pode causar febre alta, dores intensas e, em casos graves, levar a complicações hemorrágicas.</li>
+            <li><img src="zica.jpeg" alt="Zika" class="icone-doenca"> Pode provocar sintomas leves em adultos, mas é especialmente perigosa para gestantes, pois está associada a casos de microcefalia em bebês.</li>
+            <li><img src="chicun.jpg" alt="Chikungunya" class="icone-doenca"> Caracteriza-se por dores intensas nas articulações, podendo se tornar crônica e causar limitações de movimento.</li>
+        </ul>
+    </section>
+
+   <!-- Seção Medidas de Prevenção com imagens ao lado dos itens -->
+<section id="prevencao" class="reveal">
+    <h2>Medidas Necessárias para Prevenção</h2>
+    <ul class="prevencao-lista">
+        <li><img src="https://cbx-prod.b-cdn.net/COLOURBOX64602192.jpg?width=800&height=800&quality=70" alt="Evitar água parada" class="icone-prevencao">Evitar o acúmulo de água parada em locais como pneus, vasos de plantas e garrafas.</li>
+        <li><img src="https://d2u9hui909q9sw.cloudfront.net/loja/arquivos_loja/58751/Fotos/thumbs3/produto_Foto1_12209286.png" alt="Caixas d'água fechadas" class="icone-prevencao">Manter caixas d'água, tonéis e barris bem fechados.</li>
+        <li><img src="https://blog.aricanduva.com.br/wp-content/uploads/2024/03/M%C3%A3o-colocando-areia-no-pratinho-de-planta-1024x1024.jpeg" alt="Limpeza" class="icone-prevencao">Utilizar areia nos pratos de vasos de plantas ou realizar limpeza semanal.</li>
+        <li><img src="https://www.telessaude.uerj.br/dengue-zika-ckg/img/prevencao16-1.svg" alt="Conscientização" class="icone-prevencao">Guardar garrafas com a boca virada para baixo.</li>
+        <li><img src="lavar.png" alt="Conscientização" class="icone-prevencao">Lavar as bordas dos recipientes que acumulam água com sabão e escova/bucha.</li>
+        <li><img src="https://www.telessaude.uerj.br/dengue-zika-ckg/img/prevencao8-1.svg" alt="Conscientização" class="icone-prevencao">Retirar folhas, galhos e tudo que possa impedir que a água escorra pelas calhas.</li>
+        <li><img src="lixo.png" alt="Conscientização" class="icone-prevencao">Guardar ou jogar no lixo os objetos que pode acumular água: tampas de garrafa, folhas secas, brinquedos.</li>
+        <li><img src="piscina.png" alt="Conscientização" class="icone-prevencao">Manter limpas as piscinas.</li>
+    </ul>
+</section>
+
+<section id="vacina" class="reveal">
+    <h2>Vacina Contra a Dengue</h2>
+    <div class="vacina-container">
+        <!-- Texto informativo -->
+        <div class="vacina-texto">
+            <p>A vacina da dengue é uma imunização contra os quatro sorotipos do vírus da dengue (DENV-1, DENV-2, DENV-3 e DENV-4). Ela é administrada por via subcutânea e é composta por um vírus atenuado.</p>
+            <p>Em 2015, foi aprovada no Brasil a primeira vacina contra a dengue, a Dengvaxia®, disponibilizada apenas em clínicas particulares. Em 2023, foi aprovada no Brasil a segunda vacina contra a dengue, a Qdenga®, incorporada ao SUS em 2024. A aplicação gratuita da vacina pelo sistema público de saúde do Brasil começou em fevereiro de 2024 e foi direcionada, a princípio, aos grupos mais suscetíveis da população.</p>
+            <p>A vacinaçao é muito importante, pois ajuda a reduzir hospitalizações e complicações graves, oferecendo proteção contra os quatro tipos do vírus da dengue. Isso é essencial para diminuir o impacto da doença em áreas com alta incidência.</p>
+        </div>
+        <!-- Imagem relacionada -->
+        <div class="vacina-imagem">
+            <img src="https://s4.static.brasilescola.uol.com.br/be/2024/02/imagem-aproximada-da-mao-de-um-enfermeiro-segurando-um-frasco-contendo-a-vacina-da-dengue.jpg" alt="Pessoa recebendo vacina contra dengue">
+        </div>
+    </div>
+
+    <!-- FAQ (Perguntas Frequentes) -->
+    <div class="faq">
+        <h3>Perguntas Frequentes</h3>
+        <ul>
+            <li>
+                <button class="faq-question">1. A vacina é segura?</button>
+                <p class="faq-answer">Sim, é segura e foi aprovada pelos órgãos reguladores de saúde após testes rigorosos.</p>
+            </li>
+            <li>
+                <button class="faq-question">2. Quem não pode tomar a vacina?</button>
+                <p class="faq-answer">Gestantes, Lactantes, Pessoas com sistema imunológico comprometido, Pessoas com alergia a algum componente da fórmula.</p>
+            </li>
+            <li>
+                <button class="faq-question">3. Quem já teve dengue pode tomar a vacina?</button>
+                <p class="faq-answer">Quem já teve dengue também deve se vacinar para evitar novas infecção ou, em caso de contágio, sintomas mais leves. Além disso, nessas pessoas, é esperada uma resposta melhor ao imunizante.</p>
+            </li>
+            <li>
+                <button class="faq-question">4. A vacina elimina a necessidade de prevenção?</button>
+                <p class="faq-answer">Não! Mesmo vacinado, é fundamental evitar focos de água parada e adotar medidas de prevenção.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+     <!-- Seção Objetivos do Projeto -->
+     <section id="objetivos" class="reveal">
+        <h2>Objetivos do Projeto</h2>
+        <h3>Objetivo Geral</h3>
+        <ul>
+        <li>Sensibilizar os frequentadores da Praça Rio Branco, no Centro de Teresina, Piaui, sobre os riscos associados à proliferação do mosquito <i>Aedes aegypti</i>, e promover atitudes para prevenção das doenças transmitidas pelo vetor.</li>
+        </ul>
+        
+        <h3>Objetivos Específicos</h3>
+        <ul>
+            <li>Identificar possíveis criadouros do mosquito;</li>
+            <li>Conscientizar os frequentadores sobre os riscos e consequências da proliferação do mosquito;</li>
+            <li>Promover ações para a eliminação de criadouros identificados (distribuição de panfletos, exposição de banners informativos);</li>
+            <li>Criar e divulgar um site contendo informações gerais do projeto, motivação para sua criação, informações sobre o mosquito e doenças transmitidas;</li>
+            <li>Reduzir a incidência de doenças transmitidas pelo <i>Aedes aegypti</i> entre os frequentadores da praça.</li>
+        </ul>
+    </section>
+
+    <!-- Seção Material e Métodos 
+    <section id="metodologia" class="reveal">
+        <h2>Material e Métodos</h2>
+        <p>Para atingir os objetivos propostos, será realizada uma oficina informativa na Praça Rio Branco, no Centro de Teresina-PI (compreendendo a Rua Simplício Mendes, Rua Areolino de Abreu, Rua Coelho Rodrigues e Rua Rui Barbosa). Durante a oficina, os participantes serão amplamente informados sobre estratégias eficazes para combater a proliferação do mosquito <i>Aedes aegypti</i>. Simultaneamente, serão distribuídos panfletos informativos com informações claras
+         sobre as estratégias de combate ao mosquito, além da exposição de banners na praça com informações sobre as doenças transmitidas pelo mosquito e a importância de erradicar esse vetor.</p>
+    </section> --->
+    <!-- Seção Resultados Esperados -->
+    <section id="resultados" class="reveal">
+        <h2>Resultados Esperados</h2>
+        <p>Com este projeto, espera-se que os frequentadores da Praça Rio Branco, no centro de Teresina, reflitam sobre as consequências do descarte inadequado de resíduos, uma prática que pode gerar criadouros do mosquito <i>Aedes aegypti</i>. Além disso, ao disponibilizar panfletos informativos com orientações para identificar o mosquito, entender os sintomas, o período de incubação e a transmissibilidade das doenças, o projeto visa fornecer informações claras sobre essas enfermidades e como preveni-las. O objetivo final é contribuir para a redução do número de casos dessas arboviroses na área.</p>
+    </section>
+
+    <section id="panfleto" class="reveal">
+        <h2>Baixe Nosso Panfleto Educativo</h2>
+        <div class="panfleto-content">
+            <img src="Panfleto.png" alt="Prévia do Panfleto" />
+            <div class="panfleto-text">
+                <p>Nosso panfleto contém dicas essenciais para prevenir focos do mosquito <i>Aedes aegypti</i> e combater a proliferação de doenças como dengue, zika e chikungunya.</p>
+                <a href="https://drive.google.com/file/d/1iOW6-1fmymWjQRRRR0TFH9WHj8U2ZREm/view?usp=sharing" download class="btn-download">
+                    <button>Baixar Panfleto</button>
+                </a>
+            </div>
+        </div>
+    </section>    
+    
+     <!-- Seção de Quiz -->
+    <section id="quiz" class="reveal">
+        <h2>Teste seus Conhecimentos</h2>
+        <div id="quiz-container">
+            <p id="quiz-question">Qual é o principal hábito do mosquito Aedes aegypti?</p>
+            <ul id="quiz-options">
+                <li><button onclick="checkAnswer(this, false)">Transmite doenças através do contato direto</button></li>
+                <li><button onclick="checkAnswer(this, true)">Se reproduz em água parada</button></li>
+                <li><button onclick="checkAnswer(this, false)">Vive apenas em áreas rurais</button></li>
+                <li><button onclick="checkAnswer(this, false)">Se alimenta exclusivamente de plantas</button></li>
+            </ul>
+            <p id="quiz-feedback"></p>
+        </div>
+    </section>
+    
+    <section id="jogo-educativo" class="reveal">
+        <div id="jogo-titulo">
+            <h2>Elimine os Focos do Mosquito!</h2>
+            <img src="https://media.istockphoto.com/id/1670368698/pt/vetorial/dengue-prevention-avoid-water-collection-stock-illustration.jpg?s=612x612&w=0&k=20&c=YlBL7Zj8EUzvzQytrYdlXzQrR73Ulp_pgnh24aTYoo4=" alt="Ícone de mosquito" />
+        </div>
+        <div id="game-container">
+            <div id="game-instructions">
+                <p>Identifique e clique nos focos de água parada para eliminá-los. Você tem 20 segundos!</p>
+                <br>
+                <button id="start-game">Iniciar Jogo</button>
+            </div>
+            <div id="game-area" class="hidden">
+                <p>Focos eliminados: <span id="score">0</span></p>
+                <div id="game-background"></div>
             </div>
         </div>
     </section>
     
-
-    <section class="portfolio" id="port">
-        <h2>Portfólio</h2>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <a href="imagens/bioestudos.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/bioestudos.png" alt="Projeto 2"></a>
-                <h3>PLATAFORMA DE ESTUDO DE BIOLOGIA</h3>
-                <p>Plataforma destinada ao estudo de biologia contendo livros, apostilas, ferramentas de estudos entre outras coisas.</p>
-            </div>
-            <div class="portfolio-item">
-                <a href="imagens/livrosam.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/livrosam.png" alt="Projeto 5"></a>
-                <h3>PLATAFORMA DE LIVROS EM PDF</h3>
-                <p>Plataforma com variados tipos de livros em formato pdf.</p>
-            </div>
-             <div class="portfolio-item">
-                <a href="imagens/loja-virtual.gif" title="Clique na imagem para ampliar" class="image featured"><img src="imagens/loja virtual.jpg" alt="projeto1" /></a>
-                <h3>LOJA VIRTUAL</h3>
-                <p>Loja virtual completa para vendas de produtos.</p>
-            </div>
-            <div class="portfolio-item">
-                <a href="imagens/concurso.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/concurso.png" alt="Projeto 3"></a>
-                <h3>CONCURSOS</h3>
-                <p>Plataforma destinada ao acesso a diversos materiais de concursos, cronogramas, planos de estudos e muito mais.</p>
-            </div>
-             <div class="portfolio-item">
-                <a href="imagens/anotacoes.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/anotacoes.png" alt="Projeto 4"></a>
-                <h3>APLICATIVO DE ANOTAÇÕES</h3>
-                <p>Aplicativo para fazer anotações pessoais com botões salvar, editar e deletar anotações.</p>
-            </div>
-            <div class="portfolio-item">
-                <a href="imagens/qrcode2.gif" title="Clique na imagem para visualizar" class="image featured"><img src="imagens/qrcode.png" alt="Projeto 6"></a>
-                <h3>APLICATIVO QR CODE</h3>
-                <p>Aplicativo gerador de QR Code.</p>
-            </div>
-        </div>
-        <button id="bot_port" onclick="window.location.href='portfolio.html'">Veja mais projetos</button>
+    <!-- Formulário de Contato -->
+    <section id="contato" class="reveal">
+        <h2>Contato</h2>
+        <p>Interessado em apoiar o projeto ou saber mais? Entre em contato conosco:</p>
+        <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+            <input type="hidden" name="Site" value="Projeto Aedes Aegypti">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
+            <label for="email">Email:</label>
+            <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
+            <label for="mensagem">Mensagem:</label>
+            <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+            <button type="submit" class="btn" id="enviar">Enviar</button>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+            <input type="hidden" name="_template" value="table">
+        </form>
+        <div id="mensagem-status"></div>
     </section>
 
-    <section class="about">
-        <h2>Sobre</h2>
-        <p>Olá! Eu sou o Samuel, um desenvolvedor de sistemas apaixonado por criar soluções tecnológicas inovadoras. Com experiência em desenvolvimento de sites, sistemas web e hospedagem, estou aqui para transformar suas ideias em realidade digital. Meu compromisso é oferecer serviços de alta qualidade que atendam às suas necessidades e superem suas expectativas. Vamos juntos levar seu projeto ao próximo nível!</p>
-    </section>
-
-    <section class="testimonials">
-        <h2>Depoimentos</h2>
-        <div class="testimonial-item">
-            <p>"Excelente serviço! Fiquei bastante orgulhoso ao ver como meu site ficou incrível." - Felipe Costa</p>
-        </div>
-        <div class="testimonial-item">
-            <p>"Altamente recomendado. O suporte e a atenção aos detalhes são excepcionais." - Amanda Silva</p>
-        </div>
-        <div class="testimonial-item">
-            <p>"Profissional competente e serviços de alta qualidade. Estou muito satisfeito." - João Lucas</p>
-        </div>
-        <div class="testimonial-item">
-            <p>"Samuka superou todas as minhas expectativas. Ótimo trabalho!" - Leticia Sousa</p>
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="container">
-            <h2 id="cont">Entre em Contato</h2>
-            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                <input type="hidden" name="Site" value="Samukatech">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-                <label for="email">Email:</label>
-                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
-                <label for="mensagem">Mensagem:</label>
-                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
-                <button type="submit" class="btn" id="enviar">Enviar</button>
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samukatech.netlify.app/">
-                <input type="hidden" name="_template" value="table">
-            </form>
-            <br>
-            <div id="mensagem-status"></div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="icons">
-            <a href="https://samukatech.netlify.app/"><img src="imagens/icon-samukatech9.2.png" alt="Ícone 1"></a>
-            
-        </div>
-        <div class="text">
-             <p>Desenvolvido por: Samuel Araújo</p>
-            <p>&copy 2024 Todos os direitos reservados.</p>
-        </div>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Projeto <i>Aedes aegypti</i>: Sensibilização e Atitude. Todos os direitos reservados.</p>
     </footer>
+
+
+<!-- Scripts -->
+<script>
+    const slides = document.querySelector('.slider-container');
+    let index = 0;
     
-        <script>
-           
-           let currentSlide = 0;
-const slides = document.querySelectorAll('.slider img');
-const totalSlides = slides.length; 
-
-function goToSlide(n) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (n + totalSlides) % totalSlides;
-    slides[currentSlide].classList.add('active');
-}
-
-setInterval(() => {
-    goToSlide(currentSlide + 1);
-}, 5000);
-
-// código referente ao formulário de contato
-document.getElementById("meu_form").addEventListener("submit", function(event) {
+    function showSlides() {
+        index = (index + 1) % slides.children.length;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+    
+    setInterval(showSlides, 5000);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal');
+    
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150; 
+    
+            reveals.forEach((reveal) => {
+                const revealTop = reveal.getBoundingClientRect().top;
+    
+                if (revealTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                } else {
+                    reveal.classList.remove('active');
+                }
+            });
+        }
+    
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger on page load
+    });
+    
+    //código referente ao menu 
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+    
+        menuToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+        });
+    });
+    
+    
+    //script referente ao formulário de contato
+    document.getElementById("meu_form").addEventListener("submit", function(event) {
             event.preventDefault();
     
             var nome = document.getElementById("nomeid").value;
@@ -204,16 +339,259 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
                 });
             }
         });
-
-        // código referente ao menu do cabeçalho
-        const mobileMenu = document.getElementById('mobile-menu');
-const navList = document.querySelector('.nav-list');
-
-mobileMenu.addEventListener('click', () => {
-    navList.classList.toggle('active');
-});
-
-        </script>
-    </body>
-    </html>
     
+        // Seleciona todas as perguntas do FAQ
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+// Adiciona evento de clique para cada pergunta
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        // Seleciona a próxima resposta associada à pergunta clicada
+        const answer = question.nextElementSibling;
+
+        // Alterna visibilidade da resposta
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+});
+    </script>
+    
+
+    <script>
+        //codigo referente ao quiz de pergunatas
+        const questions = [
+        {
+            question: "Qual é o principal hábito do mosquito Aedes aegypti?",
+            options: [
+                { text: "Transmite doenças através do contato direto", correct: false },
+                { text: "Se reproduz em água parada", correct: true },
+                { text: "Vive apenas em áreas rurais", correct: false },
+                { text: "Se alimenta exclusivamente de plantas", correct: false }
+            ]
+        },
+        {
+            question: "Qual doença NÃO é transmitida pelo Aedes aegypti?",
+            options: [
+                { text: "Zika", correct: false },
+                { text: "Malária", correct: true },
+                { text: "Dengue", correct: false },
+                { text: "Chikungunya", correct: false }
+            ]
+        },
+        {
+            question: "Como prevenir a proliferação do Aedes aegypti?",
+            options: [
+                { text: "Deixar água parada em recipientes", correct: false },
+                { text: "Utilizar repelentes apenas à noite", correct: false },
+                { text: "Manter caixas d'água tampadas", correct: true },
+                { text: "Colocar vasos de plantas ao ar livre sem cuidado", correct: false }
+            ]
+        },
+        {
+            question: "Qual é o período de maior atividade do Aedes aegypti?",
+            options: [
+                { text: "Durante a noite", correct: false },
+                { text: "No início da manhã e fim da tarde", correct: true },
+                { text: "Em dias chuvosos", correct: false },
+                { text: "No inverno", correct: false }
+            ]
+        },
+        {
+            question: "Por que a conscientização é importante no combate ao Aedes aegypti?",
+            options: [
+                { text: "Porque apenas especialistas podem eliminá-lo", correct: false },
+                { text: "Para mobilizar a comunidade na prevenção de criadouros", correct: true },
+                { text: "Porque ele só transmite doenças graves ocasionalmente", correct: false },
+                { text: "Para aumentar o uso de repelentes", correct: false }
+            ]
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+
+    function loadQuestion() {
+        const questionElement = document.getElementById("quiz-question");
+        const optionsElement = document.getElementById("quiz-options");
+        const feedbackElement = document.getElementById("quiz-feedback");
+
+        feedbackElement.textContent = ""; // Limpar feedback
+        const currentQuestion = questions[currentQuestionIndex];
+        questionElement.textContent = currentQuestion.question;
+
+        optionsElement.innerHTML = ""; // Limpar opções anteriores
+        currentQuestion.options.forEach((option) => {
+            const button = document.createElement("button");
+            button.textContent = option.text;
+            button.onclick = () => checkAnswer(button, option.correct);
+            button.classList.add("quiz-button"); // Aplicar classe para design consistente
+            optionsElement.appendChild(button);
+        });
+    }
+
+    function checkAnswer(button, isCorrect) {
+        const feedback = document.getElementById("quiz-feedback");
+        const optionsButtons = document.querySelectorAll("#quiz-options button");
+        const currentQuestion = questions[currentQuestionIndex];
+
+        // Desabilitar todos os botões
+        optionsButtons.forEach((btn) => (btn.disabled = true));
+
+        if (isCorrect) {
+            feedback.textContent = "Correto!";
+            feedback.style.color = "green";
+            correctAnswers++;
+            button.style.backgroundColor = "green";
+        } else {
+            feedback.textContent = "Errado!";
+            feedback.style.color = "red";
+            button.style.backgroundColor = "red";
+            // Destacar a resposta correta
+            const correctButton = Array.from(optionsButtons).find(
+                (btn, index) => currentQuestion.options[index].correct
+            );
+            correctButton.style.backgroundColor = "#009c00";
+        }
+
+        // Carregar próxima pergunta após um atraso
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            setTimeout(loadQuestion, 3000);
+        } else {
+            setTimeout(showFinalScore, 3000);
+        }
+    }
+
+    function showFinalScore() {
+        const questionElement = document.getElementById("quiz-question");
+        const optionsElement = document.getElementById("quiz-options");
+        const feedbackElement = document.getElementById("quiz-feedback");
+
+        questionElement.textContent = "Quiz concluído!";
+        optionsElement.innerHTML = `
+            <p>Você acertou ${correctAnswers} de ${questions.length} perguntas.</p>
+            <button onclick="restartQuiz()" class="quiz-button">Tentar novamente</button>
+        `;
+        feedbackElement.textContent = "Obrigado por participar! 😊";
+    }
+
+    function restartQuiz() {
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+        loadQuestion();
+    }
+
+    document.addEventListener("DOMContentLoaded", loadQuestion);
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach((el) => {
+                const revealTop = el.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll(); // Ativar animação ao carregar
+    });
+</script>
+
+<script>
+    const gameArea = document.getElementById("game-area");
+    const gameBackground = document.getElementById("game-background");
+    const scoreDisplay = document.getElementById("score");
+    const startButton = document.getElementById("start-game");
+    let score = 0;
+    let totalFocos = 10; // Número total de focos no jogo
+    let gameTimer;
+
+    function startGame() {
+        // Reiniciar pontuação e interface
+        score = 0;
+        scoreDisplay.textContent = score;
+        gameArea.classList.remove("hidden");
+        startButton.parentElement.classList.add("hidden");
+
+        // Limpar focos restantes do jogo anterior
+        clearFocos();
+
+        // Adicionar novos focos
+        spawnFocos();
+
+        // Iniciar temporizador para encerrar o jogo após 20 segundos
+        gameTimer = setTimeout(() => {
+            if (totalFocos > 0) {
+                endGame(false); // False significa que o jogador perdeu
+            }
+        }, 20000);
+    }
+
+    function spawnFocos() {
+        const tipos = ["tipo1", "tipo2", "tipo3", "tipo4", "tipo5"]; // Diferentes tipos de focos
+        totalFocos = 10; // Reiniciar o número total de focos
+
+        for (let i = 0; i < totalFocos; i++) {
+            const foco = document.createElement("div");
+            const tipo = tipos[Math.floor(Math.random() * tipos.length)];
+            foco.classList.add("foco", tipo);
+            foco.style.top = `${Math.random() * 80}%`;
+            foco.style.left = `${Math.random() * 90}%`;
+
+            // Evento de clique para eliminar o foco
+            foco.onclick = () => {
+                score++;
+                scoreDisplay.textContent = score;
+                foco.remove();
+                totalFocos--;
+
+                // Encerrar o jogo se todos os focos forem eliminados
+                if (totalFocos === 0) {
+                    endGame(true); // True significa que o jogador ganhou
+                }
+            };
+
+            gameBackground.appendChild(foco);
+        }
+    }
+
+    function clearFocos() {
+        const focos = document.querySelectorAll(".foco");
+        focos.forEach(foco => foco.remove());
+    }
+
+    function endGame(allFocosCleared) {
+        clearTimeout(gameTimer); // Parar o temporizador
+        gameArea.classList.add("hidden");
+        startButton.parentElement.classList.remove("hidden");
+
+        // Mensagem personalizada dependendo do resultado
+        const message = allFocosCleared
+            ? `Parabéns! Você eliminou todos os focos e marcou ${score} pontos!`
+            : `O tempo acabou! Você eliminou ${score} de 10 focos.`;
+
+        // O botão sempre será exibido para recarregar a página
+        startButton.parentElement.innerHTML = `
+            <p>${message}</p>
+            <br>
+            <button id="start-game">Jogar novamente</button>
+        `;
+
+        const newStartButton = document.getElementById("start-game");
+        newStartButton.onclick = () => location.reload(); // Recarrega a página
+    }
+
+    startButton.onclick = startGame;
+</script>
+
+</body>
+</html>
