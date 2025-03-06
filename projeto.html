@@ -19,6 +19,21 @@
             height: 100vh;
             background-color: #f8f9fa;
             text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Imagem de fundo ajustada */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('C:/Users/samue/OneDrive/Documents/Imagens/idoso.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
         }
 
         .container {
@@ -27,6 +42,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 400px;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -42,33 +59,59 @@
         }
 
         .logo {
-            width: 100px;
+            width: 130px;
             margin-bottom: 15px;
         }
 
         .btn {
-            display: inline-block;
+            display: block;
             background-color: #007bff;
             color: white;
-            padding: 12px 20px;
+            padding: 12px;
             border-radius: 5px;
             text-decoration: none;
             font-size: 18px;
             transition: 0.3s;
+            margin: 5px 0;
         }
 
         .btn:hover {
             background-color: #0056b3;
         }
+
+        /* Ajuste para telas maiores */
+        @media screen and (min-width: 1024px) {
+            body {
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            .container {
+                max-width: 450px;
+            }
+
+            .background-image {
+                width: 37%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <div class="background-image"></div>
+
     <div class="container">
-        <img src="imagens/viva.png" alt="Logo do Projeto" class="logo">
+        <img src="C:\Users\samue\OneDrive\Documents\Imagens\viva.png" alt="Logo do Projeto" class="logo">
         <h1>Viva Mais Cidadania Digital</h1>
-        <p>Clique no botão abaixo para acessar os slides da apresentação.</p>
-        <a href="https://drive.google.com/file/d/1_0JYiu5r4uGPbEJKFdNa8wqAM_9fuDxQ/view?usp=sharing" target="_blank" class="btn">Acessar Slides</a>
+        <p>Clique nos botões abaixo para acessar os slides da apresentação.</p>
+        
+        <a href="https://drive.google.com/file/d/1L8BBVBnbPyLjRodCkDJI8sHPGp4j1HvW/view?usp=sharing" target="_blank" class="btn">WhatsApp</a>
+        <a href="https://drive.google.com/file/d/1E4XmT_SxEnpioM7unrMxnMPzk95VVJZt/view?usp=sharing" target="_blank" class="btn">Uber e YouTube</a>
+        <a href="https://drive.google.com/file/d/1_0JYiu5r4uGPbEJKFdNa8wqAM_9fuDxQ/view?usp=sharing" target="_blank" class="btn">Gov e Piauí Saúde Digital</a>
     </div>
 
 </body>
