@@ -1,0 +1,222 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eef0eb;
+  background-image: url(https://img.freepik.com/vetores-premium/fundo-monocromatico-branco-gradiente_23-2149026462.jpg);
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background-color: #333;
+  background-image: url(https://img.freepik.com/vetores-gratis/fundo-gradiente-preto-com-linhas-onduladas_23-2149146012.jpg);
+  background-size: cover;
+  color: #f0f2f5;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+h1 {
+  color: #444;
+  margin-top: 45px; /* Aumentar a distância do título do botão modo escuro */
+  transition: color 0.3s;
+}
+body.dark-mode h1 {
+  color: #f0f2f5;
+}
+input[type="text"], select, input[type="date"], input[type="time"], #searchInput {
+  width: calc(100% - 22px);
+  max-width: 500px;
+  padding: 10px;
+  background-color: #fbfefb;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+select, input[type="date"], input[type="time"]{
+  cursor: pointer;
+}
+body.dark-mode input[type="text"], body.dark-mode select, body.dark-mode input[type="date"], body.dark-mode input[type="time"], body.dark-mode #searchInput {
+  background-color: #444;
+  border-color: #555;
+  color: #f0f2f5;
+}
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#botadiciona {
+  background-color: #38b000;
+  color: white;
+}
+#botadiciona:hover {
+  background-color: #008000;
+}
+#botsalva {
+  background-color: #0466c8;
+  color: white;
+}
+#botsalva:hover {
+  background-color: #072ac8;
+}
+#botlimpa {
+  background-color: #e61616;
+  color: white;
+}
+#botlimpa:hover {
+  background-color: #d11306;
+}
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 500px;
+}
+.task-list li {
+  background: #f8f9fa;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+.task-list li.dark-mode {
+  background: #444;
+  color: #f0f2f5;
+}
+.task-list div {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.task-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.task-list button:hover {
+  transform: scale(1.1);
+}
+.task-list img {
+  width: 24px;
+  height: 24px;
+}
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+}
+.footer {
+  margin-top: 20px;
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+}
+.footer .icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.footer .icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.footer .icons a:hover {
+  transform: translateY(-10px);
+}
+.footer .icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dark-mode-toggle {
+  position: absolute;
+  top: 0px;
+  padding-right: 5px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  cursor: pointer;
+  height: 25px;
+  margin-left: 10px;
+}
+.toggle-switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #008CBA;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+@media (min-width: 768px) {
+  input[type="text"], select, input[type="date"], input[type="time"], .task-list {
+    width: 50%;
+  }
+}

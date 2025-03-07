@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anotações</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="anota.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="anota.js"></script>
+  <script src="sw.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1>📝 Anotações</h1>
+    <div class="dark-mode-toggle">
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/partly-cloudy-day--v1.png" alt="Modo Escuro" style="position: absolute; right: -40px; top: -3px;">
+      </label>
+    </div>
+  </header>
+
+  <div id="meuPopup" class="popup">
+    <p id="mensagem"></p>
+  </div>
+
+  <input type="text" id="taskInput" placeholder="Digite uma anotação">
+  <select id="categoryInput">
+    <option value="">Escolha uma categoria</option>
+    <option value="Pessoal">Pessoal</option>
+    <option value="Trabalho">Trabalho</option>
+    <option value="Concurso">Concurso</option>
+    <option value="Estudos">Estudos</option>
+    <option value="Avaliação de Aprendizagem">Avaliação de Aprendizagem</option>
+    <option value="Atividade Extensionista III">Atividade Extensionista III</option>
+    <option value="Estágio Supervisionado I">Estágio Supervisionado I</option>
+    <option value="Geologia e Paleontologia">Geologia e Paleontologia</option>
+    <option value="Diversidade Vegetal II">Diversidade Vegetal II</option>
+    <option value="Microbiologia">Microbiologia</option>
+    <option value="Genética">Genética</option>
+  </select>
+  <input type="date" id="dateInput">
+  <input type="time" id="timeInput">
+  <button onclick="addTask()" id="botadiciona">Adicionar</button>
+
+  <input type="text" id="searchInput" placeholder="Pesquisar anotações" onkeyup="searchTasks()">
+
+  <ul id="taskList" class="task-list">
+    <!-- As tarefas serão adicionadas aqui -->
+  </ul>
+
+  <div class="button-container">
+    <button onclick="saveTasks()" id="botsalva">Salvar Anotações</button>
+    <button onclick="clearTasks()" id="botlimpa">Limpar Anotações</button>
+  </div>
+<br><br>
+  <footer class="footer">
+    <div class="icons">
+      <a href="https://samuelaraujo.netlify.app/" target="_blank">
+        <img src="icon-samukatech9.2.png" alt="Ícone 1">
+      </a>
+    </div>
+    <div class="text">
+      <p>&copy; Anotações - 2025</p>
+      <p>Desenvolvido por: Samuel Araújo.</p>
+    </div>
+  </footer>
