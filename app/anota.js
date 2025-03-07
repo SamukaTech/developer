@@ -140,27 +140,16 @@ function toggleDarkMode() {
   taskListItems.forEach(item => item.classList.toggle('dark-mode'));
 }
 
+// Verifica lembretes a cada 1 minuto
+setInterval(checkReminders, 60000);
+console.log("✅ Agendamento de lembretes ativado!");
+
 window.onload = function() {
   const savedTasks = localStorage.getItem('tasks');
   if (savedTasks) {
     tasks = JSON.parse(savedTasks);
     displayTasks();
   }
-}
-
-// Função para verificar lembretes
-function checkReminders() {
-  const now = new Date();
-  tasks.forEach((task, index) => {
-    if (task.date && task.time && !task.notified) {
-      const taskDateTime = new Date(`${task.date.split('/').reverse().join('-')}T${task.time}`);
-      if (taskDateTime <= now) {
-        showNotification(task.text);
-        tasks[index].notified = true; // Marca como notificado
-        saveTasks(); // Atualiza no armazenamento local
-      }
-    }
-  });
 }
 
 function showNotification(text) {
@@ -174,3 +163,31 @@ function showNotification(text) {
     });
   }
 }
+
+// Função para verificar lembretes
+function checkReminders() {
+  const now = new Date(); // Pega a data e hora atuais
+  console.log("Verificando lembretes..."); // Debug
+
+  tasks.forEach((task, index) => {
+    if (task.date && task.time && !task.notified) {
+      // Converte a data do formato dd/mm/yyyy para yyyy-mm-dd
+      const [day, month, year] = task.date.split('/');
+      const formattedDate = `${year}-${month}-${day}`;
+
+      // Cria o objeto de data e hora do lembrete
+      const taskDateTime = new Date(`${formattedDate}T${task.time}`);
+
+      console.log(`⏰ Checando: ${task.text} - ${taskDateTime}`);
+
+      // Se a data e hora já passaram, exibe a notificação
+      if (taskDateTime <= now) {
+        console.log("🔔 Lembrete ativado para:", task.text); // Debug
+        showNotification(task.text);
+        tasks[index].notified = true; // Marca como notificado
+        saveTasks(); // Salva o estado
+      }
+    }
+  });
+}
+
