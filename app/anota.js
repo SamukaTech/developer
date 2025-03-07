@@ -4,14 +4,32 @@ let filteredTasks = [];
 // Registra o Service Worker
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js")
-    .then(() => console.log("Service Worker registrado com sucesso!"))
+    .then((registration) => {
+      console.log("Service Worker registrado com sucesso!");
+
+      // Ativa a verificação periódica de lembretes
+      if ("periodicSync" in registration) {
+        registration.periodicSync.register("check-reminders", {
+          minInterval: 15 * 60 * 1000 // Verifica a cada 15 minutos
+        });
+      }
+    })
     .catch((error) => console.log("Erro ao registrar Service Worker:", error));
 }
 
-// Solicita permissão de notificação
+// Solicita permissão de notificação ao carregar a página
 if (Notification.permission !== "granted") {
   Notification.requestPermission();
 }
+
+// Salva as tarefas para que o Service Worker possa acessá-las
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  if (navigator.serviceWorker.controller) {
+    navigator.serviceWorker.controller.postMessage({ tasks });
+  }
+}
+
 
 function addTask() {
   const taskInput = document.getElementById('taskInput');
