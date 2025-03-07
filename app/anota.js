@@ -140,8 +140,8 @@ function toggleDarkMode() {
   taskListItems.forEach(item => item.classList.toggle('dark-mode'));
 }
 
-// Verifica lembretes a cada 1 minuto
-setInterval(checkReminders, 60000);
+// Verifica lembretes a cada 10 segundos
+setInterval(checkReminders, 10000); // Verifica a cada 10 segundos
 console.log("✅ Agendamento de lembretes ativado!");
 
 window.onload = function() {
