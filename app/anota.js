@@ -3,12 +3,18 @@ let tasks = [];
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js")
     .then((registration) => {
-      console.log("Service Worker registrado com sucesso!", registration);
+      console.log("✅ Service Worker registrado com sucesso!");
+
+      // Ativar verificação periódica de lembretes
+      if ("periodicSync" in registration) {
+        registration.periodicSync.register("check-reminders", {
+          minInterval: 15 * 60 * 1000, // Verifica a cada 15 minutos
+        });
+      }
     })
-    .catch((error) => {
-      console.log("Erro ao registrar Service Worker:", error);
-    });
+    .catch((error) => console.log("Erro ao registrar Service Worker:", error));
 }
+
 
 // -------------------- ADICIONAR ANOTAÇÃO --------------------
 
