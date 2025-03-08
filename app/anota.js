@@ -37,11 +37,13 @@ function addTask() {
     timeInput.value = "";
     displayTasks();
 
-    // Enviar lembrete para o Service Worker
+    // Verifica se o navegador suporta Service Worker
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.controller.postMessage({
-        type: "scheduleReminder",
-        task: newTask,
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.active.postMessage({
+          type: "scheduleReminder",
+          task: newTask,
+        });
       });
     }
   }
