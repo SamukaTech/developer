@@ -36,9 +36,17 @@ function addTask() {
     dateInput.value = "";
     timeInput.value = "";
     displayTasks();
-    scheduleNotification(newTask);
+
+    // Enviar lembrete para o Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.controller.postMessage({
+        type: "scheduleReminder",
+        task: newTask,
+      });
+    }
   }
 }
+
 
 
 // -------------------- FORMATAR DATA --------------------
