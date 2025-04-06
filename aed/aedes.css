@@ -771,7 +771,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 80px; /* ADICIONADO: espaço extra abaixo da galeria */
+    margin-bottom: 70px; /* ADICIONADO: espaço extra abaixo da galeria */
 }
 
 .oficina-titulo {
