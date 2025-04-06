@@ -768,13 +768,14 @@ footer {
     margin: 0 auto 40px;
     line-height: 1.6;
 }
-
 .oficina-galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-}
+    gap: 10px;
+    margin-bottom: 80px; /* ADICIONADO: espaço extra abaixo da galeria */
+        }
+
 .oficina-titulo {
     text-align: center;
   }
