@@ -957,4 +957,33 @@ footer {
       transform: translateY(0);
     }
   }
-  
+  .noticias {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.noticia-item {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.noticia-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.noticia-item p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.noticia-item a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.noticia-item a:hover {
+  text-decoration: underline;
+}
+
