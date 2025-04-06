@@ -7,9 +7,14 @@
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #e3f2fd;
+    background-color: #e8f3f1;
     color: #333;
     line-height: 1.6;
+    background-image: url('bg-mosquito.png');
+ 
+  background-position: center;
+
+  background-size: 170px;
 }
 
 /* Cabeçalho - Fixação condicional */
@@ -196,7 +201,7 @@ section {
     padding: 3rem 2rem;
     margin: 1.5rem auto;
     max-width: 920px;
-    border-top: 6px solid #006609;
+    border-top: 6px solid #008000;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -653,7 +658,7 @@ footer {
 }
 
 .vacina-texto p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: #333;
     margin-bottom: 1rem;
@@ -744,7 +749,7 @@ footer {
 .oficina-section {
     background-color: #fff;
     padding: 50px 20px;
-    border-top: 6px solid #006609;
+    border-top: 6px solid #008000;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     text-align: center;
@@ -753,28 +758,21 @@ footer {
     overflow: hidden;
 }
 
-.oficina-title {
-    font-size: 2rem;
-    color: #d32f2f;
-    margin-bottom: 16px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
 .oficina-desc {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
     max-width: 800px;
     margin: 0 auto 40px;
     line-height: 1.6;
 }
+
 .oficina-galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin-bottom: 80px; /* ADICIONADO: espaço extra abaixo da galeria */
-        }
+}
 
 .oficina-titulo {
     text-align: center;
@@ -813,8 +811,8 @@ footer {
     content: "";
     position: absolute;
     bottom: 0;
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
@@ -822,12 +820,12 @@ footer {
 
 .oficina-section::before {
     left: 0;
-    background-image: url('den.webp'); /* Exemplo: mosquito vetor ou bolhas */
+    background-image: url('deng.webp'); /* Exemplo: mosquito vetor ou bolhas */
 }
 
 .oficina-section::after {
     right: 0;
-    background-image: url('deng.webp'); /* Exemplo: planta, gota d'água, etc. */
+    background-image: url('dengu.png'); /* Exemplo: planta, gota d'água, etc. */
 }
 /* Estilo para o modal de imagem */
 .modal-img {
@@ -893,7 +891,7 @@ footer {
   
   .descricao-oficina {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 25px;
     max-width: 700px;
     margin-inline: auto;
@@ -946,9 +944,6 @@ footer {
       flex-direction: column;
     }
   
-    .titulo-com-imagem h2 {
-      font-size: 1.5rem;
-    }
   }
   
   /* Animação */
