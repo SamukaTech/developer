@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #fefefe; /* ou a cor clara padrão do seu site */
+    color: #111; /* cor padrão do texto */
+  }
+  
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e8f3f1;
@@ -465,7 +474,7 @@ footer {
     max-width: 200px;
 }
 
-.icone {
+.icones {
     width: 100px;
     height: 100px;
     background-color: #e3f2fd;
@@ -477,14 +486,14 @@ footer {
     animation: fadeIn 1s ease-in-out;
 }
 
-.icone img {
+.icones img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta a imagem para ocupar todo o círculo */
     display: block;
 }
 
-.icone::before {
+.icones::before {
     content: '';
     width: 100px;
     height: 100px;
@@ -771,7 +780,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 70px; /* ADICIONADO: espaço extra abaixo da galeria */
+    margin-bottom: 80px; /* ADICIONADO: espaço extra abaixo da galeria */
 }
 
 .oficina-titulo {
@@ -958,32 +967,166 @@ footer {
     }
   }
   .noticias {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-.noticia-item {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.noticia-item h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.noticia-item p {
-  margin: 5px 0;
-  color: #666;
-}
-
-.noticia-item a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-.noticia-item a:hover {
-  text-decoration: underline;
-}
-
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .noticias-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .noticias-header img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .noticias-header h2 {
+    color: #006400;
+    margin: 0;
+  }
+  
+  .container-noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  .container-noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .container-noticias {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container-noticias {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card-noticia {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 340px;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-noticia:hover {
+    transform: scale(1.03);
+  }
+  
+  .card-noticia img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .card-noticia h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0e6f5d;
+  }
+  
+  .card-noticia p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .card-noticia .data-noticia {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .botao-leia-mais {
+    display: inline-block;
+    background-color: #007f5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .botao-leia-mais:hover {
+    background-color: #006400;
+    transform: scale(1.05);
+  }
+  .rodape {
+    background-color: #006400;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .rodape-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .item-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    line-height: 2px;
+  }
+  
+  .icone {
+    width: 24px;
+    height: 24px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
+    overflow: hidden; /* Garantir que a imagem não saia do círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .link-contato {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .link-contato:hover {
+    color: #facc15;
+  }
+  
+  .direitos {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
