@@ -280,6 +280,13 @@
         <h2>Resultados Esperados</h2>
         <p>Com este projeto, espera-se que os frequentadores da Praça Rio Branco, no centro de Teresina, reflitam sobre as consequências do descarte inadequado de resíduos, uma prática que pode gerar criadouros do mosquito <i>Aedes aegypti</i>. Além disso, ao disponibilizar panfletos informativos com orientações para identificar o mosquito, entender os sintomas, o período de incubação e a transmissibilidade das doenças, o projeto visa fornecer informações claras sobre essas enfermidades e como preveni-las. O objetivo final é contribuir para a redução do número de casos dessas arboviroses na área.</p>
     </section>
+    <section id="noticias" class="noticias">
+  <h2 class="titulo-section">Notícias Recentes sobre o Aedes aegypti</h2>
+  <div id="feed-noticias">
+    <!-- As notícias serão inseridas aqui pelo JavaScript -->
+  </div>
+    </section>
+    
 
     <!-- Formulário de Contato -->
     <section id="contato" class="reveal">
@@ -659,12 +666,55 @@ faqQuestions.forEach(question => {
       }
     }
   </script>
-  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const feedUrls = [
+      'https://g1.globo.com/rss/g1/saude/',
+      'https://bvsms.saude.gov.br/category/noticias/feed/'
+    ];
+
+    const parser = new RSSParser();
+    const feedContainer = document.getElementById('feed-noticias');
+
+    feedUrls.forEach(url => {
+      parser.parseURL(url, function(err, feed) {
+        if (err) {
+          console.error('Erro ao carregar o feed:', err);
+          return;
+        }
+        feed.items.forEach(item => {
+          if (item.title.toLowerCase().includes('aedes') || item.contentSnippet.toLowerCase().includes('aedes')) {
+            const noticiaItem = document.createElement('div');
+            noticiaItem.classList.add('noticia-item');
+
+            const titulo = document.createElement('h3');
+            titulo.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+
+            const descricao = document.createElement('p');
+            descricao.textContent = item.contentSnippet || 'Descrição não disponível.';
+
+            const dataPublicacao = document.createElement('p');
+            const data = new Date(item.pubDate);
+            dataPublicacao.textContent = `Publicado em: ${data.toLocaleDateString('pt-BR')}`;
+
+            noticiaItem.appendChild(titulo);
+            noticiaItem.appendChild(descricao);
+            noticiaItem.appendChild(dataPublicacao);
+
+            feedContainer.appendChild(noticiaItem);
+          }
+        });
+      });
+    });
+  });
+  </script>
+    
 <!-- Modal para ampliar imagem -->
 <div id="imgModal" class="modal-img">
     <span class="close-img" onclick="closeModal()">&times;</span>
     <img class="modal-img-content" id="imgModalSrc">
   </div>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rss-parser/3.12.0/rss-parser.min.js"></script>
+    
 </body>
 </html>
