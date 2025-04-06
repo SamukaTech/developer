@@ -666,49 +666,52 @@ faqQuestions.forEach(question => {
       }
     }
   </script>
-  <script>
+  
+    <script>
   document.addEventListener('DOMContentLoaded', function() {
     const feedUrls = [
       'https://g1.globo.com/rss/g1/saude/',
       'https://bvsms.saude.gov.br/category/noticias/feed/'
     ];
 
-    const parser = new RSSParser();
     const feedContainer = document.getElementById('feed-noticias');
 
-    feedUrls.forEach(url => {
-      parser.parseURL(url, function(err, feed) {
-        if (err) {
-          console.error('Erro ao carregar o feed:', err);
-          return;
-        }
-        feed.items.forEach(item => {
-          if (item.title.toLowerCase().includes('aedes') || item.contentSnippet.toLowerCase().includes('aedes')) {
-            const noticiaItem = document.createElement('div');
-            noticiaItem.classList.add('noticia-item');
+    feedUrls.forEach(feedUrl => {
+      const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
 
-            const titulo = document.createElement('h3');
-            titulo.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          data.items.forEach(item => {
+            if (item.title.toLowerCase().includes('aedes') || item.description.toLowerCase().includes('aedes')) {
+              const noticiaItem = document.createElement('div');
+              noticiaItem.classList.add('noticia-item');
 
-            const descricao = document.createElement('p');
-            descricao.textContent = item.contentSnippet || 'Descrição não disponível.';
+              const titulo = document.createElement('h3');
+              titulo.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
 
-            const dataPublicacao = document.createElement('p');
-            const data = new Date(item.pubDate);
-            dataPublicacao.textContent = `Publicado em: ${data.toLocaleDateString('pt-BR')}`;
+              const descricao = document.createElement('p');
+              descricao.textContent = item.description;
 
-            noticiaItem.appendChild(titulo);
-            noticiaItem.appendChild(descricao);
-            noticiaItem.appendChild(dataPublicacao);
+              const dataPublicacao = document.createElement('p');
+              const data = new Date(item.pubDate);
+              dataPublicacao.textContent = `Publicado em: ${data.toLocaleDateString('pt-BR')}`;
 
-            feedContainer.appendChild(noticiaItem);
-          }
+              noticiaItem.appendChild(titulo);
+              noticiaItem.appendChild(descricao);
+              noticiaItem.appendChild(dataPublicacao);
+
+              feedContainer.appendChild(noticiaItem);
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Erro ao buscar feed RSS:', error);
         });
-      });
     });
   });
-  </script>
-    
+</script>
+
 <!-- Modal para ampliar imagem -->
 <div id="imgModal" class="modal-img">
     <span class="close-img" onclick="closeModal()">&times;</span>
