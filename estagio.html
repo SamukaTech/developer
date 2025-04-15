@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cronograma de Estágio</title>
+  <title>Estágio Supervisionado</title>
   <link rel="icon" href="https://uniformg.edu.br/wp-content/uploads/2016/02/icone_estagio.jpg">
   <style>
+    :root {
+      --azul: #2c3e50;
+      --verde: #27ae60;
+      --vermelho: #dd1c1a;
+      --cinza-claro: #f2f2f2;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
@@ -18,7 +25,14 @@
     header {
       background-color: #072ac8;
       color: white;
-      padding: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .info {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #333;
       text-align: center;
     }
 
@@ -31,13 +45,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .info {
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #333;
-      text-align: center;
-    }
-
     input, textarea, button, #pesquisa {
       width: 100%;
       padding: 10px;
@@ -46,14 +53,15 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
+
     #btnAdicionar {
-      background-color: #008000;
+      background-color: #008500;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     #btnAdicionar:hover {
-      background-color: #007f5f;
+      background-color: #006d00;
     }
     button {
       background-color: #004e89;
@@ -76,14 +84,14 @@
     }
 
     .atividade strong {
-      color: #003366;
+      color: var(--azul);
     }
 
     .atividade button {
       margin-top: 10px;
-      width: fit-content;
       padding: 4px 8px;
       font-size: 14px;
+      width: fit-content;
       align-self: flex-end;
       transition: transform 0.2s, background-color 0.3s;
       margin-right: 10px;
@@ -117,7 +125,7 @@
     }
 
     @media print {
-      input, textarea, button, #pesquisa, .print-button {
+      input, textarea, button, #pesquisa, .print-button, .info {
         display: none !important;
       }
 
@@ -135,12 +143,12 @@
 
       header {
         page-break-before: avoid;
-        background-color: #072ac8 !important;
+        background-color: var(--azul) !important;
         -webkit-print-color-adjust: exact;
       }
 
       .barra {
-        background-color: #29bf12 !important;
+        background-color: var(--verde) !important;
       }
     }
 
@@ -153,23 +161,16 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Estágio Supervisionado I</h1>
-    <div style="font-size: 16px; font-weight: 500;">
-    <p>Escola Municipal Professor Ubiraci Carvalho</p>
-    </div>
-    <div style="font-size: 14px;">
-    <p><b>Horários:</b> Segunda - 14h às 16h | Terça - 13h às 14h e 15h às 16h</p>
-    </div>
-  </header>
-
   <div class="container">
+    <header>
+      <h1 style="margin-bottom: 5px;">Estágio Supervisionado I</h1>
+    </header>
     <div class="info">
       <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
     </div>
     <input type="date" id="data">
     <textarea id="atividade" placeholder="Descreva a atividade..."></textarea>
-    <input type="number" id="horas" placeholder="Horas dedicadas" min="1" max="60">
+    <input type="number" id="horas" placeholder="Horas dedicadas" min="1" max="6">
     <button id="btnAdicionar" onclick="adicionarAtividade()">Adicionar Atividade</button>
 
     <input type="text" id="pesquisa" placeholder="Pesquisar atividade..." onkeyup="filtrarAtividades()">
@@ -217,7 +218,7 @@
           <div><strong>Atividade:</strong> ${item.atividade}</div>
           <div><strong>Horas:</strong> ${item.horas}</div>
           <button onclick="editarAtividade(${index})">Editar</button>
-          <button onclick="deletarAtividade(${index})" style="background-color:#dd1c1a;">Excluir</button>
+          <button onclick="deletarAtividade(${index})" style="background-color: var(--vermelho);">Excluir</button>
         `;
         container.appendChild(div);
       });
