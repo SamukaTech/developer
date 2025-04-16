@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronograma de Estágio</title>
+  <link rel="icon" href="https://uniformg.edu.br/wp-content/uploads/2016/02/icone_estagio.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    header {
+      background-color: #072ac8;
+      color: white;
+      font-size: 15px;
+      padding: 7px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .acesso {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .acesso input {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .acesso button {
+      margin-top: 10px;
+      background-color: #072ac8;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .acesso button:hover {
+      background-color: #0055a5;
+    }
+
+    .info {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+    }
+
+    input, textarea, button, #pesquisa {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    #btnAdicionar {
+      background-color: #008000;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #btnAdicionar:hover {
+      background-color: #007f5f;
+    }
+    button {
+      background-color: #004e89;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0055a5;
+    }
+
+    .atividade {
+      background-color: #f9f9f9;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .atividade strong {
+      color: #003366;
+    }
+
+    .atividade button {
+      margin-top: 10px;
+      width: fit-content;
+      padding: 4px 8px;
+      font-size: 14px;
+      align-self: flex-end;
+      transition: transform 0.2s, background-color 0.3s;
+      margin-right: 10px;
+    }
+
+    .atividade button:hover {
+      transform: scale(1.05);
+    }
+
+    .barra-container {
+      background-color: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+      margin-top: 10px;
+    }
+
+    .barra {
+      background-color: #29bf12;
+      height: 100%;
+      width: 0%;
+      text-align: center;
+      color: white;
+      line-height: 25px;
+      transition: width 0.4s ease;
+    }
+
+    .print-button {
+      margin-top: 15px;
+      background-color: #192bc2;
+    }
+
+    @media print {
+      input, textarea, button, #pesquisa, .print-button, .info, .acesso {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .container {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        max-width: 100%;
+        padding: 0 20px;
+      }
+
+      header {
+        page-break-before: avoid;
+        background-color: #072ac8 !important;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .barra {
+        background-color: #29bf12 !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="acesso" id="acesso">
+    <h2>🧾 Confirmação de acesso</h2>
+    <p>Informe seu e-mail para continuar:</p>
+    <input type="email" id="emailInput" placeholder="Seu e-mail">
+    <button onclick="verificarEmail()">Entrar</button>
+    <p id="erroEmail" style="color: #dd1c1a; display: none;">E-mail não autorizado!</p>
+  </div>
+
+  <div class="container" id="conteudo">
+    <header>
+      <h1>Estágio Supervisionado I</h1>
+    </header>
+
+    <div class="info">
+      <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
+    </div>
+    <input type="date" id="data">
+    <textarea id="atividade" placeholder="Descreva a atividade..."></textarea>
+    <input type="number" id="horas" placeholder="Horas dedicadas" min="1" max="60">
+    <button id="btnAdicionar" onclick="adicionarAtividade()">Adicionar Atividade</button>
+
+    <input type="text" id="pesquisa" placeholder="Pesquisar atividade..." onkeyup="filtrarAtividades()">
+
+    <div id="atividades"></div>
+
+    <p><strong>Total de horas cumpridas:</strong> <span id="totalHoras">0</span>h</p>
+    <div class="barra-container">
+      <div class="barra" id="barraProgresso">0%</div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Imprimir / Exportar PDF</button>
+  </div>
+
+  <script>
+    const emailsAutorizados = ["exemplo@email.com", "teste@dominio.com", "1"];
+
+    function verificarEmail() {
+      const email = document.getElementById("emailInput").value.trim().toLowerCase();
+      if (emailsAutorizados.includes(email)) {
+        document.getElementById("acesso").style.display = "none";
+        document.getElementById("conteudo").style.display = "block";
+      } else {
+        document.getElementById("erroEmail").style.display = "block";
+      }
+    }
+
+    let atividades = JSON.parse(localStorage.getItem('atividades')) || [];
+    let editandoIndex = -1;
+
+    function salvarAtividades() {
+      localStorage.setItem('atividades', JSON.stringify(atividades));
+    }
+
+    function formatarDataISO(iso) {
+      const [ano, mes, dia] = iso.split("-");
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function atualizarTotalHoras() {
+      const total = atividades.reduce((soma, item) => soma + Number(item.horas), 0);
+      document.getElementById('totalHoras').textContent = total;
+      const porcentagem = Math.min((total / 60) * 100, 100);
+      document.getElementById('barraProgresso').style.width = porcentagem + '%';
+      document.getElementById('barraProgresso').textContent = `${porcentagem.toFixed(0)}%`;
+    }
+
+    function renderizarAtividades(filtro = '') {
+      const container = document.getElementById('atividades');
+      container.innerHTML = '';
+      atividades.forEach((item, index) => {
+        if (filtro && !item.atividade.toLowerCase().includes(filtro.toLowerCase())) return;
+        const div = document.createElement('div');
+        div.className = 'atividade';
+        div.innerHTML = `
+          <div><strong>Data:</strong> ${formatarDataISO(item.data)}</div>
+          <div><strong>Atividade:</strong> ${item.atividade}</div>
+          <div><strong>Horas:</strong> ${item.horas}</div>
+          <button onclick="editarAtividade(${index})">Editar</button>
+          <button onclick="deletarAtividade(${index})" style="background-color:#dd1c1a;">Excluir</button>
+        `;
+        container.appendChild(div);
+      });
+      atualizarTotalHoras();
+    }
+
+    function adicionarAtividade() {
+      const data = document.getElementById('data').value;
+      const atividade = document.getElementById('atividade').value;
+      const horas = document.getElementById('horas').value;
+      const botao = document.getElementById('btnAdicionar');
+
+      if (!data || !atividade || !horas) return alert('Preencha todos os campos!');
+
+      if (editandoIndex === -1) {
+        atividades.unshift({ data, atividade, horas });
+      } else {
+        atividades[editandoIndex] = { data, atividade, horas };
+        editandoIndex = -1;
+        botao.textContent = "Adicionar Atividade";
+      }
+
+      salvarAtividades();
+      renderizarAtividades();
+
+      document.getElementById('data').value = '';
+      document.getElementById('atividade').value = '';
+      document.getElementById('horas').value = '';
+    }
+
+    function editarAtividade(index) {
+      const atv = atividades[index];
+      document.getElementById('data').value = atv.data;
+      document.getElementById('atividade').value = atv.atividade;
+      document.getElementById('horas').value = atv.horas;
+      editandoIndex = index;
+      document.getElementById('btnAdicionar').textContent = "Salvar edição";
+    }
+
+    function deletarAtividade(index) {
+      atividades.splice(index, 1);
+      salvarAtividades();
+      renderizarAtividades();
+    }
+
+    function filtrarAtividades() {
+      const filtro = document.getElementById('pesquisa').value;
+      renderizarAtividades(filtro);
+    }
+
+    renderizarAtividades();
+  </script>
+</body>
+</html>
