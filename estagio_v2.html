@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cronograma de Estágio</title>
   <link rel="icon" href="https://uniformg.edu.br/wp-content/uploads/2016/02/icone_estagio.jpg">
   <style>
@@ -13,13 +13,13 @@
       padding: 0;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
+      overflow-x: hidden;
     }
 
     header {
       background-color: #072ac8;
       color: white;
-      font-size: 15px;
-      padding: 7px;
+      padding: 10px;
       text-align: center;
     }
 
@@ -30,40 +30,6 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: none;
-    }
-
-    .acesso {
-      max-width: 400px;
-      margin: 100px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .acesso input {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .acesso button {
-      margin-top: 10px;
-      background-color: #072ac8;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .acesso button:hover {
-      background-color: #0055a5;
     }
 
     .info {
@@ -81,15 +47,18 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
+
     #btnAdicionar {
       background-color: #008000;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     #btnAdicionar:hover {
       background-color: #007f5f;
     }
+
     button {
       background-color: #004e89;
       color: white;
@@ -151,8 +120,47 @@
       background-color: #192bc2;
     }
 
+    .tela-login {
+      position: fixed;
+      inset: 0;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .tela-login .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .tela-login input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .tela-login button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background: #072ac8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tela-login button:hover {
+      background: #061fa1;
+    }
+
     @media print {
-      input, textarea, button, #pesquisa, .print-button, .info, .acesso {
+      input, textarea, button, #pesquisa, .print-button, .info, .tela-login {
         display: none !important;
       }
 
@@ -185,52 +193,130 @@
         padding: 15px;
       }
     }
+    /* TELA DE LOGIN ESTILIZADA */
+    .tela-login {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #072ac8, #1e90ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .tela-login .box {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tela-login img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .tela-login h2 {
+      margin-bottom: 10px;
+      color: #072ac8;
+    }
+
+    .tela-login p {
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tela-login input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .tela-login button {
+      width: 100%;
+      padding: 12px;
+      background-color: #072ac8;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .tela-login button:hover {
+      background-color: #0055ff;
+      transform: scale(1.03);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
-  <div class="acesso" id="acesso">
-    <h2>🧾 Confirmação de acesso</h2>
-    <p>Informe seu e-mail para continuar:</p>
-    <input type="email" id="emailInput" placeholder="Seu e-mail">
-    <button onclick="verificarEmail()">Entrar</button>
-    <p id="erroEmail" style="color: #dd1c1a; display: none;">E-mail não autorizado!</p>
-  </div>
 
-  <div class="container" id="conteudo">
+    <!-- TELA DE LOGIN -->
+    <div class="tela-login" id="telaLogin">
+      <div class="box">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Estágio">
+        <h2>👋 Olá! Seja bem-vindo(a)</h2>
+        <p>Informe seu e-mail para acessar seu cronograma de estágio.</p>
+        <input type="email" id="emailInput" placeholder="Digite seu e-mail" />
+        <button onclick="verificarEmail()">Entrar</button>
+        <p id="mensagemErro" style="color: red; display: none; margin-top: 10px;">E-mail não autorizado!</p>
+      </div>
+    </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div id="conteudo" style="display: none;">
     <header>
       <h1>Estágio Supervisionado I</h1>
     </header>
 
-    <div class="info">
-      <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
+    <div class="container">
+      <div class="info">
+        <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
+      </div>
+      <input type="date" id="data">
+      <textarea id="atividade" placeholder="Descreva a atividade..."></textarea>
+      <input type="number" id="horas" placeholder="Horas dedicadas" min="1" max="60">
+      <button id="btnAdicionar" onclick="adicionarAtividade()">Adicionar Atividade</button>
+
+      <input type="text" id="pesquisa" placeholder="Pesquisar atividade..." onkeyup="filtrarAtividades()">
+
+      <div id="atividades"></div>
+
+      <p><strong>Total de horas cumpridas:</strong> <span id="totalHoras">0</span>h</p>
+      <div class="barra-container">
+        <div class="barra" id="barraProgresso">0%</div>
+      </div>
+
+      <button class="print-button" onclick="window.print()">Imprimir / Exportar PDF</button>
     </div>
-    <input type="date" id="data">
-    <textarea id="atividade" placeholder="Descreva a atividade..."></textarea>
-    <input type="number" id="horas" placeholder="Horas dedicadas" min="1" max="60">
-    <button id="btnAdicionar" onclick="adicionarAtividade()">Adicionar Atividade</button>
-
-    <input type="text" id="pesquisa" placeholder="Pesquisar atividade..." onkeyup="filtrarAtividades()">
-
-    <div id="atividades"></div>
-
-    <p><strong>Total de horas cumpridas:</strong> <span id="totalHoras">0</span>h</p>
-    <div class="barra-container">
-      <div class="barra" id="barraProgresso">0%</div>
-    </div>
-
-    <button class="print-button" onclick="window.print()">Imprimir / Exportar PDF</button>
   </div>
 
   <script>
-    const emailsAutorizados = ["exemplo@email.com", "teste@dominio.com", "1"];
+    const emailsPermitidos = ["exemplo@email.com", "teste@dominio.com"];
 
     function verificarEmail() {
       const email = document.getElementById("emailInput").value.trim().toLowerCase();
-      if (emailsAutorizados.includes(email)) {
-        document.getElementById("acesso").style.display = "none";
+      const erro = document.getElementById("mensagemErro");
+
+      if (emailsPermitidos.includes(email)) {
+        document.getElementById("telaLogin").style.display = "none";
         document.getElementById("conteudo").style.display = "block";
       } else {
-        document.getElementById("erroEmail").style.display = "block";
+        erro.style.display = "block";
       }
     }
 
@@ -321,3 +407,4 @@
   </script>
 </body>
 </html>
+
