@@ -19,7 +19,7 @@
     header {
       background-color: #072ac8;
       color: white;
-      padding: 10px;
+      padding: 13px;
       text-align: center;
     }
 
@@ -332,7 +332,18 @@
       <h1>Estágio Supervisionado I</h1>
      
     </header>
-
+    <div id="dadosParaImpressao" style="display:none; padding: 20px;">
+        <div class="info-adicional" style="display: none;">
+          <input type="text" id="nomeAluno" placeholder="Nome do aluno">
+          <input type="text" id="cursoAluno" placeholder="Curso">
+          <input type="text" id="instituicaoAluno" placeholder="Instituição de estágio">
+        </div>
+        <div id="dadosExibidos" style="margin-top: 25px; font-size: 16px; display: none; padding: 10px 15px; border: 1px solid #ccc; border-radius: 6px; background-color: #f9f9f9;">
+            <p style="margin: 8px 0;"><strong style="color:#072ac8;">Aluno:</strong> <span id="exibirNome"></span></p>
+            <p style="margin: 8px 0;"><strong style="color:#072ac8;">Curso:</strong> <span id="exibirCurso"></span></p>
+            <p style="margin: 8px 0;"><strong style="color:#072ac8;">Instituição de Estágio:</strong> <span id="exibirInstituicao"></span></p>
+          </div>          
+      </div>
     <div class="container">
       <div class="info">
         <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
@@ -356,10 +367,12 @@
       </div>
          
 
-      <button class="print-button" onclick="window.print()">Imprimir / Exportar PDF</button>
+      <button class="print-button" onclick="prepararImpressao()">Imprimir / Exportar PDF</button>
+
     </div>
   </div>
 
+  
   <script>
     const emailsPermitidos = ["exemplo@email.com", "teste@dominio.com", "1"];
 
@@ -465,6 +478,23 @@ div.innerHTML = `
   }
 }
 
+function prepararImpressao() {
+  const nome = prompt("Digite seu nome:");
+  const curso = prompt("Digite o nome do seu curso:");
+  const inst = prompt("Digite o nome da escola onde você faz o estágio:");
+
+  document.getElementById('exibirNome').textContent = nome;
+  document.getElementById('exibirCurso').textContent = curso;
+  document.getElementById('exibirInstituicao').textContent = inst;
+
+  document.getElementById('dadosParaImpressao').style.display = 'block';
+  document.getElementById('dadosExibidos').style.display = 'block';
+
+  window.print();
+
+  document.getElementById('dadosParaImpressao').style.display = 'none';
+  document.getElementById('dadosExibidos').style.display = 'none';
+}
 
     function filtrarAtividades() {
       const filtro = document.getElementById('pesquisa').value;
