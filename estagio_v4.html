@@ -107,6 +107,14 @@
   background-color: #fffde7;
 }
 
+.atividade.hoje {
+  border-left: 5px solid #007bff; /* Azul */
+  background-color: #e7f1ff;
+}
+.atividade.hoje .status {
+  color: #007bff;
+}
+
     .atividade {
     cursor: move;
     }
@@ -422,17 +430,25 @@
       document.getElementById('barraProgresso').textContent = `${porcentagem.toFixed(0)}%`;
     }
 
-    function isDataPassadaOuHoje(dataStr) {
+    function getDataSemHora(dataStr) {
   const [ano, mes, dia] = dataStr.split('-').map(Number);
+  return new Date(ano, mes - 1, dia);
+}
 
-  // Cria a data no fuso local (mês começa do zero)
-  const dataAtv = new Date(ano, mes - 1, dia);
-
+function isHoje(dataStr) {
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0);
-
-  return dataAtv.getTime() <= hoje.getTime();
+  const data = getDataSemHora(dataStr);
+  return data.getTime() === hoje.getTime();
 }
+
+function isPassada(dataStr) {
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+  const data = getDataSemHora(dataStr);
+  return data.getTime() < hoje.getTime();
+}
+
 
         
     function renderizarAtividades(filtro = '') {
@@ -441,9 +457,20 @@
       atividades.forEach((item, index) => {
         if (filtro && !item.atividade.toLowerCase().includes(filtro.toLowerCase())) return;
         const div = document.createElement('div');
-        const isPassada = isDataPassadaOuHoje(item.data);
-const classeTempo = isPassada ? 'passada' : 'futura';
-const statusIcone = isPassada ? '✅' : '🕒';
+        let classeTempo = '';
+let statusIcone = '';
+
+if (isHoje(item.data)) {
+  classeTempo = 'hoje';
+  statusIcone = '📅';
+} else if (isPassada(item.data)) {
+  classeTempo = 'passada';
+  statusIcone = '✅';
+} else {
+  classeTempo = 'futura';
+  statusIcone = '🕒';
+}
+
         
 
 div.className = `atividade ${classeTempo}`;
