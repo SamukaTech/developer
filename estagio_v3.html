@@ -426,12 +426,13 @@
   const hoje = new Date();
   const dataAtv = new Date(dataStr);
 
-  // Zera a hora de ambos para comparar só o dia
+  // Zera as horas para comparar apenas ano, mês e dia
   hoje.setHours(0, 0, 0, 0);
   dataAtv.setHours(0, 0, 0, 0);
 
-  return dataAtv <= hoje;
-                                      }
+  return dataAtv.getTime() <= hoje.getTime();
+}
+
         
     function renderizarAtividades(filtro = '') {
       const container = document.getElementById('atividades');
@@ -439,12 +440,10 @@
       atividades.forEach((item, index) => {
         if (filtro && !item.atividade.toLowerCase().includes(filtro.toLowerCase())) return;
         const div = document.createElement('div');
-        const hoje = new Date();
-const dataAtv = new Date(item.data);
-const isPassada = isDataPassadaOuHoje(item.data);
+        const isPassada = isDataPassadaOuHoje(item.data);
 const classeTempo = isPassada ? 'passada' : 'futura';
 const statusIcone = isPassada ? '✅' : '🕒';
-
+        
 
 div.className = `atividade ${classeTempo}`;
 div.innerHTML = `
