@@ -156,7 +156,15 @@
   <header>
     <h1>Estágio Supervisionado I</h1>
   </header>
-
+<div id="avisoVersaoNova" style="background-color: #ffeeba; color: #856404; padding: 12px; text-align: center; font-size: 14px; position: relative;">
+    <strong>🚀 Nova versão disponível!</strong><br>
+    O <strong>Sistema de Registro de Estágio</strong> foi atualizado com novas funcionalidades incríveis!
+    <br>
+    Adquira a nova versão por apenas <strong>R$ 9,99</strong>. 
+    <a href="https://wa.me/5586994200398" target="_blank" style="color: #0c5460; font-weight: bold; text-decoration: underline;">Clique aqui para saber mais</a>
+  
+    <span onclick="fecharAviso()" style="position: absolute; right: 10px; top: 5px; cursor: pointer; font-weight: bold;">&times;</span>
+  </div>
   <div class="container">
     <div class="info">
       <p>Adicione aqui suas atividades de estágio e acompanhe o total de horas cumpridas.</p>
@@ -191,6 +199,9 @@
       return `${dia}/${mes}/${ano}`;
     }
 
+    function fecharAviso() {
+  document.getElementById('avisoVersaoNova').style.display = 'none';
+}
     function atualizarTotalHoras() {
       const total = atividades.reduce((soma, item) => soma + Number(item.horas), 0);
       document.getElementById('totalHoras').textContent = total;
