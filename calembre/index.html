@@ -112,11 +112,30 @@
         display: block;
         line-height: 30px;
       }
-    
+      #slider {
+  border-left: none;
+  padding-bottom: 0%;
+}
+
+    .slider {
+    width: 100vw;
+    margin-left: calc(-1.1rem); /* para anular o padding do main */
+    border-radius: 0; /* remover o arredondamento nos cantos */
+  }
+
+  .slide img {
+    border-radius: 0;
+  }
+
+  #slider {
+    padding-left: 0;
+    padding-right: 0;
+  }
       header {
         padding: 1rem;
       }
     }
+   
  .slider {
             position: relative;
             max-width: 100%;
