@@ -113,23 +113,34 @@
         line-height: 30px;
       }
       #slider {
-  border-left: none;
-  padding-bottom: 0%;
-}
-
-    .slider {
     width: 100vw;
-    margin-left: calc(-1.1rem); /* para anular o padding do main */
-    border-radius: 0; /* remover o arredondamento nos cantos */
+    margin-left: calc(-1.1rem); /* compensa o padding do <main> */
+    padding-left: 0;
+    padding-right: 0;
+    border-left: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+   main {
+    padding: 0;
+  }
+
+  section {
+    margin: 0;
+    border-left: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .slider {
+    width: 100vw;
+    border-radius: 0;
+    margin: 0;
   }
 
   .slide img {
     border-radius: 0;
-  }
-
-  #slider {
-    padding-left: 0;
-    padding-right: 0;
   }
       header {
         padding: 1rem;
