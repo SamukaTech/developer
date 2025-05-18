@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pavimento Estriado de Calembre</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
   <style>
     html {
       scroll-behavior: smooth;
@@ -39,6 +38,16 @@
       font-size: 1.70rem;
     }
 
+    h2 .icon {
+      display: inline-block;
+      font-size: 1.7rem;
+      margin-right: 0.5rem;
+    }
+
+    h2 .title-text {
+      display: inline-block;
+    }
+
     p {
       font-size: 1.1rem;
     }
@@ -47,10 +56,9 @@
       padding: 2rem 1rem;
       background-color: #0d41e1;
       text-align: center;
-      
       color: #ffffff;
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url(https://img.freepik.com/vetores-gratis/paisagem-de-floresta-deserta-em-cena-diurna_1308-59151.jpg?semt=ais_hybrid&w=740);
+        url(https://img.freepik.com/vetores-gratis/paisagem-de-floresta-deserta-em-cena-diurna_1308-59151.jpg?semt=ais_hybrid&w=740);
       background-position: center;
       background-size: cover;
       position: relative;
@@ -91,84 +99,37 @@
       color: var(--accent-color);
     }
 
-    @media (max-width: 768px) {
-      nav {
-        text-align: center;
-        align-items: flex-start;
-        display: none;
-        flex-direction: row;
-        background-color: var(--secondary-color);
-        padding: 1rem;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      h2 {
-        text-align: center;
-      }
-      .menu-toggle {
-        display: block;
-        line-height: 30px;
-      }
-      #slider {
-    width: 100vw;
-    margin-left: calc(-1.1rem); /* compensa o padding do <main> */
-    padding-left: 0;
-    padding-right: 0;
-    border-left: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-   main {
-    padding: 0;
-  }
-
-  section {
-    margin: 0;
-    border-left: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .slider {
-    width: 100vw;
-    border-radius: 0;
-    margin: 0;
-  }
-
-  .slide img {
-    border-radius: 0;
-  }
-      header {
-        padding: 1rem;
-      }
+    #slider {
+    max-width: 1060px;
+    margin: 2rem auto;
+    padding: 1 1.1rem;
     }
-   
- .slider {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .slides {
-            display: flex;
-            transition: transform 1s ease;
-        }
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .slide img {
-            width: 100%;
-            display: block;
-            border-radius: 10px;
-        }
-   
+
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 1s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
     main {
       max-width: 1100px;
       margin: 2rem auto;
@@ -201,7 +162,6 @@
       background-color: #001174;
     }
 
-
     iframe {
       width: 100%;
       height: 400px;
@@ -218,6 +178,110 @@
       font-size: 1rem;
       margin-top: 4rem;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        text-align: center;
+        align-items: flex-start;
+        display: none;
+        flex-direction: row;
+        background-color: var(--secondary-color);
+        padding: 1rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      h2 .icon {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+        font-size: 1.8rem;
+      }
+
+      h2 .title-text {
+        display: block;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      #cartilha p,
+      #calembre p,
+      #importancia p,
+      #preservacao p {
+        text-align: justify;
+      }
+
+      .menu-toggle {
+        display: block;
+        line-height: 30px;
+      }
+
+      header {
+        padding: 1rem;
+      }
+
+      main {
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      section {
+        box-sizing: border-box;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0;
+        border-left: none;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
+      }
+
+      #slider {
+        width: 100vw;
+        margin-left: -8px;
+        padding: 0;
+        border-left: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .slider {
+        width: 100vw;
+        border-radius: 0;
+        margin: 0;
+      }
+
+      .slide img {
+        border-radius: 0;
+      }
+
+      .btn-download {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+      }
+
+      footer {
+        font-size: 0.95rem;
+      }
+
+      footer p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -233,82 +297,73 @@
     <a href="#importancia">Importância Científica</a>
     <a href="#preservacao">Preservação</a>
   </nav>
+
+  <section id="slider">
+    <h2><span class="icon">🖼️</span> <span class="title-text">Galeria de Imagens</span></h2>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="https://pbs.twimg.com/media/FrcC5gYWYAAPmRB.jpg:large" alt="Imagem 1"></div>
+        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5VaXQhICNrwVA3JXVDHlNJPyuwvAjrFjJUw&s" alt="Imagem 2"></div>
+        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGQoO-EOynZi7aKeMxijIOt7q5nbbYFZ2OSK79AYdN-26nA_Q_2O2gKUGhv5OSLf2evJM&usqp=CAU" alt="Imagem 3"></div>
+        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZo1qXXHPYhbEIF4JZ2rCPB36SS6rHd6A7AvGESM3Qv5E1llXOH-hKqnJH8A08GMYThE&usqp=CAU" alt="Imagem 4"></div>
+      </div>
+    </div>
+  </section>
+
   <main>
-<section id="slider">
-            <h2 class="section-title">Galeria de Imagens</h2>
-            <div class="slider">
-                <div class="slides">
-                    <div class="slide">
-                        <img src="https://pbs.twimg.com/media/FrcC5gYWYAAPmRB.jpg:large" alt="Imagem 1">
-                    </div>
-                    <div class="slide">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5VaXQhICNrwVA3JXVDHlNJPyuwvAjrFjJUw&s" alt="Imagem 2">
-                    </div>
-                    <div class="slide">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGQoO-EOynZi7aKeMxijIOt7q5nbbYFZ2OSK79AYdN-26nA_Q_2O2gKUGhv5OSLf2evJM&usqp=CAU" alt="Imagem 3">
-                    </div>
-                    <div class="slide">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZo1qXXHPYhbEIF4JZ2rCPB36SS6rHd6A7AvGESM3Qv5E1llXOH-hKqnJH8A08GMYThE&usqp=CAU" alt="Imagem 4">
-                    </div>
-                </div>
-            </div>
-        </section>
- 
     <section id="cartilha" data-aos="fade-up">
-      <h2>📘 Cartilha Digital</h2>
+      <h2><span class="icon">📘</span> <span class="title-text">Cartilha Digital</span></h2>
       <p>Baixe nossa cartilha educativa sobre o Pavimento Estriado de Calembre, sua importância geológica e os desafios para sua preservação.</p>
       <a class="btn-download" href="#" target="_blank">📥 Baixar Cartilha</a>
     </section>
 
     <section id="calembre" data-aos="fade-up">
-      <h2>📍 O Geossítio de Calembre</h2>
+      <h2><span class="icon">📍</span> <span class="title-text">O Geossítio de Calembre</span></h2>
       <p>Localizado na zona rural de Brejo do Piauí, o Pavimento de Estrias Glaciais de Calembre é um dos mais bem preservados registros da glaciação neodevoniana no Brasil. Ele está inserido na Formação Cabeças, da Bacia do Parnaíba, e é composto por um pavimento horizontal com sulcos e clastos de diferentes tamanhos presos ao arenito, formados pelo movimento das geleiras sobre o substrato rochoso.</p>
       <h3>🗺️ Veja no mapa:</h3>
       <iframe src="https://www.google.com/maps?q=-8.250555,-42.8825&hl=pt-BR&z=16&output=embed" allowfullscreen loading="lazy"></iframe>
     </section>
 
     <section id="importancia" data-aos="fade-up">
-      <h2>🔬 Importância Científica</h2>
+      <h2><span class="icon">🔬</span> <span class="title-text">Importância Científica</span></h2>
       <p>Os pavimentos estriados de Calembre representam uma evidência direta da glaciação que ocorreu no final do período Devoniano, há cerca de 360 milhões de anos. São fundamentais para estudos de paleoclimatologia, sedimentologia e evolução geológica da América do Sul. Permitem compreender o deslocamento das geleiras e reconstituir ambientes antigos do supercontinente Gondwana.</p>
     </section>
 
     <section id="preservacao" data-aos="fade-up">
-      <h2>🛡️ Ameaças e Desafios para a Preservação</h2>
+      <h2><span class="icon">🛡️</span> <span class="title-text">Ameaças e Desafios para a Preservação</span></h2>
       <p>Apesar de seu valor científico, o sítio enfrenta riscos como a erosão natural, fluxo de veículos sobre o pavimento, retirada de clastos e construções irregulares na área. A ausência de ações efetivas de geoconservação aumenta sua vulnerabilidade. É fundamental envolver a comunidade e o poder público para garantir sua proteção.</p>
     </section>
   </main>
 
   <footer>
-  <p style="font-weight: bold; font-size: 1.2rem;">👥 Equipe Responsável:</p>
-  <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
-    <li>👤 <strong>Samuel Araújo</strong><br>
-        Estudante de Ciências Biológicas - IFPI</li>
-    <li>👤 <strong>Armando Costa</strong><br>
-        Estudante de Ciências Biológicas - IFPI</li>
-    <li>👤 <strong>Prof°. Dr. Érico Gomes</strong><br>
-        Geólogo, doutor em Geografia e docente do Instituto Federal do Piauí - IFPI</li>
-  </ul>
+    <p style="font-weight: bold; font-size: 1.2rem;">👥 Equipe Responsável:</p>
+    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+      <li>👤 <strong>Samuel Araújo</strong><br>Estudante de Ciências Biológicas - IFPI</li>
+      <li>👤 <strong>Armando Costa</strong><br>Estudante de Ciências Biológicas - IFPI</li>
+      <li>👤 <strong>Prof°. Dr. Érico Gomes</strong><br>Geólogo, doutor em Geografia e docente do Instituto Federal do Piauí - IFPI</li>
+    </ul>
     <hr>
-  <p style="margin-top: 1rem; font-size: 1rem">&copy; 2025 Todos os direitos reservados.</p>
-</footer>
+    <p style="margin-top: 1rem; font-size: 1rem">&copy; 2025 Todos os direitos reservados.</p>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-
   <script>
-        let currentIndex = 0;
-        const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
 
-        function showNextSlide() {
-            currentIndex++;
-            if (currentIndex >= totalSlides) {
-                currentIndex = 0;
-            }
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+    function showNextSlide() {
+      currentIndex++;
+      if (currentIndex >= totalSlides) {
+        currentIndex = 0;
+      }
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-        setInterval(showNextSlide, 3000);
-        </script>
+    setInterval(showNextSlide, 3000);
+  </script>
 </body>
 </html>
+
+ 
