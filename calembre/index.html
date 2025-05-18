@@ -139,7 +139,7 @@
     section {
       padding: 1.5rem;
       padding-top: 1px;
-      background-color: #f9f9f9;
+      background-color: #fafaff;
       border-left: 6px solid var(--primary-color);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -170,14 +170,65 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    footer {
-      background-color: #f9f9f9;
-      color: rgb(5, 5, 5);
+      footer {
+      background-color: #dee2e6;
+      color: #050505;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
       font-size: 1rem;
-      margin-top: 4rem;
     }
+
+    .footer-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-title-icon {
+      width: 35px;
+      height: 35px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-entry {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-info {
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .footer-copy {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+
 
     @media (max-width: 768px) {
       nav {
@@ -227,6 +278,7 @@
       .menu-toggle {
         display: block;
         line-height: 30px;
+        
       }
 
       header {
@@ -251,17 +303,17 @@
       }
 
       #slider {
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-        border-left: none;
-        border-radius: 0;
-        box-shadow: none;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        transform: translateX(-50%);
-      }
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      border-left: none;
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+}
 
 
       .slider {
@@ -340,16 +392,47 @@
     </section>
   </main>
 
-  <footer>
-    <p style="font-weight: bold; font-size: 1.2rem;">👥 Equipe Responsável:</p>
-    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
-      <li>👤 <strong>Samuel Araújo</strong><br>Estudante de Ciências Biológicas - IFPI</li>
-      <li>👤 <strong>Armando Costa</strong><br>Estudante de Ciências Biológicas - IFPI</li>
-      <li>👤 <strong>Prof°. Dr. Érico Gomes</strong><br>Geólogo, doutor em Geografia e docente do Instituto Federal do Piauí - IFPI</li>
-    </ul>
-    <hr>
-    <p style="margin-top: 1rem; font-size: 1rem">&copy; 2025 Todos os direitos reservados.</p>
-  </footer>
+ <footer>
+  <p class="footer-title">
+    <img src="https://cdn-icons-png.flaticon.com/256/9790/9790561.png" alt="Ícone Equipe" class="footer-title-icon">
+    Equipe Responsável:
+  </p>
+
+  <ul class="footer-list">
+    <li>
+      <div class="footer-entry">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Samuel Araújo" class="footer-avatar">
+        <div class="footer-info">
+          <strong>Samuel Araújo</strong><br>
+          Estudante de Ciências Biológicas - IFPI
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="footer-entry">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Armando Costa" class="footer-avatar">
+        <div class="footer-info">
+          <strong>Armando Costa</strong><br>
+          Estudante de Ciências Biológicas - IFPI
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="footer-entry">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Érico Gomes" class="footer-avatar">
+        <div class="footer-info">
+          <strong>Profº. Dr. Érico Gomes</strong><br>
+          Geólogo, doutor em Geografia e docente do Instituto Federal do Piauí - IFPI
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <hr>
+  <p class="footer-copy">&copy; 2025 Todos os direitos reservados.</p>
+</footer>
+
+
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
@@ -371,4 +454,3 @@
 </body>
 </html>
 
- 
