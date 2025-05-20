@@ -896,16 +896,44 @@ button:hover {
   }
   
   .info-evento {
-    text-align: center;
-    margin: 20px auto;
-    font-size: 1rem;
-    line-height: 1.6;
-    background-color: #f1f1f1;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    color: #333;
-    max-width: 600px;
-  }
+  background: linear-gradient(135deg, #e6f4ea, #ffffff);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  color: #333;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid #2e7d32;
+  transition: transform 0.3s ease;
+}
+
+.info-evento:hover {
+  transform: scale(1.02);
+}
+
+.info-evento::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 100px;
+  height: 100px;
+  background: url('https://www.clipartmax.com/png/full/205-2057153_mosquito-da-dengue-desenho-png-mosquito-aedes-aegypti-desenho.png') no-repeat center;
+  background-size: contain;
+ 
+  transform: rotate(-10deg);
+}
+
+.info-evento p {
+  margin: 10px 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
   
   .img-oficina {
     text-align: center;
