@@ -917,8 +917,8 @@ button:hover {
 .info-evento::before {
   content: "";
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: -30px;
+  right: -30px;
   width: 100px;
   height: 100px;
   background: url('https://www.clipartmax.com/png/full/205-2057153_mosquito-da-dengue-desenho-png-mosquito-aedes-aegypti-desenho.png') no-repeat center;
