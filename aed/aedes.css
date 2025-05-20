@@ -896,46 +896,20 @@ button:hover {
   }
   
   .info-evento {
-  background: linear-gradient(135deg, #e6f4ea, #ffffff);
-  padding: 25px 15px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  color: #333;
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  position: relative;
-  overflow: hidden;
-  border-left: 4px solid #2e7d32;
-  transition: transform 0.3s ease;
-}
-
-.info-evento:hover {
-  transform: scale(1.02);
-}
-
-.info-evento::before {
-  content: "";
-  position: absolute;
-  top: -35px;
-  right: -35px;
-  width: 100px;
-  height: 100px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: #e6f4ea;
+    border-left: 4px solid #2e7d32;
+   
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    color: #333;
+    max-width: 600px;
+  }
   
-  transform: rotate(-10deg);
-}
-
-.info-evento p {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin: 10px 0;
-  font-weight: 500;
-  word-break: break-word;
-}
-
-
   .img-oficina {
     text-align: center;
   }
