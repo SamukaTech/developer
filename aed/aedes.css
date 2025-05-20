@@ -897,7 +897,7 @@ button:hover {
   
   .info-evento {
   background: linear-gradient(135deg, #e6f4ea, #ffffff);
-  padding: 25px 30px;
+  padding: 25px 15px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   color: #333;
@@ -906,7 +906,7 @@ button:hover {
   margin: 0 auto 30px;
   position: relative;
   overflow: hidden;
-  border-left: 6px solid #2e7d32;
+  border-left: 4px solid #2e7d32;
   transition: transform 0.3s ease;
 }
 
@@ -917,8 +917,8 @@ button:hover {
 .info-evento::before {
   content: "";
   position: absolute;
-  top: -30px;
-  right: -30px;
+  top: -35px;
+  right: -35px;
   width: 100px;
   height: 100px;
   background: url('https://portalescolarmaker.com.br/wp-content/uploads/2017/07/aedes.png') no-repeat center;
