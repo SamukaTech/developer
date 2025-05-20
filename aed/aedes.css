@@ -926,18 +926,15 @@ button:hover {
 }
 
 .info-evento p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
   margin: 10px 0;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  word-break: break-word;
 }
-  @media (max-width: 480px) {
-  .info-evento p {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+
 
   .img-oficina {
     text-align: center;
