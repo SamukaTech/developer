@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link rel="icon" href="imagens/img_comissao.png">
+   <link rel="icon" href="c:\Users\samue\OneDrive\Documents\Imagens\img_comissao.png">
   <title>Comissão Eleitoral CEPI</title>
   <style>
     body {
@@ -98,7 +98,6 @@
       nav ul.nav-links {
         display: none;
         flex-direction: column;
-        background-color: #072ac8;
         width: 100%;
         text-align: center;
         align-items: center;
@@ -115,6 +114,7 @@
 
     main {
       padding: 20px;
+      padding-top: 5px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -137,7 +137,7 @@
     p, li {
       font-size: 16px;
       line-height: 1.6;
-      text-align: justify;
+      
     }
 
     .btn-download {
@@ -197,7 +197,10 @@
     form button:hover {
       background-color: #1e40af;
     }
-
+#mensagem-status {
+  text-align: center;
+  color: #0a5800;
+}
     .edital-resumo {
   display: grid;
   grid-template-columns: 1fr;
@@ -248,6 +251,7 @@
 
 footer p {
     text-align: center;
+    line-height: 10px;
 }
   </style>
 </head>
@@ -255,7 +259,7 @@ footer p {
 
 <header>
   <div class="header-content">
-    <img src="imagens/img_comissao.png" alt="Logo" class="logo">
+    <img src="c:\Users\samue\OneDrive\Documents\Imagens\img_comissao-cepi.png" alt="Logo" class="logo">
     <h1 class="header-title">Comissão Eleitoral CEPI</h1>
     <button class="menu-toggle">&#9776;</button>
   </div>
@@ -272,7 +276,7 @@ footer p {
 
 <main>
   <section id="inicio">
-    <h2>Bem-vindo à Comissão Eleitoral CEPI 2025</h2>
+    <h2>Bem-vindo ao Portal da Comissão Eleitoral da CEPI</h2>
     <p>Este é o portal oficial da Comissão Eleitoral da Casa dos Estudantes do Piauí (CEPI), responsável por conduzir o processo democrático para a escolha do presidente e vice-presidente. Aqui você encontrará todas as informações necessárias sobre o processo eleitoral.</p>
   </section>
 
@@ -359,6 +363,7 @@ footer p {
 
   <section id="contato">
     <h2>Contato</h2>
+    <p>Entre em contato com a Comissão Eleitoral para dúvidas ou informações adicionais.</p>
     <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
                 <input type="hidden" name="Site" value="Comissão Eleitoral-CEPI">
                 <label for="nome">Nome:</label>
@@ -371,13 +376,14 @@ footer p {
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
                 <input type="hidden" name="_template" value="table">
-                <p id="mensagem-status" align="center"></p>
+                <div id="mensagem-status"></div>
             </form>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2024 Comissão Eleitoral CEPI</p>
+  <p>&copy; Comissão Eleitoral - CEPI</p>
+  <p>2025 - Todos os direitos reservados.</p>
 </footer>
 
 <script>
