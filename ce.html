@@ -1,39 +1,334 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comissão Eleitoral CEPI</title>
-    <link rel="stylesheet" href="comissao_eleitoral.css">
-    <link rel="icon" href="https://ugc.production.linktr.ee/bb5436ba-a3c6-440b-9b28-75f11745929a_Sem-t-tulo-2.png?io=true&size=avatar-v3_0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comissão Eleitoral CEPI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+       background-color: #f0f0f5;
+    background-image: url(https://www.parededepapel.com.br/media/catalog/product/cache/1/image2/400x/9df78eab33525d08d6e5fb8d27136e95/p/a/papel-de-parede-de-azulejo.jpg);
+    color: #333;
+    }
+
+    header {
+      background-color: #072ac8;
+      color: white;
+      padding: 20px;
+       background-image: url(https://i.pinimg.com/736x/38/b2/ab/38b2ab617272e06e30b86543a9346141.jpg);
+    background-size: cover;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .header-title {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    nav ul.nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul.nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav ul.nav-links li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsivo para telas pequenas */
+    @media (max-width: 768px) {
+      .header-content {
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo {
+        order: 3;
+      }
+
+      .header-title {
+        order: 2;
+        flex: 1;
+      }
+
+      .menu-toggle {
+        order: 1;
+      }
+
+      nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      nav ul.nav-links.show {
+        display: flex;
+        animation: expandir 0.3s ease-in-out;
+      }
+
+      @keyframes expandir {
+        from { opacity: 0; transform: scaleY(0); }
+        to { opacity: 1; transform: scaleY(1); }
+      }
+    }
+
+    main {
+      padding: 10px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+
+    #inicio p, #edital p{
+    text-align: justify;
+}
+h2 {
+    color: #072ac8;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+.btn-download {
+    background-color: #072ac8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-download:hover {
+    background-color: #2a4dff;
+    transform: scale(1.1);
+}
+
+
+.edital-resumo {
+    margin-top: 20px;
+}
+
+.resumo-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resumo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chapa, .resul, .portaria-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chapa:hover, .resul:hover, .portaria-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #072ac8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2a4dff;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #072ac8;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    line-height: 5px;
+    position: relative;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        line-height: 5px;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px;
+        padding: 10px 100px;
+    }
+
+    form input, form textarea {
+        width: 100%;
+    }
+}
+
+#inscricao {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-top: 2rem;
+}
+
+#inscricao h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#inscricao form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#inscricao label {
+    font-weight: bold;
+}
+
+#inscricao input[type="text"],
+#inscricao input[type="email"],
+#inscricao input[type="file"],
+#inscricao button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#inscricao button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#inscricao button:hover {
+    background-color: #0056b3;
+}
+
+#inscricao #mensagem-status {
+    margin-top: 1rem;
+    color: green;
+}
+
+  </style>
 </head>
 <body>
-    <header>
-        <img src="https://ugc.production.linktr.ee/bb5436ba-a3c6-440b-9b28-75f11745929a_Sem-t-tulo-2.png?io=true&size=avatar-v3_0" alt="Logo da Comissão Eleitoral" class="logo">
-        <h1>Comissão Eleitoral CEPI</h1>
-        <br>
-        <nav>
-            <ul>
-                <li><a href="#edital" class="nav-link">Edital</a></li>
-                <li><a href="#candidatos" class="nav-link">Candidatos</a></li>
-                <li><a href="#resultado" class="nav-link">Resultado</a></li>
-                <li><a href="#portaria" class="nav-link">Portaria</a></li>
-                <li><a href="#contato" class="nav-link">Contato</a></li>
-                <li><a href="#inscricao" class="nav-link">Inscrição</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Bem-vindo à Comissão Eleitoral CEPI 2024</h2>
+  <header>
+    <div class="header-content">
+      <!-- Em telas grandes, logo à esquerda; em telas pequenas, vai para direita -->
+      <img src="https://ugc.production.linktr.ee/bb5436ba-a3c6-440b-9b28-75f11745929a_Sem-t-tulo-2.png?io=true&size=avatar-v3_0" alt="Logo" class="logo">
+      
+      <!-- Título centralizado -->
+      <h1 class="header-title">Comissão Eleitoral CEPI</h1>
+      
+      <!-- Ícone do menu (só aparece em telas pequenas) -->
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </div>
+
+    <!-- Menu de navegação -->
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#edital">Edital</a></li>
+        <li><a href="#candidatos">Candidatos</a></li>
+        <li><a href="#resultado">Resultado</a></li>
+        <li><a href="#portaria">Portaria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+       <section id="inicio">
+            <h2 align="center">Bem-vindo à Comissão Eleitoral CEPI 2024</h2>
             <p>Bem-vindo ao site da comissão eleitoral da Casa dos Estudantes do Piauí para a eleição do presidente e vice-presidente. Aqui você encontrará todas as informações necessárias sobre o processo eleitoral.</p>
         </section>
 
         <section id="edital">
             <h2>Edital</h2>
-            <p>Leia o edital completo das Eleições da CEPI 2024 clicando no botão abaixo:</p>
+            <p>O edital das eleições da CEPI 2024 contém todas as informações essenciais sobre candidatura, requisitos, processo eleitoral e cronograma. Leia o edital completo clicando no botão abaixo:</p>
             <button class="btn-download" onclick="window.location.href='edital-cepi-2024.pdf'">📥 Baixar Edital </button>
             <div class="edital-resumo">
                 <h3>Resumo do Edital</h3>
@@ -88,13 +383,13 @@
             <h2>Candidatos</h2>
             <div class="chapa">
                 <h3>Chapa 1</h3>
-                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato 👀</p>
-                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato 👀</p>
+                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato </p>
+                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato </p>
             </div>
             <div class="chapa">
                 <h3>Chapa 2</h3>
-                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato 👀</p>
-                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato 👀</p>
+                <p><strong>👤 Candidato a Presidente:</strong> Por enquanto, não há candidato </p>
+                <p><strong>👤 Candidato a Vice-Presidente:</strong> Por enquanto, não há candidato </p>
             </div>
         </section>
 
@@ -124,122 +419,36 @@
             </div>
         </section>
 
-        <section id="inscricao">
-            <h2>Inscrição dos Candidatos</h2>
-            <form id="inscricao_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+        <section id="contato">
+            <h2>Contato</h2>
+            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
+                <input type="hidden" name="Site" value="Comissão Eleitoral-CEPI">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Digite seu nome" required="required" name="Nome" />
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Digite seu e-mail" name="Email" required />
-                <label for="documentos">Documentos (Declaração de matrícula):</label>
-                <input type="file" id="documentos" name="Documentos" required multiple />
-                <label for="documentos">Documentos (RG):</label>
-                <input type="file" id="documentos" name="Documentos" required multiple />
-                <label for="documentos">Documentos (CPF):</label>
-                <input type="file" id="documentos" name="Documentos" required multiple />
-                <label for="documentos">Documentos ( Foto 3x4):</label>
-                <input type="file" id="documentos" name="Documentos" required multiple />
-                <button type="submit" class="btn" id="enviar">Enviar</button>
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
-                <input type="hidden" name="_template" value="table">
-            </form>
-            <div id="mensagem-status"></div>
-        </section>
-        
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="Nome" />
-                <label for="email">Email:</label>
-                <input type="email" id="emailid" placeholder="Digite seu e-mail" name="Email" required />
                 <label for="mensagem">Mensagem:</label>
-                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="menid" name="Mensagem"></textarea>
+                <textarea type="text" placeholder="Digite sua mensagem" required="required" id="mensagem" name="Mensagem"></textarea>
                 <button type="submit" class="btn" id="enviar">Enviar</button>
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samukatech.netlify.app/concursos_publicos.html">
+                <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
                 <input type="hidden" name="_template" value="table">
+                <p id="mensagem-status" align="center"></p>
             </form>
-            <div id="mensagem-status"></div>
         </section>
     </main>
 
-    <footer>
-        <p>Comissão Eleitoral CEPI 2024 &copy; Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Comissão Eleitoral CEPI</p>
+  </footer>
 
-    <script>
-        document.getElementById("meu_form").addEventListener("submit", function(event) {
-            event.preventDefault();
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-            var nome = document.getElementById("nomeid").value;
-            var email = document.getElementById("emailid").value;
-            var mensa = document.getElementById("menid").value;
-
-            if (nome && email && mensa) {
-                var submitButton = document.getElementById("enviar");
-                var mensagemStatus = document.getElementById("mensagem-status");
-
-                submitButton.disabled = true;
-                submitButton.textContent = "Enviando...";
-                mensagemStatus.textContent = "";
-
-                var formData = new FormData(this);
-
-                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                })
-                .catch(error => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Mensagem enviada com sucesso!";
-                    this.reset();
-                });
-            }
-        });
-
-        document.getElementById("inscricao_form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var documentos = document.getElementById("documentos").files;
-
-            if (nome && email && documentos.length > 0) {
-                var submitButton = document.getElementById("enviar");
-                var mensagemStatus = document.getElementById("mensagem-status");
-
-                submitButton.disabled = true;
-                submitButton.textContent = "Enviando...";
-                mensagemStatus.textContent = "";
-
-                var formData = new FormData(this);
-
-                fetch("https://formsubmit.co/samuel.araujonascimento.98@gmail.com", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Documentos enviados com sucesso!";
-                    this.reset();
-                })
-                .catch(error => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Enviar";
-                    mensagemStatus.textContent = "Erro ao enviar documentos. Tente novamente.";
-                });
-            }
-        });
-    </script>
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
