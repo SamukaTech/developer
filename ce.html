@@ -274,16 +274,27 @@
 .ic6::before { content: "📊"; }
 
 
-    footer {
-      background-color: #072ac8;
-      color: white;
-      padding: 15px 0;
-    }
-
-footer p {
-    text-align: center;
-    line-height: 10px;
+  .footer {
+  background-color: #072ac8;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
@@ -422,7 +433,12 @@ footer p {
   </section>
 </main>
 
-<footer>
+<footer class="footer">
+  <img
+    src="imagens\logo-comissao.jpg"
+    alt="Logo da Comissão Eleitoral"
+    class="footer-logo"
+  />
   <p>&copy; Comissão Eleitoral - CEPI</p>
   <p>2025 - Todos os direitos reservados.</p>
 </footer>
