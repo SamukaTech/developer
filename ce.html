@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link rel="icon" href="imagens/logo-comissao.jpg">
+   <link rel="icon" href="imagens\img_comissao-cepi.png">
   <title>Comissão Eleitoral CEPI</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
+      background-color: #f8f9fa;
       color: #333;
     }
 
@@ -114,7 +114,7 @@
 
     main {
       padding: 20px;
-      padding-top: 5px;
+      padding-top: 0px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -161,16 +161,38 @@
     .chapa {
       padding: 10px 20px;
       margin-bottom: 10px;
-      background-color: #e1eff6;
-      border-left: 5px solid #072ac8;
+      background-color: #f6fff8;
+      border-left: 6px solid #072ac8;
+      border-radius: 8px;
     }
 
     .chapa h3::before {
       content: "🗳️ ";
     }
 
+    .caixa-resultado, .portaria {
+  background-color: #fdfffc;
+  border-left: 6px solid #072ac8;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa-resultado, .portaria:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.caixa-resultado, .portaria p {
+  margin: 10px 0;
+  text-align: left;
+}
+
     form {
-      background-color: #fff;
+      background-color: #fdfffc;
       padding: 20px;
       margin-top: 20px;
       border: 1px solid #ccc;
@@ -188,6 +210,7 @@
       padding: 8px;
       margin-top: 5px;
       border-radius: 5px;
+      background-color: #fdfffc;
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
@@ -217,7 +240,7 @@
 }
 
 .edital-resumo .resumo-box {
-  background: #ffffff;
+  background: #fdfffc;
   border-left: 6px solid #072ac8;
   padding: 20px;
   border-radius: 8px;
@@ -267,7 +290,7 @@ footer p {
 
 <header>
   <div class="header-content">
-    <img src="imagens/logo-comissao.jpg" alt="Logo" class="logo">
+    <img src="imagens\logo-comissao.jpg" alt="Logo" class="logo">
     <h1 class="header-title">Comissão Eleitoral CEPI</h1>
     <button class="menu-toggle">&#9776;</button>
   </div>
@@ -355,23 +378,33 @@ footer p {
     </div>
   </section>
 
-  <section id="resultado">
-    <h2>Resultado</h2>
-    <p>📌 Os resultados oficiais da eleição serão divulgados aqui assim que finalizada a apuração dos votos.</p>
-  </section>
-
   <section id="portaria">
-    <h2>Portaria</h2>
-    <p><b>Portaria CE nº 001/2024:</b> Conheça os membros oficiais da Comissão Eleitoral CEPI:</p>
+    <h2>Integrantes da Comissão Eleitoral</h2>
+    <div class="portaria">
     <p>👤 <strong>Presidente:</strong> José Alencar Diniz (Bloco A, Apt. 05)</p>
     <p>👤 <strong>Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, Apt. 108)</p>
     <p>👤 <strong>Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
     <a href="portaria-ce-001-2024.pdf" class="btn-download">📥 Baixar Portaria</a>
+    </div>
   </section>
+
+  <section id="resultado">
+  <h2>Resultado das Eleições</h2>
+  <p>📌 Os resultados oficiais da eleição serão divulgados aqui assim que finalizada a apuração dos votos.</p>
+<!--
+  <div class="caixa-resultado">
+    <p><strong>🏆 Chapa Vencedora:</strong> Chapa 1</p>
+    <p><strong>👤 Candidato a Presidente:</strong> Ana Costa</p>
+    <p><strong>👤 Candidato a Vice-Presidente:</strong> Carlos Silva</p>
+    <p><strong>🟢 Total de Votos:</strong> 150</p>
+    <p><strong>⚪ Votos em Branco:</strong> 10</p>
+  </div>
+-->
+</section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Entre em contato com a Comissão Eleitoral para dúvidas ou informações adicionais.</p>
+    <p>Em caso de dúvidas ou para obter informações adicionais, entre em contato conosco.</p>
     <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
                 <input type="hidden" name="Site" value="Comissão Eleitoral-CEPI">
                 <label for="nome">Nome:</label>
