@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
+      background-color: #f8f9fa;
       color: #333;
     }
 
@@ -29,9 +29,9 @@
     }
 
     .logo {
-      width: 62px;
+      width: 60px;
       height: auto;
-      border-radius: 10%;
+      border-radius: 50%;
     }
 
     .menu-toggle {
@@ -113,8 +113,8 @@
     }
 
     main {
-      padding: 20px;
-      padding-top: 5px;
+      padding: 15px;
+      padding-top: 0px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -161,16 +161,38 @@
     .chapa {
       padding: 10px 20px;
       margin-bottom: 10px;
-      background-color: #e1eff6;
-      border-left: 5px solid #072ac8;
+      background-color: #f6fff8;
+      border-left: 6px solid #072ac8;
+      border-radius: 8px;
     }
 
     .chapa h3::before {
       content: "🗳️ ";
     }
 
+    .caixa-resultado, .portaria {
+  background-color: #fdfffc;
+  border-left: 6px solid #072ac8;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa-resultado, .portaria:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.caixa-resultado, .portaria p {
+  margin: 10px 0;
+  text-align: left;
+}
+
     form {
-      background-color: #fff;
+      background-color: #fdfffc;
       padding: 20px;
       margin-top: 20px;
       border: 1px solid #ccc;
@@ -188,6 +210,7 @@
       padding: 8px;
       margin-top: 5px;
       border-radius: 5px;
+      background-color: #fdfffc;
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
@@ -217,7 +240,7 @@
 }
 
 .edital-resumo .resumo-box {
-  background: #ffffff;
+  background: #fdfffc;
   border-left: 6px solid #072ac8;
   padding: 20px;
   border-radius: 8px;
@@ -250,24 +273,81 @@
 .ic5::before { content: "🕓"; }
 .ic6::before { content: "📊"; }
 
-
-    footer {
-      background-color: #072ac8;
-      color: white;
-      padding: 15px 0;
-    }
-
-footer p {
-    text-align: center;
-    line-height: 10px;
+#inscricao {
+  background-color: #ffffff;
+  padding: 15px;
+  padding-top: 1px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
+#inscricao h2 {
+  color: #072ac8;
+  margin-bottom: 10px;
+}
+
+#inscricao form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#inscricao form input,
+#inscricao form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#inscricao form input[type="file"] {
+  padding: 5px;
+}
+
+#inscricao form button {
+  background-color: #072ac8;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#inscricao form button:hover {
+  background-color: #1e40af;
+}
+
+
+.footer {
+  background-color: #072ac8;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
 
 <header>
   <div class="header-content">
-    <img src="imagens\img_comissao-cepi.png" alt="Logo" class="logo">
+    <img src="imagens\logo-comissao.jpg" alt="Logo" class="logo">
     <h1 class="header-title">Comissão Eleitoral CEPI</h1>
     <button class="menu-toggle">&#9776;</button>
   </div>
@@ -291,7 +371,41 @@ footer p {
   <section id="edital">
     <h2>Edital</h2>
     <p>Acesse o edital oficial das eleições CEPI 2025 para conhecer todos os requisitos, prazos e orientações.</p>
-    <a href="edital-cepi-2024.pdf" class="btn-download">📥 Baixar Edital</a>
+    <a href="edital-cepi-2024.pdf" class="btn-download">📥 Acessar Edital</a>
+
+    <section id="inscricao">
+  <h2>Inscrição de Candidatura</h2>
+  <div id="mensagem-inscricao" style="color: red; "></div>
+
+  <div id="form-inscricao" style="display: none;">
+    <p>Preencha os dados abaixo e envie a documentação exigida em um único arquivo compactado (.zip ou .rar) para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
+
+    <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/inscricao_sucesso.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Tipo" value="Inscrição de Candidatura">
+
+      <label for="presidente">Nome do Candidato a Presidente:</label>
+      <input type="text" id="presidente" name="Presidente" required>
+
+      <label for="vice">Nome do Candidato a Vice-Presidente:</label>
+      <input type="text" id="vice" name="Vice-Presidente" required>
+
+      <label for="email">E-mail para contato:</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="documentos">Anexar Documentação (.zip ou .rar):</label>
+      <input type="file" id="documentos" name="Documentos" accept=".zip,.rar" required>
+      <small style="color: #555;">* Envie todos os documentos exigidos em um único arquivo compactado</small>
+
+      <button type="submit" id="enviarBtn">Enviar Inscrição</button>
+    </form>
+  </div>
+</section>
+
+
+
     <div class="edital-resumo">
         <div class="resumo-box">
       <h3 class="ic1">Dos Candidatos</h3>
@@ -355,23 +469,33 @@ footer p {
     </div>
   </section>
 
-  <section id="resultado">
-    <h2>Resultado</h2>
-    <p>📌 Os resultados oficiais da eleição serão divulgados aqui assim que finalizada a apuração dos votos.</p>
+  <section id="portaria">
+    <h2>Integrantes da Comissão Eleitoral</h2>
+    <div class="portaria">
+    <p>👤 <strong>Presidente:</strong> Manoel da Silva Ribeiro (Bloco A, Apt. 104)</p>
+    <p>👤 <strong>Vice-Presidente:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
+    <p>👤 <strong>Secretário:</strong> Luis Henrique da Costa Mano (Bloco B, Apt. 21)</p>
+    <a href="https://drive.google.com/file/d/1LgL45QpBXp6MDKqsmb_Nn_MBxhUhiAby/view" class="btn-download">📥 Baixar Portaria</a>
+    </div>
   </section>
 
-  <section id="portaria">
-    <h2>Portaria</h2>
-    <p><b>Portaria CE nº 001/2024:</b> Conheça os membros oficiais da Comissão Eleitoral CEPI:</p>
-    <p>👤 <strong>Presidente:</strong> José Alencar Diniz (Bloco A, Apt. 05)</p>
-    <p>👤 <strong>Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, Apt. 108)</p>
-    <p>👤 <strong>Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
-    <a href="portaria-ce-001-2024.pdf" class="btn-download">📥 Baixar Portaria</a>
-  </section>
+  <section id="resultado">
+  <h2>Resultado das Eleições</h2>
+  <p>📌 Os resultados oficiais da eleição serão divulgados aqui assim que finalizada a apuração dos votos.</p>
+<!--
+  <div class="caixa-resultado">
+    <p><strong>🏆 Chapa Vencedora:</strong> Chapa 1</p>
+    <p><strong>👤 Candidato a Presidente:</strong> Ana Costa</p>
+    <p><strong>👤 Candidato a Vice-Presidente:</strong> Carlos Silva</p>
+    <p><strong>🟢 Total de Votos:</strong> 150</p>
+    <p><strong>⚪ Votos em Branco:</strong> 10</p>
+  </div>
+-->
+</section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Entre em contato com a Comissão Eleitoral para dúvidas ou informações adicionais.</p>
+    <p>Em caso de dúvidas ou para obter informações adicionais, entre em contato conosco.</p>
     <form id="meu_form" action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off">
                 <input type="hidden" name="Site" value="Comissão Eleitoral-CEPI">
                 <label for="nome">Nome:</label>
@@ -382,14 +506,19 @@ footer p {
                 <textarea type="text" placeholder="Digite sua mensagem" required="required" id="mensagem" name="Mensagem"></textarea>
                 <button type="submit" class="btn" id="enviar">Enviar</button>
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
+                <input type="hidden" name="_next" value="inscricao_sucesso.html">
                 <input type="hidden" name="_template" value="table">
                 <div id="mensagem-status"></div>
             </form>
   </section>
 </main>
 
-<footer>
+<footer class="footer">
+  <img
+    src="imagens\logo-comissao.jpg"
+    alt="Logo da Comissão Eleitoral"
+    class="footer-logo"
+  />
   <p>&copy; Comissão Eleitoral - CEPI</p>
   <p>2025 - Todos os direitos reservados.</p>
 </footer>
@@ -436,6 +565,31 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
             });
         }
     });
+
+  //código do botão de inscrição
+  const formulario = document.querySelector("form");
+  const botao = document.getElementById("enviarBtn");
+
+  formulario.addEventListener("submit", () => {
+    botao.disabled = true;
+    botao.textContent = "Enviando...";
+  });
+
+  // Defina aqui o período de inscrições
+  const dataInicio = new Date("2025-05-01T00:00:00");
+  const dataFim = new Date("2025-05-31T23:59:59");
+  const hoje = new Date();
+
+  const formularioInscricao = document.getElementById("form-inscricao");
+  const mensagem = document.getElementById("mensagem-inscricao");
+
+  if (hoje >= dataInicio && hoje <= dataFim) {
+  formularioInscricao.style.display = "block";
+} else {
+  mensagem.textContent = "❌ As inscrições estão encerradas. Aguarde a próxima etapa do processo eleitoral.";
+}
+
+
 </script>
 </body>
 </html>
