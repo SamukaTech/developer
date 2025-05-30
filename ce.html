@@ -295,7 +295,7 @@
   text-align: center;
 }
 
-  #inscricao {
+ #inscricao {
   background-color: #ffffff;
   padding: 30px;
   margin-top: 30px;
@@ -460,7 +460,7 @@
 
   <section id="inscricao">
   <h2>Inscrição de Candidatura</h2>
-  <p>Preencha os dados abaixo e envie a documentação exigida para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
+  <p>Preencha os dados abaixo e envie a documentação exigida em um único arquivo compactado (.zip ou .rar) para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
 
   <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_captcha" value="false">
@@ -477,8 +477,9 @@
     <label for="email">E-mail para contato:</label>
     <input type="email" id="email" name="Email" required>
 
-    <label for="documentos">Anexar Documentos (até 5 arquivos):</label>
-    <input type="file" name="Documentos" multiple required>
+    <label for="documentos">Anexar Documentação (.zip ou .rar):</label>
+    <input type="file" id="documentos" name="Documentos" accept=".zip,.rar" required>
+    <small style="color: #555;">* Envie todos os documentos exigidos em um único arquivo compactado (.zip ou .rar)</small>
 
     <button type="submit">Enviar Inscrição</button>
   </form>
