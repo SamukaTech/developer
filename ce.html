@@ -295,6 +295,51 @@
   text-align: center;
 }
 
+  #inscricao {
+  background-color: #ffffff;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#inscricao h2 {
+  color: #072ac8;
+  margin-bottom: 10px;
+}
+
+#inscricao form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#inscricao form input,
+#inscricao form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#inscricao form input[type="file"] {
+  padding: 5px;
+}
+
+#inscricao form button {
+  background-color: #072ac8;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#inscricao form button:hover {
+  background-color: #1e40af;
+}
+
   </style>
 </head>
 <body>
@@ -412,6 +457,33 @@
   </div>
 -->
 </section>
+
+  <section id="inscricao">
+  <h2>Inscrição de Candidatura</h2>
+  <p>Preencha os dados abaixo e envie a documentação exigida para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
+
+  <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="Tipo" value="Inscrição de Candidatura">
+
+    <label for="presidente">Nome do Candidato a Presidente:</label>
+    <input type="text" id="presidente" name="Presidente" required>
+
+    <label for="vice">Nome do Candidato a Vice-Presidente:</label>
+    <input type="text" id="vice" name="Vice-Presidente" required>
+
+    <label for="email">E-mail para contato:</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="documentos">Anexar Documentos (até 5 arquivos):</label>
+    <input type="file" name="Documentos" multiple required>
+
+    <button type="submit">Enviar Inscrição</button>
+  </form>
+</section>
+
 
   <section id="contato">
     <h2>Contato</h2>
