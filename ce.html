@@ -273,31 +273,10 @@
 .ic5::before { content: "🕓"; }
 .ic6::before { content: "📊"; }
 
-
-  .footer {
-  background-color: #072ac8;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.footer-logo {
-  width: 55px;
-  height: auto;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 10px auto;
-}
-
-.footer p {
-  margin: 5px 0;
-  font-size: 16px;
-  text-align: center;
-}
-
- #inscricao {
+#inscricao {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 15px;
+  padding-top: 1px;
   margin-top: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -340,13 +319,35 @@
   background-color: #1e40af;
 }
 
+
+.footer {
+  background-color: #072ac8;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
 
 <header>
   <div class="header-content">
-    <img src="imagens\logo-comissao.jpg" alt="Logo" class="logo">
+    <img src="c:\Users\samue\OneDrive\Documents\Imagens\logo-comissao.jpg" alt="Logo" class="logo">
     <h1 class="header-title">Comissão Eleitoral CEPI</h1>
     <button class="menu-toggle">&#9776;</button>
   </div>
@@ -370,7 +371,41 @@
   <section id="edital">
     <h2>Edital</h2>
     <p>Acesse o edital oficial das eleições CEPI 2025 para conhecer todos os requisitos, prazos e orientações.</p>
-    <a href="edital-cepi-2024.pdf" class="btn-download">📥 Baixar Edital</a>
+    <a href="edital-cepi-2024.pdf" class="btn-download">📥 Acessar Edital</a>
+
+    <section id="inscricao">
+  <h2>Inscrição de Candidatura</h2>
+  <div id="mensagem-inscricao" style="color: red; "></div>
+
+  <div id="form-inscricao" style="display: none;">
+    <p>Preencha os dados abaixo e envie a documentação exigida em um único arquivo compactado (.zip ou .rar) para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
+
+    <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/sucesso_inscricao.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Tipo" value="Inscrição de Candidatura">
+
+      <label for="presidente">Nome do Candidato a Presidente:</label>
+      <input type="text" id="presidente" name="Presidente" required>
+
+      <label for="vice">Nome do Candidato a Vice-Presidente:</label>
+      <input type="text" id="vice" name="Vice-Presidente" required>
+
+      <label for="email">E-mail para contato:</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="documentos">Anexar Documentação (.zip ou .rar):</label>
+      <input type="file" id="documentos" name="Documentos" accept=".zip,.rar" required>
+      <small style="color: #555;">* Envie todos os documentos exigidos em um único arquivo compactado</small>
+
+      <button type="submit" id="enviarBtn">Enviar Inscrição</button>
+    </form>
+  </div>
+</section>
+
+
+
     <div class="edital-resumo">
         <div class="resumo-box">
       <h3 class="ic1">Dos Candidatos</h3>
@@ -437,10 +472,10 @@
   <section id="portaria">
     <h2>Integrantes da Comissão Eleitoral</h2>
     <div class="portaria">
-    <p>👤 <strong>Presidente:</strong> José Alencar Diniz (Bloco A, Apt. 05)</p>
-    <p>👤 <strong>Vice-Presidente:</strong> João Pedro Cardoso Gomes (Bloco A, Apt. 108)</p>
-    <p>👤 <strong>Secretário:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
-    <a href="portaria-ce-001-2024.pdf" class="btn-download">📥 Baixar Portaria</a>
+    <p>👤 <strong>Presidente:</strong> Manoel da Silva Ribeiro (Bloco A, Apt. 104)</p>
+    <p>👤 <strong>Vice-Presidente:</strong> Samuel Araújo do Nascimento (Bloco A, Apt. 104)</p>
+    <p>👤 <strong>Secretário:</strong> Luis Henrique da Costa Mano (Bloco B, Apt. 21)</p>
+    <a href="https://drive.google.com/file/d/1LgL45QpBXp6MDKqsmb_Nn_MBxhUhiAby/view" class="btn-download">📥 Baixar Portaria</a>
     </div>
   </section>
 
@@ -458,34 +493,6 @@
 -->
 </section>
 
-  <section id="inscricao">
-  <h2>Inscrição de Candidatura</h2>
-  <p>Preencha os dados abaixo e envie a documentação exigida em um único arquivo compactado (.zip ou .rar) para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
-
-  <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="Tipo" value="Inscrição de Candidatura">
-
-    <label for="presidente">Nome do Candidato a Presidente:</label>
-    <input type="text" id="presidente" name="Presidente" required>
-
-    <label for="vice">Nome do Candidato a Vice-Presidente:</label>
-    <input type="text" id="vice" name="Vice-Presidente" required>
-
-    <label for="email">E-mail para contato:</label>
-    <input type="email" id="email" name="Email" required>
-
-    <label for="documentos">Anexar Documentação (.zip ou .rar):</label>
-    <input type="file" id="documentos" name="Documentos" accept=".zip,.rar" required>
-    <small style="color: #555;">* Envie todos os documentos exigidos em um único arquivo compactado (.zip ou .rar)</small>
-
-    <button type="submit">Enviar Inscrição</button>
-  </form>
-</section>
-
-
   <section id="contato">
     <h2>Contato</h2>
     <p>Em caso de dúvidas ou para obter informações adicionais, entre em contato conosco.</p>
@@ -499,7 +506,7 @@
                 <textarea type="text" placeholder="Digite sua mensagem" required="required" id="mensagem" name="Mensagem"></textarea>
                 <button type="submit" class="btn" id="enviar">Enviar</button>
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/comissao_eleitoral.html">
+                <input type="hidden" name="_next" value="inscricao_sucesso.html">
                 <input type="hidden" name="_template" value="table">
                 <div id="mensagem-status"></div>
             </form>
@@ -558,6 +565,31 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
             });
         }
     });
+
+  //código do botão de inscrição
+  const formulario = document.querySelector("form");
+  const botao = document.getElementById("enviarBtn");
+
+  formulario.addEventListener("submit", () => {
+    botao.disabled = true;
+    botao.textContent = "Enviando...";
+  });
+
+  // Defina aqui o período de inscrições
+  const dataInicio = new Date("2025-05-01T00:00:00");
+  const dataFim = new Date("2025-05-31T23:59:59");
+  const hoje = new Date();
+
+  const formularioInscricao = document.getElementById("form-inscricao");
+  const mensagem = document.getElementById("mensagem-inscricao");
+
+  if (hoje >= dataInicio && hoje <= dataFim) {
+  formularioInscricao.style.display = "block";
+} else {
+  mensagem.textContent = "❌ As inscrições estão encerradas. Aguarde a próxima etapa do processo eleitoral.";
+}
+
+
 </script>
 </body>
 </html>
