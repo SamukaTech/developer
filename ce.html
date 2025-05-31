@@ -347,16 +347,16 @@
 
 <header>
   <div class="header-content">
-    <img src="imagens\logo-comissao.jpg" alt="Logo" class="logo">
+    <img src="c:\Users\samue\OneDrive\Documents\Imagens\logo-comissao.jpg" alt="Logo" class="logo">
     <h1 class="header-title">Comissão Eleitoral CEPI</h1>
     <button class="menu-toggle">&#9776;</button>
   </div>
   <nav>
     <ul class="nav-links" id="navLinks">
       <li><a href="#edital">Edital</a></li>
+      <li><a href="#inscricao">Inscrições</a></li>
       <li><a href="#candidatos">Candidatos</a></li>
       <li><a href="#resultado">Resultado</a></li>
-      <li><a href="#portaria">Portaria</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
@@ -375,14 +375,14 @@
 
     <section id="inscricao">
   <h2>Inscrição de Candidatura</h2>
-  <div id="mensagem-inscricao" style="color: red; "></div>
+  <div id="mensagem-inscricao" style="color: red;"></div>
 
   <div id="form-inscricao" style="display: none;">
     <p>Preencha os dados abaixo e envie a documentação exigida em um único arquivo compactado (.zip ou .rar) para se candidatar à presidência e vice-presidência da CEPI 2025.</p>
 
     <form action="https://formsubmit.co/samuel.araujonascimento.98@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/inscricao_sucesso.html">
+      <input type="hidden" name="_next" value="https://samuelaraujo.netlify.app/sucesso_inscricao.html">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="Tipo" value="Inscrição de Candidatura">
 
@@ -575,7 +575,7 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
     botao.textContent = "Enviando...";
   });
 
-  // Defina aqui o período de inscrições
+  // 🗓️ Ajuste as datas conforme o edital
   const dataInicio = new Date("2025-05-31T00:00:00");
   const dataFim = new Date("2025-06-01T23:59:59");
   const hoje = new Date();
@@ -583,11 +583,13 @@ document.getElementById("meu_form").addEventListener("submit", function(event) {
   const formularioInscricao = document.getElementById("form-inscricao");
   const mensagem = document.getElementById("mensagem-inscricao");
 
-  if (hoje >= dataInicio && hoje <= dataFim) {
-  formularioInscricao.style.display = "block";
-} else {
-  mensagem.textContent = "❌ As inscrições estão encerradas. Aguarde a próxima etapa do processo eleitoral.";
-}
+  if (hoje < dataInicio) {
+    mensagem.textContent = "🕐 As inscrições ainda não começaram. Aguarde o início do período oficial.";
+  } else if (hoje > dataFim) {
+    mensagem.textContent = "❌ As inscrições foram encerradas.";
+  } else {
+    formularioInscricao.style.display = "block";
+  }
 
 
 </script>
