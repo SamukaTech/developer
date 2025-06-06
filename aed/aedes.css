@@ -758,6 +758,7 @@ button:hover {
 
 .oficina-desc {
     font-size: 1rem;
+    text-align: justify;
     color: #333;
     max-width: 800px;
     margin: 0 auto 40px;
@@ -769,7 +770,7 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 80px; /* ADICIONADO: espaço extra abaixo da galeria */
+    margin-bottom: 70px; /* ADICIONADO: espaço extra abaixo da galeria */
 }
 
 .oficina-titulo {
@@ -791,7 +792,7 @@ button:hover {
   }
   
 .oficina-galeria img {
-    width: 260px;
+    width: 262px;
     height: auto;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -802,6 +803,12 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
+
+@media (max-width: 600px) {
+    .oficina-galeria img{
+      width: 100%;
+    }
+  }
 
 /* Detalhes decorativos nos cantos */
 .oficina-section::before,
