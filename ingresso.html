@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingressos - Evento Especial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .event-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+
+    .details {
+      margin-bottom: 2rem;
+    }
+
+    .buy-section {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .pix-info {
+      background-color: #f0f4ff;
+      padding: 1rem;
+      text-align: center;
+      border-left: 5px solid #3b82f6;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .btn-pdf {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pdf:hover {
+  background-color: #2563eb;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.pix-info {
+  background-color: #f0f4ff;
+  padding: 1.5rem;
+  border-left: 5px solid #3b82f6;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.pix-info p {
+  margin-bottom: 0.8rem;
+}
+
+.pix-info img {
+  max-width: 130px;
+  margin: 1rem auto;
+  display: block;
+}
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Festa de São João</h1>
+    <p>Garanta seu ingresso para a experiência do ano!</p>
+  </header>
+
+  <div class="container">
+    <img src="c:\Users\samue\OneDrive\Documents\Imagens\arraia.gif" alt="Banner do Evento" class="event-img" />
+
+    <section class="details">
+      <h2>Sobre o Evento</h2>
+      <p>Participe do nosso grande evento com atrações incríveis, música ao vivo, gastronomia e muito mais! Será um dia inesquecível cheio de experiências únicas.</p>
+      <p><strong>Data:</strong> 15 de Julho de 2025</p>
+      <p><strong>Horário:</strong> 18h às 23h</p>
+      <p><strong>Local:</strong> Praça Central, Teresina - PI</p>
+    </section>
+
+    <section class="buy-section">
+      <h2>Comprar Ingressos</h2>
+      <form id="formulario">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" required />
+
+        <label for="telefone">Telefone (WhatsApp):</label>
+        <input type="text" id="telefone" required />
+
+        <label for="quantidade">Quantidade de ingressos:</label>
+        <input type="number" id="quantidade" min="1" value="1" required />
+
+        <p class="total">Valor total: R$ <span id="total">50,00</span></p>
+       <button type="button" onclick="gerarPDF()" class="btn-pdf">
+  <i class="fa fa-download"></i> Comprovante de Solicitação de Ingresso
+</button>
+
+        <div class="pix-info">
+          <p><strong>Pagamento via PIX</strong></p>
+          <p>Chave PIX: <strong>evento@pagamento.com</strong></p>
+          <p>Nome do recebedor: <strong>Evento Produções LTDA</strong></p>
+          <p>Ou escaneie o QR Code abaixo com o app do seu banco:</p>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021126500014BR.GOV.BCB.PIX0114evento@pagamento.com5204000053039865802BR5920Evento Produções LTDA6009SAO PAULO62100506evento6304ABCD" alt="QR Code PIX">
+          <p>Após o pagamento, envie o comprovante para <strong>(86) 99999-9999</strong> via WhatsApp e receba seu ingresso.</p>
+
+          <a id="whatsappBtn" class="btn-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i> Enviar comprovante via WhatsApp
+</a>
+
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Evento Especial. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const quantidadeInput = document.getElementById('quantidade');
+    const totalSpan = document.getElementById('total');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const nomeInput = document.getElementById('nome');
+    const telefoneInput = document.getElementById('telefone');
+    const precoUnitario = 50;
+
+    function atualizarTotal() {
+      const quantidade = parseInt(quantidadeInput.value) || 1;
+      const total = quantidade * precoUnitario;
+      totalSpan.textContent = total.toFixed(2).replace('.', ',');
+      atualizarWhatsappLink();
+    }
+
+    function atualizarWhatsappLink() {
+      const nome = nomeInput.value.trim();
+      const telefone = telefoneInput.value.trim();
+      const quantidade = parseInt(quantidadeInput.value) || 1;
+      const total = quantidade * precoUnitario;
+      const mensagem = `Olá! Fiz o pagamento de ${quantidade} ingresso(s) no valor total de R$ ${total.toFixed(2).replace('.', ',')} para o Evento Especial.\nNome: ${nome}\nTelefone: ${telefone}\nSegue o comprovante em anexo.`;
+      const url = `https://wa.me/5586999999999?text=${encodeURIComponent(mensagem)}`;
+      whatsappBtn.href = url;
+    }
+
+    quantidadeInput.addEventListener('input', atualizarTotal);
+    nomeInput.addEventListener('input', atualizarWhatsappLink);
+    telefoneInput.addEventListener('input', atualizarWhatsappLink);
+
+    atualizarTotal();
+
+    
+  </script>
+
+  <script>
+  function gerarPDF() {
+    const nome = document.getElementById("nome").value;
+    const quantidade = document.getElementById("quantidade").value;
+    const valor = parseInt(quantidade) * 50;
+    const data = new Date();
+    const dataFormatada = data.toLocaleDateString();
+    const horaFormatada = data.toLocaleTimeString();
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Título centralizado e em negrito
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("Comprovante de Solicitação de Ingresso", 105, 20, { align: "center" });
+
+    let y = 40;
+    doc.setFontSize(12);
+
+    // Função auxiliar para imprimir rótulo + valor na mesma linha
+    function escreverLinha(rotulo, valor) {
+      doc.setFont("helvetica", "bold");
+      doc.text(rotulo, 20, y);
+      const larguraRotulo = doc.getTextWidth(rotulo);
+      doc.setFont("helvetica", "normal");
+      doc.text(valor, 20 + larguraRotulo + 2, y);
+      y += 10;
+    }
+
+    escreverLinha("Data:", `${dataFormatada} – ${horaFormatada}`);
+    escreverLinha("Nome:", nome);
+    escreverLinha("Quantidade de Ingressos:", quantidade);
+    escreverLinha("Valor Total:", `R$ ${valor.toFixed(2).replace('.', ',')}`);
+    escreverLinha("Forma de Pagamento:", "PIX");
+
+    // Texto final em parágrafo contínuo
+    y += 15;
+    const mensagemFinal = 
+      "Envie este comprovante de solicitação de ingresso, junto com o comprovante de pagamento, para o WhatsApp (86) 99999-9999. Você receberá seu ingresso após a confirmação.";
+
+    const linhas = doc.splitTextToSize(mensagemFinal, 170); // quebra automática respeitando a largura
+    doc.setFont("helvetica", "normal");
+    doc.text(linhas, 20, y);
+
+    doc.save("comprovante-ingresso.pdf");
+  }
+</script>
+
+
+
+</body>
+</html>
