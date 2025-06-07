@@ -23,12 +23,18 @@
     }
 
     header {
-      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      animation: fadeInDown 1s ease-in-out;
-    }
+  padding: 0;
+  background: none;
+}
+
+.header-img {
+  width: 100%;
+  display: block;
+  background-size: contain;
+  max-height: 290px; /* opcional: limite de altura */
+  object-fit: cover; /* mantém o recorte bonito */
+}
+
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -136,15 +142,6 @@
       margin-bottom: 1rem;
     }
 
-    .pix-info {
-      background-color: #f0f4ff;
-      padding: 1rem;
-      text-align: center;
-      border-left: 5px solid #3b82f6;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-
     .btn-pdf {
   background-color: #3b82f6;
   color: white;
@@ -187,7 +184,7 @@
 
 .pix-info {
   background-color: #f0f4ff;
-  padding: 1rempx;
+  padding: 1rem;
   border-left: 5px solid #3b82f6;
   border-radius: 8px;
   margin-top: 1.5rem;
@@ -224,9 +221,9 @@
 </head>
 <body>
   <header>
-    <h1>Festa de São João</h1>
-    <p>Garanta seu ingresso para a experiência do ano!</p>
-  </header>
+  <img src="imagens\cab_arraia.png" alt="Banner do Evento" class="header-img">
+</header>
+
 
   <div class="container">
     <img src="imagens\arraia.gif" alt="Banner do Evento" class="event-img" />
@@ -277,16 +274,16 @@
         <div class="pix-info">
   <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">📲 Pagamento via PIX</h3>
 
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center; margin-top: 10px;">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center;">
   <span style="display: inline-flex; align-items: center;">
-    <img src="https://futurium.com.br/wp-content/uploads/2021/06/logo-pix-icone-512.png" alt="Ícone PIX" style="width: 18px; height: 18px; margin-right: 6px;" />
+    <img src="https://futurium.com.br/wp-content/uploads/2021/06/logo-pix-icone-512.png" alt="Ícone PIX" style="width: 18px; margin-right: 6px;" />
     <strong>Chave PIX:</strong>
   </span>
 
-  <span id="chavePix" style="color:#1e3a8a;">evento@pagamento.com</span>
+  <span id="chavePix" style="color:#1e3a8a;">(86) 99999-9999</span>
 
   <button type="button" onclick="copiarChavePix()" class="btn-copiar">
-    <img src="https://cdn-icons-png.flaticon.com/512/84/84185.png" alt="Copiar" style="width: 16px;"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/84/84185.png" alt="Copiar" style="width: 15px;"/>
   
   </button>
 
@@ -393,7 +390,7 @@
     doc.setFont("helvetica", "normal");
     doc.text(linhas, 20, y);
 
-    doc.save("comprovante-ingresso.pdf");
+    doc.save("pedido-de-ingresso.pdf");
   }
 </script>
 
@@ -436,3 +433,4 @@
 
 </body>
 </html>
+
