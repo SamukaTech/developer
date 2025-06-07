@@ -37,8 +37,8 @@
 
     .container {
       max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
+      margin: 1rem auto;
+      padding: 0.5rem;
     }
 
     .event-img {
@@ -62,9 +62,50 @@
       margin-bottom: 2rem;
     }
 
+    .details h2 {
+      text-align: center;
+    }
+    .section-title-line {
+  width: 80px;
+  height: 3px;
+  background-color: #3b82f6;
+  margin: -0.5rem auto 1.5rem auto;
+  border-radius: 10px;
+}
+
+.event-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.event-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.event-info div {
+  background-color: #eef2ff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  min-width: 200px;
+}
+
+.event-info strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #1e3a8a;
+}
+
     .buy-section {
       background: #ffffff;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       animation: fadeInUp 1s ease-in-out;
@@ -146,7 +187,7 @@
 
 .pix-info {
   background-color: #f0f4ff;
-  padding: 1rem;
+  padding: 1rempx;
   border-left: 5px solid #3b82f6;
   border-radius: 8px;
   margin-top: 1.5rem;
@@ -182,12 +223,30 @@
     <img src="imagens\arraia.gif" alt="Banner do Evento" class="event-img" />
 
     <section class="details">
-      <h2>Sobre o Evento</h2>
-      <p>Participe do nosso grande evento com atrações incríveis, música ao vivo, gastronomia e muito mais! Será um dia inesquecível cheio de experiências únicas.</p>
-      <p><strong>Data:</strong> 15 de Julho de 2025</p>
-      <p><strong>Horário:</strong> 18h às 23h</p>
-      <p><strong>Local:</strong> Praça Central, Teresina - PI</p>
-    </section>
+  <h2>Sobre o Evento</h2>
+  <div class="section-title-line"></div>
+
+  <p class="event-description">
+    Participe do nosso grande evento com atrações incríveis, música ao vivo, gastronomia e muito mais! Será um dia inesquecível cheio de experiências únicas.
+  </p>
+
+  <div class="event-info">
+  <div>
+    <strong>📅 Data</strong>
+    15 de Julho de 2025
+  </div>
+  <div>
+    <strong>⏰ Horário</strong>
+    18h às 23h
+  </div>
+  <div>
+    <strong>📍 Local</strong>
+    Praça Central, Teresina - PI
+  </div>
+</div>
+
+</section>
+
 
     <section class="buy-section">
       <h2>Comprar Ingressos</h2>
