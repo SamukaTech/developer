@@ -205,19 +205,12 @@
 }
 
 .btn-copiar {
-  margin-left: 10px;
-  padding: 4px 10px;
-  font-size: 0.9rem;
-  background-color: #3b82f6;
-  color: white;
+  background-color: #f0f4ff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-copiar:hover {
-  background-color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  
 }
 
     footer {
@@ -236,7 +229,7 @@
   </header>
 
   <div class="container">
-    <img src="imagens\arraia.gif" alt="Banner do Evento" class="event-img" />
+    <img src="c:\Users\samue\OneDrive\Documents\Imagens\arraia.gif" alt="Banner do Evento" class="event-img" />
 
     <section class="details">
   <h2>Sobre o Evento</h2>
@@ -278,21 +271,27 @@
 
         <p class="total">Valor total: R$ <span id="total">50,00</span></p>
        <button type="button" onclick="gerarPDF()" class="btn-pdf">
-  <i class="fa fa-download"></i> Comprovante de Solicitação de Ingresso
+  <i class="fa fa-download"></i> Baixar Pedido de Ingresso
 </button>
 
         <div class="pix-info">
   <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">📲 Pagamento via PIX</h3>
 
-  <p>
-  <strong>✉️ Chave PIX:</strong>
-  <span id="chavePix" style="color:#1e3a8a;">evento@pagamento.com</span>
-  <button type="button" onclick="copiarChavePix()" class="btn-copiar">
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center; margin-top: 10px;">
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://futurium.com.br/wp-content/uploads/2021/06/logo-pix-icone-512.png" alt="Ícone PIX" style="width: 18px; height: 18px; margin-right: 6px;" />
+    <strong>Chave PIX:</strong>
+  </span>
 
-    📋 Copiar
+  <span id="chavePix" style="color:#1e3a8a;">evento@pagamento.com</span>
+
+  <button type="button" onclick="copiarChavePix()" class="btn-copiar">
+    <img src="https://cdn-icons-png.flaticon.com/512/84/84185.png" alt="Copiar" style="width: 16px;"/>
+  
   </button>
-  <span id="copiadoMsg" style="display:none; color:green; font-weight:bold; margin-left:8px;">Copiado!</span>
-</p>
+
+  <span id="copiadoMsg" style="display:none; color:green; font-weight:bold;">Copiado!</span>
+</div>
 
   <p><strong>🏢 Recebedor:</strong> Evento Produções LTDA</p>
 
@@ -303,7 +302,7 @@
   <p style="margin-top: 1rem;">Após o pagamento, envie o comprovante para <strong>(86) 99999-9999</strong> via WhatsApp e receba seu ingresso.</p>
 
           <a id="whatsappBtn" class="btn-whatsapp" target="_blank">
-  <i class="fab fa-whatsapp"></i> Enviar comprovante via WhatsApp
+  <i class="fab fa-whatsapp"></i> Enviar comprovante
 </a>
 
         </div>
@@ -398,6 +397,41 @@
   }
 </script>
 
+<script>
+  function copiarChavePix() {
+    const chave = document.getElementById("chavePix").innerText;
+    const copiadoMsg = document.getElementById("copiadoMsg");
+
+    if (navigator.clipboard && window.isSecureContext) {
+      // navegador em HTTPS ou localhost
+      navigator.clipboard.writeText(chave).then(() => {
+        mostrarMensagemCopiado();
+      }).catch((err) => {
+        alert("Erro ao copiar. Copie manualmente: " + chave);
+      });
+    } else {
+      // fallback usando textarea escondido
+      const textArea = document.createElement("textarea");
+      textArea.value = chave;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        mostrarMensagemCopiado();
+      } catch (err) {
+        alert("Não foi possível copiar automaticamente. Copie manualmente.");
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function mostrarMensagemCopiado() {
+      copiadoMsg.style.display = "inline";
+      setTimeout(() => {
+        copiadoMsg.style.display = "none";
+      }, 2000);
+    }
+  }
+</script>
 
 
 </body>
