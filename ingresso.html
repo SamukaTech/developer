@@ -204,6 +204,22 @@
   display: block;
 }
 
+.btn-copiar {
+  margin-left: 10px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-copiar:hover {
+  background-color: #2563eb;
+}
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -266,12 +282,25 @@
 </button>
 
         <div class="pix-info">
-          <p><strong>Pagamento via PIX</strong></p>
-          <p>Chave PIX: <strong>evento@pagamento.com</strong></p>
-          <p>Nome do recebedor: <strong>Evento Produções LTDA</strong></p>
-          <p>Ou escaneie o QR Code abaixo com o app do seu banco:</p>
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021126500014BR.GOV.BCB.PIX0114evento@pagamento.com5204000053039865802BR5920Evento Produções LTDA6009SAO PAULO62100506evento6304ABCD" alt="QR Code PIX">
-          <p>Após o pagamento, envie o comprovante para <strong>(86) 99999-9999</strong> via WhatsApp e receba seu ingresso.</p>
+  <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">📲 Pagamento via PIX</h3>
+
+  <p>
+  <strong>✉️ Chave PIX:</strong>
+  <span id="chavePix" style="color:#1e3a8a;">evento@pagamento.com</span>
+  <button type="button" onclick="copiarChavePix()" class="btn-copiar">
+
+    📋 Copiar
+  </button>
+  <span id="copiadoMsg" style="display:none; color:green; font-weight:bold; margin-left:8px;">Copiado!</span>
+</p>
+
+  <p><strong>🏢 Recebedor:</strong> Evento Produções LTDA</p>
+
+  <p style="margin-top: 1rem;">Ou escaneie o QR Code abaixo com o app do seu banco:</p>
+
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021126500014BR.GOV.BCB.PIX0114evento@pagamento.com5204000053039865802BR5920Evento Produções LTDA6009SAO PAULO62100506evento6304ABCD" alt="QR Code PIX">
+
+  <p style="margin-top: 1rem;">Após o pagamento, envie o comprovante para <strong>(86) 99999-9999</strong> via WhatsApp e receba seu ingresso.</p>
 
           <a id="whatsappBtn" class="btn-whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i> Enviar comprovante via WhatsApp
