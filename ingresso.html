@@ -31,7 +31,7 @@
   width: 100%;
   display: block;
   background-size: contain;
-  max-height: 290px; /* opcional: limite de altura */
+  max-height: 300px; /* opcional: limite de altura */
   object-fit: cover; /* mantém o recorte bonito */
 }
 
@@ -74,7 +74,7 @@
     .section-title-line {
   width: 80px;
   height: 3px;
-  background-color: #3b82f6;
+  background-color: #fb8500;
   margin: -0.5rem auto 1.5rem auto;
   border-radius: 10px;
 }
@@ -95,7 +95,8 @@
 }
 
 .event-info div {
-  background-color: #eef2ff;
+  background-color: #fff8f0;
+  border: 1px solid #ff4800;
   padding: 1rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -125,6 +126,7 @@
     label {
       display: block;
       margin-bottom: 0.5rem;
+      color: #03045e;
       font-weight: bold;
     }
 
@@ -143,8 +145,8 @@
     }
 
     .btn-pdf {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #fcca46;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 0.8rem 1.2rem;
   font-size: 1rem;
@@ -159,7 +161,7 @@
 }
 
 .btn-pdf:hover {
-  background-color: #2563eb;
+  background-color: #ffb703;
 }
 
 .btn-whatsapp {
@@ -183,9 +185,9 @@
 }
 
 .pix-info {
-  background-color: #f0f4ff;
+  background-color: #f7f6ff;
   padding: 1rem;
-  border-left: 5px solid #3b82f6;
+  border-left: 5px solid #07beb8;
   border-radius: 8px;
   margin-top: 1.5rem;
   text-align: center;
@@ -202,12 +204,12 @@
 }
 
 .btn-copiar {
-  background-color: #f0f4ff;
+  background-color: #f7f6ff;
   border: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  
+  cursor: pointer;
 }
 
     footer {
@@ -272,11 +274,15 @@
 </button>
 
         <div class="pix-info">
-  <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">📲 Pagamento via PIX</h3>
-
+ 
+<div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center;">
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://img.icons8.com/color/512/pix.png" alt="Ícone PIX" style="width: 20px; margin-right: 6px; margin-bottom: 1rem;"/>
+    <strong><h3>Pagamento Via PIX:</h3></strong></span></div>
+  
   <div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center;">
   <span style="display: inline-flex; align-items: center;">
-    <img src="https://futurium.com.br/wp-content/uploads/2021/06/logo-pix-icone-512.png" alt="Ícone PIX" style="width: 18px; margin-right: 6px;" />
+    <img src="https://cdn-icons-png.flaticon.com/512/2001/2001978.png" alt="Ícone PIX" style="width: 18px; margin-right: 6px;" />
     <strong>Chave PIX:</strong>
   </span>
 
@@ -290,7 +296,11 @@
   <span id="copiadoMsg" style="display:none; color:green; font-weight:bold;">Copiado!</span>
 </div>
 
-  <p><strong>🏢 Recebedor:</strong> Evento Produções LTDA</p>
+<div style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: 10px; text-align: center;">
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/256/8859/8859498.png" alt="Ícone PIX" style="width: 18px; margin-right: 6px;" />
+    <strong>Recebedor:</strong>Evento Produções LTDA
+  </span></div>
 
   <p style="margin-top: 1rem;">Ou escaneie o QR Code abaixo com o app do seu banco:</p>
 
@@ -433,4 +443,3 @@
 
 </body>
 </html>
-
