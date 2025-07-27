@@ -207,12 +207,13 @@ header h1 {
 section {
     padding: 3rem 2rem;
     margin: 1.5rem auto;
-    max-width: 920px;
+    max-width: 70%;
     border-top: 6px solid #008000;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 #mosquito, #metodologia, #resultados {
     text-align: justify;
@@ -308,7 +309,7 @@ button:hover {
 #panfleto {
     text-align: center;
     margin: 2rem auto;
-    max-width: 920px;
+    
 }
 
 #panfleto h2 {
@@ -361,6 +362,10 @@ button:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+  section {
+    max-width: 100%;
+  }
     .panfleto-content {
         flex-direction: column; /* Itens empilhados em telas pequenas */
     }
@@ -629,7 +634,7 @@ button:hover {
 #vacina {
     padding: 3rem 2rem;
     margin: 2rem auto;
-    max-width: 920px;
+    
     background-color: #fff; 
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
