@@ -32,6 +32,15 @@ form {
   margin-bottom: 20px;
 }
 
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form button {
+  flex: 1 1 100%; /* ocupa toda a largura disponível */
+  min-width: 0;   /* evita overflow em alguns navegadores */
+  box-sizing: border-box;
+}
+
 input, button {
   flex: 1;
   padding: 10px;
@@ -84,6 +93,7 @@ li {
     justify-content: flex-end;
     gap: 8px;
   }
+  
 }
 
 
@@ -132,6 +142,10 @@ li {
 @media (max-width: 600px) {
   form {
     flex-direction: column;
+  }
+  
+  form input, form button {
+    width: 100%; /* garante que todos os inputs e botão fiquem iguais */
   }
 }
 
