@@ -1,0 +1,208 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* Lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fafafa;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Em telas pequenas, joga os botões para baixo */
+@media (max-width: 600px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acoes {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}
+
+
+/* Cores de alerta com fundo */
+.ok {
+  border-left: 8px solid #4CAF50;
+  background: #E8F5E9;
+}
+
+.alerta {
+  border-left: 8px solid #FFC107;
+  background: #FFF8E1;
+}
+
+.critico {
+  border-left: 8px solid #F44336;
+  background: #FFEBEE;
+}
+
+
+/* Botões de ação */
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-editar, .btn-excluir {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-editar {
+  background: #2196F3;
+  color: white;
+}
+
+.btn-excluir {
+  background: #E53935;
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+}
+
+#btn-imprimir {
+  display: block;
+  margin: 10px auto 20px auto;
+  padding: 10px 20px;
+  background: #2d9079;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#btn-imprimir:hover {
+  background: #1976D2;
+}
+
+@media print {
+  footer {
+    display: none; /* esconde o rodapé da tela na impressão */
+  }
+
+  #form-produto, #btn-imprimir, .btn-editar, .btn-excluir {
+    display: none; /* mantém elementos desnecessários escondidos */
+  }
+
+  body {
+    background: white;
+    font-size: 14px;
+  }
+
+  li {
+    box-shadow: none;
+    margin: 5px 0;
+    page-break-inside: avoid;
+  }
+
+  /* Mantém cores de fundo e borda */
+  .ok, .alerta, .critico {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Rodapé fixo apenas para impressão */
+  @page {
+    margin: 20mm;
+  }
+
+  body::after {
+    content: "Controle de Validade - Gerado em " attr(data-hora) " | Desenvolvido por Samuel Araújo";
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    color: #555;
+  }
+}
+
+
+footer {
+  text-align: center;
+  padding: 12px 0;
+  line-height: 10px;
+  background: #f1f1f1;
+  color: #555;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
