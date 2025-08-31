@@ -179,7 +179,7 @@ li {
   display: block;
   margin: 10px auto 20px auto;
   padding: 10px 20px;
-  background: #80ffdb;
+  background: #64dfdf;
   color: black;
   border: none;
   border-radius: 8px;
@@ -189,7 +189,7 @@ li {
 }
 
 #btn-imprimir:hover {
-  background: #64dfdf;
+  background: #80ffdb;
 }
 
 @media print {
@@ -289,4 +289,5 @@ footer {
   font-size: 14px;
 
 }
+
 
