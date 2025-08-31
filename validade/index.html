@@ -2,13 +2,16 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controle de Validade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>📦 Controle de Validade</h1>
+   <h1 class="titulo">
+  <span class="icone">📦</span>
+  <span class="texto">Controle de Validade</span>
+</h1>
+
 
     <form id="form-produto">
       <input type="text" id="nome" placeholder="Nome do produto" required>
@@ -19,13 +22,22 @@
 
     <h2>📝 Lista de Produtos</h2>
     <ul id="lista-produtos"></ul>
-    <br>
+   <div class="legenda">
+</div>
+<div id="legenda">
+  <p><strong>Legenda:</strong></p>
+  <p><span class="caixa cor-ok"></span> Dentro da validade</p>
+  <p><span class="caixa cor-alerta"></span> Próximo do vencimento</p>
+  <p><span class="caixa cor-critico"></span> Vencido / Vence hoje</p>
+</div>
+
      <button id="btn-imprimir" onclick="imprimirLista()">🖨️ Imprimir Lista</button>
 
      <footer>
   <p>Desenvolvido por Samuel Araújo</p>
   <p>&copy Todos os direitos reservados.</p>
 </footer>
+
   </div>
 
   <script src="script.js"></script>
