@@ -13,7 +13,7 @@ body {
   max-width: 600px;
   background: white;
   margin: 0px;
-  padding: 6px;
+  padding: 8px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -24,9 +24,18 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
+/* Estilo do título */
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
 .titulo .icone {
-  width: 42px;   /* tamanho da imagem */
-  height: 42px;  /* mantém proporção quadrada */
+  width: 40px;   /* tamanho da imagem */
+  height: 40px;  /* mantém proporção quadrada */
   object-fit: contain;
 }
 
@@ -35,13 +44,14 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* Em telas pequenas: ícone fica em cima */
+/* Em telas pequenas: imagem fica em cima do texto */
 @media (max-width: 600px) {
   .titulo {
     flex-direction: column;
     gap: 5px;
   }
 }
+
 
 /* Formulário */
 form {
