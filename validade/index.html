@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Controle de Validade</title>
   <link rel="icon" href="https://play-lh.googleusercontent.com/B3XjHFTfR_HlUzd-RH5hS1PMTbXmYGEEsfjA5QZK-s9-BU8pZafvI0fmUEtTKFDbqpU=w240-h480-rw">
+  <title>Controle de Validade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,12 @@
   <span class="texto">Controle de Validade</span>
 </h1>
 
+<div id="dashboard">
+  <div class="card total">Total: <span id="count-total">0</span></div>
+  <div class="card ok">OK: <span id="count-ok">0</span></div>
+  <div class="card alerta">Próximos: <span id="count-alerta">0</span></div>
+  <div class="card critico">Vencidos: <span id="count-critico">0</span></div>
+</div>
 
     <form id="form-produto">
       <input type="text" id="nome" placeholder="Nome do produto" required>
@@ -23,6 +29,9 @@
     </form>
 
     <h2>📝 Lista de Produtos</h2>
+  
+    <input type="text" id="busca" placeholder="🔎 Buscar produto..." oninput="mostrar()">
+
     <ul id="lista-produtos"></ul>
    <div class="legenda">
 </div>
@@ -45,5 +54,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-

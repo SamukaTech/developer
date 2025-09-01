@@ -35,12 +35,22 @@ function diasRestantes(validadeIso) {
 function mostrar() {
   lista.innerHTML = "";
 
-  produtos
-  .sort((a, b) => parseIsoLocal(a.validade) - parseIsoLocal(b.validade))
-  .forEach((p, index) => {
-      const li = document.createElement("li");
+  const termoBusca = document.getElementById("busca")?.value.toLowerCase() || "";
 
+   let total = 0, ok = 0, alerta = 0, critico = 0;
+
+  produtos
+    .sort((a, b) => parseIsoLocal(a.validade) - parseIsoLocal(b.validade))
+    .filter(p => p.nome.toLowerCase().includes(termoBusca))
+    .forEach((p, index) => {
+      const li = document.createElement("li");
       const dias = diasRestantes(p.validade);
+
+      // Contagem
+      total++;
+      if (dias > 30) ok++;
+      else if (dias <= 30 && dias > 0) alerta++;
+      else critico++;
 
 // classes conforme sua nova regra
 let classe = "ok"; // > 30 dias
@@ -72,6 +82,13 @@ li.innerHTML = `
 
       lista.appendChild(li);
     });
+
+    // Atualiza Dashboard
+  document.getElementById("count-total").textContent = total;
+  document.getElementById("count-ok").textContent = ok;
+  document.getElementById("count-alerta").textContent = alerta;
+  document.getElementById("count-critico").textContent = critico;
+
 }
 
 // Função para adicionar produto

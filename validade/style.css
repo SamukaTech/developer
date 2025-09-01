@@ -87,6 +87,60 @@ button:hover {
   background: #45a049;
 }
 
+/* Dashboard */
+#dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 15px 0 20px 0;
+}
+
+#dashboard .card {
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#dashboard .total {
+  background: #e0e0e0;
+}
+
+#dashboard .ok {
+  background: #E8F5E9;
+  border-left: 6px solid #4CAF50;
+}
+
+#dashboard .alerta {
+  background: #FFF8E1;
+  border-left: 6px solid #FFC107;
+}
+
+#dashboard .critico {
+  background: #FFEBEE;
+  border-left: 6px solid #F44336;
+}
+
+/* Em telas maiores, mostra 4 colunas */
+@media (min-width: 700px) {
+  #dashboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+#busca {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box; /* 🔑 evita ultrapassar o container */
+}
+
+
 /* Lista */
 ul {
   list-style: none;
@@ -180,7 +234,7 @@ li {
   margin: 10px auto 20px auto;
   padding: 10px 20px;
   background: #64dfdf;
-  color: black;
+  color: rgb(1, 1, 1);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -197,7 +251,7 @@ li {
     display: none; /* esconde o rodapé da tela na impressão */
   }
 
-  #form-produto, #btn-imprimir, .btn-editar, .btn-excluir {
+  #form-produto, #btn-imprimir, .btn-editar, .btn-excluir, #busca {
     display: none; /* mantém elementos desnecessários escondidos */
   }
 
@@ -287,7 +341,4 @@ footer {
   margin-top: 20px;
   border-top: 1px solid #ccc;
   font-size: 14px;
-
 }
-
-
