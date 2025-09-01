@@ -13,8 +13,8 @@ body {
   max-width: 600px;
   background: white;
   margin: 0px;
-  padding: 10px;
-  border-radius: 15px;
+  padding: 6px;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -24,17 +24,10 @@ h1, h2 {
   margin-bottom: 15px;
 }
 
-/* Estilo do título */
-.titulo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
 .titulo .icone {
-  font-size: 34px;
+  width: 42px;   /* tamanho da imagem */
+  height: 42px;  /* mantém proporção quadrada */
+  object-fit: contain;
 }
 
 .titulo .texto {
@@ -90,7 +83,7 @@ button:hover {
 /* Dashboard */
 #dashboard {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
   gap: 10px;
   margin: 15px 0 20px 0;
 }
@@ -102,6 +95,8 @@ button:hover {
   font-weight: bold;
   color: #000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 #dashboard .total {
@@ -129,6 +124,7 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 
 #busca {
   width: 100%;
