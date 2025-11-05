@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel de Votação — III EICEBIO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: #f3f9f4;
+      color: #1c2d21;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #2e7d32;
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+    h2 {
+      color: #1b5e20;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .qr {
+      background: #fff;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    img {
+      width: 300px;
+      height: 300px;
+    }
+    .button {
+      display: inline-block;
+      background: #43a047;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #2e7d32;
+    }
+    .private-link {
+      background: #e8f5e9;
+      border: 2px solid #c8e6c9;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #2e7d32;
+      word-break: break-all;
+      max-width: 80%;
+    }
+    footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>EICEBIO — Votação de Logo</h1>
+  <h2>Escaneie o QR Code para votar</h2>
+
+  <div class="qr">
+    <!-- Substitua pelo seu QR Code -->
+    <img src="qrcode.png" alt="QR Code de votação" />
+  </div>
+
+  <!-- Botão para abrir o formulário -->
+   <a href="logos.pdf" target="_blank" class="button">Logos</a>
+  <a href="https://docs.google.com/forms/d/1ravl7AI1X1-ITidvjAU0FnNTlUTdaK2Hla0XiInYw40/edit" target="_blank" class="button">Acessar Formulário de Votação</a>
+
+
+</body>
+</html>
