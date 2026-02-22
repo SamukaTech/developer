@@ -218,7 +218,7 @@ nav {
     text-align: center;
     font-size: 17px;
 }
-#sit6 {
+#sit7 {
     color: rgb(0, 0, 0);
     background-color: rgb(236, 221, 0);
     border-radius: 8px;
@@ -226,7 +226,7 @@ nav {
     font-size: 15px;
     padding: 4px;
 }
-#sit5, #sit4, #sit3, #sit2, #sit1 {
+#sit6, #sit5, #sit4, #sit3, #sit2, #sit1 {
     color: rgb(0, 0, 0);
     background-color: rgb(79, 248, 0);
     border-radius: 8px;
@@ -366,4 +366,5 @@ nav {
         
     }
 }
+
 
