@@ -1,1 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recibos 99</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #000;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        main {
+            width: 92%;
+            max-width: 650px;
+            margin: 45px auto;
+            flex: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px 25px;
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .download-button {
+            display: block;
+
+            width: 100%;
+
+            background: #000;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 17px 20px;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .download-button:hover {
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .instructions {
+            margin-top: 30px;
+            background: #f7f7f7;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .instructions ol {
+            padding-left: 22px;
+        }
+
+        .instructions li {
+            margin-bottom: 9px;
+            line-height: 1.5;
+        }
+
+        .warning {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            main {
+                margin: 25px auto;
+            }
+
+            .card {
+                padding: 28px 18px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🧾 Recibos 99</h1>
+
+    <p>
+        Acesse seus recibos de corridas em um só lugar
+    </p>
+
+</header>
+
+
+
+<main>
+
+    <div class="card">
+
+        <div class="icon">
+            📁
+        </div>
+
+        <h2>
+            Meus Recibos
+        </h2>
+
+        <p class="description">
+
+            Todos os recibos estão armazenados
+            em uma pasta do Google Drive.
+
+            <br>
+
+            Clique no botão abaixo para acessar
+            os arquivos.
+
+        </p>
+
+
+        <a
+            class="download-button"
+            href="https://drive.google.com/drive/folders/19WR1IsAX60e2F8F6s7O643qO6t1F-274"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            📦 ACESSAR E BAIXAR RECIBOS
+
+        </a>
+
+
+
+        <div class="instructions">
+
+            <h3>
+                📥 Como baixar todos de uma vez
+            </h3>
+
+            <ol>
+
+                <li>
+                    Clique no botão acima.
+                </li>
+
+                <li>
+                    Na pasta do Google Drive,
+                    clique com o botão direito sobre a pasta
+                    ou selecione os arquivos desejados.
+                </li>
+
+                <li>
+                    Escolha a opção
+                    <strong>Fazer download</strong>.
+                </li>
+
+                <li>
+                    O Google Drive irá preparar um arquivo
+                    <strong>.ZIP</strong> contendo os recibos.
+                </li>
+
+                <li>
+                    Depois, basta extrair o arquivo ZIP
+                    e imprimir os PDFs.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <p class="warning">
+
+            💡 Se estiver usando celular, o funcionamento
+            pode variar conforme o aplicativo do Google Drive.
+            Em um computador, o download da pasta costuma ser
+            mais simples.
+
+        </p>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    Recibos 99 • Página para organização e acesso aos documentos
+
+</footer>
+
+
+</body>
+
+</html>
+```
+  
